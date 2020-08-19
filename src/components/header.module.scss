@@ -26,3 +26,16 @@
     text-decoration: none;
     text-transform: uppercase;
 }
+
+.social-list {
+    display: flex;
+    list-style-type: none;
+    padding: 1rem 0 1rem 0;
+}
+
+.social-item {
+    color: #000000;
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}

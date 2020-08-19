@@ -24,15 +24,15 @@ const Header = () => {
           <Link className={headerStyles.navItem} to="/guides">Guides</Link>
         </li>
       </ul>
-      <ul>
+      <ul className={headerStyles.socialList}>
         <li>
-          <a href="https://www.twitter.com/"><FaFacebookF /></a>
+          <a className={headerStyles.socialItem} href="https://www.twitter.com/"><FaFacebookF /></a>
         </li>
         <li>
-          <a href="https://www.instagram.com/"><FaInstagram /></a>
+          <a className={headerStyles.socialItem} href="https://www.instagram.com/"><FaInstagram /></a>
         </li>
         <li>
-          <a href="https://www.facebook.com/"><FaTwitter /></a>
+          <a className={headerStyles.socialItem} href="https://www.facebook.com/"><FaTwitter /></a>
         </li>
       </ul>
     </header>
