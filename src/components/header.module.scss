@@ -2,6 +2,27 @@
     padding: 1rem 0 2rem;
 }
 
-a {
-    color: grey;
+.title {
+    color: #000000;
+    font-size: 3rem;
+    font-family: Lexend Tera;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    padding: 1rem 0 1rem 0;
+    max-width: 100%;
+    justify-content: space-between;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.nav-item {
+    color: #000000;
+    font-size: .9 rem;
+    text-decoration: none;
+    text-transform: uppercase;
 }
