@@ -1,10 +1,14 @@
 import React from "react"
 
+import Layout from "../components/layout"
+
 const GuidesPage = () => {
   return (
-    <div>
-      <h1>Guides</h1>
-    </div>
+    <Layout>
+      <div>
+        <h1>Guides</h1>
+      </div>
+    </Layout>
   )
 }
 

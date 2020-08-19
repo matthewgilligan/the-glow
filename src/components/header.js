@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
+import headerStyles from './header.module.scss'
+
 const Header = () => {
   return (
     <div>

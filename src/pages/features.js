@@ -1,10 +1,14 @@
 import React from "react"
 
+import Layout from "../components/layout"
+
 const FeaturesPage = () => {
   return (
-    <div>
-      <h1>Features</h1>
-    </div>
+    <Layout>
+      <div>
+        <h1>Features</h1>
+      </div>
+    </Layout>
   )
 }
 
