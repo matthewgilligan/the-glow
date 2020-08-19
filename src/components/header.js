@@ -6,7 +6,7 @@ import headerStyles from './header.module.scss'
 
 const Header = () => {
   return (
-    <div>
+    <header className={headerStyles.header}>
       <ul>
         <li>
           <Link to="/news">News</Link>
@@ -32,7 +32,7 @@ const Header = () => {
           <a href="https://www.facebook.com/"><FaTwitter /></a>
         </li>
       </ul>
-    </div>
+    </header>
   )
 }
 
