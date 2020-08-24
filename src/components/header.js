@@ -26,10 +26,10 @@ const Header = () => {
       </ul>
       <ul className={headerStyles.socialList}>
         <li>
-          <a className={headerStyles.socialItem} href="https://www.twitter.com/"><FaFacebookF /></a>
+          <a className={headerStyles.socialItem} href="https://www.instagram.com/"><FaInstagram /></a>
         </li>
         <li>
-          <a className={headerStyles.socialItem} href="https://www.instagram.com/"><FaInstagram /></a>
+          <a className={headerStyles.socialItem} href="https://www.twitter.com/"><FaFacebookF /></a>
         </li>
         <li>
           <a className={headerStyles.socialItem} href="https://www.facebook.com/"><FaTwitter /></a>
