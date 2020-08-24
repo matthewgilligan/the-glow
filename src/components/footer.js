@@ -1,13 +1,26 @@
 import React from "react"
 import { Link } from "gatsby"
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import footerStyles from './footer.module.scss'
 
 const Footer = () => {
   return (
     <div>
-      <div>
+      <div className={footerStyles.logos}>
         <div className={footerStyles.logo}></div>
+        <div className={footerStyles.logo}></div>
+        <ul className={footerStyles.socialList}>
+          <li>
+            <a className={footerStyles.socialItem} href="https://www.instagram.com/"><FaInstagram /></a>
+          </li>
+          <li>
+            <a className={footerStyles.socialItem} href="https://www.twitter.com/"><FaFacebookF /></a>
+          </li>
+          <li>
+            <a className={footerStyles.socialItem} href="https://www.facebook.com/"><FaTwitter /></a>
+          </li>
+        </ul>
       </div>
       <div>
         <ul className={footerStyles.footerList}>

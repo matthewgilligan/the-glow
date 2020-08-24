@@ -1,13 +1,18 @@
+.logos {
+  display: flex;
+  justify-content: space-between;
+}
+
 .logo {
     background-color: red;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
 }
 
 .footer-list {
     display: flex;
     list-style-type: none;
-    padding: 1rem 0 1rem 0;
+    padding: 1.4rem 0 1.4rem 0;
     max-width: 100%;
     justify-content: space-between;
     border-top: 1px solid black;
@@ -17,4 +22,17 @@
     color: #000000;
     font-size: .8rem;
     text-decoration: none;
+}
+
+.social-list {
+    display: flex;
+    list-style-type: none;
+    padding: 1rem 0 1rem 0;
+}
+
+.social-item {
+    color: #000000;
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-transform: uppercase;
 }
