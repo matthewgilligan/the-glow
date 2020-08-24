@@ -11,22 +11,22 @@ const Footer = () => {
       <div className={footerStyles.logos}>
         <ul className={footerStyles.socialList}>
           <li>
-            <a className={footerStyles.socialItem} href="https://www.spotify.com/"><FaSpotify /></a>
+            <a className={footerStyles.socialItem} href="https://www.spotify.com/" target="_blank"><FaSpotify /></a>
           </li>
           <li>
-            <a className={footerStyles.socialItem} href="https://www.apple.com/"><FaApple /></a>
+            <a className={footerStyles.socialItem} href="https://www.apple.com/" target="_blank"><FaApple /></a>
           </li>
         </ul>
         <img src={logo} className={footerStyles.logo} alt="Logo" />
         <ul className={footerStyles.socialList}>
           <li>
-            <a className={footerStyles.socialItem} href="https://www.instagram.com/"><FaInstagram /></a>
+            <a className={footerStyles.socialItem} href="https://www.instagram.com/" target="_blank"><FaInstagram /></a>
           </li>
           <li>
-            <a className={footerStyles.socialItem} href="https://www.twitter.com/"><FaFacebookF /></a>
+            <a className={footerStyles.socialItem} href="https://www.twitter.com/" target="_blank"><FaFacebookF /></a>
           </li>
           <li>
-            <a className={footerStyles.socialItem} href="https://www.facebook.com/"><FaTwitter /></a>
+            <a className={footerStyles.socialItem} href="https://www.facebook.com/" target="_blank"><FaTwitter /></a>
           </li>
         </ul>
       </div>

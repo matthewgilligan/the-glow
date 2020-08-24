@@ -14,13 +14,13 @@ const Header = () => {
         </h1>
         <ul className={headerStyles.socialList}>
           <li>
-            <a className={headerStyles.socialItem} href="https://www.instagram.com/"><FaInstagram /></a>
+            <a className={headerStyles.socialItem} href="https://www.instagram.com/" target="_blank"><FaInstagram /></a>
           </li>
           <li>
-            <a className={headerStyles.socialItem} href="https://www.twitter.com/"><FaFacebookF /></a>
+            <a className={headerStyles.socialItem} href="https://www.twitter.com/" target="_blank"><FaFacebookF /></a>
           </li>
           <li>
-            <a className={headerStyles.socialItem} href="https://www.facebook.com/"><FaTwitter /></a>
+            <a className={headerStyles.socialItem} href="https://www.facebook.com/" target="_blank"><FaTwitter /></a>
           </li>
         </ul>
       </div>
