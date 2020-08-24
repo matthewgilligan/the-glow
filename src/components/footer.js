@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { FaFacebookF, FaInstagram, FaTwitter, FaSpotify, FaApple } from 'react-icons/fa';
 
 import footerStyles from './footer.module.scss'
+import logo from "../images/red_logo_text_medium.png"
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
             <a className={footerStyles.socialItem} href="https://www.apple.com/"><FaApple /></a>
           </li>
         </ul>
-        <div className={footerStyles.logo}></div>
+        <img src={logo} className={footerStyles.logo} alt="Logo" />
         <ul className={footerStyles.socialList}>
           <li>
             <a className={footerStyles.socialItem} href="https://www.instagram.com/"><FaInstagram /></a>
