@@ -1,5 +1,10 @@
 .header {
-    padding: 1rem 0 2rem;
+    padding: 0 0 2rem;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
 }
 
 .title {
@@ -15,7 +20,7 @@
     list-style-type: none;
     padding: 1rem 0 1rem 0;
     max-width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }

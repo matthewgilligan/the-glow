@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaSpotify, FaApple } from 'react-icons/fa';
 
 import footerStyles from './footer.module.scss'
 
@@ -8,7 +8,14 @@ const Footer = () => {
   return (
     <div>
       <div className={footerStyles.logos}>
-        <div className={footerStyles.logo}></div>
+        <ul className={footerStyles.socialList}>
+          <li>
+            <a className={footerStyles.socialItem} href="https://www.spotify.com/"><FaSpotify /></a>
+          </li>
+          <li>
+            <a className={footerStyles.socialItem} href="https://www.apple.com/"><FaApple /></a>
+          </li>
+        </ul>
         <div className={footerStyles.logo}></div>
         <ul className={footerStyles.socialList}>
           <li>
