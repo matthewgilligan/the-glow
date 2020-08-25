@@ -22,6 +22,10 @@
     text-decoration: none;
 }
 
+.footer-item:hover {
+    color: #E7334D;
+}
+
 .social-list {
     display: flex;
     list-style-type: none;
@@ -33,4 +37,8 @@
     font-size: 1.3rem;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.social-item:hover {
+    color: #E7334D;
 }
