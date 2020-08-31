@@ -28,13 +28,14 @@
 
 .nav-item {
     color: #000000;
-    font-size: .9 rem;
+    font-size: 1rem;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 .nav-item:hover {
     color: #E7334D;
+    transition: color 300ms;
 }
 
 .social-list {
@@ -52,4 +53,53 @@
 
 .social-item:hover {
     color: #E7334D;
+}
+
+.check-button {
+    font-size: 40px;
+    float: right;
+    line-height: 80px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.mobile-nav-item {
+    color: #000000;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+}
+
+.mobile-social-list {
+    display: flex;
+    list-style-type: none;
+    padding: 1rem 0 1rem 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.mobile-social-item {
+    color: #000000;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
 }

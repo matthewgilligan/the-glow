@@ -1,12 +1,17 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa';
 
 import headerStyles from './header.module.scss'
 
 const Header = () => {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
+
   return (
     <header className={headerStyles.header}>
+      <div className={headerStyles.checkButton} onClick={ () => setMobileNavOpen(!mobileNavOpen) }>
+        <FaBars />
+      </div>
       <div className={headerStyles.navTop}>
         <h3>Search</h3>
         <h1>
@@ -14,13 +19,13 @@ const Header = () => {
         </h1>
         <ul className={headerStyles.socialList}>
           <li>
-            <a className={headerStyles.socialItem} href="https://www.instagram.com/" target="_blank"><FaInstagram /></a>
+            <FaInstagram className={headerStyles.socialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer"/>
           </li>
           <li>
-            <a className={headerStyles.socialItem} href="https://www.twitter.com/" target="_blank"><FaFacebookF /></a>
+            <FaFacebookF className={headerStyles.socialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer"/>
           </li>
           <li>
-            <a className={headerStyles.socialItem} href="https://www.facebook.com/" target="_blank"><FaTwitter /></a>
+            <FaTwitter className={headerStyles.socialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer"/>
           </li>
         </ul>
       </div>
@@ -40,6 +45,35 @@ const Header = () => {
           </li>
         </ul>
       </div>
+      <div className={ mobileNavOpen ? 'active' : '' }>
+        <div className={headerStyles.mobileNav}>
+          <ul className={headerStyles.mobileNavList}>
+            <li>
+              <Link className={headerStyles.mobileNavItem} to="/news">News</Link>
+            </li>
+            <li>
+              <Link className={headerStyles.mobileNavItem} to="/reviews">Reviews</Link>
+            </li>
+            <li>
+              <Link className={headerStyles.mobileNavItem} to="/features">Features</Link>
+            </li>
+            <li>
+              <Link className={headerStyles.mobileNavItem} to="/guides">Guides</Link>
+            </li>
+          </ul>
+          <ul className={headerStyles.mobileSocialList}>
+            <li>
+              <FaInstagram className={headerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer"/>
+            </li>
+            <li>
+              <FaFacebookF className={headerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer"/>
+            </li>
+            <li>
+              <FaTwitter className={headerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer"/>
+            </li>
+          </ul>
+        </div>
+       </div>
     </header>
   )
 }
