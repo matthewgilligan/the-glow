@@ -9,14 +9,14 @@ const Header = () => {
 
   return (
     <header className={headerStyles.header}>
-      <div className={headerStyles.checkButton} onClick={ () => setMobileNavOpen(!mobileNavOpen) }>
-        <FaBars />
-      </div>
       <div className={headerStyles.navTop}>
         <h3>Search</h3>
         <h1>
           <Link className={headerStyles.title} to="/">The Glow</Link>
         </h1>
+        <div className={headerStyles.checkButton}>
+          <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
+        </div>
         <ul className={headerStyles.socialList}>
           <li>
             <FaInstagram className={headerStyles.socialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer"/>
