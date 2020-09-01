@@ -7,6 +7,38 @@ import headerStyles from './header.module.scss'
 const Header = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
+  let mobileNav
+
+  if(mobileNavOpen) {
+    mobileNav = <div className={headerStyles.mobileNav}>
+      <ul className={headerStyles.mobileNavList}>
+        <li>
+          <Link className={headerStyles.mobileNavItem} to="/news">News</Link>
+        </li>
+        <li>
+          <Link className={headerStyles.mobileNavItem} to="/reviews">Reviews</Link>
+        </li>
+        <li>
+          <Link className={headerStyles.mobileNavItem} to="/features">Features</Link>
+        </li>
+        <li>
+          <Link className={headerStyles.mobileNavItem} to="/guides">Guides</Link>
+        </li>
+      </ul>
+      <ul className={headerStyles.mobileSocialList}>
+        <li>
+          <FaInstagram className={headerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer"/>
+        </li>
+        <li>
+          <FaFacebookF className={headerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer"/>
+        </li>
+        <li>
+          <FaTwitter className={headerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer"/>
+        </li>
+      </ul>
+    </div>
+  }
+
   return (
     <header className={headerStyles.header}>
       <div className={headerStyles.navTop}>
@@ -45,35 +77,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div className={ mobileNavOpen ? 'active' : '' }>
-        <div className={headerStyles.mobileNav}>
-          <ul className={headerStyles.mobileNavList}>
-            <li>
-              <Link className={headerStyles.mobileNavItem} to="/news">News</Link>
-            </li>
-            <li>
-              <Link className={headerStyles.mobileNavItem} to="/reviews">Reviews</Link>
-            </li>
-            <li>
-              <Link className={headerStyles.mobileNavItem} to="/features">Features</Link>
-            </li>
-            <li>
-              <Link className={headerStyles.mobileNavItem} to="/guides">Guides</Link>
-            </li>
-          </ul>
-          <ul className={headerStyles.mobileSocialList}>
-            <li>
-              <FaInstagram className={headerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer"/>
-            </li>
-            <li>
-              <FaFacebookF className={headerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer"/>
-            </li>
-            <li>
-              <FaTwitter className={headerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer"/>
-            </li>
-          </ul>
-        </div>
-       </div>
+        { mobileNav }
     </header>
   )
 }
