@@ -30,7 +30,6 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div>
         <ul className={footerStyles.footerList}>
           <li>
             <Link className={footerStyles.footerItem} to="/about">About Us</Link>
@@ -48,7 +47,7 @@ const Footer = () => {
             <Link className={footerStyles.footerItem} to="/terms-of-service">Terms of Service</Link>
           </li>
         </ul>
-      </div>
+        <p className={footerStyles.copyright}>© 2020 The Glow JP Ltd. All rights reserved.</p>
     </div>
   )
 }

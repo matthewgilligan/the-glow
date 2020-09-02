@@ -44,6 +44,13 @@
     transition: .5s;
 }
 
+.copyright {
+    text-align: center;
+    font-size: .7rem;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
 @media screen and (max-width: 600px) {
     .footer-list {
         display: flex;
@@ -53,7 +60,7 @@
     }
 
     .footer-item {
-        flex: 0 1 40rem;
+        flex: 0 1 34rem;
         margin: 1rem;
         padding: 0;
     }
