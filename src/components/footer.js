@@ -44,7 +44,7 @@ const Footer = () => {
             <Link className={footerStyles.footerItem} to="#">Support Us</Link>
           </li>
           <li>
-            <Link className={footerStyles.footerItem} to="#">Contact</Link>
+            <Link className={footerStyles.footerItem} to="/contact">Contact</Link>
           </li>
         </ul>
         <div className={footerStyles.copyright}>
