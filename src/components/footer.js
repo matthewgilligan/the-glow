@@ -41,13 +41,16 @@ const Footer = () => {
             <Link className={footerStyles.footerItem} to="/advertise">Advertise</Link>
           </li>
           <li>
-            <Link className={footerStyles.footerItem} to="/privacy-policy">Privacy Policy</Link>
+            <Link className={footerStyles.footerItem} to="#">Support Us</Link>
           </li>
           <li>
-            <Link className={footerStyles.footerItem} to="/terms-of-service">Terms of Service</Link>
+            <Link className={footerStyles.footerItem} to="#">Contact</Link>
           </li>
         </ul>
-        <p className={footerStyles.copyright}>© 2020 The Glow JP Ltd. All rights reserved.</p>
+        <div className={footerStyles.copyright}>
+          <p>© 2020 The Glow JP Ltd. All rights reserved.</p>
+          <Link className={footerStyles.copyrightLinks} to="/privacy-policy">Privacy Policy</Link> | <Link className={footerStyles.copyrightLinks} to="/terms-of-service">Terms of Service</Link>
+        </div>
     </div>
   )
 }

@@ -41,14 +41,22 @@
 
 .social-item:hover {
     color: #E7334D;
-    transition: .5s;
 }
 
 .copyright {
     text-align: center;
     font-size: .7rem;
-    color: #666666;
-    margin-bottom: 8px;
+    color: #777777;
+    margin-bottom: 16px;
+}
+
+.copyright-links {
+    color: #777777;
+    text-decoration: none;
+}
+
+.copyright-links:hover{
+    color: #E7334D;
 }
 
 @media screen and (max-width: 600px) {
