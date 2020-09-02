@@ -43,3 +43,18 @@
     color: #E7334D;
     transition: .5s;
 }
+
+@media screen and (max-width: 600px) {
+    .footer-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-item {
+        flex: 0 1 40rem;
+        margin: 1rem;
+        padding: 0;
+    }
+}

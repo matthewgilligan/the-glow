@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
 
 import headerStyles from './header.module.scss'
 

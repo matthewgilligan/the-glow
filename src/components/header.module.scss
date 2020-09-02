@@ -35,7 +35,7 @@
 
 .nav-item:hover {
     color: #E7334D;
-    transition: color 300ms;
+    transition: color 200ms;
 }
 
 .social-list {
@@ -54,6 +54,7 @@
 
 .social-item:hover {
     color: #E7334D;
+    cursor: pointer;
 }
 
 .check-button {
@@ -75,6 +76,7 @@
     position: absolute;
     right: 0;
     background-color: white;
+    display: none;
 }
 
 .mobile-nav-list {
@@ -111,6 +113,11 @@
     text-transform: uppercase;
 }
 
+.mobile-social-item:hover {
+    color: #E7334D;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 600px) {
     .nav-top {
         border-bottom: 1px solid black;
@@ -133,5 +140,7 @@
         display: block;
     }
 
-
+    .mobile-nav {
+        display: block;
+    }
 }
