@@ -4,32 +4,22 @@
 }
 
 .logo {
-    height: 120px;
-}
-
-.footer-list {
-    display: flex;
-    list-style-type: none;
-    padding: 1.4rem 0 1.4rem 0;
-    max-width: 100%;
-    justify-content: space-between;
-    border-top: 1px solid black;
-}
-
-.footer-item {
-    color: #000000;
-    font-size: .8rem;
-    text-decoration: none;
-}
-
-.footer-item:hover {
-    color: #E7334D;
+    height: 60px;
+    margin: 0 8rem 1rem 0;
 }
 
 .social-list {
     display: flex;
     list-style-type: none;
     padding: 1rem 0 1rem 0;
+
+    li {
+        padding-right: 1.2rem;
+    }
+
+    li:last-child {
+        padding-right: 0;
+    }
 }
 
 .social-mobile-list {
@@ -57,7 +47,6 @@
     font-size: 1.3rem;
     text-decoration: none;
     text-transform: uppercase;
-    padding-right: 1.2rem;
 
     &:hover {
         color: #E7334D;
@@ -79,6 +68,25 @@
 
 .copyright-links, .copyright-mobile-links {
     color: #777777;
+    text-decoration: none;
+
+    &:hover {
+        color: #E7334D;
+    }
+}
+
+.footer-list {
+    display: flex;
+    list-style-type: none;
+    padding: 1.4rem 0 1.4rem 0;
+    max-width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid black;
+}
+
+.footer-item {
+    color: #000000;
+    font-size: .8rem;
     text-decoration: none;
 
     &:hover {
@@ -120,6 +128,10 @@
 
     .social-mobile-list {
         display: flex;
+    }
+
+    .social-mobile-item {
+        padding-right: 1.2rem;
     }
 
     .copyright {
