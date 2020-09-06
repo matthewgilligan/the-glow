@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <header className={headerStyles.header}>
       <div className={headerStyles.navTop}>
-        <h3>Search</h3>
+        <h3 className={headerStyles.search}>Search</h3>
         <h1>
           <Link className={headerStyles.title} to="/">The Glow</Link>
         </h1>

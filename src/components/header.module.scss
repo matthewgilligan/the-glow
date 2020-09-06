@@ -41,8 +41,15 @@
 .social-list {
     display: flex;
     list-style-type: none;
-    padding: 1rem 0 1rem 0;
-    color: green;
+    padding: 2.4rem 0 .5rem 0;
+
+    li {
+        padding-right: 1.2rem;
+    }
+
+    li:last-child {
+        padding-right: 0;
+    }
 }
 
 .social-item {
@@ -60,8 +67,7 @@
 .check-button {
     font-size: 1.8rem;
     float: right;
-    margin-top: 6px;
-    margin-right: 4px;
+    margin-bottom: .1rem;
     cursor: pointer;
     display: none;
 }
@@ -124,8 +130,14 @@
         padding: 1rem 0 .4rem 0;
     }
 
+    .search {
+        display: none;
+    }
+
     .title {
-        font-size: 2rem;
+        font-size: 1.3rem;
+        position: absolute;
+        top: 1.1rem;
     }
 
     .nav-list {

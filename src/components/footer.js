@@ -10,8 +10,8 @@ const Footer = () => {
     <footer className={footerStyles.footer}>
       <div className={footerStyles.logos}>
         <div className={footerStyles.copyright}>
-          <p>© 2020 The Glow JP Ltd. All rights reserved.</p>
-          <Link className={footerStyles.copyrightLinks} to="/privacy-policy">Privacy Policy</Link> | <Link className={footerStyles.copyrightLinks} to="/terms-of-service">Terms of Service</Link>
+          <p>© 2020 The Glow JP Ltd.</p>
+          <p>All rights reserved.<Link className={footerStyles.copyrightLinks} to="/privacy-policy">Privacy Policy</Link> | <Link className={footerStyles.copyrightLinks} to="/terms-of-service">Terms of Service</Link></p>
         </div>
         <img src={logo} className={footerStyles.logo} alt="Logo" />
         <ul className={footerStyles.socialList}>
