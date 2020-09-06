@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { FaFacebookF, FaInstagram, FaTwitter, FaSpotify, FaApple } from 'react-icons/fa';
 
 import footerStyles from './footer.module.scss'
-import logo from "../images/red_logo_text_medium.png"
+import logo from "../../images/red_logo_text_medium.png"
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
       <div className={footerStyles.logos}>
         <div className={footerStyles.copyright}>
           <p>© 2020 The Glow JP Ltd.</p>
-          <p>All rights reserved.<Link className={footerStyles.copyrightLinks} to="/privacy-policy">Privacy Policy</Link> | <Link className={footerStyles.copyrightLinks} to="/terms-of-service">Terms of Service</Link></p>
+          <p>All rights reserved. <Link className={footerStyles.copyrightLinks} to="/privacy-policy">Privacy Policy</Link> | <Link className={footerStyles.copyrightLinks} to="/terms-of-service">Terms of Service</Link></p>
         </div>
         <img src={logo} className={footerStyles.logo} alt="Logo" />
         <ul className={footerStyles.socialList}>
