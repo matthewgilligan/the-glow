@@ -16,33 +16,33 @@ const Footer = () => {
         <img src={logo} className={footerStyles.logo} alt="Logo" />
         <ul className={footerStyles.socialList}>
           <li>
-            <FaInstagram className={footerStyles.socialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer"/>
+            <a className={footerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
           </li>
           <li>
-            <FaFacebookF className={footerStyles.socialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer"/>
+            <a className={footerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
           </li>
           <li>
-            <FaTwitter className={footerStyles.socialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer"/>
+            <a className={footerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
           </li>
         </ul>
       </div>
         <ul className={footerStyles.socialMobileList}>
           <li>
-            <FaInstagram className={footerStyles.socialMobileItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer"/>
+            <a className={footerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
           </li>
           <li>
-            <FaFacebookF className={footerStyles.socialMobileItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer"/>
+            <a className={footerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
           </li>
           <li>
-            <FaTwitter className={footerStyles.socialMobileItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer"/>
+            <a className={footerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
           </li>
         </ul>
         <ul className={footerStyles.socialMobileList}>
           <li>
-            <FaSpotify className={footerStyles.socialMobileItem} href="https://www.spotify.com/" target="_blank" rel="noreferrer"/>
+            <a className={footerStyles.socialMobileItem} href="https://www.spotify.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a>
           </li>
           <li>
-            <FaApple className={footerStyles.socialMobileItem} href="https://www.apple.com/" target="_blank" rel="noreferrer"/>
+            <a className={footerStyles.socialMobileItem} href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaApple/></a>
           </li>
         </ul>
         <ul className={footerStyles.footerList}>

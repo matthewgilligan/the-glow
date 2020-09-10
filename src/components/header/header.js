@@ -37,13 +37,13 @@ const Header = () => {
       </ul>
       <ul className={headerStyles.mobileSocialList}>
         <li>
-          <FaInstagram className={headerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer"/>
+          <a className={headerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
         </li>
         <li>
-          <FaFacebookF className={headerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer"/>
+          <a className={headerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
         </li>
         <li>
-          <FaTwitter className={headerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer"/>
+          <a className={headerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
         </li>
       </ul>
     </div>
@@ -61,13 +61,13 @@ const Header = () => {
         </div>
         <ul className={headerStyles.socialList}>
           <li>
-            <FaInstagram className={headerStyles.socialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer"/>
+            <a className={headerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
           </li>
           <li>
-            <FaFacebookF className={headerStyles.socialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer"/>
+            <a className={headerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
           </li>
           <li>
-            <FaTwitter className={headerStyles.socialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer"/>
+            <a className={headerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
           </li>
         </ul>
       </div>
