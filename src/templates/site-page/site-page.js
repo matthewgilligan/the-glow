@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout/layout"
+import Layout from "../../components/layout/layout"
+import sitePageStyles from "./site-page.module.scss"
 
 export const query = graphql`
   query($slug: String!){
@@ -18,8 +19,8 @@ const SitePage = (props) => {
   return (
     <Layout>
       <div>
-        <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}></div>
+        <h1 className={sitePageStyles.title}>{props.data.markdownRemark.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} className={sitePageStyles.content}></div>
       </div>
     </Layout>
   )
