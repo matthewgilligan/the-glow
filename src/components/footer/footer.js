@@ -53,7 +53,7 @@ const Footer = () => {
             <Link className={footerStyles.footerItem} to="/contribute">Contribute</Link>
           </li>
           <li>
-            <Link className={footerStyles.footerItem} to="/advertise">Advertise</Link>
+            <Link className={footerStyles.footerItem} to="/ad">Advertise</Link>
           </li>
           <li>
             <Link className={footerStyles.footerItem} to="#">Support Us</Link>
