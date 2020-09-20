@@ -15,9 +15,7 @@ date: "2019-09-09"
 
 
 
-1. Oh
-2. My
-3. God
+![LOGO!](../images//red_logo_text_medium.png)
 
 >>>>I'm baby +1 godard biodiesel trust fund palo santo kogi adaptogen, tbh literally skateboard. Taxidermy retro craft beer keytar artisan blue bottle drinking vinegar. Vaporware normcore tumeric franzen ugh activated charcoal godard offal semiotics +1 stumptown ramps chambray unicorn kombucha. Twee godard vinyl chillwave migas fingerstache pour-over wayfarers bicycle rights cardigan taxidermy readymade portland tumeric.</br></br>
 
