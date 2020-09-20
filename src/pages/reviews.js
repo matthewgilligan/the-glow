@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 
@@ -48,9 +48,11 @@ const ReviewsPage = () => {
         {data.allContentfulReview.edges.map((edge) => {
           return (
             <li>
-              <h2>{edge.node.albumTitle}</h2>
-              <h3>{edge.node.artist.englishName}</h3>
-              <p>{edge.node.genre.name}</p>
+              <Link to={`${edge.node.slug}`}>
+                <h2>{edge.node.albumTitle}</h2>
+                <h3>{edge.node.artist.englishName}</h3>
+                <p>{edge.node.genre.name}</p>
+              </Link>
             </li>
           )
         })}

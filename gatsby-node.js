@@ -59,7 +59,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   reviewRes.data.allContentfulReview.edges.forEach((edge) => {
     createPage({
       component: reviewTemplate,
-      path: `/review/${edge.node.slug}`,
+      path: `/reviews/${edge.node.slug}`,
       context: {
         slug: edge.node.slug
       }
