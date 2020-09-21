@@ -1,0 +1,62 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details {
+  width: 25%;
+
+  img {
+    max-width: 100%;
+  }
+
+  .meta-details {
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: bold;
+    margin-top: 5rem;
+    padding: .7rem 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    .date {
+      color: #BCBCBC;
+      padding: .5rem 0 3rem 0;
+    }
+
+    .genre {
+      color: #E7334D;
+    }
+  }
+}
+
+.post {
+  width: 45%;
+
+  .album-details {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 5rem;
+    padding: 1rem 0;
+
+    .stars {
+      padding-bottom: 9rem;
+      font-size: 2rem;
+      color: #E7334D;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .subtitle {
+    font-weight: bold;
+    padding-bottom: 2rem;
+  }
+}
+
+.latest-reviews {
+  width: 25%;
+  background-color: red;
+}
