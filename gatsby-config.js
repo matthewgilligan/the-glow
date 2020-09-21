@@ -3,6 +3,7 @@ module.exports = {
     title: 'The Glow',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
     {

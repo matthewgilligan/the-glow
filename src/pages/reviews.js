@@ -2,6 +2,8 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
+import reviewsStyles from './reviews.module.scss'
+import Head from "../components/head/head"
 
 const ReviewsPage = () => {
   const data = useStaticQuery(graphql`
@@ -43,8 +45,9 @@ const ReviewsPage = () => {
 
   return (
     <Layout>
+      <Head title="Japanese Album Reviews"/>
       <h1>Reviews</h1>
-      <ul>
+      <ul className={reviewsStyles.albums}>
         {data.allContentfulReview.edges.map((edge) => {
           return (
             <li>
