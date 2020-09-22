@@ -60,9 +60,25 @@ const Review = (props) => {
   return (
     <Layout>
       <div className={reviewStyles.content}>
-        <div className={reviewStyles.details}>
-          <img src={props.data.contentfulReview.albumCover.file.url} alt={props.data.contentfulReview.albumCover.title} className={reviewStyles.albumCover} />
-          <div className={reviewStyles.metaDetails}>
+        <div className={reviewStyles.post}>
+          <div className={reviewStyles.albumBanner}>
+            <img src={props.data.contentfulReview.albumCover.file.url} alt={props.data.contentfulReview.albumCover.title} className={reviewStyles.albumCover} />
+            <div className={reviewStyles.albumDetails}>
+              <h1 className={reviewStyles.artistName}>{props.data.contentfulReview.artist.englishName}</h1>
+              <h1 className={reviewStyles.albumTitle}>{props.data.contentfulReview.albumTitle}</h1>
+              <h3 className={reviewStyles.stars}>{stars}</h3>
+              <p>{props.data.contentfulReview.label} ● {props.data.contentfulReview.initialReleaseDate}</p>
+            </div>
+          </div>
+        </div>
+        <div className={reviewStyles.latestReviews}>
+          <h1>Latest Reviews</h1>
+        </div>
+      </div>
+
+
+
+          {/*<div className={reviewStyles.metaDetails}>
             <p>By: {props.data.contentfulReview.author.englishName}</p>
             <p className={reviewStyles.date}>{props.data.contentfulReview.publishedDate}</p>
             <p className={reviewStyles.genre}>{props.data.contentfulReview.genre.name}</p>
@@ -78,10 +94,7 @@ const Review = (props) => {
           <p className={reviewStyles.subtitle}>{props.data.contentfulReview.subtitle}</p>
           {documentToReactComponents(props.data.contentfulReview.body.json, options)}
         </div>
-        <div className={reviewStyles.latestReviews}>
-          <h1>Latest Reviews</h1>
-        </div>
-      </div>
+      </div>*/}
     </Layout>
   )
 }
