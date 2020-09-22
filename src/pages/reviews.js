@@ -46,7 +46,24 @@ const ReviewsPage = () => {
   return (
     <Layout>
       <Head title="Japanese Album Reviews"/>
-      <h1>Reviews</h1>
+      <div className={reviewsStyles.featureNav}>
+        <div className={reviewsStyles.featureNavTitle}>
+          <div className={reviewsStyles.titleEnglish}>
+            <p>Reviews</p>
+          </div>
+          <div className={reviewsStyles.titleJapanese}>
+            <p>レビュー</p>
+          </div>
+        </div>
+        <div className={reviewsStyles.featureNavBottom}>
+          <ul className={reviewsStyles.featureNavList}>
+            <li className={reviewsStyles.featureNavItem}>All Reviews</li>
+            <li className={reviewsStyles.featureNavItem}>Contemporary</li>
+            <li className={reviewsStyles.featureNavItem}>Classic</li>
+            <li className={reviewsStyles.featureNavItem}>★★★★+</li>
+          </ul>
+        </div>
+      </div>
       <ul className={reviewsStyles.albums}>
         {data.allContentfulReview.edges.map((edge) => {
           return (

@@ -10,21 +10,78 @@
 .album {
   flex: 1 16%;
   text-align: center;
-  width: 10rem;
+  padding-bottom: 5rem;
 }
 
 .albumCover {
-  width: 10rem;
+  width: 70%;
+  border: .5px solid rgba(192,192,192,0.3);
 }
 
 .artistName {
-  width: 10rem;
+  width: 70%;
   font-size: 1rem;
   padding: .6rem 0;
+  margin-block-end: 0;
+  margin-right: 0;
 }
 
-.albumTitle {
-  width: 10rem;
+.album-title {
+  width: 70%;
   font-size: .8rem;
+}
+
+.feature-nav {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 10000;
+    margin-bottom: 2.5rem;
+}
+
+.feature-nav-title {
+    text-transform: uppercase;
+    font-size: 18px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+}
+
+.title-japanese {
+    color: rgba(0, 0, 0, 0.03) !important;
+    font-size: 72px;
+    position: absolute;
+}
+
+.title-english {
+    position: absolute;
+}
+
+.feature-nav-bottom {
+    display: block;
+    height: 40px;
+    padding-top: 8px;
+}
+
+.feature-nav-list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.feature-nav-item {
+    color: grey;
+}
+
+.active, .feature-nav-item:hover {
+    color: black;
+    cursor: pointer;
 }
 
