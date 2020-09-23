@@ -3,9 +3,16 @@ module.exports = {
     title: 'The Glow',
   },
   plugins: [
+    'gatsby-plugin-material-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
+    {
+        resolve: 'gatsby-plugin-mailchimp',
+        options: {
+            endpoint: process.env.MAILCHIMP_ENDPOINT
+        },
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: {

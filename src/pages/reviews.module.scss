@@ -4,13 +4,14 @@
   padding-inline-start: 0;
   display: flex;
   flex-wrap: wrap;
-  text-decoration: none;
 }
 
 .album {
   flex: 1 16%;
   text-align: center;
   padding-bottom: 5rem;
+  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .albumCover {
