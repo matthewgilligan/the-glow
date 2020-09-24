@@ -5,6 +5,7 @@
 
 .post {
   width: 72.5%;
+  padding-top: 2rem;
 
   .albumBanner {
     display: flex;
@@ -80,11 +81,16 @@
           font-weight: bold;
           padding-bottom: 2rem;
         }
+
+        p {
+          line-height: 1.5;
+        }
       }
     }
 }
 
 .latest-reviews {
+  margin-top: 2rem;
   width: 25%;
   height: 100%;
   border-top: 1px solid black;
