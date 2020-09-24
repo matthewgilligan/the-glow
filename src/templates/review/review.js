@@ -20,7 +20,7 @@ export const query = graphql`
         twitter
         bio
       }
-      publishedDate(formatString:"MMMM Do YYYY")
+      publishedDate(formatString:"MMMM D YYYY")
       rating
       label
       initialReleaseDate(formatString:"YYYY")
@@ -50,7 +50,7 @@ export const query = graphql`
               englishName
               japaneseName
             }
-            publishedDate(formatString:"MMMM Do YYYY")
+            publishedDate(formatString:"MMMM D YYYY")
             albumCover {
               title
               file {

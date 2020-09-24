@@ -4,6 +4,8 @@ import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import { Typography } from "@material-ui/core"
 
+import mailchimpStyles from './mailchimp.module.scss'
+
 export default class MailChimpForm extends React.Component {
   constructor() {
     super()
@@ -26,26 +28,25 @@ export default class MailChimpForm extends React.Component {
     ) : this.state.result === "error" ? (
       <div>ERROR</div>
     ) : (
-      <form onSubmit={this._handleSubmit}>
-        <TextField
-          id="outlined-email-input"
-          label="Email"
-          type="email"
-          name="email"
-          autoComplete="email"
-          variant="outlined"
-          onChange={this.handleChange}
-        />
-        <br />
-        <Button
-          variant="contained"
-          color="primary"
-          label="Submit"
-          type="submit"
-        >
-          <Typography variant="button">Subscribe</Typography>
-        </Button>
-      </form>
+      <div className={mailchimpStyles.main}>
+        <h2>The Glow Newsletter</h2>
+        <p>Let The Glow shine on your inbox!</p>
+        <form onSubmit={this._handleSubmit} className={mailchimpStyles.form}>
+          <TextField
+            id="outlined-email-input"
+            label="Email"
+            type="email"
+            name="email"
+            autoComplete="email"
+            variant="outlined"
+            onChange={this.handleChange}
+          />
+          <br />
+          <Button variant="contained" label="Submit" type="submit" className={mailchimpStyles.button}>
+            <Typography variant="button" >Subscribe</Typography>
+          </Button>
+        </form>
+      </div>
     )
   }
 }
