@@ -1,0 +1,53 @@
+.feature-nav {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 10000;
+    margin-bottom: 2.5rem;
+}
+
+.feature-nav-title {
+    text-transform: uppercase;
+    font-size: 18px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+.title-japanese {
+    color: rgba(0, 0, 0, 0.03) !important;
+    font-size: 72px;
+    position: absolute;
+}
+
+.title-english {
+    position: absolute;
+}
+
+.feature-nav-bottom {
+    display: block;
+    height: 40px;
+    padding-top: 8px;
+}
+
+.feature-nav-list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.feature-nav-item {
+    color: grey;
+}
+
+.active, .feature-nav-item:hover {
+    color: black;
+    cursor: pointer;
+}

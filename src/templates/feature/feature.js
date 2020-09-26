@@ -2,8 +2,8 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-import Layout from "../../components/layout/layout"
-import reviewStyles from "./feature.module.scss"
+import Footer from "../../components/footer/footer"
+import featureStyles from "./feature.module.scss"
 
 export const query = graphql`
   query($slug: String!){
@@ -29,6 +29,11 @@ export const query = graphql`
       body {
         json
       }
+      coverImage {
+        file {
+          url
+        }
+      }
     }
   }
 `
@@ -45,10 +50,28 @@ const Feature = (props) => {
   }
 
   return (
-    <Layout>
-      <h1>{props.data.contentfulFeature.title}</h1>
-      <p>{props.data.contentfulFeature.subcategory.name}</p>
-    </Layout>
+    <div>
+      <div
+      style={{backgroundImage: `linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(${props.data.contentfulFeature.coverImage.file.url})`} }
+      className={featureStyles.banner}>
+        <div className={featureStyles.container}>
+          <div className={featureStyles.content}>
+            <h1 className={featureStyles.title}>
+              <Link to="/">The Glow</Link>
+            </h1>
+            <h1>{props.data.contentfulFeature.title}</h1>
+            <p>By: {props.data.contentfulFeature.author.englishName}</p>
+            <p>{props.data.contentfulFeature.publishedDate}</p>
+          </div>
+        </div>
+      </div>
+      <div className={featureStyles.container}>
+        <div className={featureStyles.content}>
+          <p>{props.data.contentfulFeature.subcategory.name}</p>
+          <Footer />
+        </div>
+      </div>
+    </div>
   )
 }
 

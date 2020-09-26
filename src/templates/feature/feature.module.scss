@@ -1,0 +1,32 @@
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.banner {
+    height: 100vh;
+    background-size: cover;
+    color: white;
+}
+
+.title {
+    margin: 0 auto;
+    font-size: 3rem;
+    font-family: Lexend Tera;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
