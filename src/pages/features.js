@@ -44,7 +44,7 @@ const FeaturesPage = () => {
             <p>features</p>
           </div>
           <div className={featuresStyles.titleJapanese}>
-            <p>レビュー</p>
+            <p>特徴</p>
           </div>
         </div>
         <div className={featuresStyles.featureNavBottom}>
