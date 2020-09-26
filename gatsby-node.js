@@ -19,6 +19,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   const blogTemplate = path.resolve('./src/templates/site-page/site-page.js')
   const reviewTemplate = path.resolve('./src/templates/review/review.js')
+  const featureTemplate = path.resolve('./src/templates/feature/feature.js')
 
   const blogRes = await graphql(`
     query {
@@ -46,6 +47,18 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  const featureRes = await graphql(`
+    query {
+      allContentfulFeature {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+
   blogRes.data.allMarkdownRemark.edges.forEach((edge) => {
     createPage({
       component: blogTemplate,
@@ -60,6 +73,16 @@ module.exports.createPages = async ({ graphql, actions }) => {
     createPage({
       component: reviewTemplate,
       path: `/reviews/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug
+      }
+    })
+  })
+
+  featureRes.data.allContentfulFeature.edges.forEach((edge) => {
+    createPage({
+      component: featureTemplate,
+      path: `/features/${edge.node.slug}`,
       context: {
         slug: edge.node.slug
       }
