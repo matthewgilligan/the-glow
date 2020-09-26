@@ -59,7 +59,7 @@ const Feature = (props) => {
             <h1 className={featureStyles.title}>
               <Link to="/">The Glow</Link>
             </h1>
-            <h1>{props.data.contentfulFeature.title}</h1>
+            <h1 className={featureStyles.featureTitle}>{props.data.contentfulFeature.title}</h1>
             <p>By: {props.data.contentfulFeature.author.englishName}</p>
             <p>{props.data.contentfulFeature.publishedDate}</p>
           </div>
@@ -67,7 +67,17 @@ const Feature = (props) => {
       </div>
       <div className={featureStyles.container}>
         <div className={featureStyles.content}>
-          <p>{props.data.contentfulFeature.subcategory.name}</p>
+          <div className={featureStyles.featureContent}>
+            <div className={featureStyles.authorDetails}>
+              <p>By: {props.data.contentfulFeature.author.englishName}</p>
+              <p className={featureStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
+              <p className={featureStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
+            </div>
+            <div className={featureStyles.body}>
+              <p className={featureStyles.subtitle}>{props.data.contentfulFeature.subtitle}</p>
+              {documentToReactComponents(props.data.contentfulFeature.body.json, options)}
+            </div>
+          </div>
           <Footer />
         </div>
       </div>
