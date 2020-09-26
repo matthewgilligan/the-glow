@@ -56,7 +56,7 @@ const FeaturesPage = () => {
           </ul>
         </div>
       </div>
-      <ul className={featuresStyles.albums}>
+      <ul className={featuresStyles.feature}>
         {data.allContentfulFeature.edges.map((edge) => {
           return (
             <li className={featuresStyles.album}>

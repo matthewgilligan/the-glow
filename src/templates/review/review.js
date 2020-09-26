@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { FaStar, FaStarHalf } from 'react-icons/fa'
 
 import Layout from "../../components/layout/layout"
 import reviewStyles from "./review.module.scss"
