@@ -59,3 +59,31 @@
     margin-inline-end: 0px;
     padding-inline-start: 0;
 }
+
+.top-features {
+    display: flex;
+
+    .first-feature {
+        height: calc(100vh - 178px);
+        width: 65%;
+        background-size: cover;
+        position: relative;
+    }
+
+    .first-feature-details {
+        width: 85%;
+        padding: 0 0 2rem 3rem;
+        position: absolute;
+        bottom: 0;
+
+        .first-feature-title {
+            color: white;
+            font-weight: bolder;
+            font-size: 32px;
+        }
+
+        .first-feature-subtitle{
+            color: white;
+        }
+    }
+}

@@ -12,6 +12,7 @@ const FeaturesPage = () => {
         edges {
           node {
             title
+            subtitle
             slug
             author {
               englishName
@@ -35,6 +36,10 @@ const FeaturesPage = () => {
     }
   `)
 
+  const firstFeature = data.allContentfulFeature.edges[0];
+
+  const scrollFeatures = data.allContentfulFeature.edges.slice(1, 4)
+
   return (
     <Layout>
       <Head title="Japanese Music Articles and Features"/>
@@ -56,8 +61,20 @@ const FeaturesPage = () => {
           </ul>
         </div>
       </div>
+      <div class={featuresStyles.topFeatures}>
+        <div class={featuresStyles.firstFeature}
+          style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 80%, rgba(0,0,0,0.8)), url(${firstFeature.node.coverImage.file.url})`} }>
+          <div class={featuresStyles.firstFeatureDetails}>
+            <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
+            <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
+            <p class={featuresStyles.firstFeatureSubtitle}>By: {firstFeature.node.author.englishName}</p>
+            <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.publishedDate}</p>
+          </div>
+        </div>
+      </div>
+
       <ul className={featuresStyles.feature}>
-        {data.allContentfulFeature.edges.map((edge) => {
+      {scrollFeatures.map((edge) => {
           return (
             <li className={featuresStyles.album}>
               <Link to={`${edge.node.slug}`}>

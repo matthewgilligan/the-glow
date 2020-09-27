@@ -56,12 +56,16 @@ const Feature = (props) => {
       className={featureStyles.banner}>
         <div className={featureStyles.container}>
           <div className={featureStyles.content}>
-            <h1 className={featureStyles.title}>
-              <Link to="/">The Glow</Link>
-            </h1>
-            <h1 className={featureStyles.featureTitle}>{props.data.contentfulFeature.title}</h1>
-            <p>By: {props.data.contentfulFeature.author.englishName}</p>
-            <p>{props.data.contentfulFeature.publishedDate}</p>
+            <div  className={featureStyles.titleDiv}>
+              <h1 className={featureStyles.title}>
+                <Link to="/">The Glow</Link>
+              </h1>
+            </div>
+            <div className={featureStyles.details}>
+              <h1 className={featureStyles.featureTitle}>{props.data.contentfulFeature.title}</h1>
+              <p className={featureStyles.featureAuthor}>By: {props.data.contentfulFeature.author.englishName}</p>
+              <p>{props.data.contentfulFeature.publishedDate}</p>
+            </div>
           </div>
         </div>
       </div>
