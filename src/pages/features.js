@@ -64,12 +64,12 @@ const FeaturesPage = () => {
       <div class={featuresStyles.topFeatures}>
         <Link to={`${firstFeature.node.slug}`} class={featuresStyles.firstFeatureLink}>
           <div class={featuresStyles.firstFeature}
-            style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 80%, rgba(0,0,0,0.8)), url(${firstFeature.node.coverImage.file.url})`} }>
+            style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
             <div class={featuresStyles.firstFeatureDetails}>
               <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
               <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
-              <p class={featuresStyles.firstFeatureSubtitle}>By: {firstFeature.node.author.englishName}</p>
-              <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.publishedDate}</p>
+              <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
+              <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
             </div>
           </div>
         </Link>
