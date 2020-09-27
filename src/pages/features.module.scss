@@ -63,9 +63,14 @@
 .top-features {
     display: flex;
 
-    .first-feature {
+    .first-feature-link {
         height: calc(100vh - 178px);
         width: 65%;
+    }
+
+    .first-feature {
+        height: 100%;
+        width: 100%;
         background-size: cover;
         position: relative;
 
