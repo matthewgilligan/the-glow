@@ -93,65 +93,140 @@
         overflow-y: scroll;
         list-style-type: none;
         padding-left: 0;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none;  /* IE 10+ */
+
+        .scroll-feature {
+            height: 424px;
+            width: 95%;
+            float:right;
+            margin-bottom: 40px;
+
+            a {
+                text-decoration: none;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .scroll-feature-image {
+                height: 250px;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .scroll-feature-details {
+                border-bottom: 2px solid;
+                border-top: 2px solid;
+                height:150px;
+                margin-top: 20px;
+
+                .scroll-feature-title {
+                    font-weight: bolder;
+                    font-size: 20px;
+                    margin-top: 12px;
+                    width: 90%;
+                    line-height: 28px;
+                }
+
+                .scroll-feature-info {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    margin-top: 28px;
+
+                    .scroll-featue-author {
+                        font-weight: bolder;
+                        margin-bottom: 0;
+                    }
+
+                    .secondary-feature-date {
+                        color: rgba(0, 0, 0, 0.3) !important;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
     }
 
     .scroll-features::-webkit-scrollbar {
         width: 0px;
         background: transparent; /* Chrome/Safari/Webkit */
     }
+}
 
-    .scroll-feature {
-        height: 424px;
-        width: 95%;
-        float:right;
+
+.remaining-features {
+    margin-top: 40px;
+    list-style-type: none;
+    padding-left: 0;
+
+    .remaining-feature {
+        height: 400px;
+        width: 70%;
         margin-bottom: 40px;
+        display: flex;
 
-        a {
-            text-decoration: none;
+        &:hover {
+            h3 {
+                text-decoration: underline !important;
+                text-decoration-color: red !important;
+            }
         }
 
-        &:last-child {
-            margin-bottom: 0;
+        .remaining-feature-image-link {
+            height: 100%;
+            width: 55%;
+
+            .remaining-feature-image {
+                background-size: cover;
+                background-position: center;
+                height: 100%;
+                width: 100%;
+            }
         }
-    }
 
-    .scroll-feature-image {
-        height: 250px;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-    }
+        .remaining-feature-details {
+            border-bottom: 2px solid;
+            border-top: 2px solid;
+            margin-left: 45px;
+            width: calc(45% - 35px);
+            position: relative;
 
-    .scroll-feature-details {
-        border-bottom: 2px solid;
-        border-top: 2px solid;
-        height:150px;
-        margin-top: 20px;
-    }
+            a {
+                text-decoration: none;
+            }
 
-    .scroll-feature-title {
-        font-weight: bolder;
-        font-size: 20px;
-        margin-top: 12px;
-        width: 90%;
-        line-height: 28px;
-    }
+            .remaining-feature-title {
+                font-weight: bolder;
+                font-size: 30px;
+                margin-top: 16px;
+                line-height: 34px;
+                margin-bottom: 0;
+            }
 
-    .scroll-feature-info {
-        font-size: 14px;
-        text-transform: uppercase;
-        margin-top: 28px;
-    }
+            .remaining-feature-subtitle {
+                color: rgba(0, 0, 0, 0.8);
+                margin-top: 16px;
+                line-height: 22px
+            }
 
-    .scroll-featue-author {
-        font-weight: bolder;
-        margin-bottom: 0;
-    }
+            .remaining-feature-info {
+                font-size: 14px;
+                text-transform: uppercase;
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 8px;
 
-    .secondary-feature-date {
-        color: rgba(0, 0, 0, 0.3) !important;
-        margin-top: 5px;
+                .remaining-feature-author {
+                    font-weight: bolder;
+                    margin-bottom: 0;
+                }
+
+                .remaining-feature-date {
+                    color: rgba(0, 0, 0, 0.3) !important;
+                    margin-top: 5px;
+                }
+            }
+        }
     }
 }

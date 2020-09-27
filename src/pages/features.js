@@ -37,8 +37,8 @@ const FeaturesPage = () => {
   `)
 
   const firstFeature = data.allContentfulFeature.edges[0];
-
-  const scrollFeatures = data.allContentfulFeature.edges.slice(1, 5)
+  const scrollFeatures = data.allContentfulFeature.edges.slice(1, 5);
+  const remainingFeatures = data.allContentfulFeature.edges.slice(5);
 
   return (
     <Layout>
@@ -90,7 +90,29 @@ const FeaturesPage = () => {
           })}
         </ul>
       </div>
-
+      <ul className={featuresStyles.remainingFeatures}>
+        {remainingFeatures.map((edge) => {
+          return (
+            <li>
+              <div className={featuresStyles.remainingFeature}>
+                <Link to={`${edge.node.slug}`} class={featuresStyles.remainingFeatureImageLink}>
+                  <div class={featuresStyles.remainingFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                </Link>
+                <div class={featuresStyles.remainingFeatureDetails}>
+                  <Link to={`${edge.node.slug}`}>
+                    <h3 class={featuresStyles.remainingFeatureTitle}>{edge.node.title}</h3>
+                  </Link>
+                  <p class={featuresStyles.remainingFeatureSubtitle}>{edge.node.subtitle}</p>
+                  <div class={featuresStyles.remainingFeatureInfo}>
+                    <p class={featuresStyles.remainingFeatureAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={featuresStyles.remainingFeatureDate}>{edge.node.publishedDate}</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
     </Layout>
   )
 }
