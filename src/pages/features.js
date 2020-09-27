@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import featuresStyles from './features.module.scss'
+import featuresStyles from "./features.module.scss"
 import Head from "../components/head/head"
 
 const FeaturesPage = () => {
