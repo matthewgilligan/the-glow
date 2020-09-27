@@ -68,22 +68,90 @@
         width: 65%;
         background-size: cover;
         position: relative;
+
+        .first-feature-details {
+            width: 85%;
+            padding: 0 0 2rem 3rem;
+            position: absolute;
+            bottom: 0;
+
+            .first-feature-title {
+                color: white;
+                font-weight: bolder;
+                font-size: 32px;
+            }
+
+            .first-feature-subtitle{
+                color: white;
+            }
+        }
     }
 
-    .first-feature-details {
-        width: 85%;
-        padding: 0 0 2rem 3rem;
-        position: absolute;
-        bottom: 0;
+    .scroll-features {
+        height: calc(100vh - 178px);
+        width: 35%;
+        overflow-y: scroll;
+        list-style-type: none;
+        padding-left: 0;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE 10+ */
+    }
 
-        .first-feature-title {
-            color: white;
-            font-weight: bolder;
-            font-size: 32px;
+    .scroll-features::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* Chrome/Safari/Webkit */
+    }
+
+    .scroll-feature {
+        height: 424px;
+        width: 95%;
+        float:right;
+        margin-bottom: 40px;
+
+        a {
+            text-decoration: none;
         }
 
-        .first-feature-subtitle{
-            color: white;
+        &:last-child {
+            margin-bottom: 0;
         }
+    }
+
+    .scroll-feature-image {
+        height: 250px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .scroll-feature-details {
+        border-bottom: 2px solid;
+        border-top: 2px solid;
+        height:150px;
+        margin-top: 20px;
+    }
+
+    .scroll-feature-title {
+        font-weight: bolder;
+        font-size: 20px;
+        margin-top: 12px;
+        width: 90%;
+        line-height: 28px;
+    }
+
+    .scroll-feature-info {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-top: 28px;
+    }
+
+    .scroll-featue-author {
+        font-weight: bolder;
+        margin-bottom: 0;
+    }
+
+    .secondary-feature-date {
+        color: rgba(0, 0, 0, 0.3) !important;
+        margin-top: 5px;
     }
 }

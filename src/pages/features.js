@@ -38,7 +38,7 @@ const FeaturesPage = () => {
 
   const firstFeature = data.allContentfulFeature.edges[0];
 
-  const scrollFeatures = data.allContentfulFeature.edges.slice(1, 4)
+  const scrollFeatures = data.allContentfulFeature.edges.slice(1, 5)
 
   return (
     <Layout>
@@ -71,20 +71,26 @@ const FeaturesPage = () => {
             <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.publishedDate}</p>
           </div>
         </div>
+        <ul className={featuresStyles.scrollFeatures}>
+          {scrollFeatures.map((edge) => {
+            return (
+              <li className={featuresStyles.scrollFeature}>
+                <Link to={`${edge.node.slug}`}>
+                  <div class={featuresStyles.scrollFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                  <div class={featuresStyles.scrollFeatureDetails}>
+                    <p class={featuresStyles.scrollFeatureTitle}>{edge.node.title}</p>
+                    <div class={featuresStyles.scrollFeatureInfo}>
+                      <p class={featuresStyles.scrollFeatureAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={featuresStyles.scrollFeatureDate}>{edge.node.publishedDate}</p>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
       </div>
 
-      <ul className={featuresStyles.feature}>
-      {scrollFeatures.map((edge) => {
-          return (
-            <li className={featuresStyles.album}>
-              <Link to={`${edge.node.slug}`}>
-                <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} className={featuresStyles.albumCover} />
-                <h2 className={featuresStyles.title}>{edge.node.title}</h2>
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
     </Layout>
   )
 }
