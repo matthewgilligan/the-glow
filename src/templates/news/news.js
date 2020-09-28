@@ -52,7 +52,7 @@ const News = (props) => {
     <Layout>
       <div className={newsStyles.header}>
         <h1 className={newsStyles.title}>{props.data.contentfulNews.title}</h1>
-        <img src={props.data.contentfulNews.coverImage.file.url} alt={props.data.contentfulNews.coverImage.title} className={newsStyles.albumCover} />
+        <img src={props.data.contentfulNews.coverImage.file.url} alt={props.data.contentfulNews.coverImage.title} className={newsStyles.coverImage} />
       </div>
       <div className={featureStyles.featureContent}>
         <div className={featureStyles.authorDetails}>

@@ -3,5 +3,12 @@
 }
 
 .title {
-  padding: 4rem 0 2rem 0;
+    padding: 4rem 0 2rem 0;
+}
+
+.coverImage {
+    width: 100%;
+    height: calc(100vh - 296px);
+    background-size: cover;
+    object-fit: cover;
 }
