@@ -11,15 +11,7 @@ export const query = graphql`
       englishName
       japaneseName
     }
-    allContentfulReview (
-      filter: {
-        artist:{
-          slug: {
-            eq: $slug
-          }
-        }
-      }
-    ) {
+    allContentfulReview (filter: { artist:{ slug: { eq: $slug } } }) {
       edges {
         node {
           albumTitle
@@ -36,37 +28,19 @@ export const query = graphql`
         }
       }
     }
-    allContentfulNews (
-      filter: {
-        artist:{
-          elemMatch:{
-            slug: {
-              eq: $slug
-            }
-          }
-        }
-      }
-    ) {
+    allContentfulNews (filter: { artist:{ elemMatch:{ slug: { eq: $slug } } } }) {
       edges {
         node {
           title
+          slug
         }
       }
     }
-    allContentfulFeature (
-      filter: {
-        artist:{
-          elemMatch:{
-            slug: {
-              eq: $slug
-            }
-          }
-        }
-      }
-    ) {
+    allContentfulFeature (filter: { artist:{ elemMatch:{ slug: { eq: $slug } } } }) {
       edges {
         node {
           title
+          slug
         }
       }
     }
@@ -87,9 +61,11 @@ const Artist = (props) => {
           {props.data.allContentfulReview.edges.map((edge) => {
             return (
               <li>
-                <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
-                <h2>{edge.node.artist.englishName}</h2>
-                <h2>{edge.node.albumTitle}</h2>
+                <Link to={`../../reviews/${edge.node.slug}`}>
+                  <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                  <h2>{edge.node.artist.englishName}</h2>
+                  <h2>{edge.node.albumTitle}</h2>
+                </Link>
               </li>
             )
           })}
@@ -102,7 +78,9 @@ const Artist = (props) => {
           {props.data.allContentfulFeature.edges.map((edge) => {
             return (
               <li>
-                <h2>{edge.node.title}</h2>
+                <Link to={`../../features/${edge.node.slug}`}>
+                  <h2>{edge.node.title}</h2>
+                </Link>
               </li>
             )
           })}
@@ -115,7 +93,9 @@ const Artist = (props) => {
           {props.data.allContentfulNews.edges.map((edge) => {
             return (
               <li>
-                <h2>{edge.node.title}</h2>
+                <Link to={`../../news/${edge.node.slug}`}>
+                  <h2>{edge.node.title}</h2>
+                </Link>
               </li>
             )
           })}
