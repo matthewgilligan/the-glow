@@ -48,11 +48,12 @@ export const query = graphql`
 `
 
 const Artist = (props) => {
+
   return (
     <Layout>
       <div className={artistStyles.artistDetails}>
         <h1>{props.data.contentfulArtist.englishName}</h1>
-        <h2>{props.data.contentfulArtist.japaneseName}</h2>
+        <h1>{props.data.contentfulArtist.englishName}</h1>
       </div>
       <div className={artistStyles.reviewsSection}>
         <h2>Reviews</h2>
