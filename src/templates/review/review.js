@@ -13,6 +13,7 @@ export const query = graphql`
       artist {
         englishName
         japaneseName
+        slug
       }
       author {
         englishName
@@ -82,7 +83,9 @@ const Review = (props) => {
           <div className={reviewStyles.albumBanner}>
             <img src={props.data.contentfulReview.albumCover.file.url} alt={props.data.contentfulReview.albumCover.title} className={reviewStyles.albumCover} />
             <div className={reviewStyles.albumDetails}>
-              <h1 className={reviewStyles.artistName}>{props.data.contentfulReview.artist.englishName}</h1>
+              <Link to={`../../artist/${props.data.contentfulReview.artist.slug}`}>
+                <h1 className={reviewStyles.artistName}>{props.data.contentfulReview.artist.englishName}</h1>
+              </Link>
               <h1 className={reviewStyles.albumTitle}>{props.data.contentfulReview.albumTitle}</h1>
               <h3 className={reviewStyles.stars}>{stars}</h3>
               <p>{props.data.contentfulReview.label} ● {props.data.contentfulReview.initialReleaseDate}</p>

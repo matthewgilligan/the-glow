@@ -1,0 +1,44 @@
+.artist-details {
+    padding-top: 4rem;
+    color: red;
+}
+
+.reviews-section {
+    padding-top: 4rem;
+
+    ul {
+        padding: 2rem 0 0 0;
+        list-style-type: none;
+
+        li {
+            width: 15%;
+            text-align: center;
+
+            img {
+                padding-left: 0;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.features-section {
+    padding-top: 4rem;
+
+    ul {
+        padding: 2rem 0 0 0;
+        list-style-type: none;
+    }
+}
+
+.news-section {
+    padding-top: 4rem;
+
+    ul {
+        padding: 2rem 0 0 0;
+        list-style-type: none;
+    }
+}
