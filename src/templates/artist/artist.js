@@ -53,7 +53,7 @@ const Artist = (props) => {
     <Layout>
       <div className={artistStyles.artistDetails}>
         <h1>{props.data.contentfulArtist.englishName}</h1>
-        <h1>{props.data.contentfulArtist.englishName}</h1>
+        <h1>{props.data.contentfulArtist.japaneseName}</h1>
       </div>
       <div className={artistStyles.reviewsSection}>
         <h2>Reviews</h2>
