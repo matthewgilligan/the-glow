@@ -22,6 +22,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const featureTemplate = path.resolve('./src/templates/feature/feature.js')
   const newsTemplate = path.resolve('./src/templates/news/news.js')
   const artistTemplate = path.resolve('./src/templates/artist/artist.js')
+  const authorTemplate = path.resolve('./src/templates/author/author.js')
 
   const blogRes = await graphql(`
     query {
@@ -85,6 +86,18 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  const authorRes = await graphql(`
+    query {
+      allContentfulAuthor {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+
   blogRes.data.allMarkdownRemark.edges.forEach((edge) => {
     createPage({
       component: blogTemplate,
@@ -129,6 +142,16 @@ module.exports.createPages = async ({ graphql, actions }) => {
     createPage({
       component: artistTemplate,
       path: `/artist/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug
+      }
+    })
+  })
+
+  authorRes.data.allContentfulAuthor.edges.forEach((edge) => {
+    createPage({
+      component: authorTemplate,
+      path: `/author/${edge.node.slug}`,
       context: {
         slug: edge.node.slug
       }
