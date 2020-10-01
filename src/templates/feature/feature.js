@@ -14,6 +14,7 @@ export const query = graphql`
         englishName
         twitter
         bio
+        slug
       }
       publishedDate(formatString:"MMMM D YYYY")
       category {
@@ -73,7 +74,9 @@ const Feature = (props) => {
         <div className={featureStyles.content}>
           <div className={featureStyles.featureContent}>
             <div className={featureStyles.authorDetails}>
-              <p>By: {props.data.contentfulFeature.author.englishName}</p>
+              <Link to={`../../author/${props.data.contentfulFeature.author.slug}`}>
+                <p>By: {props.data.contentfulFeature.author.englishName}</p>
+              </Link>
               <p className={featureStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
               <p className={featureStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
             </div>

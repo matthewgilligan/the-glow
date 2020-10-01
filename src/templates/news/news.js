@@ -13,8 +13,7 @@ export const query = graphql`
       slug
       author {
         englishName
-        twitter
-        bio
+        slug
       }
       publishedDate(formatString:"MMMM D YYYY")
       category {
@@ -56,7 +55,9 @@ const News = (props) => {
       </div>
       <div className={featureStyles.featureContent}>
         <div className={featureStyles.authorDetails}>
-          <p>By: {props.data.contentfulNews.author.englishName}</p>
+          <Link to={`../../author/${props.data.contentfulNews.author.slug}`}>
+            <p>By: {props.data.contentfulNews.author.englishName}</p>
+          </Link>
           <p className={featureStyles.date}>{props.data.contentfulNews.publishedDate}</p>
           <p className={featureStyles.genre}>{props.data.contentfulNews.category.title}</p>
         </div>

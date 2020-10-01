@@ -19,6 +19,7 @@ export const query = graphql`
         englishName
         twitter
         bio
+        slug
       }
       publishedDate(formatString:"MMMM D YYYY")
       rating
@@ -93,7 +94,9 @@ const Review = (props) => {
           </div>
           <div className={reviewStyles.reviewContent}>
             <div className={reviewStyles.authorDetails}>
-              <p>By: {props.data.contentfulReview.author.englishName}</p>
+              <Link to={`../../author/${props.data.contentfulReview.author.slug}`}>
+                <p>By: {props.data.contentfulReview.author.englishName}</p>
+              </Link>
               <p className={reviewStyles.date}>{props.data.contentfulReview.publishedDate}</p>
               <p className={reviewStyles.genre}>{props.data.contentfulReview.genre.name}</p>
             </div>
