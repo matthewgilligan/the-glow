@@ -77,14 +77,14 @@
     text-transform: uppercase;
     list-style-type: none;
     font-size: 14px;
-}
 
-.feature-nav-item {
-    color: grey;
-}
+    a {
+        text-decoration: none;
+        color: #A9A9A9;
+    }
 
-.active, .feature-nav-item:hover {
-    color: black;
-    cursor: pointer;
+    a:hover {
+        color: black;
+        cursor: pointer;
+    }
 }
-
