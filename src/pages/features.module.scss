@@ -41,16 +41,18 @@
     text-transform: uppercase;
     list-style-type: none;
     font-size: 14px;
+
+    a {
+        text-decoration: none;
+        color: #A9A9A9;
+    }
+
+    a:hover {
+        color: black;
+        cursor: pointer;
+    }
 }
 
-.feature-nav-item {
-    color: grey;
-}
-
-.active, .feature-nav-item:hover {
-    color: black;
-    cursor: pointer;
-}
 
 .feature {
     list-style: none;

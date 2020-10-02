@@ -54,15 +54,21 @@ const FeaturesPage = () => {
         </div>
         <div className={featuresStyles.featureNavBottom}>
           <ul className={featuresStyles.featureNavList}>
-            <li className={featuresStyles.featureNavItem}>All features</li>
+            <li className={featuresStyles.featureNavItem}>
+              <Link to="/features">All Features</Link>
+            </li>
             <li className={featuresStyles.featureNavItem}>Interviews</li>
-            <li className={featuresStyles.featureNavItem}>Lists</li>
-            <li className={featuresStyles.featureNavItem}>Columns</li>
+            <li className={featuresStyles.featureNavItem}>
+              <Link to="/features/lists">Lists</Link>
+            </li>
+            <li className={featuresStyles.featureNavItem}>
+              <Link to="/features/columns">Columns</Link>
+            </li>
           </ul>
         </div>
       </div>
       <div class={featuresStyles.topFeatures}>
-        <Link to={`${firstFeature.node.slug}`} class={featuresStyles.firstFeatureLink}>
+        <Link to={`../${firstFeature.node.slug}`} class={featuresStyles.firstFeatureLink}>
           <div class={featuresStyles.firstFeature}
             style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
             <div class={featuresStyles.firstFeatureDetails}>

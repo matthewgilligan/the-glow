@@ -1,14 +1,14 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
-import Layout from "../components/layout/layout"
-import featuresStyles from "./features.module.scss"
-import Head from "../components/head/head"
+import Layout from "../../components/layout/layout"
+import featuresStyles from "../features.module.scss"
+import Head from "../../components/head/head"
 
 const FeaturesPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulFeature ( sort: { fields:publishedDate, order:DESC } ) {
+      allContentfulFeature ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ name: { eq: "Columns" } } } ) {
         edges {
           node {
             title
@@ -54,21 +54,21 @@ const FeaturesPage = () => {
         </div>
         <div className={featuresStyles.featureNavBottom}>
           <ul className={featuresStyles.featureNavList}>
-            <li className={featuresStyles.featureNavItem} style={{color: "black"}}>All features</li>
+            <li className={featuresStyles.featureNavItem}>
+              <Link to="/features">All Features</Link>
+            </li>
             <li className={featuresStyles.featureNavItem}>
               <Link to="/features/interviews">Interviews</Link>
             </li>
             <li className={featuresStyles.featureNavItem}>
               <Link to="/features/lists">Lists</Link>
             </li>
-            <li className={featuresStyles.featureNavItem}>
-              <Link to="/features/columns">Columns</Link>
-            </li>
+            <li className={featuresStyles.featureNavItem}>Columns</li>
           </ul>
         </div>
       </div>
       <div class={featuresStyles.topFeatures}>
-        <Link to={`${firstFeature.node.slug}`} class={featuresStyles.firstFeatureLink}>
+        <Link to={`../${firstFeature.node.slug}`} class={featuresStyles.firstFeatureLink}>
           <div class={featuresStyles.firstFeature}
             style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
             <div class={featuresStyles.firstFeatureDetails}>
