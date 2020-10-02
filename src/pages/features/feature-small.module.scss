@@ -1,0 +1,59 @@
+.list {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-left: 0;
+    display: flex;
+
+    :first-child {
+      margin: 0 0 40px 0;
+    }
+}
+
+.item {
+    height: 424px;
+    width: 30%;
+    margin: 0 0 40px 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.image {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.details {
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    height:150px;
+    margin-top: 20px;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 12px;
+    width: 90%;
+    line-height: 28px;
+}
+
+.info {
+    font-size: .8rem;
+    text-transform: uppercase;
+    margin-top: 28px;
+}
+
+.author {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.date {
+    color: rgba(0, 0, 0, 0.3) !important;
+    margin-top: 5px;
+}
+

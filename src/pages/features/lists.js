@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../../components/layout/layout"
 import featuresStyles from "../features.module.scss"
+import featureSmallStyles from "./feature-small.module.scss"
 import Head from "../../components/head/head"
 
 const FeaturesPage = () => {
@@ -36,10 +37,6 @@ const FeaturesPage = () => {
     }
   `)
 
-  const firstFeature = data.allContentfulFeature.edges[0];
-  const scrollFeatures = data.allContentfulFeature.edges.slice(1, 5);
-  const remainingFeatures = data.allContentfulFeature.edges.slice(5);
-
   return (
     <Layout>
       <Head title="Japanese Music Articles and Features"/>
@@ -67,56 +64,20 @@ const FeaturesPage = () => {
           </ul>
         </div>
       </div>
-      <div class={featuresStyles.topFeatures}>
-        <Link to={`../${firstFeature.node.slug}`} class={featuresStyles.firstFeatureLink}>
-          <div class={featuresStyles.firstFeature}
-            style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
-            <div class={featuresStyles.firstFeatureDetails}>
-              <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
-              <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
-              <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
-              <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
-            </div>
-          </div>
-        </Link>
-        <ul className={featuresStyles.scrollFeatures}>
-          {scrollFeatures.map((edge) => {
-            return (
-              <li className={featuresStyles.scrollFeature}>
-                <Link to={`${edge.node.slug}`}>
-                  <div class={featuresStyles.scrollFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
-                  <div class={featuresStyles.scrollFeatureDetails}>
-                    <p class={featuresStyles.scrollFeatureTitle}>{edge.node.title}</p>
-                    <div class={featuresStyles.scrollFeatureInfo}>
-                      <p class={featuresStyles.scrollFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                      <p class={featuresStyles.scrollFeatureDate}>{edge.node.publishedDate}</p>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-      <ul className={featuresStyles.remainingFeatures}>
-        {remainingFeatures.map((edge) => {
+      <ul className={featureSmallStyles.list}>
+        {data.allContentfulFeature.edges.map((edge) => {
           return (
-            <li>
-              <div className={featuresStyles.remainingFeature}>
-                <Link to={`${edge.node.slug}`} class={featuresStyles.remainingFeatureImageLink}>
-                  <div class={featuresStyles.remainingFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
-                </Link>
-                <div class={featuresStyles.remainingFeatureDetails}>
-                  <Link to={`${edge.node.slug}`}>
-                    <h3 class={featuresStyles.remainingFeatureTitle}>{edge.node.title}</h3>
-                  </Link>
-                  <p class={featuresStyles.remainingFeatureSubtitle}>{edge.node.subtitle}</p>
-                  <div class={featuresStyles.remainingFeatureInfo}>
-                    <p class={featuresStyles.remainingFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                    <p class={featuresStyles.remainingFeatureDate}>{edge.node.publishedDate}</p>
+            <li className={featureSmallStyles.item}>
+              <Link to={`../${edge.node.slug}`}>
+                <div class={featureSmallStyles.image} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <div class={featureSmallStyles.details}>
+                  <p class={featureSmallStyles.title}>{edge.node.title}</p>
+                  <div class={featureSmallStyles.info}>
+                    <p class={featureSmallStyles.author}>By: {edge.node.author.englishName}</p>
+                    <p class={featureSmallStyles.date}>{edge.node.publishedDate}</p>
                   </div>
                 </div>
-              </div>
+              </Link>
             </li>
           )
         })}
