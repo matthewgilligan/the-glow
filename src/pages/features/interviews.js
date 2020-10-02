@@ -1,14 +1,14 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
-import Layout from "../components/layout/layout"
-import featuresStyles from "./features.module.scss"
-import Head from "../components/head/head"
+import Layout from "../../components/layout/layout"
+import featuresStyles from "../features.module.scss"
+import Head from "../../components/head/head"
 
 const FeaturesPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulFeature ( sort: { fields:publishedDate, order:DESC } ) {
+      allContentfulFeature ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ name: { eq: "Interviews" } } } ) {
         edges {
           node {
             title
@@ -54,10 +54,8 @@ const FeaturesPage = () => {
         </div>
         <div className={featuresStyles.featureNavBottom}>
           <ul className={featuresStyles.featureNavList}>
-            <li className={featuresStyles.featureNavItem} style={{color: "black"}}>All features</li>
-            <li className={featuresStyles.featureNavItem}>
-              <Link to="/features/interviews">Interviews</Link>
-            </li>
+            <li className={featuresStyles.featureNavItem}>All features</li>
+            <li className={featuresStyles.featureNavItem}>Interviews</li>
             <li className={featuresStyles.featureNavItem}>Lists</li>
             <li className={featuresStyles.featureNavItem}>Columns</li>
           </ul>
