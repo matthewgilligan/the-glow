@@ -70,19 +70,19 @@ const ReviewsPage = () => {
           </ul>
         </div>
       </div>
-      <ul className={reviewsStyles.albums}>
+      <div className={reviewsStyles.albums}>
         {data.allContentfulReview.edges.map((edge) => {
           return (
-            <li className={reviewsStyles.album}>
+            <div className={reviewsStyles.album}>
               <Link to={`${edge.node.slug}`}>
                 <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
                 <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
                 <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
               </Link>
-            </li>
+            </div>
           )
         })}
-      </ul>
+      </div>
     </Layout>
   )
 }
