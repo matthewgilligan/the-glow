@@ -17,11 +17,20 @@
     padding-right: 22px;
     text-align: center;
     margin-bottom: 60px;
+
+    a {
+        text-decoration: none;
+    }
+
+    // :hover + .details {
+    //   display: block;
+    // }
 }
 
 .albumCover {
   border: .5px solid rgba(192,192,192,0.3);
   width: 100%;
+  z-index: -1;
 }
 
 .artistName {
@@ -32,7 +41,9 @@
 }
 
 .album-title {
-  font-size: .8rem;
+  font-size: .9rem;
+  font-weight: lighter;
+  font-style: italic;
 }
 
 .feature-nav {

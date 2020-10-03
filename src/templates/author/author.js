@@ -58,19 +58,20 @@ const Artist = (props) => {
       <div className={artistStyles.reviewsSection}>
         <h2>Reviews</h2>
         <hr></hr>
-        <ul>
+        <br></br>
+        <div className={reviewsStyles.albums}>
           {props.data.allContentfulReview.edges.map((edge) => {
             return (
-              <li>
-                <Link to={`../../reviews/${edge.node.slug}`}>
+              <div className={reviewsStyles.album}>
+                <Link to={`${edge.node.slug}`}>
                   <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
-                  <h2>{edge.node.artist.englishName}</h2>
-                  <h2>{edge.node.albumTitle}</h2>
+                  <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                  <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
                 </Link>
-              </li>
+              </div>
             )
           })}
-        </ul>
+        </div>
       </div>
       <div className={artistStyles.featuresSection}>
         <h2>Features</h2>
