@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
+import Head from "../../components/head/head"
 import Layout from "../../components/layout/layout"
 import featureStyles from "../feature/feature.module.scss"
 import newsStyles from "./news.module.scss"
@@ -49,6 +50,7 @@ const News = (props) => {
 
   return (
     <Layout>
+      <Head title={props.data.contentfulNews.title}/>
       <div className={newsStyles.header}>
         <h1 className={newsStyles.title}>{props.data.contentfulNews.title}</h1>
         <img src={props.data.contentfulNews.coverImage.file.url} alt={props.data.contentfulNews.coverImage.title} className={newsStyles.coverImage} />

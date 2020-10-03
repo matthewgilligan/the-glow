@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
+import Head from "../../components/head/head"
 import Footer from "../../components/footer/footer"
 import featureStyles from "./feature.module.scss"
 
@@ -50,8 +51,11 @@ const Feature = (props) => {
     }
   }
 
+
+
   return (
     <div>
+      <Head title={props.data.contentfulFeature.title}/>
       <div
       style={{backgroundImage: `linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(${props.data.contentfulFeature.coverImage.file.url})`} }
       className={featureStyles.banner}>

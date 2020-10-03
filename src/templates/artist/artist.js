@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../../components/layout/layout"
+import Head from "../../components/head/head"
 import artistStyles from "./artist.module.scss"
 import reviewsStyles from "../../pages/reviews.module.scss"
 
@@ -48,9 +49,11 @@ export const query = graphql`
 `
 
 const Artist = (props) => {
+  const head = props.data.contentfulArtist.englishName + " - Reviews, News and Features"
 
   return (
     <Layout>
+      <Head title={head}/>
       <div className={artistStyles.artistDetails}>
         <h1>{props.data.contentfulArtist.englishName}</h1>
         <h1>{props.data.contentfulArtist.japaneseName}</h1>
@@ -58,19 +61,20 @@ const Artist = (props) => {
       <div className={artistStyles.reviewsSection}>
         <h2>Reviews</h2>
         <hr></hr>
-        <ul>
+        <br></br>
+        <div className={reviewsStyles.albums}>
           {props.data.allContentfulReview.edges.map((edge) => {
             return (
-              <li>
+              <div className={reviewsStyles.album}>
                 <Link to={`../../reviews/${edge.node.slug}`}>
                   <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
-                  <h2>{edge.node.artist.englishName}</h2>
-                  <h2>{edge.node.albumTitle}</h2>
+                  <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                  <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
                 </Link>
-              </li>
+              </div>
             )
           })}
-        </ul>
+        </div>
       </div>
       <div className={artistStyles.featuresSection}>
         <h2>Features</h2>

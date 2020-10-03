@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import Layout from "../../components/layout/layout"
+import Head from "../../components/head/head"
 import reviewStyles from "./review.module.scss"
 
 export const query = graphql`
@@ -76,9 +77,11 @@ const Review = (props) => {
   }
 
   const stars = "★".repeat(props.data.contentfulReview.rating)
+  const head = props.data.contentfulReview.artist.englishName + ": " + props.data.contentfulReview.albumTitle
 
   return (
     <Layout>
+      <Head title={head}/>
       <div className={reviewStyles.content}>
         <div className={reviewStyles.post}>
           <div className={reviewStyles.albumBanner}>
