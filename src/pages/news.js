@@ -42,22 +42,21 @@ const FeaturesPage = () => {
 
   return (
     <Layout>
-      <Head title="Japanese Music Articles and Features"/>
+      <Head title="Japanese Music News"/>
       <div className={featuresStyles.featureNav}>
         <div className={featuresStyles.featureNavTitle}>
           <div className={featuresStyles.titleEnglish}>
-            <p>features</p>
+            <p>News</p>
           </div>
           <div className={featuresStyles.titleJapanese}>
-            <p>特徴</p>
+            <p>ニュース</p>
           </div>
         </div>
         <div className={featuresStyles.featureNavBottom}>
           <ul className={featuresStyles.featureNavList}>
-            <li className={featuresStyles.featureNavItem}>All features</li>
-            <li className={featuresStyles.featureNavItem}>Interviews</li>
-            <li className={featuresStyles.featureNavItem}>Lists</li>
-            <li className={featuresStyles.featureNavItem}>Columns</li>
+            <li className={featuresStyles.featureNavItem}>All news</li>
+            <li className={featuresStyles.featureNavItem}>Tours</li>
+            <li className={featuresStyles.featureNavItem}>Releases</li>
           </ul>
         </div>
       </div>
