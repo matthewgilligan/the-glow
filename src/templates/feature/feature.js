@@ -51,7 +51,9 @@ const Feature = (props) => {
     }
   }
 
+   const demo = document.getElementById("demo");
 
+  console.log(demo);
 
   return (
     <div>
@@ -62,7 +64,7 @@ const Feature = (props) => {
         <div className={featureStyles.container}>
           <div className={featureStyles.content}>
             <div  className={featureStyles.titleDiv}>
-              <h1 className={featureStyles.title}>
+              <h1 className={featureStyles.title} id="demo">
                 <Link to="/">The Glow</Link>
               </h1>
             </div>
@@ -94,6 +96,8 @@ const Feature = (props) => {
       </div>
     </div>
   )
+
+
 }
 
 export default Feature

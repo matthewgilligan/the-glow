@@ -64,11 +64,25 @@
 }
 
 .top-features {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
 
     .first-feature-link {
-        height: calc(100vh - 177px);
         width: 65%;
+        width: 65%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 80px;
+        margin-top: -120px;
+        height: -webkit-calc(100vh - 80px);
+        height: calc(100vh - 80px);
     }
 
     .first-feature {
@@ -111,9 +125,7 @@
     }
 
     .scroll-features {
-        height: calc(100vh - 178px);
         width: 35%;
-        overflow-y: scroll;
         list-style-type: none;
         padding-left: 0;
 
