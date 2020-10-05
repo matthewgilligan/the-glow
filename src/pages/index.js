@@ -49,18 +49,27 @@ const IndexPage = (props) => {
     <Layout>
       <div className={indexStyles.featureInterview}>
       </div>
-      <div className={reviewsStyles.albums}>
-        {props.data.allContentfulReview.edges.map((edge) => {
-          return (
-            <div className={reviewsStyles.album}>
-              <Link to={`${edge.node.slug}`}>
-                <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
-                <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
-                <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
-              </Link>
-            </div>
-          )
-        })}
+      <div className={indexStyles.reviews}>
+        <div className={indexStyles.reviewsTitle}>
+          <hr></hr>
+          <h2>Album Reviews</h2>
+        </div>
+        <div className={reviewsStyles.albums}>
+          {props.data.allContentfulReview.edges.map((edge) => {
+            return (
+              <div className={reviewsStyles.album}>
+                <Link to={`reviews/${edge.node.slug}`}>
+                  <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                  <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                  <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
+                </Link>
+              </div>
+            )
+          })}
+        </div>
+        <div className={indexStyles.reviewsLink}>
+          <Link to="/reviews">View All Reviews</Link>
+        </div>
       </div>
     </Layout>
   )

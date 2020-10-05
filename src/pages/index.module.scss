@@ -3,3 +3,35 @@
     width: 100%;
     background-color: red;
 }
+
+.reviews {
+    height: 100vh;
+
+    // hr {
+    //     height: 1px;
+    //     color: black;
+    //     background: black;
+    // }
+}
+
+.reviews-title {
+    padding-top: .5rem;
+
+    h2 {
+        font-size: 1.2rem;
+        font-weight: lighter;
+        text-transform: uppercase;
+        padding: .5rem 0 2rem 0;
+    }
+}
+
+.reviews-link {
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: green;
+    text-align: center;
+    padding: .6rem 0;
+    text-transform: uppercase;
+    font-size: .9rem;
+}
