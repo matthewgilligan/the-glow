@@ -21,7 +21,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const reviewTemplate = path.resolve('./src/templates/review/review.js')
   const featureTemplate = path.resolve('./src/templates/feature/feature.js')
   const newsTemplate = path.resolve('./src/templates/news/news.js')
-  const guidesTemplate = path.resolve('./src/templates/guides/guides.js')
+  const guideTemplate = path.resolve('./src/templates/guide/guide.js')
   const artistTemplate = path.resolve('./src/templates/artist/artist.js')
   const authorTemplate = path.resolve('./src/templates/author/author.js')
 
@@ -75,7 +75,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const guidesRes = await graphql(`
+  const guideRes = await graphql(`
     query {
       allContentfulGuide {
         edges {
@@ -151,9 +151,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  guidesRes.data.allContentfulGuide.edges.forEach((edge) => {
+  guideRes.data.allContentfulGuide.edges.forEach((edge) => {
     createPage({
-      component: guidesTemplate,
+      component: guideTemplate,
       path: `/guides/${edge.node.slug}`,
       context: {
         slug: edge.node.slug

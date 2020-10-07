@@ -1,0 +1,34 @@
+.banner {
+    margin: 4rem 0;
+}
+
+.banner-image {
+    width: 100%;
+    height: 25rem;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+}
+
+
+.banner-title {
+    h3 {
+        font-weight: lighter;
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+        padding-bottom: .5rem;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        margin: 1.5rem 0;
+    }
+}
+
+.body {
+    width: 61.5%;
+    margin: 0 auto;
+}
