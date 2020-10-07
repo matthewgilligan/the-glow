@@ -8,15 +8,15 @@
     color: white;
     text-align: center;
     background-size: cover;
-    background-repeat: no-repeat;
-    object-fit: contain;
 }
 
 
 .banner-title {
+    transform: translateY(68%);
+
     h3 {
         font-weight: lighter;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     h1 {
@@ -24,7 +24,8 @@
         padding-bottom: .5rem;
         border-top: 1px solid white;
         border-bottom: 1px solid white;
-        margin: 1.5rem 0;
+        margin: 1rem 0;
+        display:inline-block;
     }
 }
 
