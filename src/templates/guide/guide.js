@@ -61,6 +61,9 @@ const Guides = (props) => {
       <div className={guideStyles.body}>
         {documentToReactComponents(props.data.contentfulGuide.body.json, options)}
       </div>
+      <div className={guideStyles.reccomendations}>
+        <h2>Top 5 {props.data.contentfulGuide.title} Albums</h2>
+      </div>
     </Layout>
   )
 }
