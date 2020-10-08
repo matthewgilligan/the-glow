@@ -1,7 +1,30 @@
 .feature-interview {
     height: calc(100vh - 130px);
     width: 100%;
-    background-color: red;
+    background-color: white;
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 6rem;
+        transform: translate(0, -500px);
+        float: right;
+        mix-blend-mode: difference;
+        color: black;
+        -webkit-text-stroke: 1px white;
+        z-index: 99;
+    }
+}
+
+.feature-interview-image {
+    margin-top: 3rem;
+    width: 65%;
+}
+
+.div-box {
+    height: 80%;
+    width: 80%;
+    background-color: black;
+    z-index: -11;
 }
 
 .reviews {

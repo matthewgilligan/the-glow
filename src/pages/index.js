@@ -52,6 +52,16 @@ export const query = graphql`
           category {
             name
           }
+          coverImage {
+            title
+            file {
+              url
+            }
+          }
+          artist {
+            englishName
+            japaneseName
+          }
         }
       }
     }
@@ -62,7 +72,8 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <div className={indexStyles.featureInterview}>
-        <h1>{props.data.firstInterview.edges[0].node.title}</h1>
+        <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.featureInterviewImage}/>
+        <h1>Ichiko Aoba</h1>
       </div>
       <div className={indexStyles.reviews}>
         <div className={indexStyles.reviewsTitle}>
