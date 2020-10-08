@@ -31,6 +31,81 @@ export const query = graphql`
         }
         title
       }
+      reference1 {
+        albumTitle
+        slug
+        artist {
+          englishName
+          japaneseName
+          slug
+        }
+        albumCover {
+          title
+          file {
+            url
+          }
+        }
+      }
+      reference2 {
+        albumTitle
+        slug
+        artist {
+          englishName
+          japaneseName
+          slug
+        }
+        albumCover {
+          title
+          file {
+            url
+          }
+        }
+      }
+      reference3 {
+        albumTitle
+        slug
+        artist {
+          englishName
+          japaneseName
+          slug
+        }
+        albumCover {
+          title
+          file {
+            url
+          }
+        }
+      }
+      reference4 {
+        albumTitle
+        slug
+        artist {
+          englishName
+          japaneseName
+          slug
+        }
+        albumCover {
+          title
+          file {
+            url
+          }
+        }
+      }
+      reference5 {
+        albumTitle
+        slug
+        artist {
+          englishName
+          japaneseName
+          slug
+        }
+        albumCover {
+          title
+          file {
+            url
+          }
+        }
+      }
     }
   }
 `
@@ -45,6 +120,8 @@ const Guides = (props) => {
       }
     }
   }
+
+  const reccomendations = [props.data.contentfulGuide.reference1, props.data.contentfulGuide.reference2, props.data.contentfulGuide.reference3, props.data.contentfulGuide.reference4, props.data.contentfulGuide.reference5]
 
   return (
     <Layout>
@@ -63,6 +140,19 @@ const Guides = (props) => {
       </div>
       <div className={guideStyles.reccomendations}>
         <h2>Top 5 {props.data.contentfulGuide.title} Albums</h2>
+        <div className={guideStyles.albums}>
+          {reccomendations.map((reccomendation) => {
+            return (
+              <div className={guideStyles.album}>
+                <Link to={`${reccomendation.slug}`}>
+                  <img src={reccomendation.albumCover.file.url} alt={reccomendation.albumCover.title} className={guideStyles.albumCover} />
+                  <h2 className={guideStyles.artistName}>{reccomendation.artist.englishName}</h2>
+                  <h2 className={guideStyles.albumTitle}>{reccomendation.albumTitle}</h2>
+                </Link>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </Layout>
   )
