@@ -38,6 +38,20 @@ export const query = graphql`
         node {
           title
           slug
+          category {
+            name
+          }
+        }
+      }
+    }
+    firstInterview : allContentfulFeature ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ name: { eq: "Interviews" } } }, limit: 1 ) {
+      edges {
+        node {
+          title
+          slug
+          category {
+            name
+          }
         }
       }
     }
@@ -48,6 +62,7 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <div className={indexStyles.featureInterview}>
+        <h1>{props.data.firstInterview.edges[0].node.title}</h1>
       </div>
       <div className={indexStyles.reviews}>
         <div className={indexStyles.reviewsTitle}>
