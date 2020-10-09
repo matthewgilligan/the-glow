@@ -55,6 +55,24 @@ export const query = graphql`
 const Artist = (props) => {
   const head = props.data.contentfulArtist.englishName + " - Reviews, News and Features"
 
+  const newsSection =
+    <div className={artistStyles.newsSection}>
+      <div className={artistStyles.sectionTitle}>
+        <h2>News</h2>
+      </div>
+      <ul>
+        {props.data.allContentfulNews.edges.map((edge) => {
+          return (
+            <li>
+              <Link to={`../../news/${edge.node.slug}`}>
+                <h2>{edge.node.title}</h2>
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+    </div>;
+
   return (
     <Layout>
       <Head title={head}/>
@@ -72,55 +90,47 @@ const Artist = (props) => {
           <a href={props.data.contentfulArtist.spotify} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a> <a href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><FaApple/></a>
         </p>
       </div>
-      <div className={artistStyles.reviewsSection}>
-        <div className={artistStyles.sectionTitle}>
-          <h2>Album Reviews</h2>
+      <div className={artistStyles.menuAndContent}>
+        <div className={artistStyles.menu}>
+          <p>Reviews ({props.data.allContentfulReview.edges.length})</p>
         </div>
-        <div className={reviewsStyles.albums}>
-          {props.data.allContentfulReview.edges.map((edge) => {
-            return (
-              <div className={reviewsStyles.album}>
-                <Link to={`../../reviews/${edge.node.slug}`}>
-                  <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
-                  <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
-                  <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
-                </Link>
-              </div>
-            )
-          })}
+        <div className={artistStyles.content}>
+          <div className={artistStyles.reviewsSection}>
+            <div className={artistStyles.sectionTitle}>
+              <h2>Reviews ({props.data.allContentfulReview.edges.length})</h2>
+            </div>
+            <div className={reviewsStyles.albums}>
+              {props.data.allContentfulReview.edges.map((edge) => {
+                return (
+                  <div className={reviewsStyles.album}>
+                    <Link to={`../../reviews/${edge.node.slug}`}>
+                      <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                      <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                      <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
+                    </Link>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+          <div className={artistStyles.featuresSection}>
+            <div className={artistStyles.sectionTitle}>
+              <h2>Features</h2>
+            </div>
+            <ul>
+              {props.data.allContentfulFeature.edges.map((edge) => {
+                return (
+                  <li>
+                    <Link to={`../../features/${edge.node.slug}`}>
+                      <h2>{edge.node.title}</h2>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+          {props.data.allContentfulFeature.edges.length > 0 ? newsSection: null }
         </div>
-      </div>
-      <div className={artistStyles.featuresSection}>
-        <div className={artistStyles.sectionTitle}>
-          <h2>Features</h2>
-        </div>
-        <ul>
-          {props.data.allContentfulFeature.edges.map((edge) => {
-            return (
-              <li>
-                <Link to={`../../features/${edge.node.slug}`}>
-                  <h2>{edge.node.title}</h2>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-      <div className={artistStyles.newsSection}>
-        <div className={artistStyles.sectionTitle}>
-          <h2>News</h2>
-        </div>
-        <ul>
-          {props.data.allContentfulNews.edges.map((edge) => {
-            return (
-              <li>
-                <Link to={`../../news/${edge.node.slug}`}>
-                  <h2>{edge.node.title}</h2>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
       </div>
     </Layout>
   )
