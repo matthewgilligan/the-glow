@@ -76,8 +76,7 @@ const IndexPage = (props) => {
         <h1>Ichiko Aoba</h1>
       </div>
       <div className={indexStyles.reviews}>
-        <div className={indexStyles.reviewsTitle}>
-          <hr></hr>
+        <div className={indexStyles.sectionTitle}>
           <h2>Album Reviews</h2>
         </div>
         <div className={reviewsStyles.albums}>
@@ -93,8 +92,31 @@ const IndexPage = (props) => {
             )
           })}
         </div>
-        <div className={indexStyles.reviewsLink}>
+        <div className={indexStyles.sectionLink}>
           <Link to="/reviews">View All Reviews</Link>
+        </div>
+      </div>
+      <div className={indexStyles.supportAndLatestNews}>
+        <div className={indexStyles.support}>
+          Patreon
+        </div>
+        <div className={indexStyles.latestNews}>
+          <div className={indexStyles.sectionTitle}>
+            <h2>Latest News</h2>
+          </div>
+          <div className={indexStyles.sectionLink}>
+            <Link to="/news">View All News</Link>
+          </div>
+        </div>
+      </div>
+      <div className={indexStyles.playlists}>
+      </div>
+      <div className={indexStyles.features}>
+        <div className={indexStyles.sectionTitle}>
+          <h2>Features</h2>
+        </div>
+        <div className={indexStyles.sectionLink}>
+          <Link to="/features">View All Features</Link>
         </div>
       </div>
     </Layout>
