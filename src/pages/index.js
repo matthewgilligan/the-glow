@@ -73,7 +73,7 @@ const IndexPage = (props) => {
     <Layout>
       <div className={indexStyles.featureInterview}>
         <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.featureInterviewImage}/>
-        <h1>Ichiko Aoba</h1>
+        <h1>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
       </div>
       <div className={indexStyles.reviews}>
         <div className={indexStyles.sectionTitle}>
