@@ -55,6 +55,12 @@ export const query = graphql`
 const Artist = (props) => {
   const head = props.data.contentfulArtist.englishName + " - Reviews, News and Features"
 
+  const spotify =
+    <a href={props.data.contentfulArtist.spotify} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a>;
+
+  const appleMusic =
+    <a href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><FaApple/></a>
+
   const reviewSection =
     <div className={artistStyles.reviewsSection}>
       <div className={artistStyles.sectionTitle}>
@@ -125,7 +131,7 @@ const Artist = (props) => {
         </div>
         <p className={artistStyles.bio}>{props.data.contentfulArtist.bio}</p>
         <p className={artistStyles.streaming}>
-          <a href={props.data.contentfulArtist.spotify} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a> <a href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><FaApple/></a>
+          {props.data.contentfulArtist.spotify ? spotify: null } {props.data.contentfulArtist.appleMusic ? appleMusic: null }
         </p>
       </div>
       <div className={artistStyles.menuAndContent}>
