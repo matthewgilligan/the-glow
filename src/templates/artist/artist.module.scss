@@ -1,10 +1,59 @@
 .artist-details {
-    padding-top: 4rem;
-    color: red;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.artist-name {
+    text-transform: uppercase;
+    font-size: 18px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+}
+
+.name-japanese {
+    color: rgba(0, 0, 0, 0.03) !important;
+    font-size: 72px;
+    position: absolute;
+}
+
+.name-english {
+    position: absolute;
+    z-index: 1;
+}
+
+.bio {
+    width: 50%;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.streaming {
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+
+.apple {
+    font-size: 2.1rem;
+}
+
+.section-title {
+    padding-top: .3rem;
+    border-top: 1px solid black;
+
+    h2 {
+        font-size: 1.2rem;
+        font-weight: lighter;
+        text-transform: uppercase;
+        padding: .5rem 0 2rem 0;
+    }
 }
 
 .reviews-section {
-    padding-top: 4rem;
+    padding-top: 2.5rem;
 
     ul {
         padding: 2rem 0 0 0;

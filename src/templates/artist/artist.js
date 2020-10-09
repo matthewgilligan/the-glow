@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { FaSpotify, FaApple } from 'react-icons/fa';
 
 import Layout from "../../components/layout/layout"
 import Head from "../../components/head/head"
@@ -11,6 +12,9 @@ export const query = graphql`
     contentfulArtist (slug: { eq: $slug }) {
       englishName
       japaneseName
+      bio
+      spotify
+      appleMusic
     }
     allContentfulReview (filter: { artist:{ slug: { eq: $slug } } }) {
       edges {
@@ -55,13 +59,23 @@ const Artist = (props) => {
     <Layout>
       <Head title={head}/>
       <div className={artistStyles.artistDetails}>
-        <h1>{props.data.contentfulArtist.englishName}</h1>
-        <h1>{props.data.contentfulArtist.japaneseName}</h1>
+        <div className={artistStyles.artistName}>
+          <div className={artistStyles.nameEnglish}>
+            <p>{props.data.contentfulArtist.englishName}</p>
+          </div>
+          <div className={artistStyles.nameJapanese}>
+            <p>{props.data.contentfulArtist.japaneseName}</p>
+          </div>
+        </div>
+        <p className={artistStyles.bio}>{props.data.contentfulArtist.bio}</p>
+        <p className={artistStyles.streaming}>
+          <a href={props.data.contentfulArtist.spotify} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a> <a href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><FaApple/></a>
+        </p>
       </div>
       <div className={artistStyles.reviewsSection}>
-        <h2>Reviews</h2>
-        <hr></hr>
-        <br></br>
+        <div className={artistStyles.sectionTitle}>
+          <h2>Album Reviews</h2>
+        </div>
         <div className={reviewsStyles.albums}>
           {props.data.allContentfulReview.edges.map((edge) => {
             return (
@@ -77,8 +91,9 @@ const Artist = (props) => {
         </div>
       </div>
       <div className={artistStyles.featuresSection}>
-        <h2>Features</h2>
-        <hr></hr>
+        <div className={artistStyles.sectionTitle}>
+          <h2>Features</h2>
+        </div>
         <ul>
           {props.data.allContentfulFeature.edges.map((edge) => {
             return (
@@ -92,8 +107,9 @@ const Artist = (props) => {
         </ul>
       </div>
       <div className={artistStyles.newsSection}>
-        <h2>News</h2>
-        <hr></hr>
+        <div className={artistStyles.sectionTitle}>
+          <h2>News</h2>
+        </div>
         <ul>
           {props.data.allContentfulNews.edges.map((edge) => {
             return (
