@@ -1,3 +1,24 @@
+.album {
+    text-align: center;
+
+    img {
+        height: 225px;
+    }
+
+    .artistName {
+        font-size: 1rem;
+        padding: .6rem 0;
+        margin-block-end: 0;
+        margin-right: 0;
+    }
+
+    .album-title {
+        font-size: .9rem;
+        font-weight: lighter;
+        font-style: italic;
+    }
+}
+
 .heroImage {
   height: 115px;
   width: 225px;
@@ -7,13 +28,3 @@
   font-size: 1.5em;
 }
 
-.tag {
-  color: #a0a0a0;
-  text-decoration: none;
-  display: inline-block;
-  padding: 0.33333rem 0.5rem;
-  line-height: 1;
-  border-radius: 2px;
-  border: 1px solid #a0a0a0;
-  margin-right: 0.5em;
-}
