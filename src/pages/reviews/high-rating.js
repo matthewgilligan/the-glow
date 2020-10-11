@@ -74,7 +74,7 @@ const ReviewsPage = () => {
         {data.allContentfulReview.edges.map((edge) => {
           return (
             <div className={reviewsStyles.album}>
-              <Link to={`${edge.node.slug}`}>
+              <Link to={`../${edge.node.slug}`}>
                 <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
                 <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
                 <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>

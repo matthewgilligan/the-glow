@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaTwitter, FaBars, FaSearch } from 'react-icons/fa'
 
 import headerStyles from './header.module.scss'
 
@@ -52,7 +52,7 @@ const Header = () => {
   return (
     <header className={headerStyles.header}>
       <div className={headerStyles.navTop}>
-        <h3 className={headerStyles.search}>Search</h3>
+        <p className={headerStyles.search}><FaSearch /></p>
         <Link to="/" className={headerStyles.title}>{data.site.siteMetadata.title}</Link>
         <div className={headerStyles.checkButton}>
           <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
