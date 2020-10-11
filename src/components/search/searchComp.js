@@ -24,7 +24,7 @@ export default function() {
             className={searchStyles.searchBox}
             autoFocus
             translations={{
-              placeholder: 'Search here...',
+              placeholder: 'Search an artist...',
             }}
           />
         </header>
