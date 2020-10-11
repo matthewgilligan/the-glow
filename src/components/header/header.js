@@ -1,11 +1,10 @@
 import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { FaFacebookF, FaInstagram, FaTwitter, FaBars, FaSearch } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaTwitter, FaBars, FaSearch, AiFillCloseCircle } from 'react-icons/fa'
 
 import headerStyles from './header.module.scss'
 import searchStyles from './search.module.scss'
 import SearchComp from '../search/searchComp'
-import 'instantsearch.css/themes/algolia.css'
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -57,11 +56,12 @@ const Header = () => {
   if(searchOpen) {
     search = <div className={searchStyles.overlay}>
       <div className={searchStyles.modal}>
-        <h3>Search for an artist</h3>
-        <div style={{ background: '#fff' }}>
-          <div className="hero">Blog</div>
-          <div className="wrapper">
-            <SearchComp />
+        <FaInstagram className={searchStyles.close} onClick={ () => setSearchOpen(!searchOpen) } />
+        <div className={searchStyles.content}>
+          <div className={searchStyles.algolia}>
+            <div>
+              <SearchComp />
+            </div>
           </div>
         </div>
       </div>

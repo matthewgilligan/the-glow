@@ -6,7 +6,6 @@ import {
   SearchBox,
   RefinementList,
 } from 'react-instantsearch-dom'
-import styles from './searchComp.module.scss'
 import hit from './hit'
 
 const searchClient = algoliasearch(
@@ -31,9 +30,8 @@ export default function() {
             className="ais-RefinementList-list"
           />
         </header>
-
-        <div className={styles.container}>
-          <div className={styles.search_panel}>
+        <div>
+          <div>
             <div className="ais-Hits-list">
               <Hits hitComponent={hit} />
             </div>
