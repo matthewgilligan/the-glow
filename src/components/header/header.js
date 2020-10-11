@@ -3,6 +3,9 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import { FaFacebookF, FaInstagram, FaTwitter, FaBars, FaSearch } from 'react-icons/fa'
 
 import headerStyles from './header.module.scss'
+import searchStyles from './search.module.scss'
+import SearchComp from '../search/searchComp'
+import 'instantsearch.css/themes/algolia.css'
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -16,7 +19,6 @@ const Header = () => {
   `)
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
-
   let mobileNav
 
   if(mobileNavOpen) {
@@ -49,10 +51,28 @@ const Header = () => {
     </div>
   }
 
+  const [searchOpen, setSearchOpen] = useState(false)
+  let search
+
+  if(searchOpen) {
+    search = <div className={searchStyles.overlay}>
+      <div className={searchStyles.modal}>
+        <h3>Search for an artist</h3>
+        <div style={{ background: '#fff' }}>
+          <div className="hero">Blog</div>
+          <div className="wrapper">
+            <SearchComp />
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
   return (
     <header className={headerStyles.header}>
+      { search }
       <div className={headerStyles.navTop}>
-        <p className={headerStyles.search}><FaSearch /></p>
+        <FaSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" className={headerStyles.search}/>
         <Link to="/" className={headerStyles.title}>{data.site.siteMetadata.title}</Link>
         <div className={headerStyles.checkButton}>
           <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
@@ -85,7 +105,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-        { mobileNav }
+      { mobileNav }
     </header>
   )
 }
