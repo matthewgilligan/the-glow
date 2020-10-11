@@ -16,7 +16,9 @@
 
 .close {
     float: right;
-    margin: 2rem 3rem 0 0
+    margin: 2rem 3rem 0 0;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .content {
@@ -27,3 +29,30 @@
     width: 90%;
     overflow: hidden;
 }
+
+.section-headline {
+    padding-bottom: 2rem;
+}
+
+.search-box {
+    background-color: red;
+    color: red;
+}
+
+.hit-list {
+    display: block;
+
+    div {
+        ul {
+            display: block !important;
+
+            li {
+                box-shadow: none;
+                border: none;
+                width: 80%;
+                padding-left: 0;
+            }
+        }
+    }
+}
+

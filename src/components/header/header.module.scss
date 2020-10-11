@@ -19,8 +19,13 @@
 }
 
 .search {
-    padding-top: 2rem;
-    font-size: 1.3rem;
+    padding-top: 1.8rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    :hover {
+        color: #E7334D;
+    }
 }
 
 .nav-list {

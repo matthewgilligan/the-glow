@@ -5,7 +5,7 @@ import hitStyles from './hit.module.scss'
 import reviewsStyles from '../../pages/reviews.module.scss'
 
 export default ({ hit }) => (
-  <div className={hitStyles.album}>
+  <div className={hitStyles.item}>
     <Link to={`/artist/${hit.slug}`}>
       <h2 className={hitStyles.artist}>{hit.englishName}</h2>
     </Link>

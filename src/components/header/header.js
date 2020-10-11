@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { FaFacebookF, FaInstagram, FaTwitter, FaBars, FaSearch, AiFillCloseCircle } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
+import { GrClose } from "react-icons/gr";
+import { FiSearch } from "react-icons/fi";
 
 import headerStyles from './header.module.scss'
 import searchStyles from './search.module.scss'
@@ -56,7 +58,7 @@ const Header = () => {
   if(searchOpen) {
     search = <div className={searchStyles.overlay}>
       <div className={searchStyles.modal}>
-        <FaInstagram className={searchStyles.close} onClick={ () => setSearchOpen(!searchOpen) } />
+        <GrClose className={searchStyles.close} onClick={ () => setSearchOpen(!searchOpen) } />
         <div className={searchStyles.content}>
           <div className={searchStyles.algolia}>
             <div>
@@ -72,7 +74,9 @@ const Header = () => {
     <header className={headerStyles.header}>
       { search }
       <div className={headerStyles.navTop}>
-        <FaSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" className={headerStyles.search}/>
+        <div className={headerStyles.search}>
+          <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
+        </div>
         <Link to="/" className={headerStyles.title}>{data.site.siteMetadata.title}</Link>
         <div className={headerStyles.checkButton}>
           <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>

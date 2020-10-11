@@ -6,6 +6,8 @@ import {
   SearchBox,
   RefinementList,
 } from 'react-instantsearch-dom'
+
+import searchStyles from '../header/search.module.scss'
 import hit from './hit'
 
 const searchClient = algoliasearch(
@@ -17,25 +19,17 @@ export default function() {
   return (
     <div>
       <InstantSearch searchClient={searchClient} indexName="THE_GLOW">
-        <header className="section-headline">
+        <header className={searchStyles.sectionHeadline}>
           <SearchBox
-            className="ais-SearchBox-form"
+            className={searchStyles.searchBox}
             autoFocus
             translations={{
               placeholder: 'Search here...',
             }}
           />
-          <RefinementList
-            attribute="tags"
-            className="ais-RefinementList-list"
-          />
         </header>
-        <div>
-          <div>
-            <div className="ais-Hits-list">
-              <Hits hitComponent={hit} />
-            </div>
-          </div>
+        <div className={searchStyles.hitList}>
+          <Hits hitComponent={hit} />
         </div>
       </InstantSearch>
     </div>
