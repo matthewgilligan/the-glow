@@ -8,24 +8,13 @@ import Head from "../../components/head/head"
 const ReviewsPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { reviewCategory:{ name: { eq: "Classic" } } } ) {
+      allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { genre: { name:{ eq: "Hip-Hop"} } } ) {
         edges {
           node {
             albumTitle
             slug
             artist {
               englishName
-              japaneseName
-            }
-            author {
-              englishName
-              twitter
-              bio
-            }
-            publishedDate(formatString:"MMMM Do YYYY")
-            rating
-            reviewCategory {
-              name
             }
             albumCover {
               title
@@ -33,15 +22,12 @@ const ReviewsPage = () => {
                 url
               }
             }
-            subtitle
-            genre {
-              name
-            }
           }
         }
       }
     }
   `)
+
 
   return (
     <Layout>
@@ -57,24 +43,33 @@ const ReviewsPage = () => {
         </div>
         <div className={reviewsStyles.featureNavBottom}>
           <ul className={reviewsStyles.featureNavList}>
+            <li className={reviewsStyles.featureNavItem}>All Reviews</li>
             <li className={reviewsStyles.featureNavItem}>
-              <Link to="../">All Reviews</Link>
+              <Link to="./contemporary">Contemporary</Link>
             </li>
             <li className={reviewsStyles.featureNavItem}>
-              <Link to="../contemporary">Contemporary</Link>
+              <Link to="./classic">Classic</Link>
             </li>
-            <li className={reviewsStyles.featureNavItem}>Classic</li>
             <li className={reviewsStyles.featureNavItem}>
-              <Link to="../high-rating">★★★★+</Link>
+              <Link to="./high-rating">★★★★+</Link>
             </li>
           </ul>
         </div>
       </div>
+      <select name="genres" id="genres">
+        <option value="all">All Genres</option>
+        <option value="electronic">Electronic</option>
+        <option value="experimental">Experimental</option>
+        <option value="folk">Folk</option>
+        <option value="hipHop">Hip-Hop</option>
+        <option value="pop">Pop</option>
+        <option value="rock">Rock</option>
+      </select>
       <div className={reviewsStyles.albums}>
         {data.allContentfulReview.edges.map((edge) => {
           return (
             <div className={reviewsStyles.album}>
-              <Link to={`../${edge.node.slug}`}>
+              <Link to={`${edge.node.slug}`}>
                 <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
                 <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
                 <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>

@@ -15,17 +15,6 @@ const ReviewsPage = () => {
             slug
             artist {
               englishName
-              japaneseName
-            }
-            author {
-              englishName
-              twitter
-              bio
-            }
-            publishedDate(formatString:"MMMM Do YYYY")
-            rating
-            reviewCategory {
-              name
             }
             albumCover {
               title
@@ -33,15 +22,12 @@ const ReviewsPage = () => {
                 url
               }
             }
-            subtitle
-            genre {
-              name
-            }
           }
         }
       }
     }
   `)
+
 
   return (
     <Layout>
@@ -68,6 +54,17 @@ const ReviewsPage = () => {
               <Link to="./high-rating">★★★★+</Link>
             </li>
           </ul>
+        </div>
+      </div>
+      <div class={reviewsStyles.dropdown}>
+        <button class={reviewsStyles.dropbtn}>All Genres</button>
+        <div class={reviewsStyles.dropdownContent}>
+          <Link to="./electronic">Electronic</Link>
+          <Link to="./experimental">Experimental</Link>
+          <Link to="./folk">Folk</Link>
+          <Link to="./hip-hop">Hip-Hop</Link>
+          <Link to="./pop">Pop</Link>
+          <Link to="./rock">Rock</Link>
         </div>
       </div>
       <div className={reviewsStyles.albums}>
