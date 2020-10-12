@@ -54,17 +54,21 @@ const ReviewsPage = () => {
               <Link to="./high-rating">★★★★+</Link>
             </li>
           </ul>
+          <div className={reviewsStyles.dropdownDiv}>
+            <div class={reviewsStyles.dropdown}>
+              <button class={reviewsStyles.dropbtn}>Pop ▾</button>
+              <div class={reviewsStyles.dropdownContent}>
+                <Link to="../">All Genres</Link>
+                <Link to="../electronic">Electronic</Link>
+                <Link to="../experimental">Experimental</Link>
+                <Link to="../folk">Folk</Link>
+                <Link to="../hip-hop">Hip-Hop</Link>
+                <Link to="../rock">Rock</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <select name="genres" id="genres">
-        <option value="all">All Genres</option>
-        <option value="electronic">Electronic</option>
-        <option value="experimental">Experimental</option>
-        <option value="folk">Folk</option>
-        <option value="hipHop">Hip-Hop</option>
-        <option value="pop">Pop</option>
-        <option value="rock">Rock</option>
-      </select>
       <div className={reviewsStyles.albums}>
         {data.allContentfulReview.edges.map((edge) => {
           return (

@@ -54,6 +54,19 @@ const ReviewsPage = () => {
               <Link to="./high-rating">★★★★+</Link>
             </li>
           </ul>
+          <div className={reviewsStyles.dropdownDiv}>
+            <div class={reviewsStyles.dropdown}>
+              <button class={reviewsStyles.dropbtn}>Electronic ▾</button>
+              <div class={reviewsStyles.dropdownContent}>
+                <Link to="../">All Genres</Link>
+                <Link to="../experimental">Experimental</Link>
+                <Link to="../folk">Folk</Link>
+                <Link to="../hip-hop">Hip-Hop</Link>
+                <Link to="../pop">Pop</Link>
+                <Link to="../rock">Rock</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <select name="genres" id="genres">

@@ -8,7 +8,7 @@ import Head from "../../components/head/head"
 const ReviewsPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { genre: { name:{ eq: "Hip-Hop"} } } ) {
+      allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { genre: { name:{ eq: "Rock"} } } ) {
         edges {
           node {
             albumTitle
@@ -56,7 +56,7 @@ const ReviewsPage = () => {
           </ul>
           <div className={reviewsStyles.dropdownDiv}>
             <div class={reviewsStyles.dropdown}>
-              <button class={reviewsStyles.dropbtn}>Hip-Hop ▾</button>
+              <button class={reviewsStyles.dropbtn}>Rock ▾</button>
               <div class={reviewsStyles.dropdownContent}>
                 <Link to="../">All Genres</Link>
                 <Link to="../electronic">Electronic</Link>
@@ -67,17 +67,6 @@ const ReviewsPage = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class={reviewsStyles.dropdown}>
-        <button class={reviewsStyles.dropbtn}>Hip-Hop</button>
-        <div class={reviewsStyles.dropdownContent}>
-          <Link to="../">All Genres</Link>
-          <Link to="./electronic">Electronic</Link>
-          <Link to="./experimental">Experimental</Link>
-          <Link to="./folk">Folk</Link>
-          <Link to="./pop">Pop</Link>
-          <Link to="./rock">Rock</Link>
         </div>
       </div>
       <div className={reviewsStyles.albums}>
