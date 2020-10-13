@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import reviewsStyles from './reviews.module.scss'
+import stickyNavStyles from '../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../components/head/head"
 
 const ReviewsPage = () => {
@@ -32,32 +33,34 @@ const ReviewsPage = () => {
   return (
     <Layout>
       <Head title="Japanese Album Reviews"/>
-      <div className={reviewsStyles.featureNav}>
-        <div className={reviewsStyles.featureNavTitle}>
-          <div className={reviewsStyles.titleEnglish}>
+      <div className={stickyNavStyles.nav}>
+        <div className={stickyNavStyles.navTitle}>
+          <div className={stickyNavStyles.titleEnglish}>
             <p>Reviews</p>
           </div>
-          <div className={reviewsStyles.titleJapanese}>
+          <div className={stickyNavStyles.titleJapanese}>
             <p>レビュー</p>
           </div>
         </div>
-        <div className={reviewsStyles.featureNavBottom}>
-          <ul className={reviewsStyles.featureNavList}>
-            <li className={reviewsStyles.featureNavItem}>All Reviews</li>
-            <li className={reviewsStyles.featureNavItem}>
+        <div className={stickyNavStyles.navItems}>
+          <ul>
+            <li>
+              All Reviews
+            </li>
+            <li>
               <Link to="./contemporary">Contemporary</Link>
             </li>
-            <li className={reviewsStyles.featureNavItem}>
+            <li>
               <Link to="./classic">Classic</Link>
             </li>
-            <li className={reviewsStyles.featureNavItem}>
+            <li>
               <Link to="./high-rating">★★★★+</Link>
             </li>
           </ul>
-          <div className={reviewsStyles.dropdownDiv}>
-            <div class={reviewsStyles.dropdown}>
-              <button class={reviewsStyles.dropbtn}>All Genres ▾</button>
-              <div class={reviewsStyles.dropdownContent}>
+          <div className={stickyNavStyles.dropdownDiv}>
+            <div class={stickyNavStyles.dropdown}>
+              <button class={stickyNavStyles.dropbtn}>All Genres ▾</button>
+              <div class={stickyNavStyles.dropdownContent}>
                 <Link to="./electronic">Electronic</Link>
                 <Link to="./experimental">Experimental</Link>
                 <Link to="./folk">Folk</Link>
