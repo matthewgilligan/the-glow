@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../../components/layout/layout"
 import reviewsStyles from '../reviews.module.scss'
+import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../../components/head/head"
 
 const ReviewsPage = () => {
@@ -46,27 +47,29 @@ const ReviewsPage = () => {
   return (
     <Layout>
       <Head title="Japanese Album Reviews"/>
-      <div className={reviewsStyles.featureNav}>
-        <div className={reviewsStyles.featureNavTitle}>
-          <div className={reviewsStyles.titleEnglish}>
+      <div className={stickyNavStyles.nav}>
+        <div className={stickyNavStyles.navTitle}>
+          <div className={stickyNavStyles.titleEnglish}>
             <p>Reviews</p>
           </div>
-          <div className={reviewsStyles.titleJapanese}>
+          <div className={stickyNavStyles.titleJapanese}>
             <p>レビュー</p>
           </div>
         </div>
-        <div className={reviewsStyles.featureNavBottom}>
-          <ul className={reviewsStyles.featureNavList}>
-            <li className={reviewsStyles.featureNavItem}>
+        <div className={stickyNavStyles.navItems}>
+          <ul>
+            <li>
               <Link to="../">All Reviews</Link>
             </li>
-            <li className={reviewsStyles.featureNavItem}>
+            <li>
               <Link to="../contemporary">Contemporary</Link>
             </li>
-            <li className={reviewsStyles.featureNavItem}>
+            <li>
               <Link to="../classic">Classic</Link>
             </li>
-            <li className={reviewsStyles.featureNavItem}>★★★★+</li>
+            <li>
+              ★★★★+
+            </li>
           </ul>
         </div>
       </div>
