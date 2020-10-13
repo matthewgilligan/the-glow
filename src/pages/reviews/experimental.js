@@ -45,13 +45,13 @@ const ReviewsPage = () => {
           <ul className={reviewsStyles.featureNavList}>
             <li className={reviewsStyles.featureNavItem}>All Reviews</li>
             <li className={reviewsStyles.featureNavItem}>
-              <Link to="./contemporary">Contemporary</Link>
+              <Link to="../contemporary">Contemporary</Link>
             </li>
             <li className={reviewsStyles.featureNavItem}>
-              <Link to="./classic">Classic</Link>
+              <Link to="../classic">Classic</Link>
             </li>
             <li className={reviewsStyles.featureNavItem}>
-              <Link to="./high-rating">★★★★+</Link>
+              <Link to="../high-rating">★★★★+</Link>
             </li>
           </ul>
           <div className={reviewsStyles.dropdownDiv}>
