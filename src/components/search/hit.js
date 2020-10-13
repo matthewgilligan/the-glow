@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import hitStyles from './hit.module.scss'
-import reviewsStyles from '../../pages/reviews.module.scss'
 
 export default ({ hit }) => (
   <div className={hitStyles.item}>

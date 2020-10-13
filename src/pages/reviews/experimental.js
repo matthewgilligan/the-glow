@@ -69,15 +69,6 @@ const ReviewsPage = () => {
           </div>
         </div>
       </div>
-      <select name="genres" id="genres">
-        <option value="all">All Genres</option>
-        <option value="electronic">Electronic</option>
-        <option value="experimental">Experimental</option>
-        <option value="folk">Folk</option>
-        <option value="hipHop">Hip-Hop</option>
-        <option value="pop">Pop</option>
-        <option value="rock">Rock</option>
-      </select>
       <div className={reviewsStyles.albums}>
         {data.allContentfulReview.edges.map((edge) => {
           return (
