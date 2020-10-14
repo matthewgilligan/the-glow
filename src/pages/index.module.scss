@@ -67,6 +67,33 @@
     height: 60vh
 }
 
+.news-list .news-item {
+    color: red;
+}
+
+.news-list div:first-of-type {
+  color: green;
+}
+
+.news-item {
+    display: flex;
+    margin-top: .5rem;
+
+    img {
+        width: 6.5rem;
+        height: 4rem;
+        object-fit: cover;
+    }
+
+    h2 {
+        font-size: .8rem;
+    }
+
+    p {
+        font-size: .6rem;
+    }
+}
+
 .support {
     height: 100%;
     width: 70%;

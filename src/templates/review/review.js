@@ -4,6 +4,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import Layout from "../../components/layout/layout"
 import Head from "../../components/head/head"
+import Mailchimp from "../../components/mailchimp/mailchimp"
 import reviewStyles from "./review.module.scss"
 
 export const query = graphql`
@@ -129,6 +130,7 @@ const Review = (props) => {
           </ul>
         </div>
       </div>
+      <Mailchimp />
     </Layout>
   )
 }

@@ -25,11 +25,18 @@ export const query = graphql`
         }
       }
     }
-    allContentfulNews ( sort: { fields:publishedDate, order:DESC } ) {
+    allContentfulNews ( sort: { fields:publishedDate, order:DESC }, limit: 5 ) {
       edges {
         node {
           title
           slug
+          publishedDate (formatString:"MMMM Do YYYY")
+          coverImage {
+            title
+            file {
+              url
+            }
+          }
         }
       }
     }
@@ -72,10 +79,12 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <Head title="The Glow | Japanese Music in the Spotlight"/>
-      <div className={indexStyles.featureInterview}>
-        <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.featureInterviewImage}/>
-        <h1>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
-      </div>
+      <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`}>
+        <div className={indexStyles.featureInterview}>
+          <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.featureInterviewImage}/>
+          <h1>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
+        </div>
+      </Link>
       <div className={indexStyles.reviews}>
         <div className={indexStyles.sectionTitle}>
           <h2>Album Reviews</h2>
@@ -104,6 +113,21 @@ const IndexPage = (props) => {
         <div className={indexStyles.latestNews}>
           <div className={indexStyles.sectionTitle}>
             <h2>Latest News</h2>
+          </div>
+          <div className={indexStyles.newsList}>
+            {props.data.allContentfulNews.edges.map((edge) => {
+              return (
+                <Link to={`news/${edge.node.slug}`}>
+                  <div className={indexStyles.newsItem}>
+                    <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} className={indexStyles.albumCover} />
+                    <div className={indexStyles.newsDetails}>
+                      <h2>{edge.node.title}</h2>
+                      <p>{edge.node.publishedDate}</p>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
           </div>
           <div className={indexStyles.sectionLink}>
             <Link to="/news">View All News</Link>
