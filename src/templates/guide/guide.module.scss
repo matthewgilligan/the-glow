@@ -104,5 +104,17 @@
 }
 
 .streaming {
-    padding-top: 4rem;
+    padding-top: 6rem;
+    text-align: center;
+
+    p {
+      margin-bottom: 3rem;
+    }
+}
+
+.embed {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
