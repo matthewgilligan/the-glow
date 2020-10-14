@@ -119,7 +119,8 @@ const Guides = (props) => {
         const url = node.data.target.fields.file['en-US'].url
         return <img alt={alt} src={url} />
       }
-    }
+    },
+    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
   }
 
   const reccomendations = [props.data.contentfulGuide.reference1, props.data.contentfulGuide.reference2, props.data.contentfulGuide.reference3, props.data.contentfulGuide.reference4, props.data.contentfulGuide.reference5]
