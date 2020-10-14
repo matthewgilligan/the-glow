@@ -1,8 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout/layout"
 import Head from "../components/head/head"
+import Footer from "../components/footer/footer"
+import Header from "../components/header/header"
+import '../styles/index.scss'
 import indexStyles from "./index.module.scss"
 import reviewsStyles from "./reviews.module.scss"
 
@@ -77,74 +79,97 @@ export const query = graphql`
 
 const IndexPage = (props) => {
   return (
-    <Layout>
+    <div>
       <Head title="The Glow | Japanese Music in the Spotlight"/>
-      <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`}>
-        <div className={indexStyles.featureInterview}>
-          <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.featureInterviewImage}/>
-          <h1>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
-        </div>
-      </Link>
-      <div className={indexStyles.reviews}>
-        <div className={indexStyles.sectionTitle}>
-          <h2>Album Reviews</h2>
-        </div>
-        <div className={reviewsStyles.albums}>
-          {props.data.allContentfulReview.edges.map((edge) => {
-            return (
-              <div className={reviewsStyles.album}>
-                <Link to={`reviews/${edge.node.slug}`}>
-                  <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
-                  <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
-                  <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
-                </Link>
-              </div>
-            )
-          })}
-        </div>
-        <div className={indexStyles.sectionLink}>
-          <Link to="/reviews">View All Reviews</Link>
-        </div>
+
+      <div className={indexStyles.container}>
+        <Header />
       </div>
-      <div className={indexStyles.supportAndLatestNews}>
-        <div className={indexStyles.support}>
-          Patreon
+
+      <section className={indexStyles.featureInterview}>
+        <div className={indexStyles.container}>
+          <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`}>
+            <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.featureInterviewImage}/>
+            <h1>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
+          </Link>
         </div>
-        <div className={indexStyles.latestNews}>
+      </section>
+
+      <section className={indexStyles.reviews}>
+        <div className={indexStyles.container}>
           <div className={indexStyles.sectionTitle}>
-            <h2>Latest News</h2>
+            <h2>Album Reviews</h2>
           </div>
-          <div className={indexStyles.newsList}>
-            {props.data.allContentfulNews.edges.map((edge) => {
+          <div className={reviewsStyles.albums}>
+            {props.data.allContentfulReview.edges.map((edge) => {
               return (
-                <Link to={`news/${edge.node.slug}`}>
-                  <div className={indexStyles.newsItem}>
-                    <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} className={indexStyles.albumCover} />
-                    <div className={indexStyles.newsDetails}>
-                      <h2>{edge.node.title}</h2>
-                      <p>{edge.node.publishedDate}</p>
-                    </div>
-                  </div>
-                </Link>
+                <div className={reviewsStyles.album}>
+                  <Link to={`reviews/${edge.node.slug}`}>
+                    <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                    <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                    <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
+                  </Link>
+                </div>
               )
             })}
           </div>
           <div className={indexStyles.sectionLink}>
-            <Link to="/news">View All News</Link>
+            <Link to="/reviews">View All Reviews</Link>
           </div>
         </div>
-      </div>
-      <div className={indexStyles.playlists}>
-      </div>
-      <div className={indexStyles.features}>
-        <div className={indexStyles.sectionTitle}>
-          <h2>Features</h2>
+      </section>
+
+      <section className={indexStyles.supportAndLatestNews}>
+        <div className={indexStyles.container}>
+          <div className={indexStyles.supportNews}>
+            <div className={indexStyles.support}>
+              Patreon
+            </div>
+            <div className={indexStyles.latestNews}>
+              <div className={indexStyles.sectionTitle}>
+                <h2>Latest News</h2>
+              </div>
+              <div className={indexStyles.newsList}>
+                {props.data.allContentfulNews.edges.map((edge) => {
+                  return (
+                    <Link to={`news/${edge.node.slug}`}>
+                      <div className={indexStyles.newsItem}>
+                        <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} className={indexStyles.albumCover} />
+                        <div className={indexStyles.newsDetails}>
+                          <h2>{edge.node.title}</h2>
+                          <p>{edge.node.publishedDate}</p>
+                        </div>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+              <div className={indexStyles.sectionLink}>
+                <Link to="/news">View All News</Link>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className={indexStyles.sectionLink}>
-          <Link to="/features">View All Features</Link>
+      </section>
+
+      <section className={indexStyles.playlists}>
+      </section>
+
+      <section className={indexStyles.features}>
+        <div className={indexStyles.container}>
+          <div className={indexStyles.sectionTitle}>
+            <h2>Features</h2>
+          </div>
+          <div className={indexStyles.sectionLink}>
+            <Link to="/features">View All Features</Link>
+          </div>
         </div>
+      </section>
+
+      <div className={indexStyles.container}>
+        <Footer />
       </div>
-    </Layout>
+    </div>
   )
 }
 

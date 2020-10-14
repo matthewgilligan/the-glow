@@ -1,3 +1,12 @@
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction:column;
+}
+
 .feature-interview {
     height: calc(100vh - 130px);
     width: 100%;
@@ -63,16 +72,17 @@
 }
 
 .support-and-latest-news {
-    display: flex;
     height: 60vh
 }
 
-.news-list .news-item {
-    color: red;
+.support-news {
+    display: flex;
+    height: 60vh;
 }
 
-.news-list div:first-of-type {
-  color: green;
+.news-list {
+    margin-top: -1rem;
+    margin-bottom: .5rem;
 }
 
 .news-item {
@@ -103,6 +113,7 @@
 
 .latest-news {
     width: 30%;
+    height: 100%;
 }
 
 .playlists {
