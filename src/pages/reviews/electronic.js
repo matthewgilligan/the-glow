@@ -58,7 +58,7 @@ const ReviewsPage = () => {
             </li>
           </ul>
           <div class={stickyNavStyles.dropdown}>
-            <button class={stickyNavStyles.dropdownButton}>Electronic ▾</button>
+            <button class={stickyNavStyles.electronicButton}>Electronic ▾</button>
             <div class={stickyNavStyles.dropdownContent}>
               <Link to="../">All Genres</Link>
               <Link to="../experimental">Experimental</Link>

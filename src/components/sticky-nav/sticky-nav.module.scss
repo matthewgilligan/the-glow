@@ -52,14 +52,105 @@
 .dropdown {
     position: absolute;
     display: inline-block;
-    transform: translate(1171px, -19.5px);
+    transform: translate(1168px, -19.5px);
 
     &:hover .dropdown-content {display: block}
     // &:hover .dropdown-button {background-color: #3e8e41}
 }
 
 .dropdown-button {
-    width: 7.1rem;
+    width: 100%;
+    transform: translate(-1px, 0);
+    padding-bottom: .8rem;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: Montserrat;
+    color: gray;
+    text-transform: uppercase;
+    text-align:left;
+    cursor: pointer;
+}
+
+.electronic-button {
+    width: 100%;
+    transform: translate(-3px, 0);
+    padding-bottom: .8rem;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: Montserrat;
+    color: gray;
+    text-transform: uppercase;
+    text-align:left;
+    cursor: pointer;
+}
+
+.experimental-button {
+    width: 100%;
+    transform: translate(-22px, 0);
+    padding-bottom: .8rem;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: Montserrat;
+    color: gray;
+    text-transform: uppercase;
+    text-align:left;
+    cursor: pointer;
+}
+
+.folk-button {
+    width: 100%;
+    transform: translate(50px, 0);
+    padding-bottom: .8rem;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: Montserrat;
+    color: gray;
+    text-transform: uppercase;
+    text-align:left;
+    cursor: pointer;
+}
+
+.hip-hop-button {
+    width: 100%;
+    transform: translate(24px, 0);
+    padding-bottom: .8rem;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: Montserrat;
+    color: gray;
+    text-transform: uppercase;
+    text-align:left;
+    cursor: pointer;
+}
+
+.pop-button {
+    width: 100%;
+    transform: translate(56px, 0);
+    padding-bottom: .8rem;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: Montserrat;
+    color: gray;
+    text-transform: uppercase;
+    text-align:left;
+    cursor: pointer;
+}
+
+.rock-button {
+    width: 100%;
+    transform: translate(46px, 0);
     padding-bottom: .8rem;
     background-color: white;
     border: none;

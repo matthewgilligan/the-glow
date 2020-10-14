@@ -58,14 +58,14 @@ const ReviewsPage = () => {
             </li>
           </ul>
           <div class={stickyNavStyles.dropdown}>
-            <button class={stickyNavStyles.dropdownButton}>Hip-Hop ▾</button>
+            <button class={stickyNavStyles.hipHopButton}>Hip-Hop ▾</button>
             <div class={stickyNavStyles.dropdownContent}>
               <Link to="../">All Genres</Link>
               <Link to="../electronic">Electronic</Link>
               <Link to="../experimental">Experimental</Link>
               <Link to="../folk">Folk</Link>
-              <Link to="../hip-hop">Hip-Hop</Link>
               <Link to="../pop">Pop</Link>
+              <Link to="../rock">Rock</Link>
             </div>
           </div>
         </div>
