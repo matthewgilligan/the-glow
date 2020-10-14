@@ -1,3 +1,12 @@
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction:column;
+}
+
 .banner {
     margin: 4rem 0;
 }
@@ -8,6 +17,7 @@
     color: white;
     text-align: center;
     background-size: cover;
+    object-fit: cover;
 }
 
 
@@ -46,12 +56,12 @@
 }
 
 .albums {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 40px -20px 0 -20px;
+    width: 90%;
+    justify-content: space-between;
+    margin: 40px auto;
 }
 
 .album {
