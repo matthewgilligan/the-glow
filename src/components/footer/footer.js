@@ -8,7 +8,7 @@ import logo from "../../images/red_logo_text_medium.png"
 const Footer = () => {
   return (
     <footer className={footerStyles.footer}>
-      <div className={footerStyles.logos}>
+      <div className={footerStyles.top}>
         <div className={footerStyles.copyright}>
           <p>© 2020 The Glow JP Ltd.</p>
           <p>All rights reserved. <Link className={footerStyles.copyrightLinks} to="/privacy-policy">Privacy Policy</Link> | <Link className={footerStyles.copyrightLinks} to="/terms-of-service">Terms of Service</Link></p>
@@ -16,13 +16,13 @@ const Footer = () => {
         <img src={logo} className={footerStyles.logo} alt="Logo" />
         <ul className={footerStyles.socialList}>
           <li>
-            <a className={footerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
           </li>
           <li>
-            <a className={footerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
           </li>
           <li>
-            <a className={footerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
+            <a href="https://www.twitter.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
           </li>
         </ul>
       </div>
