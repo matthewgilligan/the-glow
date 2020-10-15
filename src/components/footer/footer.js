@@ -45,21 +45,21 @@ const Footer = () => {
             <a className={footerStyles.socialMobileItem} href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaApple/></a>
           </li>
         </ul>
-        <ul className={footerStyles.footerList}>
+        <ul className={footerStyles.bottom}>
           <li>
-            <Link className={footerStyles.footerItem} to="/about">About Us</Link>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
-            <Link className={footerStyles.footerItem} to="/contribute">Contribute</Link>
+            <Link to="/contribute">Contribute</Link>
           </li>
           <li>
-            <Link className={footerStyles.footerItem} to="/ad">Advertise</Link>
+            <Link to="/ad">Advertise</Link>
           </li>
           <li>
-            <Link className={footerStyles.footerItem} to="#">Support Us</Link>
+            <Link to="#">Support Us</Link>
           </li>
           <li>
-            <Link className={footerStyles.footerItem} to="/contact">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
         <div className={footerStyles.copyrightMobile}>
