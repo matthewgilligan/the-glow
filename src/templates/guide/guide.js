@@ -170,8 +170,8 @@ const Guides = (props) => {
         <div className={guideStyles.container}>
           <p>Check out our {props.data.contentfulGuide.title} playlist on Spotify and Apple Music!</p>
           <div className={guideStyles.embed}>
-            <iframe src="https://open.spotify.com/embed/playlist/74EKFQ29bNMQaI6zHYJslN" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            <iframe src="https://embed.music.apple.com/us/playlist/inspired-by-the-beach-boys/pl.e4d175deb7ea4108a2f010cd250064c2" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe src="https://open.spotify.com/embed/playlist/74EKFQ29bNMQaI6zHYJslN" title="spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe src="https://embed.music.apple.com/us/playlist/inspired-by-the-beach-boys/pl.e4d175deb7ea4108a2f010cd250064c2" title="apple" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           </div>
         </div>
       </div>
