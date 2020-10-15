@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import featuresStyles from "./features.module.scss"
+import stickyNavStyles from '../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../components/head/head"
 
 const FeaturesPage = () => {
@@ -43,21 +44,38 @@ const FeaturesPage = () => {
   return (
     <Layout>
       <Head title="Japanese Music News"/>
-      <div className={featuresStyles.featureNav}>
-        <div className={featuresStyles.featureNavTitle}>
-          <div className={featuresStyles.titleEnglish}>
+      <div className={stickyNavStyles.nav}>
+        <div className={stickyNavStyles.navTitle}>
+          <div className={stickyNavStyles.titleEnglish}>
             <p>News</p>
           </div>
-          <div className={featuresStyles.titleJapanese}>
+          <div className={stickyNavStyles.titleJapanese}>
             <p>ニュース</p>
           </div>
         </div>
-        <div className={featuresStyles.featureNavBottom}>
-          <ul className={featuresStyles.featureNavList}>
-            <li className={featuresStyles.featureNavItem}>All news</li>
-            <li className={featuresStyles.featureNavItem}>Tours</li>
-            <li className={featuresStyles.featureNavItem}>Releases</li>
+        <div className={stickyNavStyles.navItems}>
+          <ul>
+            <li>
+              All News
+            </li>
+            <li>
+              Tours
+            </li>
+            <li>
+              Releases
+            </li>
           </ul>
+          <div class={stickyNavStyles.dropdown}>
+            <button className={stickyNavStyles.dropdownButton}>All Genres ▾</button>
+            <div className={stickyNavStyles.dropdownContent}>
+              <Link to="./electronic">Electronic</Link>
+              <Link to="./experimental">Experimental</Link>
+              <Link to="./folk">Folk</Link>
+              <Link to="./hip-hop">Hip-Hop</Link>
+              <Link to="./pop">Pop</Link>
+              <Link to="./rock">Rock</Link>
+            </div>
+          </div>
         </div>
       </div>
       <div class={featuresStyles.topFeatures}>
