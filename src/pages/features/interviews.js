@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../../components/layout/layout"
 import featuresStyles from "../features.module.scss"
+import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../../components/head/head"
 
 const FeaturesPage = () => {
@@ -43,42 +44,57 @@ const FeaturesPage = () => {
   return (
     <Layout>
       <Head title="Japanese Music Articles and Features"/>
-      <div className={featuresStyles.featureNav}>
-        <div className={featuresStyles.featureNavTitle}>
-          <div className={featuresStyles.titleEnglish}>
-            <p>features</p>
+      <div className={stickyNavStyles.nav}>
+        <div className={stickyNavStyles.navTitle}>
+          <div className={stickyNavStyles.titleEnglish}>
+            <p>Features</p>
           </div>
-          <div className={featuresStyles.titleJapanese}>
+          <div className={stickyNavStyles.titleJapanese}>
             <p>特徴</p>
           </div>
         </div>
-        <div className={featuresStyles.featureNavBottom}>
-          <ul className={featuresStyles.featureNavList}>
-            <li className={featuresStyles.featureNavItem}>
-              <Link to="/features">All Features</Link>
+        <div className={stickyNavStyles.navItems}>
+          <ul>
+            <li>
+              <Link to="/features/">All Features</Link>
             </li>
-            <li className={featuresStyles.featureNavItem}>Interviews</li>
-            <li className={featuresStyles.featureNavItem}>
+            <li>
+              Interviews
+            </li>
+            <li>
               <Link to="/features/lists">Lists</Link>
             </li>
-            <li className={featuresStyles.featureNavItem}>
+            <li>
               <Link to="/features/columns">Columns</Link>
             </li>
           </ul>
+          <div class={stickyNavStyles.dropdown}>
+            <button className={stickyNavStyles.dropdownButton}>All Genres ▾</button>
+            <div className={stickyNavStyles.dropdownContent}>
+              <Link to="./electronic">Electronic</Link>
+              <Link to="./experimental">Experimental</Link>
+              <Link to="./folk">Folk</Link>
+              <Link to="./hip-hop">Hip-Hop</Link>
+              <Link to="./pop">Pop</Link>
+              <Link to="./rock">Rock</Link>
+            </div>
+          </div>
         </div>
       </div>
       <div class={featuresStyles.topFeatures}>
-        <Link to={`../${firstFeature.node.slug}`} class={featuresStyles.firstFeatureLink}>
-          <div class={featuresStyles.firstFeature}
-            style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
-            <div class={featuresStyles.firstFeatureDetails}>
-              <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
-              <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
-              <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
-              <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
+        <div class={featuresStyles.firstFeature}>
+          <Link to={`${firstFeature.node.slug}`}>
+            <div class={featuresStyles.firstFeatureImg}
+              style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
+              <div class={featuresStyles.firstFeatureDetails}>
+                <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
+                <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
+                <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
+                <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
         <ul className={featuresStyles.scrollFeatures}>
           {scrollFeatures.map((edge) => {
             return (

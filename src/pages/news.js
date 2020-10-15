@@ -61,17 +61,19 @@ const FeaturesPage = () => {
         </div>
       </div>
       <div class={featuresStyles.topFeatures}>
-        <Link to={`${firstFeature.node.slug}`} class={featuresStyles.firstFeatureLink}>
-          <div class={featuresStyles.firstFeature}
-            style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
-            <div class={featuresStyles.firstFeatureDetails}>
-              <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
-              <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
-              <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
-              <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
+        <div class={featuresStyles.firstFeature}>
+          <Link to={`${firstFeature.node.slug}`}>
+            <div class={featuresStyles.firstFeatureImg}
+              style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
+              <div class={featuresStyles.firstFeatureDetails}>
+                <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
+                <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
+                <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
+                <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
         <ul className={featuresStyles.scrollFeatures}>
           {scrollFeatures.map((edge) => {
             return (

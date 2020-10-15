@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import featuresStyles from "./features.module.scss"
+import stickyNavStyles from '../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../components/head/head"
 
 const FeaturesPage = () => {
@@ -43,34 +44,47 @@ const FeaturesPage = () => {
   return (
     <Layout>
       <Head title="Japanese Music Articles and Features"/>
-      <div className={featuresStyles.featureNav}>
-        <div className={featuresStyles.featureNavTitle}>
-          <div className={featuresStyles.titleEnglish}>
-            <p>features</p>
+      <div className={stickyNavStyles.nav}>
+        <div className={stickyNavStyles.navTitle}>
+          <div className={stickyNavStyles.titleEnglish}>
+            <p>Features</p>
           </div>
-          <div className={featuresStyles.titleJapanese}>
+          <div className={stickyNavStyles.titleJapanese}>
             <p>特徴</p>
           </div>
         </div>
-        <div className={featuresStyles.featureNavBottom}>
-          <ul className={featuresStyles.featureNavList}>
-            <li className={featuresStyles.featureNavItem} style={{color: "black"}}>All features</li>
-            <li className={featuresStyles.featureNavItem}>
+        <div className={stickyNavStyles.navItems}>
+          <ul>
+            <li>
+              All Features
+            </li>
+            <li>
               <Link to="/features/interviews">Interviews</Link>
             </li>
-            <li className={featuresStyles.featureNavItem}>
+            <li>
               <Link to="/features/lists">Lists</Link>
             </li>
-            <li className={featuresStyles.featureNavItem}>
+            <li>
               <Link to="/features/columns">Columns</Link>
             </li>
           </ul>
+          <div class={stickyNavStyles.dropdown}>
+            <button className={stickyNavStyles.dropdownButton}>All Genres ▾</button>
+            <div className={stickyNavStyles.dropdownContent}>
+              <Link to="./electronic">Electronic</Link>
+              <Link to="./experimental">Experimental</Link>
+              <Link to="./folk">Folk</Link>
+              <Link to="./hip-hop">Hip-Hop</Link>
+              <Link to="./pop">Pop</Link>
+              <Link to="./rock">Rock</Link>
+            </div>
+          </div>
         </div>
       </div>
       <div class={featuresStyles.topFeatures}>
-        <div class={featuresStyles.firstFeatureLink}>
+        <div class={featuresStyles.firstFeature}>
           <Link to={`${firstFeature.node.slug}`}>
-            <div class={featuresStyles.firstFeature}
+            <div class={featuresStyles.firstFeatureImg}
               style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
               <div class={featuresStyles.firstFeatureDetails}>
                 <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
