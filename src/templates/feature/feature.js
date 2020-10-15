@@ -52,10 +52,6 @@ const Feature = (props) => {
     renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
   }
 
-   const demo = document.getElementById("demo");
-
-  console.log(demo);
-
   return (
     <div>
       <Head title={props.data.contentfulFeature.title}/>
