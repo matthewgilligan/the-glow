@@ -45,16 +45,16 @@ const ReviewsPage = () => {
         <div className={stickyNavStyles.navItems}>
           <ul>
             <li>
-              <Link to="../">All Reviews</Link>
+              <Link to="../../">All Reviews</Link>
             </li>
             <li>
-              <Link to="../contemporary">Contemporary</Link>
+              <Link to="../../contemporary">Contemporary</Link>
             </li>
             <li>
               Classic
             </li>
             <li>
-              <Link to="../high-rating">★★★★+</Link>
+              <Link to="../../high-rating">★★★★+</Link>
             </li>
           </ul>
           <div class={stickyNavStyles.dropdown}>
