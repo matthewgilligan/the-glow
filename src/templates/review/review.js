@@ -80,9 +80,17 @@ const Review = (props) => {
 
   const multiplyInt = (num) => {
     let stars = [];
+
     for(let i= 0; i < num; i++) {
       stars.push(<VscStarFull/>);
     }
+
+    const empty = 5 - num;
+
+    for(let i= 0; i < empty; i++) {
+      stars.push(<VscStarEmpty/>);
+    }
+
     return (
       <div>{stars}</div>
     );
@@ -90,10 +98,19 @@ const Review = (props) => {
 
   const multiplyDec = (num) => {
     let stars = [];
+
     for(let i= 0; i < num - 1; i++) {
       stars.push(<VscStarFull/>);
     }
+
     stars.push(<VscStarHalf/>);
+
+    const empty = 4.5 - num;
+
+    for(let i= 0; i < empty; i++) {
+      stars.push(<VscStarEmpty/>);
+    }
+
     return (
       <div>{stars}</div>
     );
