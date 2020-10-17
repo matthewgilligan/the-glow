@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { VscStarFull, VscStarHalf, VscStarEmpty } from "react-icons/vsc";
 
 import Layout from "../../components/layout/layout"
 import Head from "../../components/head/head"
@@ -77,7 +78,31 @@ const Review = (props) => {
     }
   }
 
-  const stars = "★".repeat(props.data.contentfulReview.rating)
+  const multiplyInt = (num) => {
+    let stars = [];
+    for(let i= 0; i < num; i++) {
+      stars.push(<VscStarFull/>);
+    }
+    return (
+      <div>{stars}</div>
+    );
+  };
+
+  const multiplyDec = (num) => {
+    let stars = [];
+    for(let i= 0; i < num - 1; i++) {
+      stars.push(<VscStarFull/>);
+    }
+    stars.push(<VscStarHalf/>);
+    return (
+      <div>{stars}</div>
+    );
+  };
+
+  const starsInt = multiplyInt(props.data.contentfulReview.rating)
+  const starsDec = multiplyDec(props.data.contentfulReview.rating)
+
+
   const head = props.data.contentfulReview.artist.englishName + ": " + props.data.contentfulReview.albumTitle
 
   return (
@@ -92,7 +117,7 @@ const Review = (props) => {
                 <h1 className={reviewStyles.artistName}>{props.data.contentfulReview.artist.englishName}</h1>
               </Link>
               <h1 className={reviewStyles.albumTitle}>{props.data.contentfulReview.albumTitle}</h1>
-              <h3 className={reviewStyles.stars}>{stars}</h3>
+              <h3 className={reviewStyles.stars}>{props.data.contentfulReview.rating % 1 !== 0 ? starsDec : starsInt }</h3>
               <p>{props.data.contentfulReview.label} ● {props.data.contentfulReview.initialReleaseDate}</p>
             </div>
           </div>
