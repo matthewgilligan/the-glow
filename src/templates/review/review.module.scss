@@ -116,15 +116,19 @@
       width: 100%;
       display: flex;
       text-decoration: none;
-      padding-top: 1rem;
+      padding-top: .5rem;
 
       img {
-        width: 6rem;
+        width: 5rem;
+        height: 5rem;
         padding-right: 1rem;
       }
 
       .latest-details {
         padding-top: 1.3rem;
+        border-top: 1px solid rgba(191, 191, 191, 0.4);
+        border-bottom: 1px solid rgba(191, 191, 191, 0.4);
+        width: 100%;
 
         h1 {
           font-size: .9rem;
