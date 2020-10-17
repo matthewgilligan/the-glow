@@ -1,15 +1,15 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
-import Layout from "../../components/layout/layout"
-import reviewsStyles from '../reviews.module.scss'
-import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
-import Head from "../../components/head/head"
+import Layout from "../../../components/layout/layout"
+import reviewsStyles from '../../reviews.module.scss'
+import stickyNavStyles from '../../../components/sticky-nav/sticky-nav.module.scss'
+import Head from "../../../components/head/head"
 
 const ReviewsPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { reviewCategory:{ name: { eq: "Classic" } } } ) {
+      allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { reviewCategory:{ name: { eq: "Classic" } }, genre: { name:{ eq: "Hip-Hop"} } } ) {
         edges {
           node {
             albumTitle
@@ -58,14 +58,14 @@ const ReviewsPage = () => {
             </li>
           </ul>
           <div class={stickyNavStyles.dropdown}>
-            <button className={stickyNavStyles.dropdownButton}>All Genres ▾</button>
-            <div className={stickyNavStyles.dropdownContent}>
-              <Link to="./electronic">Electronic</Link>
-              <Link to="./experimental">Experimental</Link>
-              <Link to="./folk">Folk</Link>
-              <Link to="./hip-hop">Hip-Hop</Link>
-              <Link to="./pop">Pop</Link>
-              <Link to="./rock">Rock</Link>
+            <button class={stickyNavStyles.hipHopButton}>Hip-Hop ▾</button>
+            <div class={stickyNavStyles.dropdownContent}>
+              <Link to="../">All Genres</Link>
+              <Link to="../electronic">Electronic</Link>
+              <Link to="../experimental">Experimental</Link>
+              <Link to="../folk">Folk</Link>
+              <Link to="../pop">Pop</Link>
+              <Link to="../rock">Rock</Link>
             </div>
           </div>
         </div>

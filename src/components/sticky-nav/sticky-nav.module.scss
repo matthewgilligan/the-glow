@@ -53,10 +53,16 @@
 .dropdown {
     position: absolute;
     display: inline-block;
-    transform: translate(1168px, -19.5px);
+    transform: translate(1168px, -20.5px);
 
     &:hover .dropdown-content {display: block}
     // &:hover .dropdown-button {background-color: #3e8e41}
+}
+
+@media screen and (max-width: 1140px) {
+    .dropdown {
+        transform: translate(1168px, -20.5px);
+    }
 }
 
 .dropdown-button {

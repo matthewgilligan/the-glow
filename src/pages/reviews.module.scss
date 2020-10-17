@@ -23,9 +23,27 @@
         color: black;
     }
 
-    // :hover + .details {
-    //   display: block;
-    // }
+    :hover {
+        text-decoration: underline;
+        text-decoration-color: red;
+    }
+}
+
+.un {
+  display: inline-block;
+}
+
+.un::after {
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: block;
+  background: black;
+  transition: 300ms;
+}
+
+.un:hover::after {
+  width: 100%;
 }
 
 .albumCover {
