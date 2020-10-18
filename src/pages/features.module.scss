@@ -144,7 +144,7 @@
 
 .remaining-feature {
     height: 400px;
-    width: 70%;
+    width: 900px;
     margin-bottom: 40px;
     display: flex;
 
@@ -172,7 +172,7 @@
     border-bottom: 2px solid;
     border-top: 2px solid;
     margin-left: 45px;
-    width: calc(45% - 35px);
+    width: 400px;
     position: relative;
 
     a {
@@ -213,7 +213,7 @@
 }
 
 .narrow-top-feature {
-    height: 100vh;
+    height: calc(100vh - 191.19px);
     width: 100%;
 }
 
@@ -221,6 +221,77 @@
     height: 100%;
     width: 100%;
     background-size: cover;
+    position: relative;
+}
+
+.mobile-top-feature {
+    display: none;
+    margin-top: -3rem;
+}
+
+.mobile-features {
+    display: none;
+    list-style-type: none;
+    padding-left: 0;
+    display: -ms-flexbox;
+    margin-left: -22px;
+}
+
+.mobile-feature {
+    width: 46.9%;
+    margin-top: 3rem;
+    padding-left: 3%;
+
+    &:hover {
+        h3 {
+            text-decoration: underline !important;
+            text-decoration-color: red !important;
+        }
+    }
+}
+
+.mobile-feature-image {
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+}
+
+.mobile-feature-details {
+    margin-top: 1rem;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    height: 150px;
+    width: 100%;
+    position: relative;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.mobile-feature-title {
+    font-weight: bolder;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+.mobile-feature-info {
+    font-size: 14px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 8px;
+}
+
+.mobile-feature-author {
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.mobile-feature-date {
+    color: rgba(0, 0, 0, 0.3) !important;
+    margin-top: 3px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -230,5 +301,54 @@
 
     .wideScreen {
         display: none;
+    }
+}
+
+@media screen and (max-width: 931px) {
+    .remaining-features {
+        display: none;
+    }
+
+    .mobile-features {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 666px) {
+    .narrow-top-feature {
+        display: none;
+    }
+
+    .mobile-top-feature {
+        display: flex;
+    }
+
+    .mobile-features {
+        margin-left: 0;
+    }
+
+    .mobile-feature {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .mobile-feature-image {
+        height: 350px;
+    }
+
+    .mobile-feature-details {
+        height: 170px;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .mobile-feature-title {
+        font-size: 1.5rem;
     }
 }

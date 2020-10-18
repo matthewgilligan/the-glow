@@ -37,7 +37,7 @@ const FeaturesPage = () => {
     }
   `)
 
-const firstFeature = data.allContentfulFeature.edges[0];
+  const firstFeature = data.allContentfulFeature.edges[0];
   const scrollFeatures = data.allContentfulFeature.edges.slice(1, 5);
   const remainingFeatures = data.allContentfulFeature.edges.slice(5);
 
@@ -141,6 +141,42 @@ const firstFeature = data.allContentfulFeature.edges[0];
           )
         })}
       </ul>
+      <div className={featuresStyles.mobileTopFeature}>
+        <div className={featuresStyles.mobileFeature}>
+          <Link to={`${firstFeature.node.slug}`}>
+            <div class={featuresStyles.mobileFeatureImage} style={{backgroundImage: `url(${firstFeature.node.coverImage.file.url})`} }></div>
+          </Link>
+          <div class={featuresStyles.mobileFeatureDetails}>
+            <Link to={`${firstFeature.node.slug}`}>
+              <h3 class={featuresStyles.mobileFeatureTitle}>{firstFeature.node.title}</h3>
+            </Link>
+            <div class={featuresStyles.mobileFeatureInfo}>
+              <p class={featuresStyles.mobileFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
+              <p class={featuresStyles.mobileFeatureDate}>{firstFeature.node.publishedDate}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={featuresStyles.mobileFeatures}>
+        {narrowRemainingFeatures.map((edge) => {
+          return (
+            <div className={featuresStyles.mobileFeature}>
+              <Link to={`${edge.node.slug}`}>
+                <div class={featuresStyles.mobileFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+              </Link>
+              <div class={featuresStyles.mobileFeatureDetails}>
+                <Link to={`${edge.node.slug}`}>
+                  <h3 class={featuresStyles.mobileFeatureTitle}>{edge.node.title}</h3>
+                </Link>
+                <div class={featuresStyles.mobileFeatureInfo}>
+                  <p class={featuresStyles.mobileFeatureAuthor}>By: {edge.node.author.englishName}</p>
+                  <p class={featuresStyles.mobileFeatureDate}>{edge.node.publishedDate}</p>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </div>
 
   return (
@@ -158,13 +194,13 @@ const firstFeature = data.allContentfulFeature.edges[0];
         <div className={stickyNavStyles.navItems}>
           <ul>
             <li>
-              <Link to="../">All Features</Link>
+              All Features
             </li>
             <li>
               <Link to="/features/interviews">Interviews</Link>
             </li>
             <li>
-              Lists
+              <Link to="/features/lists">Lists</Link>
             </li>
             <li>
               <Link to="/features/columns">Columns</Link>
