@@ -75,7 +75,8 @@ const Review = (props) => {
         const url = node.data.target.fields.file['en-US'].url
         return <img alt={alt} src={url} />
       }
-    }
+    },
+    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
   }
 
   const multiplyInt = (num) => {
