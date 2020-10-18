@@ -42,6 +42,8 @@ const FeaturesPage = () => {
   const scrollFeatures = data.allContentfulFeature.edges.slice(1, 5);
   const remainingFeatures = data.allContentfulFeature.edges.slice(5);
 
+  const narrowRemainingFeatures = data.allContentfulFeature.edges.slice(1);
+
   const wideScreen =
     <div class={featuresStyles.wideScreen}>
       <div class={featuresStyles.topFeatures}>
@@ -102,6 +104,82 @@ const FeaturesPage = () => {
       </ul>
     </div>
 
+  const narrowScreen =
+    <div class={featuresStyles.narrowScreen}>
+      <div class={featuresStyles.narrowTopFeature}>
+        <Link to={`${firstFeature.node.slug}`}>
+          <div class={featuresStyles.narrowTopFeatureImg}
+            style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
+            <div class={featuresStyles.firstFeatureDetails}>
+              <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
+              <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
+              <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
+              <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
+            </div>
+          </div>
+        </Link>
+      </div>
+      <ul className={featuresStyles.remainingFeatures}>
+        {narrowRemainingFeatures.map((edge) => {
+          return (
+            <li>
+              <div className={featuresStyles.remainingFeature}>
+                <Link to={`${edge.node.slug}`} class={featuresStyles.remainingFeatureImageLink}>
+                  <div class={featuresStyles.remainingFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                </Link>
+                <div class={featuresStyles.remainingFeatureDetails}>
+                  <Link to={`${edge.node.slug}`}>
+                    <h3 class={featuresStyles.remainingFeatureTitle}>{edge.node.title}</h3>
+                  </Link>
+                  <p class={featuresStyles.remainingFeatureSubtitle}>{edge.node.subtitle}</p>
+                  <div class={featuresStyles.remainingFeatureInfo}>
+                    <p class={featuresStyles.remainingFeatureAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={featuresStyles.remainingFeatureDate}>{edge.node.publishedDate}</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+      <div className={featuresStyles.mobileTopFeature}>
+        <div className={featuresStyles.mobileFeature}>
+          <Link to={`${firstFeature.node.slug}`}>
+            <div class={featuresStyles.mobileFeatureImage} style={{backgroundImage: `url(${firstFeature.node.coverImage.file.url})`} }></div>
+          </Link>
+          <div class={featuresStyles.mobileFeatureDetails}>
+            <Link to={`${firstFeature.node.slug}`}>
+              <h3 class={featuresStyles.mobileFeatureTitle}>{firstFeature.node.title}</h3>
+            </Link>
+            <div class={featuresStyles.mobileFeatureInfo}>
+              <p class={featuresStyles.mobileFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
+              <p class={featuresStyles.mobileFeatureDate}>{firstFeature.node.publishedDate}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={featuresStyles.mobileFeatures}>
+        {narrowRemainingFeatures.map((edge) => {
+          return (
+            <div className={featuresStyles.mobileFeature}>
+              <Link to={`${edge.node.slug}`}>
+                <div class={featuresStyles.mobileFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+              </Link>
+              <div class={featuresStyles.mobileFeatureDetails}>
+                <Link to={`${edge.node.slug}`}>
+                  <h3 class={featuresStyles.mobileFeatureTitle}>{edge.node.title}</h3>
+                </Link>
+                <div class={featuresStyles.mobileFeatureInfo}>
+                  <p class={featuresStyles.mobileFeatureAuthor}>By: {edge.node.author.englishName}</p>
+                  <p class={featuresStyles.mobileFeatureDate}>{edge.node.publishedDate}</p>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+
   return (
     <Layout>
       <Head title="Japanese Music Articles and Features"/>
@@ -117,7 +195,7 @@ const FeaturesPage = () => {
         <div className={stickyNavStyles.navItems}>
           <ul>
             <li>
-              <Link to="../">All Features</Link>
+              <Link to="../">Lists</Link>
             </li>
             <li>
               <Link to="/features/interviews">Interviews</Link>
@@ -143,6 +221,7 @@ const FeaturesPage = () => {
         </div>
       </div>
       {wideScreen}
+      {narrowScreen}
     </Layout>
   )
 }
