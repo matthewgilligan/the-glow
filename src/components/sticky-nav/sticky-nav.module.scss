@@ -52,7 +52,7 @@
 
 .dropdown {
     position: absolute;
-    display: inline-block;
+    display: none;
     transform: translate(1168px, -20.5px);
 
     &:hover .dropdown-content {display: block}
