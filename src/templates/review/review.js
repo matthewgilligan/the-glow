@@ -155,16 +155,18 @@ const Review = (props) => {
         </div>
         <div className={reviewStyles.latestReviews}>
           <h1 className={reviewStyles.title}>Latest Reviews</h1>
-          <ul className={reviewStyles.albums}>
+          <ul className={reviewStyles.latestAlbums}>
             {props.data.allContentfulReview.edges.map((edge) => {
               return (
                 <li>
-                  <Link to={`../${edge.node.slug}`} className={reviewStyles.album}>
-                    <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewStyles.albumCover} />
-                    <div className={reviewStyles.latestDetails}>
-                      <h1 className={reviewStyles.artistName}>{edge.node.artist.englishName}</h1>
-                      <h1 className={reviewStyles.albumTitle}>{edge.node.albumTitle}</h1>
-                      <p className={reviewStyles.date}>{edge.node.publishedDate}</p>
+                  <Link to={`../${edge.node.slug}`}>
+                    <div className={reviewStyles.latestAlbum}>
+                      <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} />
+                      <div className={reviewStyles.latestDetails}>
+                        <h1 className={reviewStyles.latestArtistName}>{edge.node.artist.englishName}</h1>
+                        <h1 className={reviewStyles.latestAlbumTitle}>{edge.node.albumTitle}</h1>
+                        <p className={reviewStyles.latestdate}>{edge.node.publishedDate}</p>
+                      </div>
                     </div>
                   </Link>
                 </li>
