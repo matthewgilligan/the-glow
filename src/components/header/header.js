@@ -23,33 +23,37 @@ const Header = () => {
   let mobileNav
 
   if(mobileNavOpen) {
-    mobileNav = <div className={headerStyles.mobileNav}>
-      <ul className={headerStyles.mobileNavList}>
-        <li>
-          <Link className={headerStyles.mobileNavItem} to="/news">News</Link>
-        </li>
-        <li>
-          <Link className={headerStyles.mobileNavItem} to="/reviews">Reviews</Link>
-        </li>
-        <li>
-          <Link className={headerStyles.mobileNavItem} to="/features">Features</Link>
-        </li>
-        <li>
-          <Link className={headerStyles.mobileNavItem} to="/guides">Guides</Link>
-        </li>
-      </ul>
-      <ul className={headerStyles.mobileSocialList}>
-        <li>
-          <a className={headerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
-        </li>
-        <li>
-          <a className={headerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
-        </li>
-        <li>
-          <a className={headerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
-        </li>
-      </ul>
-    </div>
+    mobileNav =
+      <div className={headerStyles.overlay}>
+        <div className={headerStyles.mobileNav}>
+          <GrClose className={headerStyles.close} onClick={ () => setMobileNavOpen(!mobileNavOpen) } />
+          <ul className={headerStyles.mobileNavList}>
+            <li>
+              <Link to="/news">News</Link>
+            </li>
+            <li>
+              <Link to="/reviews">Reviews</Link>
+            </li>
+            <li>
+              <Link to="/features">Features</Link>
+            </li>
+            <li>
+              <Link to="/guides">Guides</Link>
+            </li>
+          </ul>
+          <ul className={headerStyles.mobileSocialList}>
+            <li>
+              <a className={headerStyles.mobileSocialItem} href="https://www.instagram.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
+            </li>
+            <li>
+              <a className={headerStyles.mobileSocialItem} href="https://www.facebook.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
+            </li>
+            <li>
+              <a className={headerStyles.mobileSocialItem} href="https://www.twitter.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
+            </li>
+          </ul>
+        </div>
+      </div>
   }
 
   const [searchOpen, setSearchOpen] = useState(false)
