@@ -118,8 +118,13 @@ const FeaturesPage = () => {
                 <div class={newsStyles.remainingDetails}>
                   <h3 class={newsStyles.remainingTitle}>{edge.node.title}</h3>
                   <div class={newsStyles.remainingInfo}>
-                    <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
-                    <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                    <div class={newsStyles.remainingMeta}>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                    </div>
+                    <Link to={`/news/${edge.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
+                      <p>{edge.node.category.title}</p>
+                    </Link>
                   </div>
                 </div>
               </div>
