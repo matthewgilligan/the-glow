@@ -38,8 +38,8 @@ const FeaturesPage = () => {
   `)
 
   const firstPost = data.allContentfulNews.edges[0];
-  const secondaryPosts = data.allContentfulNews.edges.slice(1, 3);
-  const remainingPosts = data.allContentfulNews.edges.slice(3);
+  const secondaryPosts = data.allContentfulNews.edges.slice(1, 4);
+  const remainingPosts = data.allContentfulNews.edges.slice(4);
 
   return (
     <Layout>
@@ -91,47 +91,42 @@ const FeaturesPage = () => {
           </div>
         </div>
       </Link>
-      <ul className={newsStyles.scrollFeatures}>
+      <div className={newsStyles.secondaryPosts}>
         {secondaryPosts.map((edge) => {
           return (
-            <li className={newsStyles.secondaryPosts}>
+            <div className={newsStyles.secondaryPost}>
               <Link to={`${edge.node.slug}`}>
-                <div class={newsStyles.scrollFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
-                <div class={newsStyles.scrollFeatureDetails}>
-                  <p class={newsStyles.scrollFeatureTitle}>{edge.node.title}</p>
-                  <div class={newsStyles.scrollFeatureInfo}>
-                    <p class={newsStyles.scrollFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                    <p class={newsStyles.scrollFeatureDate}>{edge.node.publishedDate}</p>
+                <div class={newsStyles.secondaryImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <div class={newsStyles.secondaryDetails}>
+                  <p class={newsStyles.secondaryTitle}>{edge.node.title}</p>
+                  <div class={newsStyles.secondaryInfo}>
+                    <p class={newsStyles.secondaryAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={newsStyles.secondaryDate}>{edge.node.publishedDate}</p>
                   </div>
                 </div>
               </Link>
-            </li>
+            </div>
           )
         })}
-      </ul>
-      <ul className={newsStyles.remainingPosts}>
+      </div>
+      <div className={newsStyles.remainingPosts}>
         {remainingPosts.map((edge) => {
           return (
-            <li>
-              <div className={newsStyles.remainingFeature}>
-                <Link to={`${edge.node.slug}`} class={newsStyles.remainingFeatureImageLink}>
-                  <div class={newsStyles.remainingFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
-                </Link>
-                <div class={newsStyles.remainingFeatureDetails}>
-                  <Link to={`${edge.node.slug}`}>
-                    <h3 class={newsStyles.remainingFeatureTitle}>{edge.node.title}</h3>
-                  </Link>
-                  <p class={newsStyles.remainingFeatureSubtitle}>{edge.node.subtitle}</p>
-                  <div class={newsStyles.remainingFeatureInfo}>
-                    <p class={newsStyles.remainingFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                    <p class={newsStyles.remainingFeatureDate}>{edge.node.publishedDate}</p>
+            <Link to={`${edge.node.slug}`}>
+              <div className={newsStyles.remainingPost}>
+                <div class={newsStyles.remainingImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <div class={newsStyles.remainingDetails}>
+                  <h3 class={newsStyles.remainingTitle}>{edge.node.title}</h3>
+                  <div class={newsStyles.remainingInfo}>
+                    <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                   </div>
                 </div>
               </div>
-            </li>
+            </Link>
           )
         })}
-      </ul>
+      </div>
     </Layout>
   )
 }
