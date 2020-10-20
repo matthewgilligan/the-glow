@@ -38,8 +38,7 @@ const FeaturesPage = () => {
   `)
 
   const firstPost = data.allContentfulNews.edges[0];
-  const secondaryPosts = data.allContentfulNews.edges.slice(1, 4);
-  const remainingPosts = data.allContentfulNews.edges.slice(4);
+  const remainingPosts = data.allContentfulNews.edges.slice(1);
 
   return (
     <Layout>
@@ -91,24 +90,6 @@ const FeaturesPage = () => {
           </div>
         </div>
       </Link>
-      <div className={newsStyles.secondaryPosts}>
-        {secondaryPosts.map((edge) => {
-          return (
-            <div className={newsStyles.secondaryPost}>
-              <Link to={`${edge.node.slug}`}>
-                <div class={newsStyles.secondaryImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
-                <div class={newsStyles.secondaryDetails}>
-                  <p class={newsStyles.secondaryTitle}>{edge.node.title}</p>
-                  <div class={newsStyles.secondaryInfo}>
-                    <p class={newsStyles.secondaryAuthor}>By: {edge.node.author.englishName}</p>
-                    <p class={newsStyles.secondaryDate}>{edge.node.publishedDate}</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          )
-        })}
-      </div>
       <div className={newsStyles.remainingPosts}>
         {remainingPosts.map((edge) => {
           return (
