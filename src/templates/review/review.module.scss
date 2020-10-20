@@ -131,22 +131,21 @@
 }
 
 .latest-details {
-    padding-top: 1.3rem;
-    border-top: 1px solid rgba(191, 191, 191, 0.4);
-    border-bottom: 1px solid rgba(191, 191, 191, 0.4);
+    padding-top: .2rem;
     width: 100%;
 
     h1 {
-        font-size: .9rem;
+        font-size: 1rem;
     }
 }
 
-.album-title {
+.latest-album-title {
     font-weight: lighter;
     font-style: italic;
 }
 
 .latest-date {
+    padding-top: .2rem;
     font-size: .8rem;
     color: #BCBCBC;
 }

@@ -1,0 +1,18 @@
+.first-post {
+    display: flex;
+    height: 25rem;
+}
+
+.first-img {
+    height: 100%;
+    width: 49%;
+    background-size: cover;
+}
+
+.first-details {
+    height: 100%;
+    width: 49%;
+    margin-left: 2%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}

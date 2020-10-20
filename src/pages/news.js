@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import featuresStyles from "./features.module.scss"
+import newsStyles from "./news.module.scss"
 import stickyNavStyles from '../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../components/head/head"
 
@@ -37,9 +37,9 @@ const FeaturesPage = () => {
     }
   `)
 
-  const firstFeature = data.allContentfulNews.edges[0];
-  const scrollFeatures = data.allContentfulNews.edges.slice(1, 5);
-  const remainingFeatures = data.allContentfulNews.edges.slice(5);
+  const firstPost = data.allContentfulNews.edges[0];
+  const secondaryPosts = data.allContentfulNews.edges.slice(1, 3);
+  const remainingPosts = data.allContentfulNews.edges.slice(3);
 
   return (
     <Layout>
@@ -78,55 +78,53 @@ const FeaturesPage = () => {
           </div>
         </div>
       </div>
-      <div class={featuresStyles.topFeatures}>
-        <div class={featuresStyles.firstFeature}>
-          <Link to={`${firstFeature.node.slug}`}>
-            <div class={featuresStyles.firstFeatureImg}
-              style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
-              <div class={featuresStyles.firstFeatureDetails}>
-                <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
-                <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
-                <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
-                <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
-              </div>
-            </div>
-          </Link>
+      <Link to={`${firstPost.node.slug}`}>
+        <div class={newsStyles.firstPost}>
+          <div class={newsStyles.firstImg}
+            style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstPost.node.coverImage.file.url})`} }>
+          </div>
+          <div class={newsStyles.firstDetails}>
+            <h2 class={newsStyles.firstTitle}>{firstPost.node.title}</h2>
+            <p class={newsStyles.firstSubtitle}>{firstPost.node.subtitle}</p>
+            <p class={newsStyles.firstAuthor}>By: {firstPost.node.author.englishName}</p>
+            <p class={newsStyles.firstDate}>{firstPost.publishedDate}</p>
+          </div>
         </div>
-        <ul className={featuresStyles.scrollFeatures}>
-          {scrollFeatures.map((edge) => {
-            return (
-              <li className={featuresStyles.scrollFeature}>
-                <Link to={`${edge.node.slug}`}>
-                  <div class={featuresStyles.scrollFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
-                  <div class={featuresStyles.scrollFeatureDetails}>
-                    <p class={featuresStyles.scrollFeatureTitle}>{edge.node.title}</p>
-                    <div class={featuresStyles.scrollFeatureInfo}>
-                      <p class={featuresStyles.scrollFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                      <p class={featuresStyles.scrollFeatureDate}>{edge.node.publishedDate}</p>
-                    </div>
+      </Link>
+      <ul className={newsStyles.scrollFeatures}>
+        {secondaryPosts.map((edge) => {
+          return (
+            <li className={newsStyles.secondaryPosts}>
+              <Link to={`${edge.node.slug}`}>
+                <div class={newsStyles.scrollFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <div class={newsStyles.scrollFeatureDetails}>
+                  <p class={newsStyles.scrollFeatureTitle}>{edge.node.title}</p>
+                  <div class={newsStyles.scrollFeatureInfo}>
+                    <p class={newsStyles.scrollFeatureAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={newsStyles.scrollFeatureDate}>{edge.node.publishedDate}</p>
                   </div>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-      <ul className={featuresStyles.remainingFeatures}>
-        {remainingFeatures.map((edge) => {
+                </div>
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+      <ul className={newsStyles.remainingPosts}>
+        {remainingPosts.map((edge) => {
           return (
             <li>
-              <div className={featuresStyles.remainingFeature}>
-                <Link to={`${edge.node.slug}`} class={featuresStyles.remainingFeatureImageLink}>
-                  <div class={featuresStyles.remainingFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+              <div className={newsStyles.remainingFeature}>
+                <Link to={`${edge.node.slug}`} class={newsStyles.remainingFeatureImageLink}>
+                  <div class={newsStyles.remainingFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
                 </Link>
-                <div class={featuresStyles.remainingFeatureDetails}>
+                <div class={newsStyles.remainingFeatureDetails}>
                   <Link to={`${edge.node.slug}`}>
-                    <h3 class={featuresStyles.remainingFeatureTitle}>{edge.node.title}</h3>
+                    <h3 class={newsStyles.remainingFeatureTitle}>{edge.node.title}</h3>
                   </Link>
-                  <p class={featuresStyles.remainingFeatureSubtitle}>{edge.node.subtitle}</p>
-                  <div class={featuresStyles.remainingFeatureInfo}>
-                    <p class={featuresStyles.remainingFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                    <p class={featuresStyles.remainingFeatureDate}>{edge.node.publishedDate}</p>
+                  <p class={newsStyles.remainingFeatureSubtitle}>{edge.node.subtitle}</p>
+                  <div class={newsStyles.remainingFeatureInfo}>
+                    <p class={newsStyles.remainingFeatureAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={newsStyles.remainingFeatureDate}>{edge.node.publishedDate}</p>
                   </div>
                 </div>
               </div>

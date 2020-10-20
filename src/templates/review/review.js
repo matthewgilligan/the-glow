@@ -165,7 +165,7 @@ const Review = (props) => {
                       <div className={reviewStyles.latestDetails}>
                         <h1 className={reviewStyles.latestArtistName}>{edge.node.artist.englishName}</h1>
                         <h1 className={reviewStyles.latestAlbumTitle}>{edge.node.albumTitle}</h1>
-                        <p className={reviewStyles.latestdate}>{edge.node.publishedDate}</p>
+                        <p className={reviewStyles.latestDate}>{edge.node.publishedDate}</p>
                       </div>
                     </div>
                   </Link>
