@@ -136,7 +136,7 @@ const Review = (props) => {
               </Link>
               <h1 className={reviewStyles.albumTitle}>{props.data.contentfulReview.albumTitle}</h1>
               <h3 className={reviewStyles.stars}>{props.data.contentfulReview.rating % 1 !== 0 ? starsDec : starsInt }</h3>
-              <p>{props.data.contentfulReview.label} ● {props.data.contentfulReview.initialReleaseDate}</p>
+              <p className={reviewStyles.label}>{props.data.contentfulReview.label} &nbsp;&nbsp;• &nbsp;&nbsp;{props.data.contentfulReview.initialReleaseDate}</p>
             </div>
           </div>
           <div className={reviewStyles.reviewContent}>
