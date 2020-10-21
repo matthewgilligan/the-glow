@@ -45,7 +45,7 @@ export const query = graphql`
         json
       }
     }
-    allContentfulReview ( sort: { fields:publishedDate, order:DESC }, limit: 5 ) {
+    allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { slug:{ ne: $slug } }, limit: 5 ) {
         edges {
           node {
             albumTitle
