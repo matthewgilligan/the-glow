@@ -85,8 +85,15 @@ const FeaturesPage = () => {
           <div class={newsStyles.firstDetails}>
             <h2 class={newsStyles.firstTitle}>{firstPost.node.title}</h2>
             <p class={newsStyles.firstSubtitle}>{firstPost.node.subtitle}</p>
-            <p class={newsStyles.firstAuthor}>By: {firstPost.node.author.englishName}</p>
-            <p class={newsStyles.firstDate}>{firstPost.publishedDate}</p>
+            <div class={newsStyles.remainingInfo}>
+              <div class={newsStyles.remainingMeta}>
+                <p class={newsStyles.remainingAuthor}>By: {firstPost.node.author.englishName}</p>
+                <p class={newsStyles.remainingDate}>{firstPost.node.publishedDate}</p>
+              </div>
+              <Link to={`/news/${firstPost.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
+                <p>{firstPost.node.category.title}</p>
+              </Link>
+            </div>
           </div>
         </div>
       </Link>
