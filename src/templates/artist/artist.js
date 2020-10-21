@@ -45,7 +45,24 @@ export const query = graphql`
       edges {
         node {
           title
-          slug
+            subtitle
+            slug
+            author {
+              englishName
+            }
+            publishedDate(formatString:"MMMM Do YYYY")
+            category {
+              name
+            }
+            genre {
+              name
+            }
+            coverImage {
+              file {
+                url
+              }
+              title
+            }
         }
       }
     }
@@ -66,14 +83,14 @@ const Artist = (props) => {
       <div className={artistStyles.sectionTitle}>
         <h2>Reviews ({props.data.allContentfulReview.edges.length})</h2>
       </div>
-      <div className={reviewsStyles.albums}>
+      <div className={artistStyles.albums}>
         {props.data.allContentfulReview.edges.map((edge) => {
           return (
-            <div className={reviewsStyles.album}>
+            <div className={artistStyles.album}>
               <Link to={`../../reviews/${edge.node.slug}`}>
-                <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
-                <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
-                <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
+                <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={artistStyles.albumCover} />
+                <h2 className={artistStyles.reviewArtistName}>{edge.node.artist.englishName}</h2>
+                <h2 className={artistStyles.albumTitle}>{edge.node.albumTitle}</h2>
               </Link>
             </div>
           )
@@ -86,17 +103,26 @@ const Artist = (props) => {
       <div className={artistStyles.sectionTitle}>
         <h2>Features</h2>
       </div>
-      <ul>
+      <div className={artistStyles.mobileFeatures}>
         {props.data.allContentfulFeature.edges.map((edge) => {
           return (
-            <li>
-              <Link to={`../../features/${edge.node.slug}`}>
-                <h2>{edge.node.title}</h2>
+            <div className={artistStyles.mobileFeature}>
+              <Link to={`${edge.node.slug}`}>
+                <div class={artistStyles.mobileFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
               </Link>
-            </li>
+              <div class={artistStyles.mobileFeatureDetails}>
+                <Link to={`${edge.node.slug}`}>
+                  <h3 class={artistStyles.mobileFeatureTitle}>{edge.node.title}</h3>
+                </Link>
+                <div class={artistStyles.mobileFeatureInfo}>
+                  <p class={artistStyles.mobileFeatureAuthor}>By: {edge.node.author.englishName}</p>
+                  <p class={artistStyles.mobileFeatureDate}>{edge.node.publishedDate}</p>
+                </div>
+              </div>
+            </div>
           )
         })}
-      </ul>
+      </div>
     </div>
 
   const newsSection =

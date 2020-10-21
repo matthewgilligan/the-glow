@@ -54,6 +54,7 @@
 
 .section-title {
     padding-top: .3rem;
+    width: 87%;
     border-top: 1px solid black;
 
     h2 {
@@ -66,25 +67,58 @@
 
 .reviews-section {
     padding-top: 2.5rem;
+}
 
-    ul {
-        padding: 2rem 0 0 0;
-        list-style-type: none;
+.albums {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: -20px;
+    margin-right: -20px;
+}
 
-        li {
-            width: 15%;
-            text-align: center;
+.album {
+    float: left;
+    width: 17.5%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 2.2%;
+    padding-right: 2.2%;
+    text-align: center;
+    margin-bottom: 60px;
 
-            img {
-                padding-left: 0;
-            }
+    a {
+        text-decoration: none;
+        color: black;
+    }
 
-            h2 {
-                font-size: 1rem;
-            }
-        }
+    :hover {
+        text-decoration: underline;
+        text-decoration-color: red;
     }
 }
+
+.albumCover {
+  border: .5px solid rgba(192,192,192,0.3);
+  width: 100%;
+  z-index: -1;
+}
+
+.review-artist-name {
+  font-size: 1rem;
+  padding: .6rem 0;
+  margin-block-end: 0;
+  margin-right: 0;
+}
+
+.album-title {
+  font-size: .9rem;
+  font-weight: lighter;
+  font-style: italic;
+}
+
 
 .features-section {
     padding-top: 4rem;
@@ -93,6 +127,70 @@
         padding: 2rem 0 0 0;
         list-style-type: none;
     }
+}
+
+.mobile-features {
+    list-style-type: none;
+    padding-left: 0;
+    display: -ms-flexbox;
+    margin-left: -22px;
+}
+
+.mobile-feature {
+    width: 46.9%;
+    margin-top: 3rem;
+    padding-left: 3%;
+
+    &:hover {
+        h3 {
+            text-decoration: underline !important;
+            text-decoration-color: red !important;
+        }
+    }
+}
+
+.mobile-feature-image {
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+}
+
+.mobile-feature-details {
+    margin-top: 1rem;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    height: 150px;
+    width: 100%;
+    position: relative;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.mobile-feature-title {
+    font-weight: bolder;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+.mobile-feature-info {
+    font-size: 14px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 8px;
+}
+
+.mobile-feature-author {
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.mobile-feature-date {
+    color: rgba(0, 0, 0, 0.3) !important;
+    margin-top: 3px;
 }
 
 .news-section {
