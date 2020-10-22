@@ -79,10 +79,8 @@ const Artist = (props) => {
     <a href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><FaApple/></a>
 
   const reviewSection =
-    <div className={artistStyles.reviewsSection}>
-      <div className={artistStyles.sectionTitle}>
-        <h2>Reviews ({props.data.allContentfulReview.edges.length})</h2>
-      </div>
+    <div className={artistStyles.contentSection}>
+      <h2 className={artistStyles.sectionTitle}>Reviews ({props.data.allContentfulReview.edges.length})</h2>
       <div className={artistStyles.albums}>
         {props.data.allContentfulReview.edges.map((edge) => {
           return (
@@ -160,16 +158,11 @@ const Artist = (props) => {
           {props.data.contentfulArtist.spotify ? spotify: null } {props.data.contentfulArtist.appleMusic ? appleMusic: null }
         </p>
       </div>
-      <div className={artistStyles.menuAndContent}>
-        <div className={artistStyles.menu}>
-          <p>Reviews ({props.data.allContentfulReview.edges.length})</p>
-        </div>
         <div className={artistStyles.content}>
           {props.data.allContentfulReview.edges.length > 0 ? reviewSection: null }
           {props.data.allContentfulFeature.edges.length > 0 ? featureSection: null }
           {props.data.allContentfulNews.edges.length > 0 ? newsSection: null }
         </div>
-      </div>
     </Layout>
   )
 }
