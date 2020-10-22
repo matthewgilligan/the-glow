@@ -97,24 +97,22 @@ const Artist = (props) => {
     </div>
 
   const featureSection =
-    <div className={artistStyles.featuresSection}>
-      <div className={artistStyles.sectionTitle}>
-        <h2>Features</h2>
-      </div>
-      <div className={artistStyles.mobileFeatures}>
+    <div className={artistStyles.contentSection}>
+      <h2 className={artistStyles.sectionTitle}>Features ({props.data.allContentfulFeature.edges.length})</h2>
+      <div className={artistStyles.features}>
         {props.data.allContentfulFeature.edges.map((edge) => {
           return (
-            <div className={artistStyles.mobileFeature}>
-              <Link to={`${edge.node.slug}`}>
-                <div class={artistStyles.mobileFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+            <div className={artistStyles.feature}>
+              <Link to={`../../features/${edge.node.slug}`}>
+                <div class={artistStyles.featureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
               </Link>
-              <div class={artistStyles.mobileFeatureDetails}>
-                <Link to={`${edge.node.slug}`}>
-                  <h3 class={artistStyles.mobileFeatureTitle}>{edge.node.title}</h3>
+              <div class={artistStyles.featureDetails}>
+                <Link to={`../../features/${edge.node.slug}`}>
+                  <h3 class={artistStyles.featureTitle}>{edge.node.title}</h3>
                 </Link>
-                <div class={artistStyles.mobileFeatureInfo}>
-                  <p class={artistStyles.mobileFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                  <p class={artistStyles.mobileFeatureDate}>{edge.node.publishedDate}</p>
+                <div class={artistStyles.featureInfo}>
+                  <p class={artistStyles.featureAuthor}>By: {edge.node.author.englishName}</p>
+                  <p class={artistStyles.featureDate}>{edge.node.publishedDate}</p>
                 </div>
               </div>
             </div>
