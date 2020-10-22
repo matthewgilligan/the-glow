@@ -5,7 +5,6 @@ import { FaSpotify, FaApple } from 'react-icons/fa';
 import Layout from "../../components/layout/layout"
 import Head from "../../components/head/head"
 import artistStyles from "./artist.module.scss"
-import reviewsStyles from "../../pages/reviews.module.scss"
 
 export const query = graphql`
   query($slug: String!){
@@ -16,7 +15,7 @@ export const query = graphql`
       spotify
       appleMusic
     }
-    allContentfulReview (filter: { artist:{ slug: { eq: $slug } } }) {
+    allContentfulReview (sort: { fields:publishedDate, order:DESC }, filter: { artist:{ slug: { eq: $slug } } }) {
       edges {
         node {
           albumTitle
@@ -33,36 +32,56 @@ export const query = graphql`
         }
       }
     }
-    allContentfulNews (filter: { artist:{ elemMatch:{ slug: { eq: $slug } } } }) {
+    allContentfulNews (sort: { fields:publishedDate, order:DESC }, filter: { artist:{ elemMatch:{ slug: { eq: $slug } } } }) {
       edges {
         node {
           title
+          subtitle
           slug
+          author {
+            englishName
+          }
+          publishedDate(formatString:"MMMM Do YYYY")
+          category {
+            title
+          }
+          genre {
+            name
+          }
+          coverImage {
+            file {
+              url
+            }
+            title
+          }
         }
       }
     }
-    allContentfulFeature (filter: { artist:{ elemMatch:{ slug: { eq: $slug } } } }) {
+    allContentfulFeature (sort: { fields:publishedDate, order:DESC } ,filter: { artist:{ elemMatch:{ slug: { eq: $slug } } } }) {
       edges {
         node {
           title
-            subtitle
-            slug
-            author {
-              englishName
+          subtitle
+          slug
+          author {
+            englishName
+          }
+          publishedDate(formatString:"MMMM Do YYYY")
+          category {
+            name
+          }
+          subcategory {
+            name
+          }
+          genre {
+            name
+          }
+          coverImage {
+            file {
+              url
             }
-            publishedDate(formatString:"MMMM Do YYYY")
-            category {
-              name
-            }
-            genre {
-              name
-            }
-            coverImage {
-              file {
-                url
-              }
-              title
-            }
+            title
+          }
         }
       }
     }
@@ -70,13 +89,13 @@ export const query = graphql`
 `
 
 const Artist = (props) => {
-  const head = props.data.contentfulArtist.englishName + " - Reviews, News and Features"
+  const head = props.data.contentfulArtist.englishName + " - Reviews, News and Features";
 
   const spotify =
     <a href={props.data.contentfulArtist.spotify} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a>;
 
   const appleMusic =
-    <a href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><FaApple/></a>
+    <a href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><FaApple/></a>;
 
   const reviewSection =
     <div className={artistStyles.contentSection}>
@@ -94,7 +113,7 @@ const Artist = (props) => {
           )
         })}
       </div>
-    </div>
+    </div>;
 
   const featureSection =
     <div className={artistStyles.contentSection}>
@@ -110,9 +129,14 @@ const Artist = (props) => {
                 <Link to={`../../features/${edge.node.slug}`}>
                   <h3 class={artistStyles.featureTitle}>{edge.node.title}</h3>
                 </Link>
-                <div class={artistStyles.featureInfo}>
-                  <p class={artistStyles.featureAuthor}>By: {edge.node.author.englishName}</p>
-                  <p class={artistStyles.featureDate}>{edge.node.publishedDate}</p>
+                <div class={artistStyles.newsInfo}>
+                  <div class={artistStyles.newsMeta}>
+                    <p class={artistStyles.newsAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={artistStyles.newsDate}>{edge.node.publishedDate}</p>
+                  </div>
+                  <Link to={`/news/${edge.node.category.name.toLowerCase()}`}  className={artistStyles.newsCategory}>
+                    <p>{edge.node.subcategory.name}</p>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -122,21 +146,31 @@ const Artist = (props) => {
     </div>
 
   const newsSection =
-    <div className={artistStyles.newsSection}>
-      <div className={artistStyles.sectionTitle}>
-        <h2>News</h2>
-      </div>
-      <ul>
+    <div className={artistStyles.contentSection}>
+      <h2 className={artistStyles.sectionTitle}>News ({props.data.allContentfulNews.edges.length})</h2>
+      <div className={artistStyles.newsItems}>
         {props.data.allContentfulNews.edges.map((edge) => {
           return (
-            <li>
-              <Link to={`../../news/${edge.node.slug}`}>
-                <h2>{edge.node.title}</h2>
-              </Link>
-            </li>
+            <Link to={`${edge.node.slug}`}>
+              <div className={artistStyles.newsItem}>
+                <div class={artistStyles.newsImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <div class={artistStyles.newsDetails}>
+                  <h3 class={artistStyles.newsTitle}>{edge.node.title}</h3>
+                  <div class={artistStyles.newsInfo}>
+                    <div class={artistStyles.newsMeta}>
+                      <p class={artistStyles.newsAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={artistStyles.newsDate}>{edge.node.publishedDate}</p>
+                    </div>
+                    <Link to={`/news/${edge.node.category.title.toLowerCase()}`}  className={artistStyles.newsCategory}>
+                      <p>{edge.node.category.title}</p>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </Link>
           )
         })}
-      </ul>
+      </div>
     </div>;
 
   return (
