@@ -1,0 +1,29 @@
+.guides {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -ms-flexbox;
+    width: 100%;
+}
+
+.guide {
+    width: 30%;
+    margin-top: 40px;
+    padding-left: 3%;
+
+    &:hover {
+        h3 {
+            text-decoration: underline !important;
+            text-decoration-color: red !important;
+        }
+    }
+}
+
+.guide-img {
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+}
