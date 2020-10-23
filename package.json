@@ -17,7 +17,7 @@
     "@contentful/rich-text-react-renderer": "^14.1.1",
     "@material-ui/core": "^4.11.0",
     "@material-ui/styles": "^4.10.0",
-    "gatsby": "^2.24.57",
+    "gatsby": "^2.24.85",
     "gatsby-plugin-algolia": "^0.12.1",
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-material-ui": "^2.1.10",
@@ -35,6 +35,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
+    "react-instantsearch": "^6.8.2",
     "react-instantsearch-dom": "^6.7.0"
   },
   "devDependencies": {
