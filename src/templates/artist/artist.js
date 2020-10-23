@@ -151,7 +151,7 @@ const Artist = (props) => {
       <div className={artistStyles.newsItems}>
         {props.data.allContentfulNews.edges.map((edge) => {
           return (
-            <Link to={`${edge.node.slug}`}>
+            <Link to={`../../news/${edge.node.slug}`}>
               <div className={artistStyles.newsItem}>
                 <div class={artistStyles.newsImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
                 <div class={artistStyles.newsDetails}>
