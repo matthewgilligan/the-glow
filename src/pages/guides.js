@@ -40,17 +40,7 @@ const GuidesPage = () => {
           </div>
         </div>
         <div className={stickyNavStyles.navItems}>
-          <ul>
-            <li>
-              All News
-            </li>
-            <li>
-              <Link to="./tours">Tours</Link>
-            </li>
-            <li>
-              <Link to="./releases">Releases</Link>
-            </li>
-          </ul>
+          <p className={stickyNavStyles.navDesc}>A Guide to Japanese Genres.</p>
           <div class={stickyNavStyles.dropdown}>
             <button className={stickyNavStyles.dropdownButton}>All Genres ▾</button>
             <div className={stickyNavStyles.dropdownContent}>
@@ -70,7 +60,7 @@ const GuidesPage = () => {
             <div className={guidesStyles.guide}>
               <Link to={`${edge.node.slug}`}>
                   <div class={guidesStyles.guideImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
-                  <h3 class={guidesStyles.guideTitle}>{edge.node.title}</h3>
+                  <h3 class={guidesStyles.guideTitle}>A Brief Guide to {edge.node.title}</h3>
               </Link>
             </div>
           )

@@ -5,13 +5,17 @@
     display: -ms-flexbox;
     display: flex;
     display: -ms-flexbox;
-    width: 100%;
+    margin-left: -20px;
+    margin-right: -20px;
 }
 
 .guide {
-    width: 30%;
-    margin-top: 40px;
-    padding-left: 3%;
+    float: left;
+    width: 30.3%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
 
     &:hover {
         h3 {
