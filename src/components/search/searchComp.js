@@ -5,7 +5,6 @@ import {
   Hits,
   SearchBox
 } from 'react-instantsearch-dom'
-import { connectStateResults } from "react-instantsearch/connectors";
 
 import searchStyles from '../header/search.module.scss'
 import hit from './hit'

@@ -96,16 +96,19 @@
     left: 0;
     background-color: rgba(0,0,0,0.8);
     z-index: 1000000;
+    overflow: hidden;
 }
 
 .mobile-nav {
     width: 80%;
     height: 100vh;
     background-color: #E7334D;
+    float: right;
 }
 
 .close {
-    margin: 2rem 3rem 0 1rem;
+    margin: 1rem .9rem 0 0;
+    float: right;
     font-size: 2rem;
     cursor: pointer;
 }
@@ -115,10 +118,11 @@
     flex-direction: column;
     list-style-type: none;
     justify-content: center;
+    margin-top: 5rem;
     padding-inline-start: 1rem;
 
     li {
-        padding-top: 1rem;
+        padding-top: 1.5rem;
         color: #000000;
         font-size: 2rem;
         text-decoration: none;
