@@ -38,6 +38,38 @@
     }
 }
 
+.mobile-nav {
+    display: none;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-bottom: 2px solid white;
+    height: 2.1rem;
+    padding: 1rem 0 .4rem 0;
+    justify-content: space-between;
+    padding: .6rem 0;
+}
+
+.mobile-title {
+    height: 3.7rem;
+    font-size: 1.5rem;
+    font-family: Lexend Tera;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: translate(0);
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.check-button {
+    font-size: 1.8rem;
+    float: right;
+    margin-bottom: .1rem;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
 .title-div {
     width: 100%;
     text-align: center;
@@ -98,3 +130,14 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+    .title-div {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+}
+

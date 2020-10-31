@@ -1,10 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
+import { GrClose } from "react-icons/gr";
 
 import Head from "../../components/head/head"
 import Footer from "../../components/footer/footer"
 import featureStyles from "./feature.module.scss"
+import headerStyles from "../../components/header/header.module.scss"
 
 export const query = graphql`
   query($slug: String!){
@@ -52,6 +55,43 @@ const Feature = (props) => {
     renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
   }
 
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
+  let mobileNav
+
+  if(mobileNavOpen) {
+    mobileNav =
+      <div className={headerStyles.overlay}>
+        <div className={headerStyles.mobileNav}>
+          <GrClose className={headerStyles.close} onClick={ () => setMobileNavOpen(!mobileNavOpen) } />
+          <ul className={headerStyles.mobileNavList}>
+            <li>
+              <Link to="/news">News</Link>
+            </li>
+            <li>
+              <Link to="/reviews">Reviews</Link>
+            </li>
+            <li>
+              <Link to="/features">Features</Link>
+            </li>
+            <li>
+              <Link to="/guides">Guides</Link>
+            </li>
+          </ul>
+          <ul className={headerStyles.mobileSocialList}>
+            <li>
+              <a className={headerStyles.mobileSocialItem} href="https://www.instagram.com/theglow.jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
+            </li>
+            <li>
+              <a className={headerStyles.mobileSocialItem} href="https://www.facebook.com/theglow.jp" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
+            </li>
+            <li>
+              <a className={headerStyles.mobileSocialItem} href="https://twitter.com/theglow_jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  }
+
   return (
     <div>
       <Head title={props.data.contentfulFeature.title}/>
@@ -64,6 +104,12 @@ const Feature = (props) => {
               <h1 className={featureStyles.title} id="demo">
                 <Link to="/">The Glow</Link>
               </h1>
+            </div>
+            <div className={featureStyles.mobileNav}>
+              <Link to="/" className={featureStyles.mobileTitle}>The Glow</Link>
+              <div className={featureStyles.checkButton}>
+                <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
+              </div>
             </div>
             <div className={featureStyles.details}>
               <h1 className={featureStyles.featureTitle}>{props.data.contentfulFeature.title}</h1>
@@ -91,6 +137,7 @@ const Feature = (props) => {
           <Footer />
         </div>
       </div>
+      { mobileNav }
     </div>
   )
 
