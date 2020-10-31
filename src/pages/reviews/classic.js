@@ -57,7 +57,17 @@ const ReviewsPage = () => {
               <Link to="../high-rating">★★★★+</Link>
             </li>
           </ul>
-          <div class={stickyNavStyles.dropdown}>
+          <div className={stickyNavStyles.mobileNav}>
+            <div class={stickyNavStyles.navDropdown}>
+              <button className={stickyNavStyles.navDropdownButton}>Classic ▾</button>
+              <div className={stickyNavStyles.navDropdownContent}>
+                <Link to="../">All Reviews</Link>
+                <Link to="../contemporary">Contemporary</Link>
+                <Link to="../high-rating">★★★★+</Link>
+              </div>
+            </div>
+          </div>
+          {/* <div class={stickyNavStyles.dropdown}>
             <button className={stickyNavStyles.dropdownButton}>All Genres ▾</button>
             <div className={stickyNavStyles.dropdownContent}>
               <Link to="./electronic">Electronic</Link>
@@ -67,7 +77,7 @@ const ReviewsPage = () => {
               <Link to="./pop">Pop</Link>
               <Link to="./rock">Rock</Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={reviewsStyles.albums}>
