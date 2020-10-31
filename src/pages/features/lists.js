@@ -3,7 +3,6 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../../components/layout/layout"
 import featuresStyles from "../features.module.scss"
-import featureSmallStyles from "./feature-small.module.scss"
 import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../../components/head/head"
 

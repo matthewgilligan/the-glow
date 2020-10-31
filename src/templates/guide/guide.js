@@ -134,8 +134,8 @@ const Guides = (props) => {
         <Header />
       </div>
 
-      <div className={guideStyles.container}>
-        <div className={guideStyles.banner} style={{backgroundImage: `radial-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0)), url(${props.data.contentfulGuide.coverImage.file.url})`}}>
+      <div className={guideStyles.containerBanner}>
+        <div className={guideStyles.banner} style={{backgroundImage: `radial-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)), url(${props.data.contentfulGuide.coverImage.file.url})`}}>
             <div className={guideStyles.bannerTitle}>
               <h3>A Brief Guide to</h3>
               <h1>{props.data.contentfulGuide.title}</h1>
@@ -165,12 +165,10 @@ const Guides = (props) => {
         </div>
       </div>
       <div className={guideStyles.streaming}>
-        <div className={guideStyles.container}>
-          <p>Check out our {props.data.contentfulGuide.title} playlist on Spotify and Apple Music!</p>
-          <div className={guideStyles.embed}>
-            <iframe src={props.data.contentfulGuide.spotify} title="spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            <iframe src={props.data.contentfulGuide.appleMusic} title="apple" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-          </div>
+        <p className={guideStyles.checkout}>Check out our {props.data.contentfulGuide.title} playlist on Spotify and Apple Music!</p>
+        <div className={guideStyles.embed}>
+          <iframe src={props.data.contentfulGuide.spotify} title="spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <iframe src={props.data.contentfulGuide.appleMusic} title="apple" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
       </div>
       <div className={guideStyles.container}>
