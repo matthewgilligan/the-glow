@@ -6,9 +6,23 @@
     padding: 4rem 0 2rem 0;
 }
 
-.coverImage {
+.cover-image {
     width: 100%;
     height: calc(100vh - 296px);
     background-size: cover;
     object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        width: 100%;
+    }
+
+    .title {
+        padding: 2rem 0 2rem 0;
+    }
+
+    .cover-image {
+        height: 300px;
+    }
 }
