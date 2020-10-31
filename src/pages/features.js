@@ -206,7 +206,17 @@ const FeaturesPage = () => {
               <Link to="/features/columns">Columns</Link>
             </li>
           </ul>
-          <div class={stickyNavStyles.dropdown}>
+          <div className={stickyNavStyles.mobileNav}>
+            <div class={stickyNavStyles.navDropdown}>
+              <button className={stickyNavStyles.navDropdownButton}>All Features ▾</button>
+              <div className={stickyNavStyles.navDropdownContent}>
+                <Link to="/features/interviews">Interviews</Link>
+                <Link to="/features/lists">Lists</Link>
+                <Link to="/features/columns">Columns</Link>
+              </div>
+            </div>
+          </div>
+          {/* <div class={stickyNavStyles.dropdown}>
             <button className={stickyNavStyles.dropdownButton}>All Genres ▾</button>
             <div className={stickyNavStyles.dropdownContent}>
               <Link to="./electronic">Electronic</Link>
@@ -216,7 +226,7 @@ const FeaturesPage = () => {
               <Link to="./pop">Pop</Link>
               <Link to="./rock">Rock</Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       {wideScreen}
