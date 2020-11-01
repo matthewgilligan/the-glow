@@ -56,12 +56,11 @@
 }
 
 .section-title {
-    margin-top: 24px;
     width: 33.27%;
     font-size: 1.2rem;
     font-weight: lighter;
     text-transform: uppercase;
-    padding: .5rem 0 2rem 0;
+    padding-top: 32px;
 }
 
 .albums {
@@ -70,7 +69,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 38px 0 0 0;
+    margin-top: 38px;
     width: 66.73%;
     transform: translate(20px);
 }
@@ -254,4 +253,72 @@
     bottom: 0;
     color: red;
     padding-bottom: .5rem;
+}
+
+@media screen and (max-width: 991px) {
+    .name-japanese {
+        font-size: 65px;
+    }
+
+    .bio {
+        width: 75%;
+    }
+
+    .content-section {
+        display: block;
+    }
+
+    .section-title {
+        padding-top: 16px;
+    }
+
+    .albums {
+        width: 100%;
+        min-height: 1px;
+        transform: translate(0px);
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .album {
+        position: relative;
+        min-height: 1px;
+        width: 29.73%;
+        padding-left: 1.78%;
+        padding-right: 1.78%;
+    }
+
+    .features {
+        width: 100%;
+        transform: translate(0);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .albums {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .album {
+        width: 46.2%;
+        position: relative;
+        min-height: 1px;
+        padding-left: 1.9%;
+        padding-right: 1.9%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .name-japanese {
+        font-size: 45px;
+    }
+
+    .bio {
+        width: 95%;
+    }
+
+    .content-section {
+        display: block;
+    }
 }
