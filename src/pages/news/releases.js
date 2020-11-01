@@ -86,7 +86,7 @@ const FeaturesPage = () => {
           </div> */}
         </div>
       </div>
-      <Link to={`${firstPost.node.slug}`} className={newsStyles.firstPostWide}>
+      <Link to={`../${firstPost.node.slug}`} className={newsStyles.firstPostWide}>
         <div class={newsStyles.firstPost}>
           <div class={newsStyles.firstImg}
             style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstPost.node.coverImage.file.url})`} }>
@@ -99,14 +99,14 @@ const FeaturesPage = () => {
                 <p class={newsStyles.remainingAuthor}>By: {firstPost.node.author.englishName}</p>
                 <p class={newsStyles.remainingDate}>{firstPost.node.publishedDate}</p>
               </div>
-              <Link to={`/news/${firstPost.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
+              <Link to={`../${firstPost.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
                 <p>{firstPost.node.category.title}</p>
               </Link>
             </div>
           </div>
         </div>
       </Link>
-      <Link to={`${firstPost.node.slug}`} className={newsStyles.firstPostSmall}>
+      <Link to={`../${firstPost.node.slug}`} className={newsStyles.firstPostSmall}>
         <div className={newsStyles.remainingPost}>
           <div class={newsStyles.remainingImg} style={{backgroundImage: `url(${firstPost.node.coverImage.file.url})`} }></div>
           <div class={newsStyles.remainingDetails}>
@@ -116,7 +116,7 @@ const FeaturesPage = () => {
                 <p class={newsStyles.remainingAuthor}>By: {firstPost.node.author.englishName}</p>
                 <p class={newsStyles.remainingDate}>{firstPost.node.publishedDate}</p>
               </div>
-              <Link to={`/news/${firstPost.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
+              <Link to={`../${firstPost.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
                 <p>{firstPost.node.category.title}</p>
               </Link>
             </div>
@@ -126,7 +126,7 @@ const FeaturesPage = () => {
       <div className={newsStyles.remainingPosts}>
         {remainingPosts.map((edge) => {
           return (
-            <Link to={`${edge.node.slug}`}>
+            <Link to={`../${edge.node.slug}`}>
               <div className={newsStyles.remainingPost}>
                 <div class={newsStyles.remainingImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
                 <div class={newsStyles.remainingDetails}>
@@ -136,7 +136,7 @@ const FeaturesPage = () => {
                       <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
-                    <Link to={`/news/${edge.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
+                    <Link to={`../${edge.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
                       <p>{edge.node.category.title}</p>
                     </Link>
                   </div>
