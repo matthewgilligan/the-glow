@@ -72,11 +72,19 @@
         display: block;
     }
 
+    .nav-title {
+        padding-top: 1rem;
+    }
+
     .nav-items {
+        padding-bottom: .7rem;
+
         ul {
             display: none;
         }
     }
+
+
 }
 
 .nav-dropdown-button {
