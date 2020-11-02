@@ -49,7 +49,7 @@ export const query = graphql`
 `
 
 const Artist = (props) => {
-  const head = props.data.contentfulAuthor.englishName + " | Contributor"
+  const head = props.data.contentfulAuthor.englishName + " - Contributor | The Glow"
 
   return (
     <Layout>

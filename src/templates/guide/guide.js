@@ -129,7 +129,7 @@ const Guides = (props) => {
 
   return (
     <div>
-      <Head title={props.data.contentfulGuide.title}/>
+      <Head title={`${props.data.contentfulGuide.title} | The Glow`}/>
       <div className={guideStyles.container}>
         <Header />
       </div>

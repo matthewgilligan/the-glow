@@ -94,7 +94,7 @@ const Feature = (props) => {
 
   return (
     <div>
-      <Head title={props.data.contentfulFeature.title}/>
+      <Head title={`${props.data.contentfulFeature.title} | The Glow`}/>
       <div
       style={{backgroundImage: `linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(${props.data.contentfulFeature.coverImage.file.url})`} }
       className={featureStyles.banner}>

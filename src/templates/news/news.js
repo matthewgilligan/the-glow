@@ -51,7 +51,7 @@ const News = (props) => {
 
   return (
     <Layout>
-      <Head title={props.data.contentfulNews.title}/>
+      <Head title={`${props.data.contentfulNews.title} | The Glow`}/>
       <div className={newsStyles.header}>
         <h1 className={newsStyles.title}>{props.data.contentfulNews.title}</h1>
         <img src={props.data.contentfulNews.coverImage.file.url} alt={props.data.contentfulNews.coverImage.title} className={newsStyles.coverImage} />

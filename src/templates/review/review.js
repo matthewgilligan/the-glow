@@ -121,7 +121,7 @@ const Review = (props) => {
   const starsDec = multiplyDec(props.data.contentfulReview.rating)
 
 
-  const head = props.data.contentfulReview.artist.englishName + ": " + props.data.contentfulReview.albumTitle
+  const head = props.data.contentfulReview.artist.englishName + ": " + props.data.contentfulReview.albumTitle + " | The Glow"
 
   return (
     <Layout>

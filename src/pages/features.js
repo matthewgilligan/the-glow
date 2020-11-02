@@ -181,7 +181,7 @@ const FeaturesPage = () => {
 
   return (
     <Layout>
-      <Head title="Japanese Music Articles and Features"/>
+      <Head title="Japanese Music Articles and Features | The Glow"/>
       <div className={stickyNavStyles.nav}>
         <div className={stickyNavStyles.navTitle}>
           <div className={stickyNavStyles.titleEnglish}>

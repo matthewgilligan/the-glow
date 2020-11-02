@@ -29,7 +29,7 @@ const GuidesPage = () => {
 
   return (
     <Layout>
-      <Head title="Japanese Genre Guides"/>
+      <Head title="Japanese Genre Guides | The Glow"/>
       <div className={stickyNavStyles.nav}>
         <div className={stickyNavStyles.navTitle}>
           <div className={stickyNavStyles.titleEnglish}>

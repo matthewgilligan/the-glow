@@ -89,7 +89,7 @@ export const query = graphql`
 `
 
 const Artist = (props) => {
-  const head = props.data.contentfulArtist.englishName + " - Reviews, News and Features";
+  const head = props.data.contentfulArtist.englishName + " - Reviews, News and Features | The Glow";
 
   const spotify =
     <a href={props.data.contentfulArtist.spotify} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a>;

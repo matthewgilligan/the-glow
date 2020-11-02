@@ -46,7 +46,7 @@ const ReviewsPage = () => {
 
   return (
     <Layout>
-      <Head title="New Japanese Album Reviews"/>
+      <Head title="New Japanese Album Reviews | The Glow"/>
       <div className={stickyNavStyles.nav}>
         <div className={stickyNavStyles.navTitle}>
           <div className={stickyNavStyles.titleEnglish}>
