@@ -86,7 +86,7 @@ const FeaturesPage = () => {
           </div> */}
         </div>
       </div>
-      <Link to={`${firstPost.node.slug}`} className={newsStyles.firstPostWide}>
+      <Link to={`/news/${firstPost.node.slug}`} className={newsStyles.firstPostWide}>
         <div class={newsStyles.firstPost}>
           <div class={newsStyles.firstImg}
             style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstPost.node.coverImage.file.url})`} }>
@@ -106,7 +106,7 @@ const FeaturesPage = () => {
           </div>
         </div>
       </Link>
-      <Link to={`${firstPost.node.slug}`} className={newsStyles.firstPostSmall}>
+      <Link to={`/news/${firstPost.node.slug}`} className={newsStyles.firstPostSmall}>
         <div className={newsStyles.remainingPost}>
           <div class={newsStyles.remainingImg} style={{backgroundImage: `url(${firstPost.node.coverImage.file.url})`} }></div>
           <div class={newsStyles.remainingDetails}>
@@ -126,7 +126,7 @@ const FeaturesPage = () => {
       <div className={newsStyles.remainingPosts}>
         {remainingPosts.map((edge) => {
           return (
-            <Link to={`${edge.node.slug}`}>
+            <Link to={`/news/${edge.node.slug}`}>
               <div className={newsStyles.remainingPost}>
                 <div class={newsStyles.remainingImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
                 <div class={newsStyles.remainingDetails}>
