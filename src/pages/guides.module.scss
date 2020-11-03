@@ -90,7 +90,9 @@
 
 @media screen and (max-width: 666px) {
     .guides {
+        display: block;
         margin-left: 0;
+        margin-right: 0;
     }
 
     .guide {

@@ -328,11 +328,13 @@
     }
 
     .mobile-top-feature {
-        display: flex;
+        display: block;
     }
 
     .mobile-features {
+        display: block;
         margin-left: 0;
+        margin-right: 0;
     }
 
     .mobile-feature {
