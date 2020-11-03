@@ -135,7 +135,7 @@ const Guides = (props) => {
         <Header />
       </div>
 
-      <div className={guideStyles.containerBanner}>
+      <div className={guideStyles.container}>
         <div className={guideStyles.banner} style={{backgroundImage: `radial-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)), url(${props.data.contentfulGuide.coverImage.file.url})`}}>
             <div className={guideStyles.bannerTitle}>
               <h3>A Brief Guide to</h3>
