@@ -40,18 +40,6 @@ const GuidesPage = () => {
           </div>
         </div>
         <div className={stickyNavStyles.navItems}>
-          <p className={stickyNavStyles.navDesc}>A Guide to Japanese Genres.</p>
-          <div class={stickyNavStyles.dropdown}>
-            <button className={stickyNavStyles.dropdownButton}>All Genres ▾</button>
-            <div className={stickyNavStyles.dropdownContent}>
-              <Link to="./electronic">Electronic</Link>
-              <Link to="./experimental">Experimental</Link>
-              <Link to="./folk">Folk</Link>
-              <Link to="./hip-hop">Hip-Hop</Link>
-              <Link to="./pop">Pop</Link>
-              <Link to="./rock">Rock</Link>
-            </div>
-          </div>
         </div>
       </div>
       <div className={guidesStyles.guides}>
