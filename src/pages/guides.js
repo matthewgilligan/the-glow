@@ -48,7 +48,7 @@ const GuidesPage = () => {
             <div className={guidesStyles.guide}>
               <Link to={`${edge.node.slug}`}>
                   <div class={guidesStyles.guideImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
-                  <h3 class={guidesStyles.guideTitle}>A Brief Guide to {edge.node.title}</h3>
+                  <h3 class={guidesStyles.guideTitle}>{edge.node.title}</h3>
               </Link>
             </div>
           )

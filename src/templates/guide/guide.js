@@ -11,6 +11,7 @@ export const query = graphql`
   query($slug: String!){
     contentfulGuide (slug: { eq: $slug }) {
       title
+      subject
       slug
       author {
         englishName
@@ -138,7 +139,7 @@ const Guides = (props) => {
         <div className={guideStyles.banner} style={{backgroundImage: `radial-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)), url(${props.data.contentfulGuide.coverImage.file.url})`}}>
             <div className={guideStyles.bannerTitle}>
               <h3>A Brief Guide to</h3>
-              <h1>{props.data.contentfulGuide.title}</h1>
+              <h1>{props.data.contentfulGuide.subject}</h1>
               <h3>by The Glow</h3>
             </div>
         </div>
