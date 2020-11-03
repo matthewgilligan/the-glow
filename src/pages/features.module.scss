@@ -236,13 +236,15 @@
     list-style-type: none;
     padding-left: 0;
     display: -ms-flexbox;
-    margin-left: -22px;
+    margin-left: -14px;
+    margin-right: -16px;
 }
 
 .mobile-feature {
     width: 46.9%;
     margin-top: 3rem;
-    padding-left: 3%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
 
     &:hover {
         h3 {
@@ -274,7 +276,7 @@
 
 .mobile-feature-title {
     font-weight: bolder;
-    margin-top: 16px;
+    margin-top: 8px;
     margin-bottom: 0;
 }
 

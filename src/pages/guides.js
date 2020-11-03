@@ -21,6 +21,9 @@ const GuidesPage = () => {
               }
               title
             }
+            author {
+              englishName
+            }
           }
         }
       }
@@ -40,6 +43,7 @@ const GuidesPage = () => {
           </div>
         </div>
         <div className={stickyNavStyles.navItems}>
+          <p>Brief guides to Japanese genres.</p>
         </div>
       </div>
       <div className={guidesStyles.guides}>
@@ -47,8 +51,14 @@ const GuidesPage = () => {
           return (
             <div className={guidesStyles.guide}>
               <Link to={`${edge.node.slug}`}>
-                  <div class={guidesStyles.guideImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <div class={guidesStyles.guideImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <div class={guidesStyles.guideDetails}>
                   <h3 class={guidesStyles.guideTitle}>{edge.node.title}</h3>
+                  <div class={guidesStyles.guideInfo}>
+                    <p class={guidesStyles.guideAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={guidesStyles.guideDate}>{edge.node.publishedDate}</p>
+                  </div>
+                </div>
               </Link>
             </div>
           )

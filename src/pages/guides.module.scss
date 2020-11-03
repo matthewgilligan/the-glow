@@ -14,6 +14,7 @@
     width: 30.3%;
     position: relative;
     min-height: 1px;
+    margin-bottom: 3rem;
     padding-left: 1.5%;
     padding-right: 1.5%;
 
@@ -30,4 +31,84 @@
     background-position: center;
     height: 250px;
     width: 100%;
+}
+
+.guide-details {
+    margin-top: 1rem;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    height: 150px;
+    width: 100%;
+    position: relative;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.guide-title {
+    font-weight: bolder;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.guide-info {
+    font-size: 14px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 8px;
+}
+
+.guide-author {
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.guide-date {
+    color: rgba(0, 0, 0, 0.3) !important;
+    margin-top: 3px;
+}
+
+@media screen and (max-width: 931px) {
+    .guides {
+        padding-left: 0;
+        margin-left: -14px;
+        margin-right: -16px;
+    }
+
+    .guide {
+        width: 46.9%;
+        &:hover {
+            h3 {
+                text-decoration: underline !important;
+                text-decoration-color: red !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 666px) {
+    .guides {
+        margin-left: 0;
+    }
+
+    .guide {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .guide-img {
+        height: 300px;
+    }
+
+    .guide-details {
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .guide-title {
+        font-size: 1.5rem;
+    }
 }
