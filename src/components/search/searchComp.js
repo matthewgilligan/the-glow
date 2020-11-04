@@ -21,7 +21,6 @@ export default function() {
         <header className={searchStyles.sectionHeadline}>
           <SearchBox
             className={searchStyles.searchBox}
-            autoFocus
             translations={{
               placeholder: 'Search an artist...',
             }}
