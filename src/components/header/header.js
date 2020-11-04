@@ -82,8 +82,13 @@ const Header = () => {
           <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
         </div>
         <Link to="/" className={headerStyles.title}>{data.site.siteMetadata.title}</Link>
-        <div className={headerStyles.checkButton}>
-          <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
+        <div className={headerStyles.mobileIcons}>
+          <div className={headerStyles.mobileSearch}>
+            <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
+          </div>
+          <div className={headerStyles.checkButton}>
+            <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
+          </div>
         </div>
         <ul className={headerStyles.socialList}>
           <li>

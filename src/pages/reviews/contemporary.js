@@ -34,7 +34,6 @@ const ReviewsPage = () => {
                 url
               }
             }
-            subtitle
             genre {
               name
             }

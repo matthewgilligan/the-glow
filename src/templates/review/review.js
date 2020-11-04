@@ -37,11 +37,13 @@ export const query = graphql`
           url
         }
       }
-      subtitle
       genre {
         name
       }
       body {
+        json
+      }
+      subtitle2 {
         json
       }
     }
@@ -148,7 +150,7 @@ const Review = (props) => {
               <p className={reviewStyles.genre}>{props.data.contentfulReview.genre.name}</p>
             </div>
             <div className={reviewStyles.body}>
-              <p className={reviewStyles.subtitle}>{props.data.contentfulReview.subtitle}</p>
+              <p className={reviewStyles.subtitle}>{documentToReactComponents(props.data.contentfulReview.subtitle2.json, options)}</p>
               {documentToReactComponents(props.data.contentfulReview.body.json, options)}
             </div>
           </div>
