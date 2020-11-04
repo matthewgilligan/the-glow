@@ -9,7 +9,7 @@
 }
 
 .modal {
-    width: 40%;
+    width: 540px;
     height: 80vh;
     background-color: #E7334D;
 }
@@ -97,6 +97,25 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .modal {
+        width: 80%;
+        height: 100vh;
+        float: right;
+    }
+
+    .close {
+        float: right;
+        margin: 1rem .9rem 0 0;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .content {
+        padding: 4.5rem 0 0 1rem;
     }
 }
 
