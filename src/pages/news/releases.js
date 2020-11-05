@@ -99,9 +99,9 @@ const FeaturesPage = () => {
                 <p class={newsStyles.remainingAuthor}>By: {firstPost.node.author.englishName}</p>
                 <p class={newsStyles.remainingDate}>{firstPost.node.publishedDate}</p>
               </div>
-              <Link to={`../${firstPost.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
+              <div className={newsStyles.remainingCategory}>
                 <p>{firstPost.node.category.title}</p>
-              </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -116,9 +116,9 @@ const FeaturesPage = () => {
                 <p class={newsStyles.remainingAuthor}>By: {firstPost.node.author.englishName}</p>
                 <p class={newsStyles.remainingDate}>{firstPost.node.publishedDate}</p>
               </div>
-              <Link to={`../${firstPost.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
+              <div className={newsStyles.remainingCategory}>
                 <p>{firstPost.node.category.title}</p>
-              </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -136,9 +136,9 @@ const FeaturesPage = () => {
                       <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
-                    <Link to={`../${edge.node.category.title.toLowerCase()}`}  className={newsStyles.remainingCategory}>
+                    <div className={newsStyles.remainingCategory}>
                       <p>{edge.node.category.title}</p>
-                    </Link>
+                    </div>
                   </div>
                 </div>
               </div>
