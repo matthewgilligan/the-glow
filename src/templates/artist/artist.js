@@ -95,7 +95,7 @@ const Artist = (props) => {
     <a href={props.data.contentfulArtist.spotify} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a>;
 
   const appleMusic =
-    <a href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><FaApple/></a>;
+    <a href={props.data.contentfulArtist.appleMusic} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><FaApple/></a>;
 
   const reviewSection =
     <div className={artistStyles.contentSection}>

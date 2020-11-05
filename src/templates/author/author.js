@@ -1,5 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { FaTwitter } from 'react-icons/fa'
+import { HiLink } from "react-icons/hi";
 
 import Layout from "../../components/layout/layout"
 import Head from "../../components/head/head"
@@ -90,11 +92,11 @@ export const query = graphql`
 const Author = (props) => {
   const head = props.data.contentfulAuthor.englishName + " - Reviews, News and Features | The Glow";
 
-  {/*const spotify =
-    <a href={props.data.contentfulArtist.spotify} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a>;
+  const twitter =
+    <a href={props.data.contentfulAuthor.twitter} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>;
 
-  const appleMusic =
-    <a href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><FaApple/></a>;*/}
+  const externalLink =
+    <a href={props.data.contentfulAuthor.externalLink} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume" className={artistStyles.apple}><HiLink/></a>;
 
   const reviewSection =
     <div className={artistStyles.contentSection}>
@@ -186,7 +188,7 @@ const Author = (props) => {
         </div>
         <p className={artistStyles.bio}>{props.data.contentfulAuthor.bio}</p>
         <p className={artistStyles.streaming}>
-          {/*{props.data.contentfulArtist.spotify ? spotify: null } {props.data.contentfulArtist.appleMusic ? appleMusic: null }*/}
+          {props.data.contentfulAuthor.twitter ? twitter : null } {props.data.contentfulAuthor.externalLink ? externalLink : null }
         </p>
       </div>
         <div className={artistStyles.content}>
