@@ -24,6 +24,7 @@ const ReviewsPage = () => {
                 url
               }
             }
+            publishedDate(formatString:"MMMM DD YYYY")
           }
         }
       }
@@ -88,6 +89,7 @@ const ReviewsPage = () => {
                 <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
                 <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
                 <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
+                <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
               </Link>
             </div>
           )

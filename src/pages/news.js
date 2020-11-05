@@ -18,7 +18,7 @@ const FeaturesPage = () => {
             author {
               englishName
             }
-            publishedDate(formatString:"MMMM Do YYYY")
+            publishedDate(formatString:"MMMM DD YYYY")
             category {
               title
               slug

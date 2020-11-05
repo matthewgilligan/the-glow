@@ -24,45 +24,37 @@
     }
 
     :hover {
-        text-decoration: underline;
-        text-decoration-color: red;
+        .album-title {
+            color: red;
+        }
     }
 }
 
-.un {
-  display: inline-block;
-}
-
-.un::after {
-  content: '';
-  width: 0px;
-  height: 1px;
-  display: block;
-  background: black;
-  transition: 300ms;
-}
-
-.un:hover::after {
-  width: 100%;
-}
-
 .albumCover {
-  border: .5px solid rgba(192,192,192,0.3);
-  width: 100%;
-  z-index: -1;
+    border: .5px solid rgba(192,192,192,0.3);
+    width: 100%;
+    z-index: -1;
 }
 
 .artistName {
-  font-size: 1rem;
-  padding: .6rem 0;
-  margin-block-end: 0;
-  margin-right: 0;
+    font-size: 1rem;
+    padding: .6rem 0;
+    margin-block-end: 0;
+    margin-right: 0;
 }
 
 .album-title {
-  font-size: .9rem;
-  font-weight: lighter;
-  font-style: italic;
+    font-size: .9rem;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.published-date {
+    font-size: .65rem;
+    font-weight: bolder;
+    margin-top: .7rem;
+    text-transform: uppercase;
+    color:  #C0C0C0;
 }
 
 @media screen and (max-width: 1140px) {
