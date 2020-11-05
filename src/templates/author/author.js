@@ -13,6 +13,7 @@ export const query = graphql`
       englishName
       japaneseName
       bio
+      role
       twitter
       externalLink
     }
@@ -186,6 +187,7 @@ const Author = (props) => {
             <p>{props.data.contentfulAuthor.japaneseName}</p>
           </div>
         </div>
+        <p className={artistStyles.role}>{props.data.contentfulAuthor.role}</p>
         <p className={artistStyles.bio}>{props.data.contentfulAuthor.bio}</p>
         <p className={artistStyles.streaming}>
           {props.data.contentfulAuthor.twitter ? twitter : null } {props.data.contentfulAuthor.externalLink ? externalLink : null }

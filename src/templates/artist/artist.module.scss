@@ -25,9 +25,14 @@
     z-index: 1;
 }
 
+.role {
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
 .bio {
     width: 50%;
-    margin: 0 auto;
+    margin: .5rem auto 0 auto;
     line-height: 1.5;
 }
 
