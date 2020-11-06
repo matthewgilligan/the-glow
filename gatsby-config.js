@@ -14,6 +14,12 @@ module.exports = {
         },
     },
     {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/*`,],
+      }
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,

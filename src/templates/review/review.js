@@ -1,12 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { Helmet } from 'react-helmet'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import { VscStarFull, VscStarHalf, VscStarEmpty } from "react-icons/vsc";
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 
 import Layout from "../../components/layout/layout"
-import Head from "../../components/head/head"
 import Mailchimp from "../../components/mailchimp/mailchimp"
 import reviewStyles from "./review.module.scss"
 
@@ -42,6 +42,8 @@ export const query = graphql`
       genre {
         name
       }
+      seoDescription
+      seoKeywords
       body {
         json
       }
@@ -127,19 +129,29 @@ const Review = (props) => {
   const head = props.data.contentfulReview.artist.englishName + ": " + props.data.contentfulReview.albumTitle + " | The Glow"
 
   const shareBlockProps = {
-    url: `https://http://xenodochial-dubinsky-db8110.netlify.app/review/${props.data.contentfulReview.slug}`,
+    url: `https://xenodochial-dubinsky-db8110.netlify.app/reviews/${props.data.contentfulReview.slug}`,
     button: ShareButtonIconOnly,
     buttons: [
       { network: "Twitter", icon: FaTwitter },
       { network: "Facebook", icon: FaFacebookF },
     ],
-    text: `Give it a try`,
-    longtext: `Take a look at this super website I have just found.`
+    text: `${props.data.contentfulReview.albumTitle}`,
   };
 
   return (
     <Layout>
-      <Head title={head}/>
+      <Helmet>
+        <title>{`${props.data.contentfulReview.artist.englishName}: ${props.data.contentfulReview.albumTitle}`} | The Glow</title>
+        <meta name="description" content={props.data.contentfulReview.seoDescription} />
+        <meta name="keywords" content={props.data.contentfulReview.seoKeywords} />
+        <meta name="og:title" content={`${props.data.contentfulReview.artist.englishName}: ${props.data.contentfulReview.albumTitle}`} />
+        <meta name="og:type" content="website" />
+        <meta name="og:description" content={props.data.contentfulReview.seoDescription} />
+        <meta name="og:image" content={props.data.contentfulReview.albumCover.file.url} />
+        <meta name="og:locale" content="en_US" />
+        <meta name="og: url" content={`https://xenodochial-dubinsky-db8110.netlify.app/reviews/${props.data.contentfulReview.albumCover.file.url}`} />
+        <link rel="canonical" href={`https://xenodochial-dubinsky-db8110.netlify.app/reviews/${props.data.contentfulReview.albumCover.file.url}`} />
+      </Helmet>
       <div className={reviewStyles.content}>
         <div className={reviewStyles.post}>
           <div className={reviewStyles.albumBanner}>

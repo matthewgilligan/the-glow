@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
-import Head from "../components/head/head"
 import Footer from "../components/footer/footer"
 import Header from "../components/header/header"
 import '../styles/index.scss'
@@ -80,7 +80,18 @@ export const query = graphql`
 const IndexPage = (props) => {
   return (
     <div>
-      <Head title="The Glow | Japanese Music in the Spotlight"/>
+      <Helmet>
+        <title>The Glow | Japanese music in the spotlight</title>
+        <meta name="description" content="Japanese music in the spotlight." />
+        <meta name="keywords" content="music, japan, indie, japanese, reviews, albums" />
+        <meta name="og:title" content="The Glow | Japanese music in the spotlight" />
+        <meta name="og:type" content="website" />
+        <meta name="og:description" content="Japanese music in the spotlight." />
+        <meta name="og:image" content="../images/red_logo_text_medium.png" />
+        <meta name="og:locale" content="en_US" />
+        <meta name="og: url" content="https://xenodochial-dubinsky-db8110.netlify.app" />
+        <link rel="canonical" href="https://xenodochial-dubinsky-db8110.netlify.app" />
+      </Helmet>
 
       <div className={indexStyles.container}>
         <Header />
