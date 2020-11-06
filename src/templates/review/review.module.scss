@@ -36,6 +36,7 @@
     }
 }
 
+
 .album-title {
     padding-top: 8px;
     font-weight: normal;
@@ -75,6 +76,18 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+
+    .css-6rti61, svg {
+        fill: black !important;
+    }
+
+    button {
+        *:hover {
+            all:unset!important;
+        }
+
+        margin: 0 0 -.7rem 0;
+    }
 }
 
 .date {
@@ -82,7 +95,14 @@
     padding: .5rem 0 2rem 0;
 }
 
+.genre-and-socials {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .genre {color: #E7334D}
+
 
 
 .body {

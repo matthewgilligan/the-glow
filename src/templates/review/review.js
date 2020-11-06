@@ -126,8 +126,6 @@ const Review = (props) => {
   const starsInt = multiplyInt(props.data.contentfulReview.rating)
   const starsDec = multiplyDec(props.data.contentfulReview.rating)
 
-  const head = props.data.contentfulReview.artist.englishName + ": " + props.data.contentfulReview.albumTitle + " | The Glow"
-
   const shareBlockProps = {
     url: `https://xenodochial-dubinsky-db8110.netlify.app/reviews/${props.data.contentfulReview.slug}`,
     button: ShareButtonIconOnly,
@@ -171,8 +169,10 @@ const Review = (props) => {
                 <p>By: {props.data.contentfulReview.author.englishName}</p>
               </Link>
               <p className={reviewStyles.date}>{props.data.contentfulReview.publishedDate}</p>
-              <p className={reviewStyles.genre}>{props.data.contentfulReview.genre.name}</p>
-              <ShareBlockStandard {...shareBlockProps} />
+              <div className={reviewStyles.genreAndSocials}>
+                <p className={reviewStyles.genre}>{props.data.contentfulReview.genre.name}</p>
+                <ShareBlockStandard {...shareBlockProps} />
+              </div>
             </div>
             <div className={reviewStyles.body}>
               <p className={reviewStyles.subtitle}>{documentToReactComponents(props.data.contentfulReview.subtitle2.json, options)}</p>
