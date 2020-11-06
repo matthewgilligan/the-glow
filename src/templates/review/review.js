@@ -1,7 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import { VscStarFull, VscStarHalf, VscStarEmpty } from "react-icons/vsc";
+import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 
 import Layout from "../../components/layout/layout"
 import Head from "../../components/head/head"
@@ -122,8 +124,18 @@ const Review = (props) => {
   const starsInt = multiplyInt(props.data.contentfulReview.rating)
   const starsDec = multiplyDec(props.data.contentfulReview.rating)
 
-
   const head = props.data.contentfulReview.artist.englishName + ": " + props.data.contentfulReview.albumTitle + " | The Glow"
+
+  const shareBlockProps = {
+    url: `https://http://xenodochial-dubinsky-db8110.netlify.app/review/${props.data.contentfulReview.slug}`,
+    button: ShareButtonIconOnly,
+    buttons: [
+      { network: "Twitter", icon: FaTwitter },
+      { network: "Facebook", icon: FaFacebookF },
+    ],
+    text: `Give it a try`,
+    longtext: `Take a look at this super website I have just found.`
+  };
 
   return (
     <Layout>
@@ -148,6 +160,7 @@ const Review = (props) => {
               </Link>
               <p className={reviewStyles.date}>{props.data.contentfulReview.publishedDate}</p>
               <p className={reviewStyles.genre}>{props.data.contentfulReview.genre.name}</p>
+              <ShareBlockStandard {...shareBlockProps} />
             </div>
             <div className={reviewStyles.body}>
               <p className={reviewStyles.subtitle}>{documentToReactComponents(props.data.contentfulReview.subtitle2.json, options)}</p>
