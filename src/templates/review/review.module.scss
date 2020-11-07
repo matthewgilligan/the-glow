@@ -64,7 +64,7 @@
     margin-top: 4rem;
 }
 
-.author-details {
+.meta-details {
     width: 28%;
     height: 100%;
     text-transform: uppercase;
@@ -121,7 +121,14 @@
     align-self: flex-end;
 }
 
-
+.mobile-meta-details {
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: bold;
+}
 
 .body {
     width: 61.5%;
@@ -253,10 +260,15 @@
 
     .review-content {
         display: block;
+        margin-top: 1rem;
     }
 
-    .author-details {
+    .meta-details {
         display: none;
+    }
+
+    .mobile-meta-details {
+        display: block;
     }
 
     .body {
