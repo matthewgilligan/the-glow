@@ -82,11 +82,13 @@
     }
 
     button {
-        *:hover {
+        :hover {
             all:unset!important;
         }
 
-        margin: 0 0 -.7rem 0;
+        margin: 0 0 -.7rem .7rem;
+        padding: 0;
+        width: 26px;
     }
 }
 
@@ -101,6 +103,7 @@
     width: 100%;
     position: relative;
 
+    // For some reason I cannot integrate this block with the above selector
     button:hover {
         background: none !important;
         box-shadow: 0 0 0px rgba(99,205,241,0);
