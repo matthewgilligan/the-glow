@@ -99,9 +99,24 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    position: relative;
+
+    button:hover {
+        background: none !important;
+        box-shadow: 0 0 0px rgba(99,205,241,0);
+    }
+
+    svg {
+        transition: none !important;
+        pointer-events: none;
+    }
+
 }
 
-.genre {color: #E7334D}
+.genre {
+    color: #E7334D;
+    align-self: flex-end;
+}
 
 
 

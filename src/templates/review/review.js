@@ -165,9 +165,7 @@ const Review = (props) => {
           </div>
           <div className={reviewStyles.reviewContent}>
             <div className={reviewStyles.authorDetails}>
-              <Link to={`../../author/${props.data.contentfulReview.author.slug}`}>
-                <p>By: {props.data.contentfulReview.author.englishName}</p>
-              </Link>
+              <p>By: <Link to={`../../author/${props.data.contentfulReview.author.slug}`}>{props.data.contentfulReview.author.englishName}</Link></p>
               <p className={reviewStyles.date}>{props.data.contentfulReview.publishedDate}</p>
               <div className={reviewStyles.genreAndSocials}>
                 <p className={reviewStyles.genre}>{props.data.contentfulReview.genre.name}</p>
