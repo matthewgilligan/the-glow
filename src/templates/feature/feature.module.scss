@@ -125,9 +125,7 @@
 .body {
     width: 61.5%;
 
-    p {
-      line-height: 1.5;
-    }
+    p {line-height: 1.5}
 }
 
 .subtitle {
@@ -158,6 +156,7 @@
     .feature-content {
         width: 100%;
         display: block;
+        margin-top: 1rem;
     }
 
     .author-details {

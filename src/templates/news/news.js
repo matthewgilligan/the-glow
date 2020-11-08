@@ -81,7 +81,7 @@ const News = (props) => {
         <div className={articleDetailsStyles.mobileMetaDetails}>
           <div className={articleDetailsStyles.genreAndSocials}>
             <p>By: <Link to={`../../author/${props.data.contentfulNews.author.slug}`}>{props.data.contentfulNews.author.englishName}</Link></p>
-            <p className={articleDetailsStyles.genre}>{props.data.contentfulNews.genre.name}</p>
+            <p className={articleDetailsStyles.genre}>{props.data.contentfulNews.category.title}</p>
           </div>
           <p className={articleDetailsStyles.date}>{props.data.contentfulNews.publishedDate}</p>
         </div>
