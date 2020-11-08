@@ -21,6 +21,7 @@
     "gatsby": "^2.24.85",
     "gatsby-plugin-algolia": "^0.12.1",
     "gatsby-plugin-mailchimp": "^5.2.2",
+    "gatsby-plugin-manifest": "^2.5.2",
     "gatsby-plugin-material-ui": "^2.1.10",
     "gatsby-plugin-offline": "^3.3.2",
     "gatsby-plugin-react-helmet": "^3.3.11",
