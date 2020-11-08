@@ -120,8 +120,21 @@
 }
 
 @media screen and (max-width: 600px) {
-    .reccomendations {
+    .banner-title {
+        transform: translateY(170%);
 
+        h3 {
+            font-size: .8rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: .5rem 0;
+        }
+    }
+
+    .reccomendations-header {
+        font-size: 1.5rem;
     }
 
     .albums {
