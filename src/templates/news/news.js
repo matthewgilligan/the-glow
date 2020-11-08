@@ -6,7 +6,7 @@ import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 import Head from "../../components/head/head"
 import Layout from "../../components/layout/layout"
-import reviewStyles from "../review/review.module.scss"
+import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import featureStyles from "../feature/feature.module.scss"
 import newsStyles from "./news.module.scss"
 
@@ -70,20 +70,20 @@ const News = (props) => {
         <img src={props.data.contentfulNews.coverImage.file.url} alt={props.data.contentfulNews.coverImage.title} className={newsStyles.coverImage} />
       </div>
       <div className={featureStyles.featureContent}>
-        <div className={reviewStyles.metaDetails}>
+        <div className={articleDetailsStyles.metaDetails}>
           <p>By: <Link to={`../../author/${props.data.contentfulNews.author.slug}`}>{props.data.contentfulNews.author.englishName}</Link></p>
-          <p className={reviewStyles.date}>{props.data.contentfulNews.publishedDate}</p>
-          <div className={reviewStyles.genreAndSocials}>
-            <p className={reviewStyles.genre}>{props.data.contentfulNews.category.title}</p>
+          <p className={articleDetailsStyles.date}>{props.data.contentfulNews.publishedDate}</p>
+          <div className={articleDetailsStyles.genreAndSocials}>
+            <p className={articleDetailsStyles.genre}>{props.data.contentfulNews.category.title}</p>
             <ShareBlockStandard {...shareBlockProps} />
           </div>
         </div>
-        <div className={reviewStyles.mobileMetaDetails}>
-          <div className={reviewStyles.genreAndSocials}>
+        <div className={articleDetailsStyles.mobileMetaDetails}>
+          <div className={articleDetailsStyles.genreAndSocials}>
             <p>By: <Link to={`../../author/${props.data.contentfulNews.author.slug}`}>{props.data.contentfulNews.author.englishName}</Link></p>
-            <p className={reviewStyles.genre}>{props.data.contentfulNews.genre.name}</p>
+            <p className={articleDetailsStyles.genre}>{props.data.contentfulNews.genre.name}</p>
           </div>
-          <p className={reviewStyles.date}>{props.data.contentfulNews.publishedDate}</p>
+          <p className={articleDetailsStyles.date}>{props.data.contentfulNews.publishedDate}</p>
         </div>
         <div className={featureStyles.body}>
           <p className={featureStyles.subtitle}>{props.data.contentfulNews.subtitle}</p>

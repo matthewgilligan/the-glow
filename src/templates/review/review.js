@@ -8,6 +8,7 @@ import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 
 import Layout from "../../components/layout/layout"
 import Mailchimp from "../../components/mailchimp/mailchimp"
+import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import reviewStyles from "./review.module.scss"
 
 export const query = graphql`
@@ -164,20 +165,20 @@ const Review = (props) => {
             </div>
           </div>
           <div className={reviewStyles.reviewContent}>
-            <div className={reviewStyles.metaDetails}>
+            <div className={articleDetailsStyles.metaDetails}>
               <p>By: <Link to={`../../author/${props.data.contentfulReview.author.slug}`}>{props.data.contentfulReview.author.englishName}</Link></p>
-              <p className={reviewStyles.date}>{props.data.contentfulReview.publishedDate}</p>
-              <div className={reviewStyles.genreAndSocials}>
-                <p className={reviewStyles.genre}>{props.data.contentfulReview.genre.name}</p>
+              <p className={articleDetailsStyles.date}>{props.data.contentfulReview.publishedDate}</p>
+              <div className={articleDetailsStyles.genreAndSocials}>
+                <p className={articleDetailsStyles.genre}>{props.data.contentfulReview.genre.name}</p>
                 <ShareBlockStandard {...shareBlockProps} />
               </div>
             </div>
-            <div className={reviewStyles.mobileMetaDetails}>
-              <div className={reviewStyles.genreAndSocials}>
+            <div className={articleDetailsStyles.mobileMetaDetails}>
+              <div className={articleDetailsStyles.genreAndSocials}>
                 <p>By: <Link to={`../../author/${props.data.contentfulReview.author.slug}`}>{props.data.contentfulReview.author.englishName}</Link></p>
-                <p className={reviewStyles.genre}>{props.data.contentfulReview.genre.name}</p>
+                <p className={articleDetailsStyles.genre}>{props.data.contentfulReview.genre.name}</p>
               </div>
-              <p className={reviewStyles.date}>{props.data.contentfulReview.publishedDate}</p>
+              <p className={articleDetailsStyles.date}>{props.data.contentfulReview.publishedDate}</p>
             </div>
             <div className={reviewStyles.body}>
               <p className={reviewStyles.subtitle}>{documentToReactComponents(props.data.contentfulReview.subtitle2.json, options)}</p>

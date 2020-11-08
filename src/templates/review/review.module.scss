@@ -56,78 +56,10 @@
     padding-bottom: 16px;
 }
 
-
-
 .review-content {
     display: flex;
     justify-content: space-between;
     margin-top: 4rem;
-}
-
-.meta-details {
-    width: 28%;
-    height: 100%;
-    text-transform: uppercase;
-    font-size: .9rem;
-    font-weight: bold;
-    padding: .7rem 0;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
-    .css-6rti61, svg {
-        fill: black !important;
-    }
-
-    button {
-        :hover {
-            all:unset!important;
-        }
-
-        margin: 0 0 -.7rem .7rem;
-        padding: 0;
-        width: 26px;
-    }
-}
-
-.date {
-    color: #BCBCBC;
-    padding: .5rem 0 2rem 0;
-}
-
-.genre-and-socials {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: relative;
-
-    // For some reason I cannot integrate this block with the above selector
-    button:hover {
-        background: none !important;
-        box-shadow: 0 0 0px rgba(99,205,241,0);
-    }
-
-    svg {
-        transition: none !important;
-        pointer-events: none;
-    }
-
-}
-
-.genre {
-    color: #E7334D;
-    align-self: flex-end;
-}
-
-.mobile-meta-details {
-    display: none;
-    width: 100%;
-    height: 100%;
-    text-transform: uppercase;
-    font-size: .8rem;
-    font-weight: bold;
 }
 
 .body {
@@ -261,14 +193,6 @@
     .review-content {
         display: block;
         margin-top: 1rem;
-    }
-
-    .meta-details {
-        display: none;
-    }
-
-    .mobile-meta-details {
-        display: block;
     }
 
     .body {
