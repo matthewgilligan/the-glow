@@ -13,7 +13,7 @@ input, textarea, button, select, a {
 }
 
 .title {
-    height: 3.7rem;
+    height: 100%;
     color: #000000;
     font-size: 3rem;
     font-family: Lexend Tera;
@@ -183,7 +183,7 @@ input, textarea, button, select, a {
 
     .nav-top {
         border-bottom: 1px solid black;
-        padding: 1rem 0 .4rem 0;
+        padding: .8rem 0 .4rem 0;
         height: 2.1rem;
         display: block;
     }

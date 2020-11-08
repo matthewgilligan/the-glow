@@ -137,8 +137,13 @@ const Feature = (props) => {
             </div>
             <div className={featureStyles.mobileNav}>
               <Link to="/" className={featureStyles.mobileTitle}>The Glow</Link>
-              <div className={featureStyles.checkButton}>
-                <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
+              <div className={featureStyles.mobileIcons}>
+                <div className={featureStyles.mobileSearch}>
+                  <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
+                </div>
+                <div className={featureStyles.checkButton}>
+                  <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
+                </div>
               </div>
             </div>
             <div className={featureStyles.details}>
