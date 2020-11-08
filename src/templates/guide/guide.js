@@ -152,7 +152,7 @@ const Guides = (props) => {
       </div>
 
       <div className={guideStyles.reccomendations}>
-        <h2>Top 5 {props.data.contentfulGuide.title} Albums</h2>
+        <h2 className={guideStyles.reccomendationsHeader}>Top 5 {props.data.contentfulGuide.subject} Albums</h2>
         <div className={guideStyles.albums}>
           {reccomendations.map((reccomendation) => {
             return (
@@ -164,12 +164,12 @@ const Guides = (props) => {
             )
           })}
         </div>
-      </div>
-      <div className={guideStyles.streaming}>
-        <p className={guideStyles.checkout}>Check out our {props.data.contentfulGuide.title} playlist on Spotify and Apple Music!</p>
-        <div className={guideStyles.embed}>
-          <iframe src={props.data.contentfulGuide.spotify} title="spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-          <iframe src={props.data.contentfulGuide.appleMusic} title="apple" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <div className={guideStyles.streaming}>
+          <p className={guideStyles.checkout}>Check out our {props.data.contentfulGuide.subject} playlist!</p>
+          <div className={guideStyles.embed}>
+            <iframe src={props.data.contentfulGuide.spotify} title="spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe src={props.data.contentfulGuide.appleMusic} title="apple" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
         </div>
       </div>
       <div className={guideStyles.container}>
