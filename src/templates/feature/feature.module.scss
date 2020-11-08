@@ -12,6 +12,12 @@
     flex-grow: 1;
 }
 
+.nav-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .banner {
     height: 100vh;
     background-size: cover;
@@ -73,14 +79,43 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+.large-check-button {
+    font-size: 1.5rem;
+    float: right;
+    margin: 2.4rem 0 .1rem 0;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    z-index: 10;
+
+    :hover {
+        color: #E7334D;
+    }
+}
+
+.search {
+    z-index: 12;
+    margin-top: 2.4rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    :hover {
+        color: #E7334D;
+    }
+}
+
 
 .title-div {
-    width: 100%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     text-align: center;
 }
 
 .title {
-    padding-top: .55rem;
+    margin-top: .6rem;
     font-size: 3rem;
     font-family: Lexend Tera;
     text-transform: uppercase;

@@ -3,11 +3,14 @@ import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
 import { GrClose } from "react-icons/gr";
+import { FiSearch } from "react-icons/fi";
 
 import Head from "../../components/head/head"
 import Footer from "../../components/footer/footer"
 import featureStyles from "./feature.module.scss"
+import SearchComp from '../../components/search/searchComp'
 import headerStyles from "../../components/header/header.module.scss"
+import searchStyles from "../../components/header/search.module.scss"
 
 export const query = graphql`
   query($slug: String!){
@@ -92,9 +95,28 @@ const Feature = (props) => {
       </div>
   }
 
+  const [searchOpen, setSearchOpen] = useState(false)
+  let search
+
+  if(searchOpen) {
+    search = <div className={searchStyles.overlay}>
+      <div className={searchStyles.modal}>
+        <GrClose className={searchStyles.close} onClick={ () => setSearchOpen(!searchOpen) } />
+        <div className={searchStyles.content}>
+          <div className={searchStyles.algolia}>
+            <div>
+              <SearchComp />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
   return (
     <div>
       <Head title={`${props.data.contentfulFeature.title} | The Glow`}/>
+      { search }
       <div
       style={{backgroundImage: `linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(${props.data.contentfulFeature.coverImage.file.url})`} }
       className={featureStyles.banner}>
@@ -104,6 +126,14 @@ const Feature = (props) => {
               <h1 className={featureStyles.title} id="demo">
                 <Link to="/">The Glow</Link>
               </h1>
+            </div>
+            <div className={featureStyles.navIcons}>
+              <div className={featureStyles.search}>
+                <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
+              </div>
+              <div className={featureStyles.largeCheckButton}>
+                <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
+              </div>
             </div>
             <div className={featureStyles.mobileNav}>
               <Link to="/" className={featureStyles.mobileTitle}>The Glow</Link>
