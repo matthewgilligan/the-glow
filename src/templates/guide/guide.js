@@ -172,9 +172,7 @@ const Guides = (props) => {
           </div>
         </div>
       </div>
-      <div className={guideStyles.container}>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   )
 }

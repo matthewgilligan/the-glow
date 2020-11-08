@@ -1,5 +1,4 @@
 .main {
-  margin: 4rem auto 0 auto;
 
   h2 {
       padding-bottom: .5rem;
@@ -13,11 +12,24 @@
 
 .form {
     display: flex;
+
+    input {
+        -webkit-appearance: none;
+        outline: none;
+        padding: .82rem;
+        color: rgb(153, 153, 153);
+        border: 2px solid rgb(153, 153, 153);
+    }
+
+    label {
+        color: rgb(153, 153, 153);
+        display: none;
+    }
 }
 
 .button {
-    background-color: #E7334D !important;
-    color: white !important;
+    background-color: rgb(153, 153, 153) !important;
+    color: black !important;
     margin-left: .5rem !important;
     border-radius: 0 !important;
     height: 3rem;

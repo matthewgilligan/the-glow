@@ -169,9 +169,9 @@ const Feature = (props) => {
               {documentToReactComponents(props.data.contentfulFeature.body.json, options)}
             </div>
           </div>
-          <Footer />
         </div>
       </div>
+      <Footer />
       { mobileNav }
     </div>
   )

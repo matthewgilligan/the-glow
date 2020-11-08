@@ -7,7 +7,6 @@ import { VscStarFull, VscStarHalf, VscStarEmpty } from "react-icons/vsc";
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 
 import Layout from "../../components/layout/layout"
-import Mailchimp from "../../components/mailchimp/mailchimp"
 import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import reviewStyles from "./review.module.scss"
 
@@ -208,7 +207,6 @@ const Review = (props) => {
           </ul>
         </div>
       </div>
-      <Mailchimp />
     </Layout>
   )
 }

@@ -34,7 +34,7 @@ export default class MailChimpForm extends React.Component {
         <form onSubmit={this._handleSubmit} className={mailchimpStyles.form}>
           <TextField
             id="outlined-email-input"
-            label="Email"
+            placeholder="Email"
             type="email"
             name="email"
             autoComplete="email"
