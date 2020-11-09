@@ -1,5 +1,4 @@
 .main {
-
   h2 {
       padding-bottom: .5rem;
       font-size: 1.2rem;
@@ -7,7 +6,7 @@
 
   p {
       padding-bottom: 1rem;
-    }
+  }
 }
 
 .form {
@@ -25,6 +24,10 @@
         color: rgb(153, 153, 153);
         display: none;
     }
+
+    input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
 }
 
 .button {
@@ -32,5 +35,25 @@
     color: black !important;
     margin-left: .5rem !important;
     border-radius: 0 !important;
-    height: 3rem;
+    height: 3.1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        text-align: center;
+    }
+
+    .form {
+        display: block;
+
+        input {
+            margin-bottom: 1rem;
+            width: 250px;
+        }
+    }
+
+    .button {
+        width: 280px;
+        margin-left: 0 !important;
+    }
 }

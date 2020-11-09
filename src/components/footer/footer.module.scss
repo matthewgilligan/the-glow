@@ -35,6 +35,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+
+    ul {
+        padding-left: 0;
+    }
 }
 
 .copyright {
@@ -68,7 +72,7 @@
 }
 
 .socials {
-    margin-top: 80px;
+    margin: 40px 0;
 
     ul {
         display: flex;
@@ -84,6 +88,59 @@
 
     li:last-child {
         margin-right: 0;
+    }
+}
+
+.mobile-copyright {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .mailchimp {
+        width: 100%;
+        margin: 2rem 0 2rem 0;
+    }
+
+    .content {
+        display: block;
+        margin-bottom: 4rem;
+    }
+
+    .copyright {
+        display: none;
+    }
+
+    .pages {
+        width: 100%;
+        font-size: 1.5rem;
+
+        ul {
+            position: relative;
+            text-align: center;
+        }
+    }
+
+    .socials {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        ul {
+            margin: 0 auto;
+        }
+
+        li {
+            font-size: 1.8rem;
+        }
+    }
+
+    .mobile-copyright {
+        display: block;
+        text-align: center;
+
+        p {
+            font-size: .8rem;
+        }
     }
 }
 
