@@ -43,6 +43,8 @@
     margin-bottom: 2rem;
 }
 
+// {props.data.firstInterview.edges[0].node.artist[0].englishName}
+
 .remaining-img {
     width: 49%;
     height: 100%;
@@ -53,7 +55,7 @@
 
 .remaining-details {
     position: relative;
-    width: 49%;
+    width: 45%;
     margin-left: 2%;
     border-top: 1px solid black;
     border-bottom: 1px solid black;

@@ -31,6 +31,7 @@ export const query = graphql`
       edges {
         node {
           title
+          subtitle
           slug
           publishedDate (formatString:"MMMM Do YYYY")
           coverImage {
@@ -46,6 +47,7 @@ export const query = graphql`
       edges {
         node {
           title
+          subtitle
           slug
           category {
             name
@@ -57,6 +59,7 @@ export const query = graphql`
       edges {
         node {
           title
+          subtitle
           slug
           category {
             name
@@ -71,6 +74,10 @@ export const query = graphql`
             englishName
             japaneseName
           }
+          author {
+            englishName
+          }
+          publishedDate(formatString:"MMMM Do YYYY")
         }
       }
     }
@@ -97,14 +104,29 @@ const IndexPage = (props) => {
         <Header />
       </div>
 
-      <section className={indexStyles.featureInterview}>
-        <div className={indexStyles.container}>
-          <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`}>
-            <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.featureInterviewImage}/>
-            <h1>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
-          </Link>
+
+      <div className={indexStyles.container}>
+        <div className={indexStyles.featureInterview}>
+          <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.featureInterviewImage}/>
+          <div className={indexStyles.featureInterviewText}>
+            <div className={indexStyles.featureInterviewTextDiv}>
+              <h1 className={indexStyles.featureInterviewTitle}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
+              <div className={indexStyles.featureInterviewDetails}>
+                <p class={indexStyles.featureInterviewSubtitle}>{props.data.firstInterview.edges[0].node.subtitle}</p>
+                <div class={indexStyles.featureInterviewInfo}>
+                  <div class={indexStyles.featureInterviewMeta}>
+                    <p class={indexStyles.featureInterviewAuthor}>By: {props.data.firstInterview.edges[0].node.author.englishName}</p>
+                    <p class={indexStyles.featureInterviewDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
+                  </div>
+                  <Link to={props.data.firstInterview.edges[0].node.category.slug}  className={indexStyles.featureInterviewCategory}>
+                    <p>{props.data.firstInterview.edges[0].node.category.name}</p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
 
       <section className={indexStyles.reviews}>
         <div className={indexStyles.container}>
@@ -177,9 +199,7 @@ const IndexPage = (props) => {
         </div>
       </section>
 
-      <div className={indexStyles.container}>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   )
 }
