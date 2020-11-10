@@ -45,6 +45,7 @@ export const query = graphql`
         file {
           url
         }
+        description
       }
     }
   }
@@ -169,7 +170,7 @@ const Feature = (props) => {
         </div>
       </div>
       <div className={featureStyles.container}>
-        <p className={featureStyles.credit}>Getty Images</p>
+        <p className={featureStyles.credit}>{props.data.contentfulFeature.coverImage.description}</p>
         <div className={featureStyles.content}>
           <div className={featureStyles.featureContent}>
             <div className={featureStyles.authorDetails}>

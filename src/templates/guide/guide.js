@@ -143,6 +143,7 @@ const Guides = (props) => {
               <h3>by The Glow</h3>
             </div>
         </div>
+        <p className={guideStyles.credit}>{props.data.contentfulGuide.coverImage.description}</p>
       </div>
 
       <div className={guideStyles.container}>
