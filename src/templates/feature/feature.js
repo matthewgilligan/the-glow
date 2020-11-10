@@ -65,7 +65,7 @@ const Feature = (props) => {
   const artists = props.data.contentfulFeature.artist;
   let artistTags = []
   for (let i = 0; i < artists.length; i++) {
-    if(i == artists.length -1){
+    if(i === artists.length -1){
       artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}</Link>)
     } else {
       artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}, </Link>)
@@ -169,6 +169,7 @@ const Feature = (props) => {
         </div>
       </div>
       <div className={featureStyles.container}>
+        <p className={featureStyles.credit}>Getty Images</p>
         <div className={featureStyles.content}>
           <div className={featureStyles.featureContent}>
             <div className={featureStyles.authorDetails}>

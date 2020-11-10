@@ -39,6 +39,7 @@ export const query = graphql`
           url
         }
         title
+        description
       }
     }
   }
@@ -69,7 +70,7 @@ const News = (props) => {
   const artists = props.data.contentfulNews.artist;
   let artistTags = []
   for (let i = 0; i < artists.length; i++) {
-    if(i == artists.length -1){
+    if(i === artists.length -1){
       artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}</Link>)
     } else {
       artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}, </Link>)
@@ -82,6 +83,7 @@ const News = (props) => {
       <div className={newsStyles.header}>
         <h1 className={newsStyles.title}>{props.data.contentfulNews.title}</h1>
         <img src={props.data.contentfulNews.coverImage.file.url} alt={props.data.contentfulNews.coverImage.title} className={newsStyles.coverImage} />
+        <p className={newsStyles.credit}>{props.data.contentfulNews.coverImage.description}</p>
       </div>
       <div className={featureStyles.featureContent}>
         <div className={articleDetailsStyles.metaDetails}>

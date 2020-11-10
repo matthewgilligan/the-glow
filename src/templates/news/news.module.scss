@@ -13,6 +13,11 @@
     object-fit: cover;
 }
 
+.credit {
+    font-size: .7rem;
+    margin-top: 4px;
+}
+
 @media screen and (max-width: 600px) {
     .header {
         width: 100%;
