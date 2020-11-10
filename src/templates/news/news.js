@@ -19,6 +19,10 @@ export const query = graphql`
         englishName
         slug
       }
+      artist {
+          englishName
+          slug
+      }
       publishedDate(formatString:"MMMM D YYYY")
       category {
         title
@@ -62,6 +66,16 @@ const News = (props) => {
     text: `${props.data.contentfulNews.title}`,
   };
 
+  const artists = props.data.contentfulNews.artist;
+  let artistTags = []
+  for (let i = 0; i < artists.length; i++) {
+    if(i == artists.length -1){
+      artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}</Link>)
+    } else {
+      artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}, </Link>)
+    }
+  }
+
   return (
     <Layout>
       <Head title={`${props.data.contentfulNews.title} | The Glow`}/>
@@ -88,6 +102,7 @@ const News = (props) => {
         <div className={featureStyles.body}>
           <p className={featureStyles.subtitle}>{props.data.contentfulNews.subtitle}</p>
           {documentToReactComponents(props.data.contentfulNews.body.json, options)}
+          <p className={featureStyles.artistTags}>Tags: { artistTags }</p>
         </div>
       </div>
     </Layout>
