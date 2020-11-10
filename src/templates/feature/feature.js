@@ -23,6 +23,10 @@ export const query = graphql`
         bio
         slug
       }
+      artist {
+        englishName
+        slug
+      }
       publishedDate(formatString:"MMMM D YYYY")
       category {
         name
@@ -56,6 +60,16 @@ const Feature = (props) => {
       }
     },
     renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
+  }
+
+  const artists = props.data.contentfulFeature.artist;
+  let artistTags = []
+  for (let i = 0; i < artists.length; i++) {
+    if(i == artists.length -1){
+      artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}</Link>)
+    } else {
+      artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}, </Link>)
+    }
   }
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
@@ -167,6 +181,7 @@ const Feature = (props) => {
             <div className={featureStyles.body}>
               <p className={featureStyles.subtitle}>{props.data.contentfulFeature.subtitle}</p>
               {documentToReactComponents(props.data.contentfulFeature.body.json, options)}
+              <p className={featureStyles.artistTags}>Tags: { artistTags }</p>
             </div>
           </div>
         </div>

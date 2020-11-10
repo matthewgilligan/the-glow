@@ -185,6 +185,24 @@
     padding-bottom: 2rem;
 }
 
+.artistTags {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    text-transform: uppercase;
+    color: gray;
+    font-weight: bold;
+    font-size: .8rem;
+    border-top: 2px solid black;
+
+    a {
+        color: black;
+
+        &:hover {
+            color: red;
+        }
+    }
+}
+
 @media screen and (max-width: 600px) {
     .title-div {
         display: none;
