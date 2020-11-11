@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
+import logo from "../../images/white-glow-ray.png"
 import Head from "../../components/head/head"
 import Footer from "../../components/footer/footer"
 import Header from "../../components/header/header"
@@ -166,6 +167,7 @@ const Guides = (props) => {
           })}
         </div>
         <div className={guideStyles.streaming}>
+          <img src={logo} alt="Logo" className={guideStyles.logo}/>
           <p className={guideStyles.checkout}>Check out our {props.data.contentfulGuide.subject} playlist!</p>
           <div className={guideStyles.embed}>
             <iframe src={props.data.contentfulGuide.spotify} title="spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
