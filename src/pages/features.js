@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import featuresStyles from "./features.module.scss"
+import newsStyles from "./news.module.scss"
 import stickyNavStyles from '../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../components/head/head"
 
@@ -67,9 +68,14 @@ const FeaturesPage = () => {
                   <div class={featuresStyles.scrollFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
                   <div class={featuresStyles.scrollFeatureDetails}>
                     <p class={featuresStyles.scrollFeatureTitle}>{edge.node.title}</p>
-                    <div class={featuresStyles.scrollFeatureInfo}>
-                      <p class={featuresStyles.scrollFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                      <p class={featuresStyles.scrollFeatureDate}>{edge.node.publishedDate}</p>
+                    <div class={newsStyles.remainingInfo}>
+                      <div class={newsStyles.remainingMeta}>
+                        <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                        <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                      </div>
+                      <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
+                        <p>{edge.node.category.name}</p>
+                      </Link>
                     </div>
                   </div>
                 </Link>
@@ -91,9 +97,14 @@ const FeaturesPage = () => {
                     <h3 class={featuresStyles.remainingFeatureTitle}>{edge.node.title}</h3>
                   </Link>
                   <p class={featuresStyles.remainingFeatureSubtitle}>{edge.node.subtitle}</p>
-                  <div class={featuresStyles.remainingFeatureInfo}>
-                    <p class={featuresStyles.remainingFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                    <p class={featuresStyles.remainingFeatureDate}>{edge.node.publishedDate}</p>
+                  <div class={newsStyles.remainingInfo}>
+                    <div class={newsStyles.remainingMeta}>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                    </div>
+                    <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
+                      <p>{edge.node.category.name}</p>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -131,9 +142,14 @@ const FeaturesPage = () => {
                     <h3 class={featuresStyles.remainingFeatureTitle}>{edge.node.title}</h3>
                   </Link>
                   <p class={featuresStyles.remainingFeatureSubtitle}>{edge.node.subtitle}</p>
-                  <div class={featuresStyles.remainingFeatureInfo}>
-                    <p class={featuresStyles.remainingFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                    <p class={featuresStyles.remainingFeatureDate}>{edge.node.publishedDate}</p>
+                  <div class={newsStyles.remainingInfo}>
+                    <div class={newsStyles.remainingMeta}>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                    </div>
+                    <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
+                      <p>{edge.node.category.name}</p>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -168,9 +184,14 @@ const FeaturesPage = () => {
                 <Link to={`${edge.node.slug}`}>
                   <h3 class={featuresStyles.mobileFeatureTitle}>{edge.node.title}</h3>
                 </Link>
-                <div class={featuresStyles.mobileFeatureInfo}>
-                  <p class={featuresStyles.mobileFeatureAuthor}>By: {edge.node.author.englishName}</p>
-                  <p class={featuresStyles.mobileFeatureDate}>{edge.node.publishedDate}</p>
+                <div class={newsStyles.remainingInfo}>
+                  <div class={newsStyles.remainingMeta}>
+                    <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                  </div>
+                  <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
+                    <p>{edge.node.category.name}</p>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -71,7 +71,7 @@
     width: 100%;
     bottom: 0;
     display: flex;
-    padding-bottom: .5rem;
+    margin-bottom: 10px;
 
     p {
        text-transform: uppercase;
@@ -85,7 +85,7 @@
 }
 
 .remaining-date {
-    padding-top: .5rem;
+    margin-top: 4px;
     color: lightgray;
 }
 
@@ -94,7 +94,6 @@
     right: 0;
     bottom: 0;
     color: red;
-    padding-bottom: .5rem;
 }
 
 @media screen and (max-width: 931px) {
