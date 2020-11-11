@@ -1,12 +1,14 @@
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
 import { GrClose } from "react-icons/gr";
 import { FiSearch } from "react-icons/fi";
 
 import Head from "../../components/head/head"
 import Footer from "../../components/footer/footer"
+import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import featureStyles from "./feature.module.scss"
 import SearchComp from '../../components/search/searchComp'
 import headerStyles from "../../components/header/header.module.scss"
@@ -110,6 +112,16 @@ const Feature = (props) => {
       </div>
   }
 
+  const shareBlockProps = {
+    url: `https://xenodochial-dubinsky-db8110.netlify.app/news/${props.data.contentfulFeature.slug}`,
+    button: ShareButtonIconOnly,
+    buttons: [
+      { network: "Twitter", icon: FaTwitter },
+      { network: "Facebook", icon: FaFacebookF },
+    ],
+    text: `${props.data.contentfulFeature.title}`,
+  };
+
   const [searchOpen, setSearchOpen] = useState(false)
   let search
 
@@ -173,12 +185,13 @@ const Feature = (props) => {
         <p className={featureStyles.credit}>{props.data.contentfulFeature.coverImage.description}</p>
         <div className={featureStyles.content}>
           <div className={featureStyles.featureContent}>
-            <div className={featureStyles.authorDetails}>
-              <Link to={`../../author/${props.data.contentfulFeature.author.slug}`}>
-                <p>By: {props.data.contentfulFeature.author.englishName}</p>
-              </Link>
-              <p className={featureStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
-              <p className={featureStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
+            <div className={articleDetailsStyles.metaDetails}>
+              <p>By: <Link to={`../../author/${props.data.contentfulFeature.author.slug}`}>{props.data.contentfulFeature.author.englishName}</Link></p>
+              <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
+              <div className={articleDetailsStyles.genreAndSocials}>
+                <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
+                <ShareBlockStandard {...shareBlockProps} />
+              </div>
             </div>
             <div className={featureStyles.body}>
               <p className={featureStyles.subtitle}>{props.data.contentfulFeature.subtitle}</p>
