@@ -101,6 +101,7 @@
 }
 
 .scroll-feature-details {
+    position: relative;
     border-bottom: 2px solid;
     border-top: 2px solid;
     height:150px;
@@ -110,15 +111,17 @@
 .scroll-feature-title {
     font-weight: bolder;
     font-size: 20px;
-    margin-top: 12px;
+    margin-top: 4px;
     width: 90%;
     line-height: 28px;
 }
 
 .scroll-feature-info {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 6px;
     font-size: .8rem;
     text-transform: uppercase;
-    margin-top: 28px;
 }
 
 .scroll-feature-author {
