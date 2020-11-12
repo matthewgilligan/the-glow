@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
@@ -52,6 +53,13 @@ const News = (props) => {
         const alt = node.data.target.fields.title['en-US']
         const url = node.data.target.fields.file['en-US'].url
         return <img alt={alt} src={url} />
+      },
+      [INLINES.HYPERLINK]: (node) => {
+        if(node.data.uri.indexOf('youtube.com') !== -1){
+          return(
+            <iframe width="560" height="315" src={node.data.uri} frameborder="0" allowfullscreen></iframe>
+          )
+        }
       }
     },
     renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
