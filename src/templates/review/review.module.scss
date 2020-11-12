@@ -66,6 +66,14 @@
 .body {
     width: 61.5%;
     line-height: 1.8;
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration-color: red;
+        }
+    }
 }
 
 .subtitle {

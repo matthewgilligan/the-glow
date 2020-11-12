@@ -125,7 +125,7 @@ const Guides = (props) => {
         return <img alt={alt} src={url} />
       },
       [INLINES.HYPERLINK]: (node) => {
-        if(node.data.uri.indexOf('youtube.com') !== -1){
+        if(node.data.uri.indexOf('youtube.comyoutube.com/embed') !== -1){
           return(
             <iframe width="100%" height="321" src={node.data.uri} frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           )

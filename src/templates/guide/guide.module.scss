@@ -45,6 +45,14 @@
     width: 50%;
     margin: 3rem auto 4rem auto;
     line-height: 1.8;
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration-color: red;
+        }
+    }
 }
 
 .reccomendations {
