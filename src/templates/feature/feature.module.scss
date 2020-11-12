@@ -190,6 +190,10 @@
             text-decoration-color: red;
         }
     }
+
+    img {
+        width: 100%;
+    }
 }
 
 .subtitle {
@@ -209,6 +213,7 @@
 
     a {
         color: black;
+        text-decoration: none;
 
         &:hover {
             color: red;
