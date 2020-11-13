@@ -10,6 +10,7 @@
 .feature-interview {
     position: relative;
     width: 100%;
+    height: calc(100vh - 132.19px);
     display: flex;
     margin-bottom: 3rem;
     background-color: white;
@@ -17,7 +18,9 @@
 
 .feature-interview-image {
     margin-top: 3rem;
+    height: 85%;
     width: 64%;
+    object-fit: cover;
 }
 
 .feature-interview-text {
@@ -108,7 +111,6 @@
 }
 
 .section-title {
-    padding-top: .3rem;
     border-top: 1px solid black;
 
     h2 {
@@ -131,6 +133,7 @@
 }
 
 .support-and-latest-news {
+    margin-top: 2rem;
     height: 60vh
 }
 
@@ -175,13 +178,73 @@
     height: 100%;
 }
 
-.playlists {
-    margin-top: 3rem;
-    width: 100%;
-    height: 50vh;
-    background-color: #E7334D;
-}
 
 .features {
     margin: 3rem 0 4rem 0;
+}
+
+
+// The Playlist
+.the-playlist {
+    margin-top: 3rem;
+    width: 100%;
+    height: 520px;
+    background-color: #E7334D;
+}
+
+.the-playlist-title {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color: white;
+    margin: 1.5rem 0;
+}
+
+.playlists {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.playlist {
+    width: 20%;
+}
+
+.playlist-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.playlist-details {
+    position: relative;
+    margin: 20px 8px;
+    height: 240px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    text-align: center;
+    color: white
+}
+
+.playlist-artist {
+    margin-top: 16px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 1.2rem;
+}
+
+.playlist-subtitle {
+    margin-top: 48px;
+    font-size: .8rem;
+}
+
+.playlist-date {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 0 16px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .7rem;
 }

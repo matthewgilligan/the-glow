@@ -81,6 +81,29 @@ export const query = graphql`
         }
       }
     }
+    thePlaylist: allContentfulFeature ( sort: { fields:publishedDate, order:DESC }, filter: { subcategory:{ name: { eq: "The Playlist" } } }, limit: 4 ) {
+      edges {
+        node {
+          title
+          subtitle
+          artist {
+            englishName
+            japaneseName
+          }
+          slug
+          category {
+            name
+          }
+          coverImage {
+            title
+            file {
+              url
+            }
+          }
+          publishedDate (formatString:"MMMM Do YYYY")
+        }
+      }
+    }
   }
 `
 
@@ -185,9 +208,6 @@ const IndexPage = (props) => {
         </div>
       </section>
 
-      <section className={indexStyles.playlists}>
-      </section>
-
       <section className={indexStyles.features}>
         <div className={indexStyles.container}>
           <div className={indexStyles.sectionTitle}>
@@ -195,6 +215,41 @@ const IndexPage = (props) => {
           </div>
           <div className={indexStyles.sectionLink}>
             <Link to="/features">View All Features</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className={indexStyles.thePlaylist}>
+        <div className={indexStyles.container}>
+          <div className={indexStyles.thePlaylistTitle}>
+            <p>The Playlist</p>
+          </div>
+          <div className={indexStyles.playlists}>
+            {props.data.thePlaylist.edges.map((edge) => {
+              return (
+                <div className={indexStyles.playlist}>
+                  <Link to={`features/${edge.node.slug}`}>
+                    <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} className={indexStyles.playlistImage} />
+                    <div className={indexStyles.playlistDetails}>
+                      <h2 className={indexStyles.playlistArtist}>{edge.node.artist[0].englishName}</h2>
+                      <p className={indexStyles.playlistSubtitle}>{edge.node.subtitle}</p>
+                      <p className={indexStyles.playlistDate}>{edge.node.publishedDate}</p>
+                    </div>
+                  </Link>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className={indexStyles.guides}>
+        <div className={indexStyles.container}>
+          <div className={indexStyles.sectionTitle}>
+            <h2>Guides</h2>
+          </div>
+          <div className={indexStyles.sectionLink}>
+            <Link to="/guides">View All Guides</Link>
           </div>
         </div>
       </section>
