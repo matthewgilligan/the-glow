@@ -7,6 +7,7 @@ import logo from "../../images/white-glow-ray.png"
 import Head from "../../components/head/head"
 import Footer from "../../components/footer/footer"
 import Header from "../../components/header/header"
+import indexStyles from "../../pages/index.module.scss"
 import guideStyles from "./guide.module.scss"
 
 export const query = graphql`
@@ -140,9 +141,9 @@ const Guides = (props) => {
   const reccomendations = [props.data.contentfulGuide.reference1, props.data.contentfulGuide.reference2, props.data.contentfulGuide.reference3, props.data.contentfulGuide.reference4, props.data.contentfulGuide.reference5]
 
   return (
-    <div>
+    <div className={indexStyles.indexContainter}>
       <Head title={`${props.data.contentfulGuide.title} | The Glow`}/>
-      <div className={guideStyles.container}>
+      <div className={indexStyles.headerContainer}>
         <Header />
       </div>
 
