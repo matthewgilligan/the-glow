@@ -113,6 +113,44 @@
     padding-bottom: .5rem;
 }
 
+@media screen and (max-width: 600px) {
+    .top-feature {
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+    }
+
+    .top-feature-content {
+        position: relative;
+        display: block;
+        height: 85%;
+        width: 100%;
+        padding-top: 2rem;
+    }
+
+    .top-feature-image {
+        height: 60%;
+        width: 100%;
+    }
+
+    .top-feature-text {
+        position: relative;
+        width: 100%;
+        padding-top: 32px;
+        height: 36%;
+    }
+
+    .top-feature-title {
+        display:none;
+    }
+
+    .top-feature-details {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}
+
 
 // Reviews
 .reviews {
@@ -121,7 +159,7 @@
 
 // Patreon and Latest News
 .patreon-and-latest-news {
-    margin-top: 2rem;
+    margin-top: 3rem;
     height: 475px;
 }
 
