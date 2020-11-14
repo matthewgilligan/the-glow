@@ -28,6 +28,12 @@
     font-size: .9rem;
 }
 
+@media screen and (max-width: 600px) {
+    .section-title {
+        border-top: none;
+    }
+}
+
 // Top Feature
 .top-feature {
     width: 100%;
@@ -209,6 +215,48 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    .patreon-and-latest-news {
+        margin-top: 3rem;
+        height: 100%;
+    }
+
+    .patreon-and-latest-news-content {
+        display: block;
+        height: 100%;
+    }
+
+    .patreon {
+        height: 350px;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .latest-news {
+        width: 100%;
+    }
+
+    .news-list {
+        margin-top: -1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .news-item {
+        img {
+            width: 12rem;
+            height: 7rem;
+            margin-right: 12px;
+            object-fit: cover;
+        }
+
+        h2 {
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+    }
+}
+
 //Features
 
 .features-section {
@@ -256,6 +304,18 @@
     margin-bottom: 0;
 }
 
+@media screen and (max-width: 600px) {
+    .features {
+        display: block;
+        width: 100%;
+    }
+
+    .feature {
+        width: 100%;
+        margin-bottom: 60px;
+    }
+}
+
 // The Playlist
 .the-playlist-section {
     margin-top: 3rem;
@@ -290,7 +350,7 @@
 
 .playlist-details {
     position: relative;
-    margin: 20px 8px;
+    margin: 20px 0;
     height: 240px;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
@@ -306,7 +366,7 @@
 }
 
 .playlist-subtitle {
-    margin-top: 48px;
+    margin: 48px 8px 0 8px;
     font-size: .8rem;
 }
 
@@ -319,6 +379,52 @@
     text-align: center;
     text-transform: uppercase;
     font-size: .7rem;
+}
+
+@media screen and (max-width: 600px) {
+    .the-playlist-section {
+        height: 100%;
+        padding-bottom: 32px;
+    }
+
+    .playlists {
+        display: block;
+        margin-top: -60px;
+    }
+
+    .playlist {
+        width: 65%;
+        margin: 60px auto 0 auto;
+    }
+
+    .playlist-image {
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+    }
+
+    .playlist-details {
+        position: relative;
+        height: 100%;
+    }
+
+    .playlist-artist {
+        margin-top: 16px;
+        text-transform: uppercase;
+        font-weight: lighter;
+        font-size: 1.2rem;
+    }
+
+    .playlist-subtitle {
+        margin: 32px 0 16px 0;
+        font-size: .8rem;
+    }
+
+    .playlist-date {
+        position: relative;        text-align: center;
+        text-transform: uppercase;
+        font-size: .7rem;
+    }
 }
 
 //Guides
