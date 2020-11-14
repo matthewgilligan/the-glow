@@ -163,6 +163,82 @@
     height: 100%;
 }
 
+.albums {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 -20px;
+}
+
+.less-albums {
+    display: none;
+}
+
+@media screen and (max-width: 1140px) {
+    .albums {
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .albums {
+        display: none;
+    }
+
+    .less-albums {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .album {
+        width: 29.73%;
+        padding-left: 1.78%;
+        padding-right: 1.78%;
+    }
+}
+
+@media screen and (max-width: 863px) {
+    .albums {
+        margin-left: -13px;
+        margin-right: -13px;
+    }
+
+    .album {
+        width: 29.73%;
+        padding-left: 1.78%;
+        padding-right: 1.78%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .less-albums {
+        margin-left: -13px;
+        margin-right: -13px;
+    }
+
+    .album {
+        width: 46%;
+        position: relative;
+        min-height: 1px;
+        padding-left: 1.9%;
+        padding-right: 1.9%;
+    }
+}
+
+@media screen and (max-width: 666px) {
+    .less-albums {
+        margin-left: -6.8px;
+        margin-right: -6.5px;
+    }
+}
 // Patreon and Latest News
 .patreon-and-latest-news {
     margin-top: 3rem;
@@ -244,8 +320,8 @@
 
     .news-item {
         img {
-            width: 12rem;
-            height: 7rem;
+            width: 35%;
+            height: 6.5rem;
             margin-right: 12px;
             object-fit: cover;
         }

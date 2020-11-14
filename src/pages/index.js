@@ -170,8 +170,21 @@ const IndexPage = (props) => {
           <div className={indexStyles.sectionTitle}>
             <h2>Album Reviews</h2>
           </div>
-          <div className={reviewsStyles.albums}>
+          <div className={indexStyles.albums}>
             {props.data.allContentfulReview.edges.map((edge) => {
+              return (
+                <div className={reviewsStyles.album}>
+                  <Link to={`reviews/${edge.node.slug}`}>
+                    <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                    <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                    <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
+                  </Link>
+                </div>
+              )
+            })}
+          </div>
+          <div className={indexStyles.lessAlbums}>
+            {props.data.allContentfulReview.edges.slice(0,6).map((edge) => {
               return (
                 <div className={reviewsStyles.album}>
                   <Link to={`reviews/${edge.node.slug}`}>
