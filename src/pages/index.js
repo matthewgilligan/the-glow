@@ -7,6 +7,7 @@ import Header from "../components/header/header"
 import '../styles/index.scss'
 import indexStyles from "./index.module.scss"
 import reviewsStyles from "./reviews.module.scss"
+import newsStyles from "./news.module.scss"
 
 export const query = graphql`
   query {
@@ -43,7 +44,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulFeature ( sort: { fields:publishedDate, order:DESC } ) {
+    allContentfulFeature ( sort: { fields: publishedDate, order:DESC }, filter: { subcategory:{ name: { ne: "The Playlist" } } } limit: 6 ) {
       edges {
         node {
           title
@@ -51,6 +52,19 @@ export const query = graphql`
           slug
           category {
             name
+          }
+          publishedDate (formatString:"MMMM Do YYYY")
+          coverImage {
+            title
+            file {
+              url
+            }
+          }
+          artist {
+            englishName
+          }
+          author {
+            englishName
           }
         }
       }
@@ -128,20 +142,20 @@ const IndexPage = (props) => {
       </div>
 
 
-      <div className={indexStyles.container}>
-        <div className={indexStyles.featureInterview}>
-          <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.featureInterviewImage}/>
-          <div className={indexStyles.featureInterviewText}>
-            <div className={indexStyles.featureInterviewTextDiv}>
-              <h1 className={indexStyles.featureInterviewTitle}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
-              <div className={indexStyles.featureInterviewDetails}>
-                <p class={indexStyles.featureInterviewSubtitle}>{props.data.firstInterview.edges[0].node.subtitle}</p>
-                <div class={indexStyles.featureInterviewInfo}>
-                  <div class={indexStyles.featureInterviewMeta}>
-                    <p class={indexStyles.featureInterviewAuthor}>By: {props.data.firstInterview.edges[0].node.author.englishName}</p>
-                    <p class={indexStyles.featureInterviewDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
+      <section className={indexStyles.topFeature}>
+        <div className={indexStyles.container}>
+          <div className={indexStyles.topFeatureContent}>
+            <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.topFeatureImage}/>
+            <div className={indexStyles.topFeatureText}>
+              <h1 className={indexStyles.topFeatureTitle}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
+              <div className={indexStyles.topFeatureDetails}>
+                <p class={indexStyles.topFeatureSubtitle}>{props.data.firstInterview.edges[0].node.subtitle}</p>
+                <div class={indexStyles.topFeatureInfo}>
+                  <div class={indexStyles.topFeatureMeta}>
+                    <p class={indexStyles.topFeatureAuthor}>By: {props.data.firstInterview.edges[0].node.author.englishName}</p>
+                    <p class={indexStyles.topFeatureDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
                   </div>
-                  <Link to={props.data.firstInterview.edges[0].node.category.slug}  className={indexStyles.featureInterviewCategory}>
+                  <Link to={props.data.firstInterview.edges[0].node.category.slug}  className={indexStyles.topFeatureCategory}>
                     <p>{props.data.firstInterview.edges[0].node.category.name}</p>
                   </Link>
                 </div>
@@ -149,7 +163,7 @@ const IndexPage = (props) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <section className={indexStyles.reviews}>
         <div className={indexStyles.container}>
@@ -175,10 +189,10 @@ const IndexPage = (props) => {
         </div>
       </section>
 
-      <section className={indexStyles.supportAndLatestNews}>
+      <section className={indexStyles.patreonAndLatestNews}>
         <div className={indexStyles.container}>
-          <div className={indexStyles.supportNews}>
-            <div className={indexStyles.support}>
+          <div className={indexStyles.patreonAndLatestNewsContent}>
+            <div className={indexStyles.patreon}>
               Patreon
             </div>
             <div className={indexStyles.latestNews}>
@@ -208,10 +222,35 @@ const IndexPage = (props) => {
         </div>
       </section>
 
-      <section className={indexStyles.features}>
+      <section className={indexStyles.featuresSection}>
         <div className={indexStyles.container}>
           <div className={indexStyles.sectionTitle}>
             <h2>Features</h2>
+          </div>
+          <div className={indexStyles.features}>
+            {props.data.allContentfulFeature.edges.map((edge) => {
+              return (
+                <div className={indexStyles.feature}>
+                  <Link to={`features/${edge.node.slug}`}>
+                    <div class={indexStyles.featureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                    <div class={indexStyles.featureDetails}>
+                      <Link to={`${edge.node.slug}`}>
+                        <h3 class={indexStyles.featureTitle}>{edge.node.title}</h3>
+                      </Link>
+                      <div class={newsStyles.remainingInfo}>
+                        <div class={newsStyles.remainingMeta}>
+                          <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                          <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                        </div>
+                        <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
+                          <p>{edge.node.category.name}</p>
+                        </Link>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              )
+            })}
           </div>
           <div className={indexStyles.sectionLink}>
             <Link to="/features">View All Features</Link>
@@ -219,7 +258,7 @@ const IndexPage = (props) => {
         </div>
       </section>
 
-      <section className={indexStyles.thePlaylist}>
+      <section className={indexStyles.thePlaylistSection}>
         <div className={indexStyles.container}>
           <div className={indexStyles.thePlaylistTitle}>
             <p>The Playlist</p>
@@ -243,7 +282,7 @@ const IndexPage = (props) => {
         </div>
       </section>
 
-      <section className={indexStyles.guides}>
+      <section className={indexStyles.guidesSection}>
         <div className={indexStyles.container}>
           <div className={indexStyles.sectionTitle}>
             <h2>Guides</h2>
