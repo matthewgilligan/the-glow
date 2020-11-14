@@ -123,7 +123,7 @@ export const query = graphql`
 
 const IndexPage = (props) => {
   return (
-    <div>
+    <div className={indexStyles.indexContainter}>
       <Helmet>
         <title>The Glow | Japanese music in the spotlight</title>
         <meta name="description" content="Japanese music in the spotlight." />
@@ -137,7 +137,7 @@ const IndexPage = (props) => {
         <link rel="canonical" href="https://xenodochial-dubinsky-db8110.netlify.app" />
       </Helmet>
 
-      <div className={indexStyles.container}>
+      <div className={indexStyles.headerContainer}>
         <Header />
       </div>
 
