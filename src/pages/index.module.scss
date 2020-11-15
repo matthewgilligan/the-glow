@@ -147,6 +147,18 @@
     z-index: 99;
 }
 
+@media screen and (max-width: 1000px) {
+    .top-feature-details {
+        height: 40%;
+    }
+
+    .top-feature-subtitle {
+        padding-top: .5rem;
+        font-size: .9rem;
+        line-height: 1.5;
+    }
+}
+
 @media screen and (max-width: 850px) {
     .top-feature-content {
         position: relative;
@@ -610,7 +622,7 @@
     }
 
     .playlist {
-        width: 65%;
+        width: 70%;
         margin: 60px auto 0 auto;
     }
 
