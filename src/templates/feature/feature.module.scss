@@ -221,6 +221,23 @@
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .feature-content {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .feature-content {
+        display: block;
+        margin-top: 2rem;
+    }
+
+    .body {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .title-div {
         display: none;
