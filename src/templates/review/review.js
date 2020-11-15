@@ -173,6 +173,13 @@ const Review = (props) => {
               <p className={reviewStyles.label}>{props.data.contentfulReview.label} &nbsp;&nbsp;• &nbsp;&nbsp;{props.data.contentfulReview.initialReleaseDate}</p>
             </div>
           </div>
+          <div className={articleDetailsStyles.mobileMetaDetails}>
+            <div className={articleDetailsStyles.genreAndSocials}>
+              <p>By: <Link to={`../../author/${props.data.contentfulReview.author.slug}`}>{props.data.contentfulReview.author.englishName}</Link></p>
+              <p className={articleDetailsStyles.genre}>{props.data.contentfulReview.genre.name}</p>
+            </div>
+            <p className={articleDetailsStyles.date}>{props.data.contentfulReview.publishedDate}</p>
+          </div>
           <div className={reviewStyles.reviewContent}>
             <div className={articleDetailsStyles.metaDetails}>
               <p>By: <Link to={`../../author/${props.data.contentfulReview.author.slug}`}>{props.data.contentfulReview.author.englishName}</Link></p>
@@ -181,13 +188,6 @@ const Review = (props) => {
                 <p className={articleDetailsStyles.genre}>{props.data.contentfulReview.genre.name}</p>
                 <ShareBlockStandard {...shareBlockProps} />
               </div>
-            </div>
-            <div className={articleDetailsStyles.mobileMetaDetails}>
-              <div className={articleDetailsStyles.genreAndSocials}>
-                <p>By: <Link to={`../../author/${props.data.contentfulReview.author.slug}`}>{props.data.contentfulReview.author.englishName}</Link></p>
-                <p className={articleDetailsStyles.genre}>{props.data.contentfulReview.genre.name}</p>
-              </div>
-              <p className={articleDetailsStyles.date}>{props.data.contentfulReview.publishedDate}</p>
             </div>
             <div className={reviewStyles.body}>
               <p className={reviewStyles.subtitle}>{documentToReactComponents(props.data.contentfulReview.subtitle2.json, options)}</p>

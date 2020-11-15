@@ -58,13 +58,13 @@
 .mobile-meta-details {
     display: none;
     width: 100%;
-    height: 100%;
     text-transform: uppercase;
     font-size: .8rem;
     font-weight: bold;
+    margin-top: 1rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
     .meta-details {
         display: none;
     }
