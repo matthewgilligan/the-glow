@@ -145,6 +145,7 @@ const IndexPage = (props) => {
       <section className={indexStyles.topFeature}>
         <div className={indexStyles.container}>
           <div className={indexStyles.topFeatureContent}>
+            <h1 className={indexStyles.topFeatureResponsiveTitle}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
             <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.topFeatureImage}/>
             <div className={indexStyles.topFeatureText}>
               <h1 className={indexStyles.topFeatureTitle}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
