@@ -116,7 +116,7 @@ input, textarea, button, select, a {
 }
 
 .mobile-nav {
-    width: 80%;
+    width: 50%;
     height: 100vh;
     background-color: #E7334D;
     float: right;
@@ -134,15 +134,19 @@ input, textarea, button, select, a {
     flex-direction: column;
     list-style-type: none;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 10rem;
     padding-inline-start: 1rem;
 
     li {
-        padding-top: 1.5rem;
+        margin-top: 1.5rem;
         color: #000000;
-        font-size: 2rem;
+        font-size: 4rem;
         text-decoration: none;
         text-transform: uppercase;
+
+        &:hover {
+            font-style: italic;
+        }
     }
 }
 
@@ -153,7 +157,7 @@ input, textarea, button, select, a {
     padding: 2.4rem 0 .5rem 1rem;
 
     li {
-        padding-right: 1.2rem;
+        margin-right: 1.2rem;
     }
 
     li:last-child {
@@ -169,8 +173,17 @@ input, textarea, button, select, a {
 }
 
 .mobile-social-item:hover {
-    color: #E7334D;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 900px) {
+    .mobile-nav {
+        width: 80%;
+        height: 100vh;
+        background-color: #E7334D;
+        float: right;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -213,5 +226,63 @@ input, textarea, button, select, a {
 
     .mobile-nav {
         display: block;
+    }
+
+    .mobile-nav {
+        width: 80%;
+        height: 100vh;
+        background-color: #E7334D;
+        float: right;
+    }
+
+    .close {
+        margin: 1rem .9rem 0 0;
+        float: right;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .mobile-nav-list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        justify-content: center;
+        margin-top: 6rem;
+        padding-inline-start: 1rem;
+
+        li {
+            margin-top: 1.5rem;
+            color: #000000;
+            font-size: 3rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+
+    .mobile-social-list {
+        display: flex;
+        list-style-type: none;
+        // justify-content: center;
+        padding: 2.4rem 0 .5rem 1rem;
+
+        li {
+            padding-right: 1.2rem;
+        }
+
+        li:last-child {
+            padding-right: 0;
+        }
+    }
+
+    .mobile-social-item {
+        color: #000000;
+        font-size: 1.5rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .mobile-social-item:hover {
+        color: #E7334D;
+        cursor: pointer;
     }
 }
