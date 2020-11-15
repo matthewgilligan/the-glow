@@ -31,7 +31,7 @@
 }
 
 .section-headline {
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -116,6 +116,18 @@
 
     .content {
         padding: 4.5rem 0 0 1rem;
+    }
+
+    .search-box {
+        input {
+            font-size: 1.2rem !important;
+        }
+    }
+
+    .hit-list {
+        h2 {
+            font-size: 1.2rem;
+        }
     }
 }
 
