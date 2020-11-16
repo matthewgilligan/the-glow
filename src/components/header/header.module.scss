@@ -26,6 +26,17 @@ input, textarea, button, select, a {
     text-transform: uppercase;
 }
 
+.mobile-title {
+    display: none;
+    height: 100%;
+    color: #000000;
+    font-size: 3rem;
+    font-family: Lexend Tera;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 .search {
     padding-top: 1.8rem;
     font-size: 1.5rem;
@@ -210,6 +221,11 @@ input, textarea, button, select, a {
     }
 
     .title {
+        display: none;
+    }
+
+    .mobile-title {
+        display: block;
         font-size: 1.5rem;
         position: absolute;
         top: .9rem;
