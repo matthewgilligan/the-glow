@@ -4,6 +4,7 @@ input, textarea, button, select, a {
 
 .header {
     padding: 0;
+    position: relative;
 }
 
 .nav-top {
@@ -13,13 +14,16 @@ input, textarea, button, select, a {
 }
 
 .title {
-    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
     color: #000000;
+    margin-top: 12px;
     font-size: 3rem;
     font-family: Lexend Tera;
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    transform: translate(45px, 0)
 }
 
 .search {

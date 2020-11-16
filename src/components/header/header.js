@@ -81,7 +81,6 @@ const Header = () => {
         <div className={headerStyles.search}>
           <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
         </div>
-        <Link to="/" className={headerStyles.title}>{data.site.siteMetadata.title}</Link>
         <div className={headerStyles.mobileIcons}>
           <div className={headerStyles.mobileSearch}>
             <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
@@ -101,6 +100,9 @@ const Header = () => {
             <a className={headerStyles.mobileSocialItem} href="https://twitter.com/theglow_jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
           </li>
         </ul>
+      </div>
+      <div className={headerStyles.title}>
+        <Link to="/">{data.site.siteMetadata.title}</Link>
       </div>
       <div>
         <ul className={headerStyles.navList}>
