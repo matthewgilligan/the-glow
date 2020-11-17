@@ -70,7 +70,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulGuide ( sort: { fields:publishedDate, order:DESC } ) {
+    allContentfulGuide ( sort: { fields:publishedDate, order:DESC }, limit: 3 ) {
       edges {
         node {
           title
