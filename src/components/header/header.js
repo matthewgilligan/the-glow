@@ -101,9 +101,7 @@ const Header = () => {
             <a className={headerStyles.mobileSocialItem} href="https://twitter.com/theglow_jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
           </li>
         </ul>
-      </div>
-      <div className={headerStyles.title}>
-        <Link to="/">{data.site.siteMetadata.title}</Link>
+        <Link to="/" className={headerStyles.title}>{data.site.siteMetadata.title}</Link>
       </div>
       <div>
         <ul className={headerStyles.navList}>
