@@ -8,6 +8,7 @@ import '../styles/index.scss'
 import indexStyles from "./index.module.scss"
 import reviewsStyles from "./reviews.module.scss"
 import newsStyles from "./news.module.scss"
+import guidesStyles from "./guides.module.scss"
 
 export const query = graphql`
   query {
@@ -62,6 +63,24 @@ export const query = graphql`
           }
           artist {
             englishName
+          }
+          author {
+            englishName
+          }
+        }
+      }
+    }
+    allContentfulGuide ( sort: { fields:publishedDate, order:DESC } ) {
+      edges {
+        node {
+          title
+          slug
+          publishedDate(formatString:"MMMM Do YYYY")
+          coverImage {
+            file {
+              url
+            }
+            title
           }
           author {
             englishName
@@ -300,6 +319,24 @@ const IndexPage = (props) => {
         <div className={indexStyles.container}>
           <div className={indexStyles.sectionTitle}>
             <h2>Guides</h2>
+          </div>
+          <div className={guidesStyles.guides}>
+            {props.data.allContentfulGuide.edges.map((edge) => {
+              return (
+                <div className={guidesStyles.guide}>
+                  <Link to={`${edge.node.slug}`}>
+                    <div class={guidesStyles.guideImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                    <div class={guidesStyles.guideDetails}>
+                      <h3 class={guidesStyles.guideTitle}>{edge.node.title}</h3>
+                      <div class={guidesStyles.guideInfo}>
+                        <p class={guidesStyles.guideAuthor}>By: {edge.node.author.englishName}</p>
+                        <p class={guidesStyles.guideDate}>{edge.node.publishedDate}</p>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              )
+            })}
           </div>
           <div className={indexStyles.sectionLink}>
             <Link to="/guides">View All Guides</Link>
