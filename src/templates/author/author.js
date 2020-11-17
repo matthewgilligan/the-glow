@@ -6,6 +6,9 @@ import { HiLink } from "react-icons/hi";
 import Layout from "../../components/layout/layout"
 import Head from "../../components/head/head"
 import artistStyles from "../artist/artist.module.scss"
+import reviewsStyles from "../../pages/reviews.module.scss"
+import featuresStyles from "../../pages/features.module.scss"
+import newsStyles from "../../pages/news.module.scss"
 
 export const query = graphql`
   query($slug: String!){
@@ -115,6 +118,22 @@ const Author = (props) => {
           )
         })}
       </div>
+      <div className={artistStyles.responsiveAlbums}>
+        <div className={reviewsStyles.albums}>
+          {props.data.allContentfulReview.edges.map((edge) => {
+            return (
+              <div className={reviewsStyles.album}>
+                <Link to={`../../reviews/${edge.node.slug}`}>
+                  <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                  <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                  <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
+                  <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
+                </Link>
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </div>;
 
   const featureSection =
@@ -136,7 +155,7 @@ const Author = (props) => {
                     <p class={artistStyles.newsAuthor}>By: {edge.node.author.englishName}</p>
                     <p class={artistStyles.newsDate}>{edge.node.publishedDate}</p>
                   </div>
-                  <Link to={`/news/${edge.node.category.name.toLowerCase()}`}  className={artistStyles.newsCategory}>
+                  <Link to={`/features/${edge.node.category.name.toLowerCase()}`}  className={artistStyles.newsCategory}>
                     <p>{edge.node.subcategory.name}</p>
                   </Link>
                 </div>
@@ -144,6 +163,33 @@ const Author = (props) => {
             </div>
           )
         })}
+      </div>
+      <div className={artistStyles.responsiveFeatures}>
+        <div className={featuresStyles.mobileFeatures}>
+          {props.data.allContentfulFeature.edges.map((edge) => {
+            return (
+              <div className={featuresStyles.mobileFeature}>
+                <Link to={`../../features/${edge.node.slug}`}>
+                  <div class={featuresStyles.mobileFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                </Link>
+                <div class={featuresStyles.mobileFeatureDetails}>
+                  <Link to={`../../features/${edge.node.slug}`}>
+                    <h3 class={featuresStyles.mobileFeatureTitle}>{edge.node.title}</h3>
+                  </Link>
+                  <div class={newsStyles.remainingInfo}>
+                    <div class={newsStyles.remainingMeta}>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                    </div>
+                    <Link to={`/features/${edge.node.category.name.toLowerCase()}`} className={newsStyles.remainingCategory}>
+                      <p>{edge.node.category.name}</p>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
 
@@ -163,7 +209,7 @@ const Author = (props) => {
                       <p class={artistStyles.newsAuthor}>By: {edge.node.author.englishName}</p>
                       <p class={artistStyles.newsDate}>{edge.node.publishedDate}</p>
                     </div>
-                    <Link to={`/news/${edge.node.category.title.toLowerCase()}`}  className={artistStyles.newsCategory}>
+                    <Link to={`/news/${edge.node.category.title.toLowerCase()}`} className={artistStyles.newsCategory}>
                       <p>{edge.node.category.title}</p>
                     </Link>
                   </div>
@@ -172,6 +218,31 @@ const Author = (props) => {
             </Link>
           )
         })}
+      </div>
+      <div className={artistStyles.responsiveNews}>
+        <div className={newsStyles.remainingPosts}>
+          {props.data.allContentfulNews.edges.map((edge) => {
+            return (
+              <Link to={`../../news/${edge.node.slug}`}>
+                <div className={newsStyles.remainingPost}>
+                  <div class={newsStyles.remainingImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                  <div class={newsStyles.remainingDetails}>
+                    <h3 class={newsStyles.remainingTitle}>{edge.node.title}</h3>
+                    <div class={newsStyles.remainingInfo}>
+                      <div class={newsStyles.remainingMeta}>
+                        <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                        <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                      </div>
+                      <Link to={`/news/${edge.node.category.title.toLowerCase()}`} className={newsStyles.remainingCategory}>
+                        <p>{edge.node.category.title}</p>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
       </div>
     </div>;
 
