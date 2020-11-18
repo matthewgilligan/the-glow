@@ -109,6 +109,7 @@ export const query = graphql`
           }
           author {
             englishName
+            slug
           }
           publishedDate(formatString:"MMMM Do YYYY")
         }
@@ -165,14 +166,18 @@ const IndexPage = (props) => {
         <div className={indexStyles.container}>
           <div className={indexStyles.topFeatureContent}>
             <h1 className={indexStyles.topFeatureResponsiveTitle}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
-            <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.topFeatureImage}/>
-            <div className={indexStyles.topFeatureText}>
+            <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`} className={indexStyles.topFeatureImageLink}>
+              <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.topFeatureImage}/>
+            </Link>
+            <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`} className={indexStyles.topFeatureTitleLink}>
               <h1 className={indexStyles.topFeatureTitle}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
+            </Link>
+            <div className={indexStyles.topFeatureText}>
               <div className={indexStyles.topFeatureDetails}>
                 <p class={indexStyles.topFeatureSubtitle}>{props.data.firstInterview.edges[0].node.subtitle}</p>
                 <div class={indexStyles.topFeatureInfo}>
                   <div class={indexStyles.topFeatureMeta}>
-                    <p class={indexStyles.topFeatureAuthor}>By: {props.data.firstInterview.edges[0].node.author.englishName}</p>
+                    <p class={indexStyles.topFeatureAuthor}>By: <Link to={`/author/${props.data.firstInterview.edges[0].node.author.slug}`}>{props.data.firstInterview.edges[0].node.author.englishName}</Link></p>
                     <p class={indexStyles.topFeatureDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
                   </div>
                   <Link to={props.data.firstInterview.edges[0].node.category.slug}  className={indexStyles.topFeatureCategory}>
@@ -324,7 +329,7 @@ const IndexPage = (props) => {
             {props.data.allContentfulGuide.edges.map((edge) => {
               return (
                 <div className={guidesStyles.guide}>
-                  <Link to={`${edge.node.slug}`}>
+                  <Link to={`guides/${edge.node.slug}`}>
                     <div class={guidesStyles.guideImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
                     <div class={guidesStyles.guideDetails}>
                       <h3 class={guidesStyles.guideTitle}>{edge.node.title}</h3>
