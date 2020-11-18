@@ -391,6 +391,13 @@
         text-transform: uppercase;
         color: gray;
     }
+
+    &:hover {
+        h2 {
+            text-decoration: underline;
+            text-decoration-color: red;
+        }
+    }
 }
 
 @media screen and (max-width: 940px) {
