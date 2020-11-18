@@ -180,7 +180,7 @@ const IndexPage = (props) => {
                     <p class={indexStyles.topFeatureAuthor}>By: <Link to={`/author/${props.data.firstInterview.edges[0].node.author.slug}`}>{props.data.firstInterview.edges[0].node.author.englishName}</Link></p>
                     <p class={indexStyles.topFeatureDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
                   </div>
-                  <Link to={props.data.firstInterview.edges[0].node.category.slug}  className={indexStyles.topFeatureCategory}>
+                  <Link to={`features/${props.data.firstInterview.edges[0].node.category.name.toLowerCase()}`}  className={indexStyles.topFeatureCategory}>
                     <p>{props.data.firstInterview.edges[0].node.category.name}</p>
                   </Link>
                 </div>
