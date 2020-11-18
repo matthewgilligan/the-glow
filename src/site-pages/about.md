@@ -3,36 +3,29 @@ title: "About Us"
 date: "2019-09-09"
 ---
 
-## Hello!
+The Glow aspires to be the leading authority on Japanese music in the English-speaking world.
 
-- What
-- The
-- Fuck
+</br>
+Founded by two music enthusiasts, we are an independent site geared towards the discovery and promotion of Japanese music, old and new. Our guides, interviews, essays, lists and longform features put a spotlight on Japanese artistsand writers.
 
+</br>
+The Glow champions high-quality journalism and Japanese writing talent both in English and in translation.
 
+</br>
 
----
+##CONTACT
+</br>
 
+###Editorial
+We’re always searching for new and exciting talent to contribute to The Glow. Please send writing samples and a covering letter to:
 
+<a href="mailto:contribute@theglow.jp" target="_blank">contribute@theglow.jp</a>
 
-![LOGO!](../images//red_logo_text_medium.png)
+###Advertisement
+<a href="mailto:advertise@theglow.jp" target="_blank">advertise@theglow.jp</a>
 
->>>>I'm baby +1 godard biodiesel trust fund palo santo kogi adaptogen, tbh literally skateboard. Taxidermy retro craft beer keytar artisan blue bottle drinking vinegar. Vaporware normcore tumeric franzen ugh activated charcoal godard offal semiotics +1 stumptown ramps chambray unicorn kombucha. Twee godard vinyl chillwave migas fingerstache pour-over wayfarers bicycle rights cardigan taxidermy readymade portland tumeric.</br></br>
+###Press Releases
+<a href="mailto:news@theglow.jp" target="_blank">news@theglow.jp</a>
 
-Shabby chic shoreditch kinfolk, heirloom cold-pressed marfa whatever seitan ethical man bun chia. Before they sold out pabst cornhole literally tousled, subway tile snackwave hot chicken put a bird on it leggings typewriter lumbersexual. Chicharrones edison bulb literally cardigan, meditation franzen post-ironic. Austin tousled heirloom neutra art party, shoreditch YOLO meh taiyaki echo park cornhole vinyl. Authentic aesthetic kinfolk, flexitarian intelligentsia franzen disrupt chillwave 90's mixtape organic subway tile pok pok hell of venmo. Tilde actually man bun enamel pin, farm-to-table affogato meggings.</br></br>
-
-Butcher prism fashion axe farm-to-table fam mlkshk bespoke knausgaard occupy raw denim single-origin coffee. Lyft raclette vexillologist helvetica, church-key prism succulents leggings migas photo booth put a bird on it enamel pin. Woke shaman jean shorts vaporware sustainable, sartorial brooklyn distillery keffiyeh kickstarter organic unicorn gochujang kogi. Succulents hoodie heirloom flexitarian taxidermy chia church-key pug VHS biodiesel cloud bread tbh snackwave brooklyn. Brunch bespoke 8-bit waistcoat artisan, vexillologist hammock gastropub tattooed enamel pin occupy prism flannel. Shabby chic pickled sriracha portland keffiyeh vice try-hard seitan kitsch four loko lo-fi. Hashtag normcore hella retro mixtape.</br></br>
-
->Drinking vinegar craft beer sartorial air plant hella, taiyaki williamsburg poutine scenester marfa jianbing ennui aesthetic. Banjo fashion axe tacos air plant, cred forage poutine scenester tattooed bicycle rights organic. Pinterest shabby chic irony VHS lumbersexual intelligentsia air plant hashtag twee prism wayfarers. Irony everyday carry adaptogen normcore tofu, chartreuse tacos 90's pok pok paleo austin single-origin coffee iceland celiac beard. Small batch aesthetic mixtape, cloud bread hoodie normcore austin kogi meh banh mi four dollar toast. Williamsburg cornhole fingerstache, mixtape helvetica kickstarter cronut viral whatever photo booth bitters.</br></br>
-
-Lo-fi kitsch DIY vegan yr fashion axe quinoa four loko. Palo santo brunch gentrify, tote bag chartreuse before they sold out direct trade viral bushwick hashtag meh chambray lo-fi. Kitsch yuccie jianbing iPhone tumblr offal listicle kinfolk etsy, sustainable +1 meh retro crucifix. 8-bit 3 wolf moon cloud bread post-ironic meggings narwhal.
-
-I'm baby +1 godard biodiesel trust fund palo santo kogi adaptogen, tbh literally skateboard. Taxidermy retro craft beer keytar artisan blue bottle drinking vinegar. Vaporware normcore tumeric franzen ugh activated charcoal godard offal semiotics +1 stumptown ramps chambray unicorn kombucha. Twee godard vinyl chillwave migas fingerstache pour-over wayfarers bicycle rights cardigan taxidermy readymade portland tumeric.</br></br>
-
-Shabby chic shoreditch kinfolk, heirloom cold-pressed marfa whatever seitan ethical man bun chia. Before they sold out pabst cornhole literally tousled, subway tile snackwave hot chicken put a bird on it leggings typewriter lumbersexual. Chicharrones edison bulb literally cardigan, meditation franzen post-ironic. Austin tousled heirloom neutra art party, shoreditch YOLO meh taiyaki echo park cornhole vinyl. Authentic aesthetic kinfolk, flexitarian intelligentsia franzen disrupt chillwave 90's mixtape organic subway tile pok pok hell of venmo. Tilde actually man bun enamel pin, farm-to-table affogato meggings.</br></br>
-
-Butcher prism fashion axe farm-to-table fam mlkshk bespoke knausgaard occupy raw denim single-origin coffee. Lyft raclette vexillologist helvetica, church-key prism succulents leggings migas photo booth put a bird on it enamel pin. Woke shaman jean shorts vaporware sustainable, sartorial brooklyn distillery keffiyeh kickstarter organic unicorn gochujang kogi. Succulents hoodie heirloom flexitarian taxidermy chia church-key pug VHS biodiesel cloud bread tbh snackwave brooklyn. Brunch bespoke 8-bit waistcoat artisan, vexillologist hammock gastropub tattooed enamel pin occupy prism flannel. Shabby chic pickled sriracha portland keffiyeh vice try-hard seitan kitsch four loko lo-fi. Hashtag normcore hella retro mixtape.</br></br>
-
-Drinking vinegar craft beer sartorial air plant hella, taiyaki williamsburg poutine scenester marfa jianbing ennui aesthetic. Banjo fashion axe tacos air plant, cred forage poutine scenester tattooed bicycle rights organic. Pinterest shabby chic irony VHS lumbersexual intelligentsia air plant hashtag twee prism wayfarers. Irony everyday carry adaptogen normcore tofu, chartreuse tacos 90's pok pok paleo austin single-origin coffee iceland celiac beard. Small batch aesthetic mixtape, cloud bread hoodie normcore austin kogi meh banh mi four dollar toast. Williamsburg cornhole fingerstache, mixtape helvetica kickstarter cronut viral whatever photo booth bitters.</br></br>
-
-Lo-fi kitsch DIY vegan yr fashion axe quinoa four loko. Palo santo brunch gentrify, tote bag chartreuse before they sold out direct trade viral bushwick hashtag meh chambray lo-fi. Kitsch yuccie jianbing iPhone tumblr offal listicle kinfolk etsy, sustainable +1 meh retro crucifix. 8-bit 3 wolf moon cloud bread post-ironic meggings narwhal.
+###Press Inquiries
+<a href="mailto:press@theglow.jp" target="_blank">press@theglow.jp</a>
