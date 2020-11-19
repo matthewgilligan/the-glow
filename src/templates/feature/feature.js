@@ -183,10 +183,8 @@ const Feature = (props) => {
                 </div>
               </div>
             </div>
-            <div className={featureStyles.details}>
-              <h1 className={featureStyles.featureTitle}>{props.data.contentfulFeature.title}</h1>
-              <p className={featureStyles.featureAuthor}>By: {props.data.contentfulFeature.author.englishName}</p>
-              <p>{props.data.contentfulFeature.publishedDate}</p>
+            <div className={featureStyles.featureTitle}>
+              <h1>{props.data.contentfulFeature.title}</h1>
             </div>
           </div>
         </div>
@@ -202,6 +200,13 @@ const Feature = (props) => {
                 <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
                 <ShareBlockStandard {...shareBlockProps} />
               </div>
+            </div>
+            <div className={articleDetailsStyles.mobileMetaDetails}>
+              <div className={articleDetailsStyles.genreAndSocials}>
+                <p>By: <Link to={`../../author/${props.data.contentfulFeature.author.slug}`}>{props.data.contentfulFeature.author.englishName}</Link></p>
+                <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
+              </div>
+              <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
             </div>
             <div className={featureStyles.body}>
               <p className={featureStyles.subtitle}>{props.data.contentfulFeature.subtitle}</p>
