@@ -5,7 +5,55 @@
     display: -ms-flexbox;
     display: flex;
     display: -ms-flexbox;
-    margin: 0 -20px;
+    margin: 0 -19px;
+}
+
+@media screen and (max-width: 1230px) {
+    .guides {
+        margin: 0 -18.2px;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .guides {
+        margin: 0 -17.7px;
+    }
+}
+
+@media screen and (max-width: 1142px) {
+    .guides {
+        margin: 0 -17px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .guides {
+        margin: 0 -16.2px;
+    }
+}
+
+@media screen and (max-width: 1047px) {
+    .guides {
+        margin: 0 -15.3px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .guides {
+        margin: 0 -14.5px;
+    }
+}
+
+@media screen and (max-width: 933px) {
+    .guides {
+        margin: 0 -13.5px;
+    }
+}
+
+@media screen and (max-width: 904px) {
+    .guides {
+        margin: 0 -12px;
+    }
 }
 
 .guide {
@@ -72,18 +120,34 @@
 @media screen and (max-width: 931px) {
     .guides {
         padding-left: 0;
-        margin-left: -14px;
+        margin-left: -12px;
         margin-right: -16px;
     }
 
     .guide {
-        width: 46.9%;
+        width: 46.6%;
         &:hover {
             h3 {
                 text-decoration: underline !important;
                 text-decoration-color: red !important;
             }
         }
+    }
+}
+
+@media screen and (max-width: 784px) {
+    .guides {
+        padding-left: 0;
+        margin-left: -10px;
+        margin-right: -16px;
+    }
+}
+
+@media screen and (max-width: 685px) {
+    .guides {
+        padding-left: 0;
+        margin-left: -10px;
+        margin-right: -14px;
     }
 }
 
