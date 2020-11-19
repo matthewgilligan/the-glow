@@ -8,6 +8,7 @@ import '../styles/index.scss'
 import indexStyles from "./index.module.scss"
 import reviewsStyles from "./reviews.module.scss"
 import newsStyles from "./news.module.scss"
+import featuresStyles from "./features.module.scss"
 import guidesStyles from "./guides.module.scss"
 
 export const query = graphql`
@@ -167,7 +168,7 @@ const IndexPage = (props) => {
       <section className={indexStyles.topFeature}>
         <div className={indexStyles.container}>
           <div className={indexStyles.topFeatureContent}>
-            <h1 className={indexStyles.topFeatureResponsiveTitle}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
+            <h1 className={indexStyles.topFeatureResponsiveTitle}>Hakushi Hasegawa</h1>
             <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`} className={indexStyles.topFeatureImageLink}>
               <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.topFeatureImage}/>
             </Link>
@@ -187,6 +188,21 @@ const IndexPage = (props) => {
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className={indexStyles.responsiveTopFeature}>
+            <div class={indexStyles.responsiveTopFeature}>
+              <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`}>
+                <div class={indexStyles.responsiveTopFeatureImg}
+                  style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${props.data.firstInterview.edges[0].node.coverImage.file.url})`} }>
+                  <div class={indexStyles.responsiveTopFeatureDetails}>
+                    <h2 class={indexStyles.responsiveTopFeatureTitle}>{props.data.firstInterview.edges[0].node.title}</h2>
+                    <p class={indexStyles.responsiveTopFeatureSubtitle}>{props.data.firstInterview.edges[0].node.subtitle}</p>
+                    <p class={indexStyles.responsiveTopFeatureAuthor}>By: {props.data.firstInterview.edges[0].node.author.englishName}</p>
+                    <p class={indexStyles.responsiveTopFeatureDate}>{props.data.firstInterview.edges[0].node.publushedDate}</p>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
