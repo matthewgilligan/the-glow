@@ -199,7 +199,7 @@ const IndexPage = (props) => {
                     <h2 class={indexStyles.responsiveTopFeatureTitle}>{props.data.firstInterview.edges[0].node.title}</h2>
                     <p class={indexStyles.responsiveTopFeatureSubtitle}>{props.data.firstInterview.edges[0].node.subtitle}</p>
                     <p class={indexStyles.responsiveTopFeatureAuthor}>By: {props.data.firstInterview.edges[0].node.author.englishName}</p>
-                    <p class={indexStyles.responsiveTopFeatureDate}>{props.data.firstInterview.edges[0].node.publushedDate}</p>
+                    <p class={indexStyles.responsiveTopFeatureDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
                   </div>
                 </div>
               </Link>
