@@ -302,7 +302,7 @@ const IndexPage = (props) => {
       <section className={indexStyles.thePlaylistSection}>
         <div className={indexStyles.playlistContainer}>
           <div className={indexStyles.thePlaylistTitle}>
-            <p>The Playlist</p>
+            <h2>The Playlist</h2>
           </div>
           <div className={indexStyles.playlists}>
             {props.data.thePlaylist.edges.map((edge) => {
@@ -310,12 +310,14 @@ const IndexPage = (props) => {
                 <div className={indexStyles.playlist}>
                   <Link to={`features/${edge.node.slug}`}>
                     <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} className={indexStyles.playlistImage} />
-                    <div className={indexStyles.playlistDetails}>
-                      <h2 className={indexStyles.playlistArtist}>{edge.node.artist[0].englishName}</h2>
-                      <p className={indexStyles.playlistSubtitle}>{edge.node.subtitle}</p>
-                      <p className={indexStyles.playlistDate}>{edge.node.publishedDate}</p>
-                    </div>
                   </Link>
+                  <div className={indexStyles.playlistDetails}>
+                    <Link to={`features/${edge.node.slug}`}>
+                      <h2 className={indexStyles.playlistArtist}>{edge.node.artist[0].englishName}</h2>
+                    </Link>
+                    <p className={indexStyles.playlistSubtitle}>{edge.node.subtitle}</p>
+                    <p className={indexStyles.playlistDate}>{edge.node.publishedDate}</p>
+                  </div>
                 </div>
               )
             })}
