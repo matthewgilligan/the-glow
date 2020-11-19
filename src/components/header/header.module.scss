@@ -205,6 +205,12 @@ input, textarea, button, select, a {
     }
 }
 
+@media screen and (max-width: 900px) {
+    .title {
+        width: 400px;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .header {
         position: sticky;
