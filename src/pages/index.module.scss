@@ -294,7 +294,7 @@
     }
 
     .responsive-top-feature {
-        height: 70vh;
+        height: 40vh;
     }
 
     .responsive-top-feature-title {
@@ -302,9 +302,7 @@
     }
 
     .responsive-top-feature-subtitle{
-        margin-top: .5rem;
-        font-size: .8rem !important;
-        line-height: 1.3;
+        display: none;
     }
 
     .responsive-top-feature-details {
@@ -314,7 +312,7 @@
     }
 
     .responsive-top-feature-author {
-        margin: 1.5rem 0 .3rem 0;
+        margin: 1rem 0 .3rem 0;
     }
 
     // .top-feature-content {
