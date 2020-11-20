@@ -319,24 +319,27 @@ const IndexPage = (props) => {
         <div className={indexStyles.playlistContainer}>
           <div className={indexStyles.thePlaylistTitle}>
             <h2>The Playlist</h2>
+            <p>swipe →</p>
           </div>
-          <div className={indexStyles.playlists}>
-            {props.data.thePlaylist.edges.map((edge) => {
-              return (
-                <div className={indexStyles.playlist}>
-                  <Link to={`features/${edge.node.slug}`}>
-                    <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} className={indexStyles.playlistImage} />
-                  </Link>
-                  <div className={indexStyles.playlistDetails}>
+          <div className={indexStyles.playlistsScroll}>
+            <div className={indexStyles.playlists}>
+              {props.data.thePlaylist.edges.map((edge) => {
+                return (
+                  <div className={indexStyles.playlist}>
                     <Link to={`features/${edge.node.slug}`}>
-                      <h2 className={indexStyles.playlistArtist}>{edge.node.artist[0].englishName}</h2>
+                      <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} className={indexStyles.playlistImage} />
                     </Link>
-                    <p className={indexStyles.playlistSubtitle}>{edge.node.subtitle}</p>
-                    <p className={indexStyles.playlistDate}>{edge.node.publishedDate}</p>
+                    <div className={indexStyles.playlistDetails}>
+                      <Link to={`features/${edge.node.slug}`}>
+                        <h2 className={indexStyles.playlistArtist}>{edge.node.artist[0].englishName}</h2>
+                      </Link>
+                      <p className={indexStyles.playlistSubtitle}>{edge.node.subtitle}</p>
+                      <p className={indexStyles.playlistDate}>{edge.node.publishedDate}</p>
+                    </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>
