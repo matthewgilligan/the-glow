@@ -64,12 +64,34 @@
     margin-bottom: 3rem;
     padding-left: 1.5%;
     padding-right: 1.5%;
+}
 
-    &:hover {
-        h3 {
-            text-decoration: underline !important;
-            text-decoration-color: red !important;
-        }
+.image {
+    position: relative;
+    height: 300px;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.title {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+
+    h1 {
+        font-size: 2rem;
+        padding-bottom: .2rem;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        margin: .5rem 0;
+        display:inline-block;
     }
 }
 
@@ -126,12 +148,6 @@
 
     .guide {
         width: 46.6%;
-        &:hover {
-            h3 {
-                text-decoration: underline !important;
-                text-decoration-color: red !important;
-            }
-        }
     }
 }
 
@@ -161,10 +177,17 @@
     .guide {
         padding-left: 0;
         width: 100%;
+        margin-bottom: 2rem;
     }
 
-    .guide-img {
-        height: 300px;
+    .image {
+        height: 200px;
+    }
+
+    .title {
+        h1 {
+            font-size: 1.2rem;
+        }
     }
 
     .guide-details {

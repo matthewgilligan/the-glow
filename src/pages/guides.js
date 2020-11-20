@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import guidesStyles from "./guides.module.scss"
+import guideStyles from "../templates//guide/guide.module.scss"
 import stickyNavStyles from '../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../components/head/head"
 
@@ -13,6 +14,7 @@ const GuidesPage = () => {
         edges {
           node {
             title
+            subject
             slug
             publishedDate(formatString:"MMMM Do YYYY")
             coverImage {
@@ -51,12 +53,9 @@ const GuidesPage = () => {
           return (
             <div className={guidesStyles.guide}>
               <Link to={`${edge.node.slug}`}>
-                <div class={guidesStyles.guideImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
-                <div class={guidesStyles.guideDetails}>
-                  <h3 class={guidesStyles.guideTitle}>{edge.node.title}</h3>
-                  <div class={guidesStyles.guideInfo}>
-                    <p class={guidesStyles.guideAuthor}>By: {edge.node.author.englishName}</p>
-                    <p class={guidesStyles.guideDate}>{edge.node.publishedDate}</p>
+                <div className={guidesStyles.image} style={{backgroundImage: `radial-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)), url(${edge.node.coverImage.file.url})`}}>
+                  <div className={guidesStyles.title}>
+                    <h1>{edge.node.subject}</h1>
                   </div>
                 </div>
               </Link>
