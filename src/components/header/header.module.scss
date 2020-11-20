@@ -69,6 +69,10 @@ input, textarea, button, select, a {
 
 .check-button {
     cursor: pointer;
+
+    :hover {
+        color: #E7334D;
+    }
 }
 
 .nav-list {
