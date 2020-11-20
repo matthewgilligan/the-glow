@@ -309,6 +309,31 @@ const IndexPage = (props) => {
               )
             })}
           </div>
+          <div className={indexStyles.lessFeatures}>
+            {props.data.allContentfulFeature.edges.slice(0, 4).map((edge) => {
+              return (
+                <div className={indexStyles.feature}>
+                  <Link to={`features/${edge.node.slug}`}>
+                    <div class={indexStyles.featureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                  </Link>
+                  <div class={indexStyles.featureDetails}>
+                    <Link to={`features/${edge.node.slug}`}>
+                      <h3 class={indexStyles.featureTitle}>{edge.node.title}</h3>
+                    </Link>
+                    <div class={newsStyles.remainingInfo}>
+                      <div class={newsStyles.remainingMeta}>
+                        <p class={newsStyles.remainingAuthor}>By: <Link to={`/author/${edge.node.author.slug}`}>{edge.node.author.englishName}</Link></p>
+                        <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                      </div>
+                      <Link to={`features/${edge.node.category.name.toLowerCase()}`} className={newsStyles.remainingCategory}>
+                        <p>{edge.node.category.name}</p>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
           <div className={indexStyles.sectionLink}>
             <Link to="/features">View All Features</Link>
           </div>
