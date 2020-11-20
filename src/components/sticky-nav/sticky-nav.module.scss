@@ -110,8 +110,8 @@
     padding-left: .5rem;
     min-width: 180px;
     font-size: 14px;
-    transform: translate(-80px, 0);
-    background-color: #E7334D;
+    transform: translate(-40px, 0);
+    background-color: white;
     // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     text-transform: uppercase;
 
@@ -121,7 +121,7 @@
         color: black;
         text-decoration: none;
 
-        &:hover {color: white}
+        &:hover {color: #E7334D}
     }
 }
 
