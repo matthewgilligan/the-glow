@@ -211,7 +211,7 @@ const IndexPage = (props) => {
       <section className={indexStyles.reviews}>
         <div className={indexStyles.container}>
           <div className={indexStyles.sectionTitle}>
-            <h2>Album Reviews</h2>
+            <h2>Reviews</h2>
           </div>
           <div className={indexStyles.albums}>
             {props.data.allContentfulReview.edges.map((edge) => {

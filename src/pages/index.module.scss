@@ -19,7 +19,7 @@
         font-size: 1.2rem;
         font-weight: lighter;
         text-transform: uppercase;
-        padding: .5rem 0 2rem 0;
+        margin: .5rem 0 2rem 0;
     }
 }
 
@@ -39,10 +39,10 @@
         border-top: none;
         width: 100%;
         text-align: center;
-        margin: 2rem 0 .5rem 0;
 
         h2 {
             font-size: 1.5rem;
+            margin: 1rem 0 1rem 0;
         }
     }
 
@@ -299,7 +299,7 @@
     }
 
     .responsive-top-feature-title {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .responsive-top-feature-subtitle{
@@ -307,13 +307,16 @@
     }
 
     .responsive-top-feature-details {
+        padding: 0 0 1rem 1rem;
+        width: 90%;
+
         p {
             font-size: .6rem;
         }
     }
 
     .responsive-top-feature-author {
-        margin: 1rem 0 .3rem 0;
+        margin: .5rem 0 .3rem 0;
     }
 
     // .top-feature-content {
@@ -534,6 +537,11 @@
 @media screen and (max-width: 600px) {
     .patreon {
         height: 350px;
+    }
+
+    .news-list {
+        margin-top: 0rem;
+        margin-bottom: 1.5rem;
     }
 
     .news-item {
