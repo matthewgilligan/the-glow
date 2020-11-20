@@ -379,7 +379,7 @@ const IndexPage = (props) => {
             {props.data.allContentfulGuide.edges.map((edge) => {
               return (
                 <div className={guidesStyles.guide}>
-              <Link to={`${edge.node.slug}`}>
+              <Link to={`guides/${edge.node.slug}`}>
                 <div className={guidesStyles.image} style={{backgroundImage: `radial-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)), url(${edge.node.coverImage.file.url})`}}>
                   <div className={guidesStyles.title}>
                     <h1>{edge.node.subject}</h1>
