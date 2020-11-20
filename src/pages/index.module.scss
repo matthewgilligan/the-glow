@@ -640,11 +640,15 @@
 }
 
 .the-playlist-title {
-    font-size: 1.2rem;
     font-weight: lighter;
     text-transform: uppercase;
     color: white;
     padding: 1.5rem 0;
+
+    h2 {
+        font-weight: lighter;
+        font-size: 1.2rem;
+    }
 }
 
 .playlists {
