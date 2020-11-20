@@ -42,7 +42,6 @@
 
         h2 {
             font-size: 1.5rem;
-            font-weight: bolder;
         }
     }
 
@@ -290,16 +289,16 @@
 
     .top-feature {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         background-color: white;
     }
 
     .responsive-top-feature {
-        height: calc(100vh - 53.78px);
+        height: 70vh;
     }
 
     .responsive-top-feature-title {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     .responsive-top-feature-subtitle{
