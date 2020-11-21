@@ -119,8 +119,13 @@ const Author = (props) => {
         {props.data.allContentfulReview.edges.map((edge) => {
           return (
             <div className={artistStyles.album}>
-              <Link to={`../../reviews/${edge.node.slug}`}>
-                <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={artistStyles.albumCover} />
+              <Link to={`/reviews/${edge.node.slug}`}>
+                <Img
+                  fluid={edge.node.albumCover.fluid}
+                  key={edge.node.albumCover.fluid.src}
+                  alt={edge.node.albumCover.title}
+                  className={artistStyles.albumCover}>
+                </Img>
                 <h2 className={artistStyles.reviewArtistName}>{edge.node.artist.englishName}</h2>
                 <h2 className={artistStyles.albumTitle}>{edge.node.albumTitle}</h2>
               </Link>
@@ -133,8 +138,13 @@ const Author = (props) => {
           {props.data.allContentfulReview.edges.map((edge) => {
             return (
               <div className={reviewsStyles.album}>
-                <Link to={`../../reviews/${edge.node.slug}`}>
-                  <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                <Link to={`/reviews/${edge.node.slug}`}>
+                  <Img
+                    fluid={edge.node.albumCover.fluid}
+                    key={edge.node.albumCover.fluid.src}
+                    alt={edge.node.albumCover.title}
+                    className={reviewsStyles.albumCover}>
+                  </Img>
                   <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
                   <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
                   <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
@@ -153,11 +163,16 @@ const Author = (props) => {
         {props.data.allContentfulFeature.edges.map((edge) => {
           return (
             <div className={artistStyles.feature}>
-              <Link to={`../../features/${edge.node.slug}`}>
-                <div class={artistStyles.featureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+              <Link to={`/features/${edge.node.slug}`}>
+                <Img
+                  fluid={edge.node.coverImage.fluid}
+                  key={edge.node.coverImage.fluid.src}
+                  alt={edge.node.coverImage.title}
+                  className={artistStyles.featureImage}>
+                </Img>
               </Link>
               <div class={artistStyles.featureDetails}>
-                <Link to={`../../features/${edge.node.slug}`}>
+                <Link to={`/features/${edge.node.slug}`}>
                   <h3 class={artistStyles.featureTitle}>{edge.node.title}</h3>
                 </Link>
                 <div class={artistStyles.newsInfo}>
@@ -179,11 +194,16 @@ const Author = (props) => {
           {props.data.allContentfulFeature.edges.map((edge) => {
             return (
               <div className={featuresStyles.mobileFeature}>
-                <Link to={`../../features/${edge.node.slug}`}>
-                  <div class={featuresStyles.mobileFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <Link to={`/features/${edge.node.slug}`}>
+                  <Img
+                    fluid={edge.node.coverImage.fluid}
+                    key={edge.node.coverImage.fluid.src}
+                    alt={edge.node.coverImage.title}
+                    className={featuresStyles.mobileFeatureImage}>
+                  </Img>
                 </Link>
                 <div class={featuresStyles.mobileFeatureDetails}>
-                  <Link to={`../../features/${edge.node.slug}`}>
+                  <Link to={`/features/${edge.node.slug}`}>
                     <h3 class={featuresStyles.mobileFeatureTitle}>{edge.node.title}</h3>
                   </Link>
                   <div class={newsStyles.remainingInfo}>
@@ -209,9 +229,14 @@ const Author = (props) => {
       <div className={artistStyles.newsItems}>
         {props.data.allContentfulNews.edges.map((edge) => {
           return (
-            <Link to={`../../news/${edge.node.slug}`}>
+            <Link to={`/news/${edge.node.slug}`}>
               <div className={artistStyles.newsItem}>
-                <div class={artistStyles.newsImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <Img
+                  fluid={edge.node.coverImage.fluid}
+                  key={edge.node.coverImage.fluid.src}
+                  alt={edge.node.coverImage.title}
+                  className={artistStyles.newsImg}>
+                </Img>
                 <div class={artistStyles.newsDetails}>
                   <h3 class={artistStyles.newsTitle}>{edge.node.title}</h3>
                   <div class={artistStyles.newsInfo}>
@@ -233,9 +258,14 @@ const Author = (props) => {
         <div className={newsStyles.remainingPosts}>
           {props.data.allContentfulNews.edges.map((edge) => {
             return (
-              <Link to={`../../news/${edge.node.slug}`}>
+              <Link to={`/news/${edge.node.slug}`}>
                 <div className={newsStyles.remainingPost}>
-                  <div class={newsStyles.remainingImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                  <Img
+                  fluid={edge.node.coverImage.fluid}
+                  key={edge.node.coverImage.fluid.src}
+                  alt={edge.node.coverImage.title}
+                  className={newsStyles.remainingImg}>
+                </Img>
                   <div class={newsStyles.remainingDetails}>
                     <h3 class={newsStyles.remainingTitle}>{edge.node.title}</h3>
                     <div class={newsStyles.remainingInfo}>
