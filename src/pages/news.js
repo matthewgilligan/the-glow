@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout/layout"
 import newsStyles from "./news.module.scss"
@@ -29,6 +30,9 @@ const FeaturesPage = () => {
             coverImage {
               file {
                 url
+              }
+              fluid {
+                ...GatsbyContentfulFluid
               }
               title
             }
@@ -89,9 +93,12 @@ const FeaturesPage = () => {
       </div>
       <Link to={`${firstPost.node.slug}`} className={newsStyles.firstPostWide}>
         <div class={newsStyles.firstPost}>
-          <div class={newsStyles.firstImg}
-            style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstPost.node.coverImage.file.url})`} }>
-          </div>
+          <Img
+            fluid={firstPost.node.coverImage.fluid}
+            key={firstPost.node.coverImage.fluid.src}
+            alt={firstPost.node.coverImage.title}
+            className={newsStyles.firstImg}>
+          </Img>
           <div class={newsStyles.firstDetails}>
             <h2 class={newsStyles.firstTitle}>{firstPost.node.title}</h2>
             <p class={newsStyles.firstSubtitle}>{firstPost.node.subtitle}</p>
@@ -109,7 +116,12 @@ const FeaturesPage = () => {
       </Link>
       <Link to={`${firstPost.node.slug}`} className={newsStyles.firstPostSmall}>
         <div className={newsStyles.remainingPost}>
-          <div class={newsStyles.remainingImg} style={{backgroundImage: `url(${firstPost.node.coverImage.file.url})`} }></div>
+          <Img
+            fluid={firstPost.node.coverImage.fluid}
+            key={firstPost.node.coverImage.fluid.src}
+            alt={firstPost.node.coverImage.title}
+            className={newsStyles.remainingImg}>
+          </Img>
           <div class={newsStyles.remainingDetails}>
             <h3 class={newsStyles.remainingTitle}>{firstPost.node.title}</h3>
             <div class={newsStyles.remainingInfo}>
@@ -129,7 +141,12 @@ const FeaturesPage = () => {
           return (
             <Link to={`${edge.node.slug}`}>
               <div className={newsStyles.remainingPost}>
-                <div class={newsStyles.remainingImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <Img
+                  fluid={edge.node.coverImage.fluid}
+                  key={edge.node.coverImage.fluid.src}
+                  alt={edge.node.coverImage.title}
+                  className={newsStyles.remainingImg}>
+                </Img>
                 <div class={newsStyles.remainingDetails}>
                   <h3 class={newsStyles.remainingTitle}>{edge.node.title}</h3>
                   <div class={newsStyles.remainingInfo}>

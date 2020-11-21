@@ -506,6 +506,16 @@ index-container {
     }
 }
 
+.news-image {
+
+        width: 6.5rem;
+        height: 4.3rem;
+        margin-right: 8px;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+}
+
 @media screen and (max-width: 940px) {
     .patreon-and-latest-news {
         margin-top: 3rem;

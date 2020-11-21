@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 import { Helmet } from "react-helmet"
 
 import Footer from "../components/footer/footer"
@@ -25,6 +26,9 @@ export const query = graphql`
             title
             file {
               url
+            }
+            fluid {
+              ...GatsbyContentfulFluid
             }
           }
           publishedDate (formatString:"MMMM Do YYYY")
@@ -61,6 +65,9 @@ export const query = graphql`
             title
             file {
               url
+            }
+            fluid {
+              ...GatsbyContentfulFluid
             }
           }
           artist {
@@ -106,6 +113,9 @@ export const query = graphql`
             file {
               url
             }
+            fluid {
+              ...GatsbyContentfulFluid
+            }
           }
           artist {
             englishName
@@ -136,6 +146,9 @@ export const query = graphql`
             title
             file {
               url
+            }
+            fluid {
+              ...GatsbyContentfulFluid
             }
           }
           publishedDate (formatString:"MMMM Do YYYY")
@@ -174,7 +187,12 @@ const IndexPage = (props) => {
           <div className={indexStyles.topFeatureContent}>
             <h1 className={indexStyles.topFeatureResponsiveTitle}>Hakushi Hasegawa</h1>
             <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`} className={indexStyles.topFeatureImageLink}>
-              <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.topFeatureImage}/>
+              <Img
+                fluid={props.data.firstInterview.edges[0].node.coverImage.fluid}
+                key={props.data.firstInterview.edges[0].node.coverImage.fluid.src}
+                alt={props.data.firstInterview.edges[0].node.coverImage.title}
+                className={indexStyles.topFeatureImage}>
+              </Img>
             </Link>
             <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`} className={indexStyles.topFeatureTitleLink}>
               {props.data.firstInterview.edges[0].node.artist[0].englishName.length > 11 ? topFeatureTitleLong : topFeatureTitleShort}
@@ -222,7 +240,12 @@ const IndexPage = (props) => {
               return (
                 <div className={reviewsStyles.album}>
                   <Link to={`reviews/${edge.node.slug}`}>
-                    <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                    <Img
+                      fluid={edge.node.albumCover.fluid}
+                      key={edge.node.albumCover.fluid.src}
+                      alt={edge.node.albumCover.title}
+                      className={reviewsStyles.albumCover}>
+                    </Img>
                     <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
                     <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
                     <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
@@ -236,7 +259,12 @@ const IndexPage = (props) => {
               return (
                 <div className={reviewsStyles.album}>
                   <Link to={`reviews/${edge.node.slug}`}>
-                    <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                    <Img
+                      fluid={edge.node.albumCover.fluid}
+                      key={edge.node.albumCover.fluid.src}
+                      alt={edge.node.albumCover.title}
+                      className={reviewsStyles.albumCover}>
+                    </Img>
                     <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
                     <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
                   </Link>
@@ -293,7 +321,12 @@ const IndexPage = (props) => {
               return (
                 <div className={indexStyles.feature}>
                   <Link to={`features/${edge.node.slug}`}>
-                    <div class={indexStyles.featureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                    <Img
+                      fluid={edge.node.coverImage.fluid}
+                      key={edge.node.coverImage.fluid.src}
+                      alt={edge.node.coverImage.title}
+                      className={indexStyles.featureImage}>
+                    </Img>
                   </Link>
                   <div class={indexStyles.featureDetails}>
                     <Link to={`features/${edge.node.slug}`}>
@@ -318,7 +351,12 @@ const IndexPage = (props) => {
               return (
                 <div className={indexStyles.feature}>
                   <Link to={`features/${edge.node.slug}`}>
-                    <div class={indexStyles.featureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                    <Img
+                      fluid={edge.node.coverImage.fluid}
+                      key={edge.node.coverImage.fluid.src}
+                      alt={edge.node.coverImage.title}
+                      className={indexStyles.featureImage}>
+                    </Img>
                   </Link>
                   <div class={indexStyles.featureDetails}>
                     <Link to={`features/${edge.node.slug}`}>
@@ -356,7 +394,12 @@ const IndexPage = (props) => {
                 return (
                   <div className={indexStyles.playlist}>
                     <Link to={`features/${edge.node.slug}`}>
-                      <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} className={indexStyles.playlistImage} />
+                      <Img
+                        fluid={edge.node.coverImage.fluid}
+                        key={edge.node.coverImage.fluid.src}
+                        alt={edge.node.coverImage.title}
+                        className={indexStyles.playlistImage}>
+                      </Img>
                     </Link>
                     <div className={indexStyles.playlistDetails}>
                       <Link to={`features/${edge.node.slug}`}>
