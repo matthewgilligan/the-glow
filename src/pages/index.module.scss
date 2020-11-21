@@ -1,4 +1,4 @@
-.index-container {
+index-container {
     display:flex;
     flex-direction:column;
     min-height:100vh;
@@ -149,7 +149,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    color: red;
+    color: #E7334D;
     padding-bottom: .5rem;
 }
 
@@ -445,7 +445,7 @@
 .patreon {
     height: 100%;
     width: 65%;
-    background-color: red;
+    background-color: #E7334D;
     margin-right: 2rem;
 }
 
@@ -487,7 +487,7 @@
     &:hover {
         h2 {
             text-decoration: underline;
-            text-decoration-color: red;
+            text-decoration-color: #E7334D;
         }
     }
 }
@@ -589,7 +589,7 @@
 
 .feature-image:hover ~ .feature-title {
     text-decoration: underline;
-    text-decoration-color: red;
+    text-decoration-color: #E7334D;
 }
 
 .feature-details {
@@ -613,7 +613,7 @@
 
     &:hover {
         text-decoration: underline;
-        text-decoration-color: red;
+        text-decoration-color: #E7334D;
     }
 }
 
