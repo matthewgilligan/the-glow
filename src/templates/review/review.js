@@ -167,7 +167,12 @@ const Review = (props) => {
       <div className={reviewStyles.content}>
         <div className={reviewStyles.post}>
           <div className={reviewStyles.albumBanner}>
-            <img src={props.data.contentfulReview.albumCover.file.url} alt={props.data.contentfulReview.albumCover.title} className={reviewStyles.albumCover} />
+            <Img
+              fluid={props.data.contentfulReview.albumCover.fluid}
+              key={props.data.contentfulReview.albumCover.fluid.src}
+              alt={props.data.contentfulReview.albumCover.title}
+              className={reviewStyles.albumCover}>
+            </Img>
             <div className={reviewStyles.albumDetails}>
               <Link to={`../../artist/${props.data.contentfulReview.artist.slug}`}>
                 <h1 className={reviewStyles.artistName}>{props.data.contentfulReview.artist.englishName}</h1>

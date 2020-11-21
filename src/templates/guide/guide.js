@@ -186,7 +186,12 @@ const Guides = (props) => {
           {reccomendations.map((reccomendation) => {
             return (
               <div className={guideStyles.album}>
-                <img src={reccomendation.albumCover.file.url} alt={reccomendation.albumCover.title} className={guideStyles.albumCover} />
+                <Img
+                  fluid={reccomendation.albumCover.fluid}
+                  key={reccomendation.albumCover.fluid.src}
+                  alt={reccomendation.albumCover.title}
+                  className={guideStyles.albumCover}>
+                </Img>
                 <h2 className={guideStyles.artistName}>{reccomendation.artist.englishName}</h2>
                 <h2 className={guideStyles.albumTitle}>{reccomendation.albumTitle}</h2>
               </div>

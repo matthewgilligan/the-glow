@@ -96,7 +96,12 @@ const News = (props) => {
       <Head title={`${props.data.contentfulNews.title} | The Glow`}/>
       <div className={newsStyles.header}>
         <h1 className={newsStyles.title}>{props.data.contentfulNews.title}</h1>
-        <img src={props.data.contentfulNews.coverImage.file.url} alt={props.data.contentfulNews.coverImage.title} className={newsStyles.coverImage} />
+        <Img
+          fluid={props.data.contentfulNews.coverImage.fluid}
+          key={props.data.contentfulNews.coverImage.fluid.src}
+          alt={props.data.contentfulNews.coverImage.title}
+          className={newsStyles.coverImage}>
+        </Img>
         <p className={newsStyles.credit}>{props.data.contentfulNews.coverImage.description}</p>
       </div>
       <div className={featureStyles.featureContent}>
