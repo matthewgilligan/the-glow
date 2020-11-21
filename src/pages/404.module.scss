@@ -1,0 +1,56 @@
+.banner {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 130.9px);
+}
+
+.text {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+
+    p {
+        margin-top: 16px;
+        font-size: 1.2rem;
+    }
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration-color: #E7334D;
+        }
+    }
+}
+
+.four-o-four {
+    font-size: 10rem;
+}
+
+.not-found {
+    font-size: 1.5rem;
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 700px) {
+    .text {
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .four-o-four {
+        font-size: 6rem;
+    }
+
+    .not-found {
+        font-size: 1.2rem;
+        width: 75%;
+        margin: 0 auto;
+    }
+}
