@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import { INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
@@ -49,6 +50,9 @@ export const query = graphql`
           file {
             url
           }
+          fluid {
+            ...GatsbyContentfulFluid
+          }
         }
       }
       reference2 {
@@ -63,6 +67,9 @@ export const query = graphql`
           title
           file {
             url
+          }
+          fluid {
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -79,6 +86,9 @@ export const query = graphql`
           file {
             url
           }
+          fluid {
+            ...GatsbyContentfulFluid
+          }
         }
       }
       reference4 {
@@ -94,6 +104,9 @@ export const query = graphql`
           file {
             url
           }
+          fluid {
+            ...GatsbyContentfulFluid
+          }
         }
       }
       reference5 {
@@ -108,6 +121,9 @@ export const query = graphql`
           title
           file {
             url
+          }
+          fluid {
+            ...GatsbyContentfulFluid
           }
         }
       }

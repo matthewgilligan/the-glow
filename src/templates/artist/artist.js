@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 import { FaSpotify, FaApple } from 'react-icons/fa';
 
 import Layout from "../../components/layout/layout"
@@ -31,6 +32,9 @@ export const query = graphql`
             file {
               url
             }
+            fluid {
+              ...GatsbyContentfulFluid
+            }
           }
         }
       }
@@ -56,6 +60,9 @@ export const query = graphql`
               url
             }
             title
+            fluid {
+              ...GatsbyContentfulFluid
+            }
           }
         }
       }
@@ -84,6 +91,9 @@ export const query = graphql`
               url
             }
             title
+            fluid {
+              ...GatsbyContentfulFluid
+            }
           }
         }
       }
@@ -108,7 +118,12 @@ const Artist = (props) => {
           return (
             <div className={artistStyles.album}>
               <Link to={`../../reviews/${edge.node.slug}`}>
-                <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={artistStyles.albumCover} />
+                <Img
+                  fluid={edge.node.albumCover.fluid}
+                  key={edge.node.albumCover.fluid.src}
+                  alt={edge.node.albumCover.title}
+                  className={artistStyles.albumCover}>
+                </Img>
                 <h2 className={artistStyles.reviewArtistName}>{edge.node.artist.englishName}</h2>
                 <h2 className={artistStyles.albumTitle}>{edge.node.albumTitle}</h2>
               </Link>
@@ -122,7 +137,12 @@ const Artist = (props) => {
             return (
               <div className={reviewsStyles.album}>
                 <Link to={`../../reviews/${edge.node.slug}`}>
-                  <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                  <Img
+                    fluid={edge.node.albumCover.fluid}
+                    key={edge.node.albumCover.fluid.src}
+                    alt={edge.node.albumCover.title}
+                    className={reviewsStyles.albumCover}>
+                  </Img>
                   <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
                   <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
                   <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
@@ -142,7 +162,12 @@ const Artist = (props) => {
           return (
             <div className={artistStyles.feature}>
               <Link to={`../../features/${edge.node.slug}`}>
-                <div class={artistStyles.featureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <Img
+                  fluid={edge.node.coverImage.fluid}
+                  key={edge.node.coverImage.fluid.src}
+                  alt={edge.node.coverImage.title}
+                  className={artistStyles.featureImage}>
+                </Img>
               </Link>
               <div class={artistStyles.featureDetails}>
                 <Link to={`../../features/${edge.node.slug}`}>
@@ -168,7 +193,12 @@ const Artist = (props) => {
             return (
               <div className={featuresStyles.mobileFeature}>
                 <Link to={`../../features/${edge.node.slug}`}>
-                  <div class={featuresStyles.mobileFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                  <Img
+                    fluid={edge.node.coverImage.fluid}
+                    key={edge.node.coverImage.fluid.src}
+                    alt={edge.node.coverImage.title}
+                    className={featuresStyles.mobileFeatureImage}>
+                  </Img>
                 </Link>
                 <div class={featuresStyles.mobileFeatureDetails}>
                   <Link to={`../../features/${edge.node.slug}`}>
@@ -199,7 +229,12 @@ const Artist = (props) => {
           return (
             <Link to={`../../news/${edge.node.slug}`}>
               <div className={artistStyles.newsItem}>
-                <div class={artistStyles.newsImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <Img
+                  fluid={edge.node.coverImage.fluid}
+                  key={edge.node.coverImage.fluid.src}
+                  alt={edge.node.coverImage.title}
+                  className={artistStyles.newsImg}>
+                </Img>
                 <div class={artistStyles.newsDetails}>
                   <h3 class={artistStyles.newsTitle}>{edge.node.title}</h3>
                   <div class={artistStyles.newsInfo}>
@@ -223,7 +258,12 @@ const Artist = (props) => {
             return (
               <Link to={`../../news/${edge.node.slug}`}>
                 <div className={newsStyles.remainingPost}>
-                  <div class={newsStyles.remainingImg} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                  <Img
+                  fluid={edge.node.coverImage.fluid}
+                  key={edge.node.coverImage.fluid.src}
+                  alt={edge.node.coverImage.title}
+                  className={newsStyles.remainingImg}>
+                </Img>
                   <div class={newsStyles.remainingDetails}>
                     <h3 class={newsStyles.remainingTitle}>{edge.node.title}</h3>
                     <div class={newsStyles.remainingInfo}>

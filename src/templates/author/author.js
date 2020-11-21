@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 import { FaTwitter } from 'react-icons/fa'
 import { HiLink } from "react-icons/hi";
 
@@ -33,6 +34,9 @@ export const query = graphql`
             file {
               url
             }
+            fluid {
+              ...GatsbyContentfulFluid
+            }
           }
         }
       }
@@ -58,6 +62,9 @@ export const query = graphql`
               url
             }
             title
+            fluid {
+              ...GatsbyContentfulFluid
+            }
           }
         }
       }
@@ -86,6 +93,9 @@ export const query = graphql`
               url
             }
             title
+            fluid {
+              ...GatsbyContentfulFluid
+            }
           }
         }
       }

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 import { Helmet } from 'react-helmet'
 import { INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -38,6 +39,9 @@ export const query = graphql`
         title
         file {
           url
+        }
+        fluid {
+          ...GatsbyContentfulFluid
         }
       }
       genre {
