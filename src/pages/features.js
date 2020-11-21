@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout/layout"
 import featuresStyles from "./features.module.scss"
@@ -31,6 +32,9 @@ const FeaturesPage = () => {
                 url
               }
               title
+              fluid {
+                ...GatsbyContentfulFluid
+              }
             }
           }
         }
@@ -65,7 +69,12 @@ const FeaturesPage = () => {
             return (
               <li className={featuresStyles.scrollFeature}>
                 <Link to={`${edge.node.slug}`}>
-                  <div class={featuresStyles.scrollFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                  <Img
+                    fluid={edge.node.coverImage.fluid}
+                    key={edge.node.coverImage.fluid.src}
+                    alt={edge.node.coverImage.title}
+                    className={featuresStyles.scrollFeatureImage}>
+                  </Img>
                   <div class={featuresStyles.scrollFeatureDetails}>
                     <p class={featuresStyles.scrollFeatureTitle}>{edge.node.title}</p>
                     <div class={newsStyles.remainingInfo}>
@@ -90,7 +99,12 @@ const FeaturesPage = () => {
             <li>
               <div className={featuresStyles.remainingFeature}>
                 <Link to={`${edge.node.slug}`} class={featuresStyles.remainingFeatureImageLink}>
-                  <div class={featuresStyles.remainingFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                  <Img
+                    fluid={edge.node.coverImage.fluid}
+                    key={edge.node.coverImage.fluid.src}
+                    alt={edge.node.coverImage.title}
+                    className={featuresStyles.remainingFeatureImage}>
+                  </Img>
                 </Link>
                 <div class={featuresStyles.remainingFeatureDetails}>
                   <Link to={`${edge.node.slug}`}>
@@ -135,7 +149,12 @@ const FeaturesPage = () => {
             <li>
               <div className={featuresStyles.remainingFeature}>
                 <Link to={`${edge.node.slug}`} class={featuresStyles.remainingFeatureImageLink}>
-                  <div class={featuresStyles.remainingFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                  <Img
+                    fluid={edge.node.coverImage.fluid}
+                    key={edge.node.coverImage.fluid.src}
+                    alt={edge.node.coverImage.title}
+                    className={featuresStyles.remainingFeatureImage}>
+                  </Img>
                 </Link>
                 <div class={featuresStyles.remainingFeatureDetails}>
                   <Link to={`${edge.node.slug}`}>
@@ -160,7 +179,12 @@ const FeaturesPage = () => {
       <div className={featuresStyles.mobileTopFeature}>
         <div className={featuresStyles.mobileFeature}>
           <Link to={`${firstFeature.node.slug}`}>
-            <div class={featuresStyles.mobileFeatureImage} style={{backgroundImage: `url(${firstFeature.node.coverImage.file.url})`} }></div>
+            <Img
+              fluid={firstFeature.node.coverImage.fluid}
+              key={firstFeature.node.coverImage.fluid.src}
+              alt={firstFeature.node.coverImage.title}
+              className={featuresStyles.mobileFeatureImage}>
+            </Img>
           </Link>
           <div class={featuresStyles.mobileFeatureDetails}>
             <Link to={`${firstFeature.node.slug}`}>
@@ -178,7 +202,12 @@ const FeaturesPage = () => {
           return (
             <div className={featuresStyles.mobileFeature}>
               <Link to={`${edge.node.slug}`}>
-                <div class={featuresStyles.mobileFeatureImage} style={{backgroundImage: `url(${edge.node.coverImage.file.url})`} }></div>
+                <Img
+                  fluid={edge.node.coverImage.fluid}
+                  key={edge.node.coverImage.fluid.src}
+                  alt={edge.node.coverImage.title}
+                  className={featuresStyles.mobileFeatureImage}>
+                </Img>
               </Link>
               <div class={featuresStyles.mobileFeatureDetails}>
                 <Link to={`${edge.node.slug}`}>
