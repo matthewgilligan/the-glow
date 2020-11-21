@@ -146,6 +146,9 @@ export const query = graphql`
 `
 
 const IndexPage = (props) => {
+  const topFeatureTitleShort = <h1 className={indexStyles.topFeatureTitleShort}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
+  const topFeatureTitleLong = <h1 className={indexStyles.topFeatureTitleLong}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
+
   return (
     <div className={indexStyles.indexContainter}>
       <Helmet>
@@ -174,7 +177,7 @@ const IndexPage = (props) => {
               <img src={props.data.firstInterview.edges[0].node.coverImage.file.url} alt={props.data.firstInterview.edges[0].node.coverImage.title} className={indexStyles.topFeatureImage}/>
             </Link>
             <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`} className={indexStyles.topFeatureTitleLink}>
-              <h1 className={indexStyles.topFeatureTitle}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
+              {props.data.firstInterview.edges[0].node.artist[0].englishName.length > 11 ? topFeatureTitleLong : topFeatureTitleShort}
             </Link>
             <div className={indexStyles.topFeatureText}>
               <div className={indexStyles.topFeatureDetails}>
