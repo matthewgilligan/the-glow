@@ -24,9 +24,9 @@ export default class MailChimpForm extends React.Component {
 
   render() {
     return this.state.result === "success " ? (
-      <div>SUCCESS</div>
+      <div className={mailchimpStyles.response}>{this.state.result.msg}</div>
     ) : this.state.result === "error" ? (
-      <div>ERROR</div>
+      <div className={mailchimpStyles.response}>{this.state.result.msg}</div>
     ) : (
       <div className={mailchimpStyles.main}>
         <h2>The Glow Newsletter</h2>
