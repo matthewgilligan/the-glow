@@ -27,7 +27,7 @@ index-container {
     width: 100%;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    color: green;
+    color: black;
     text-align: center;
     padding: .6rem 0;
     text-transform: uppercase;
@@ -142,7 +142,7 @@ index-container {
 
 .top-feature-date {
     padding-top: .5rem;
-    color: gray;
+    color: #C0C0C0;
 }
 
 .top-feature-category {
@@ -481,7 +481,8 @@ index-container {
         margin-top: 4px;
         font-size: .7rem;
         text-transform: uppercase;
-        color: gray;
+        color: #C0C0C0;
+        font-weight: bolder;
     }
 
     &:hover {
