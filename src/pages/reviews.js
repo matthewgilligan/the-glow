@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout/layout"
 import reviewsStyles from './reviews.module.scss'
@@ -18,6 +19,9 @@ const ReviewsPage = () => {
               englishName
             }
             albumCover {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
               title
               file {
                 url
@@ -85,7 +89,12 @@ const ReviewsPage = () => {
           return (
             <div className={reviewsStyles.album}>
               <Link to={`${edge.node.slug}`}>
-                <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} className={reviewsStyles.albumCover} />
+                <Img
+                  fluid={edge.node.albumCover.fluid}
+                  key={edge.node.albumCover.fluid.src}
+                  alt={edge.node.albumCover.title}
+                  className={reviewsStyles.albumCover}>
+                </Img>
                 <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
                 <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
                 <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
