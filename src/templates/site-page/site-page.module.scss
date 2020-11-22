@@ -1,6 +1,6 @@
 .title {
     text-align: center;
-    padding: 4rem 0 5rem 0;
+    margin: 3rem 0 5rem 0;
 }
 
 .content {
@@ -26,5 +26,21 @@ a {
 
     &:hover {
         text-decoration-color: #E7334D;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .title {
+        margin: 2rem 0 3rem 0;
+    }
+
+    .content {
+        width: 100%;
     }
 }
