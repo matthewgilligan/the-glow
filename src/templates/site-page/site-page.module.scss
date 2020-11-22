@@ -5,5 +5,26 @@
 
 .content {
     width: 50%;
-    margin: 0 auto;
+    margin: 0 auto 48px auto;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+h3 {
+    margin: 32px 0 8px 0;
+}
+
+p {
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration-color: #E7334D;
+    }
 }
