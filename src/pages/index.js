@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Helmet } from "react-helmet"
 
+import patreon from "../images/patreon_ad.png"
 import Footer from "../components/footer/footer"
 import Header from "../components/header/header"
 import '../styles/index.scss'
@@ -281,9 +282,10 @@ const IndexPage = (props) => {
       <section className={indexStyles.patreonAndLatestNews}>
         <div className={indexStyles.container}>
           <div className={indexStyles.patreonAndLatestNewsContent}>
-            <div className={indexStyles.patreon}>
-              Patreon
-            </div>
+
+              <img src={patreon} alt="Support us on Patreon!" className={indexStyles.patreon} />
+
+
             <div className={indexStyles.latestNews}>
               <div className={indexStyles.sectionTitle}>
                 <h2>Latest News</h2>

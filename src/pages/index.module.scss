@@ -460,6 +460,8 @@ index-container {
     width: 65%;
     background-color: #E7334D;
     margin-right: 2rem;
+    object-fit: cover;
+    object-position: center bottom;
 }
 
 .latest-news {
@@ -528,7 +530,7 @@ index-container {
     }
 
     .patreon {
-        height: 450px;
+        height: 100%;
         width: 100%;
         margin-right: 0;
         margin-bottom: 2rem;
@@ -559,10 +561,6 @@ index-container {
 }
 
 @media screen and (max-width: 600px) {
-    .patreon {
-        height: 225px;
-    }
-
     .news-list {
         margin-top: 0rem;
         margin-bottom: 1.5rem;
