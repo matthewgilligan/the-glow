@@ -90,7 +90,7 @@ const FeaturesPage = () => {
           </div> */}
         </div>
       </div>
-      <Link to={`${firstPost.node.slug}`} className={newsStyles.firstPostWide}>
+      <Link to={`../${firstPost.node.slug}`} className={newsStyles.firstPostWide}>
         <div class={newsStyles.firstPost}>
           <Img
             fluid={firstPost.node.coverImage.fluid}
@@ -113,7 +113,7 @@ const FeaturesPage = () => {
           </div>
         </div>
       </Link>
-      <Link to={`${firstPost.node.slug}`} className={newsStyles.firstPostSmall}>
+      <Link to={`../${firstPost.node.slug}`} className={newsStyles.firstPostSmall}>
         <div className={newsStyles.remainingPost}>
           <Img
             fluid={firstPost.node.coverImage.fluid}
@@ -128,9 +128,7 @@ const FeaturesPage = () => {
                 <p class={newsStyles.remainingAuthor}>By: {firstPost.node.author.englishName}</p>
                 <p class={newsStyles.remainingDate}>{firstPost.node.publishedDate}</p>
               </div>
-              <Link to={firstPost.node.category.slug}  className={newsStyles.remainingCategory}>
-                <p>{firstPost.node.category.title}</p>
-              </Link>
+              <p className={newsStyles.remainingCategory}>{firstPost.node.category.title}</p>
             </div>
           </div>
         </div>
@@ -138,7 +136,7 @@ const FeaturesPage = () => {
       <div className={newsStyles.remainingPosts}>
         {remainingPosts.map((edge) => {
           return (
-            <Link to={`${edge.node.slug}`}>
+            <Link to={`../${edge.node.slug}`}>
               <div className={newsStyles.remainingPost}>
                 <Img
                   fluid={edge.node.coverImage.fluid}
@@ -153,9 +151,7 @@ const FeaturesPage = () => {
                       <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
-                    <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
-                      <p>{edge.node.category.title}</p>
-                    </Link>
+                    <p className={newsStyles.remainingCategory}>{edge.node.category.title}</p>
                   </div>
                 </div>
               </div>
