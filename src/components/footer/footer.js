@@ -64,10 +64,10 @@ const Footer = () => {
                 <a href="https://twitter.com/theglow_jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
               </li>
               <li>
-                <a className={footerStyles.socialMobileItem} href="https://www.spotify.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a>
+                <a className={footerStyles.socialMobileItem} href="https://open.spotify.com/user/ji21784pk94jfyv4u9w01xkhe?si=ZOykmTClStyjbTpG9XmPGg" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a>
               </li>
               <li>
-                <a className={footerStyles.socialMobileItem} href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaApple/></a>
+                <a className={footerStyles.socialMobileItem} href="https://itunes.apple.com/profile/theglow_jp" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaApple/></a>
               </li>
             </ul>
           </div>
