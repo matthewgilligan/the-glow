@@ -75,19 +75,19 @@ const FeaturesPage = () => {
                     alt={edge.node.coverImage.title}
                     className={featuresStyles.scrollFeatureImage}>
                   </Img>
-                  <div class={featuresStyles.scrollFeatureDetails}>
-                    <p class={featuresStyles.scrollFeatureTitle}>{edge.node.title}</p>
-                    <div class={newsStyles.remainingInfo}>
-                      <div class={newsStyles.remainingMeta}>
-                        <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
-                        <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
-                      </div>
-                      <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
-                        <p>{edge.node.category.name}</p>
-                      </Link>
-                    </div>
-                  </div>
                 </Link>
+                <div class={featuresStyles.scrollFeatureDetails}>
+                  <Link to={`${edge.node.slug}`}>
+                    <p class={featuresStyles.scrollFeatureTitle}>{edge.node.title}</p>
+                  </Link>
+                  <div class={newsStyles.remainingInfo}>
+                    <div class={newsStyles.remainingMeta}>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
+                    </div>
+                    <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
+                  </div>
+                </div>
               </li>
             )
           })}
@@ -116,9 +116,7 @@ const FeaturesPage = () => {
                       <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
-                    <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
-                      <p>{edge.node.category.name}</p>
-                    </Link>
+                    <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
                   </div>
                 </div>
               </div>
@@ -166,9 +164,7 @@ const FeaturesPage = () => {
                       <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
-                    <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
-                      <p>{edge.node.category.name}</p>
-                    </Link>
+                    <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
                   </div>
                 </div>
               </div>
@@ -190,9 +186,12 @@ const FeaturesPage = () => {
             <Link to={`${firstFeature.node.slug}`}>
               <h3 class={featuresStyles.mobileFeatureTitle}>{firstFeature.node.title}</h3>
             </Link>
-            <div class={featuresStyles.mobileFeatureInfo}>
-              <p class={featuresStyles.mobileFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
-              <p class={featuresStyles.mobileFeatureDate}>{firstFeature.node.publishedDate}</p>
+            <div class={newsStyles.remainingInfo}>
+              <div class={newsStyles.remainingMeta}>
+                <p class={newsStyles.remainingAuthor}>By: {firstFeature.node.author.englishName}</p>
+                <p class={newsStyles.remainingDate}>{firstFeature.node.publishedDate}</p>
+              </div>
+              <p className={newsStyles.remainingCategory}>{firstFeature.node.category.name}</p>
             </div>
           </div>
         </div>
@@ -218,9 +217,7 @@ const FeaturesPage = () => {
                     <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
                     <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                   </div>
-                  <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
-                    <p>{edge.node.category.name}</p>
-                  </Link>
+                  <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
                 </div>
               </div>
             </div>
