@@ -21,7 +21,7 @@ const FeaturesPage = () => {
             }
             publishedDate(formatString:"MMMM DD YYYY")
             category {
-              title
+              name
               slug
             }
             genre {
@@ -108,7 +108,7 @@ const FeaturesPage = () => {
                 <p class={newsStyles.remainingDate}>{firstPost.node.publishedDate}</p>
               </div>
               <Link to={firstPost.node.category.slug}  className={newsStyles.remainingCategory}>
-                <p>{firstPost.node.category.title}</p>
+                <p>{firstPost.node.category.name}</p>
               </Link>
             </div>
           </div>
@@ -130,7 +130,7 @@ const FeaturesPage = () => {
                 <p class={newsStyles.remainingDate}>{firstPost.node.publishedDate}</p>
               </div>
               <Link to={firstPost.node.category.slug}  className={newsStyles.remainingCategory}>
-                <p>{firstPost.node.category.title}</p>
+                <p>{firstPost.node.category.name}</p>
               </Link>
             </div>
           </div>
@@ -155,7 +155,7 @@ const FeaturesPage = () => {
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <Link to={edge.node.category.slug}  className={newsStyles.remainingCategory}>
-                      <p>{edge.node.category.title}</p>
+                      <p>{edge.node.category.name}</p>
                     </Link>
                   </div>
                 </div>

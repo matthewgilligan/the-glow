@@ -22,9 +22,6 @@ export const query = graphql`
         slug
       }
       publishedDate(formatString:"MMMM D YYYY")
-      category {
-        title
-      }
       genre {
         name
       }

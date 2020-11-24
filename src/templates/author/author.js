@@ -52,7 +52,8 @@ export const query = graphql`
           }
           publishedDate(formatString:"MMMM Do YYYY")
           category {
-            title
+            name
+            slug
           }
           genre {
             name
@@ -244,8 +245,8 @@ const Author = (props) => {
                       <p class={artistStyles.newsAuthor}>By: {edge.node.author.englishName}</p>
                       <p class={artistStyles.newsDate}>{edge.node.publishedDate}</p>
                     </div>
-                    <Link to={`/news/${edge.node.category.title.toLowerCase()}`} className={artistStyles.newsCategory}>
-                      <p>{edge.node.category.title}</p>
+                    <Link to={edge.node.category.slug} className={artistStyles.newsCategory}>
+                      <p>{edge.node.category.name}</p>
                     </Link>
                   </div>
                 </div>
@@ -273,8 +274,8 @@ const Author = (props) => {
                         <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
                         <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                       </div>
-                      <Link to={`/news/${edge.node.category.title.toLowerCase()}`} className={newsStyles.remainingCategory}>
-                        <p>{edge.node.category.title}</p>
+                      <Link to={edge.node.category.slug} className={newsStyles.remainingCategory}>
+                        <p>{edge.node.category.name}</p>
                       </Link>
                     </div>
                   </div>

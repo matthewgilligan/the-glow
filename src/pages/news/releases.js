@@ -10,7 +10,7 @@ import Head from "../../components/head/head"
 const FeaturesPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulNews ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ title: { eq: "Releases" } } } ) {
+      allContentfulNews ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ name: { eq: "Releases" } } } ) {
         edges {
           node {
             title
@@ -21,7 +21,7 @@ const FeaturesPage = () => {
             }
             publishedDate(formatString:"MMMM Do YYYY")
             category {
-              title
+              name
             }
             genre {
               name
@@ -107,7 +107,7 @@ const FeaturesPage = () => {
                 <p class={newsStyles.remainingDate}>{firstPost.node.publishedDate}</p>
               </div>
               <Link to={firstPost.node.category.slug}  className={newsStyles.remainingCategory}>
-                <p>{firstPost.node.category.title}</p>
+                <p>{firstPost.node.category.name}</p>
               </Link>
             </div>
           </div>
@@ -128,7 +128,7 @@ const FeaturesPage = () => {
                 <p class={newsStyles.remainingAuthor}>By: {firstPost.node.author.englishName}</p>
                 <p class={newsStyles.remainingDate}>{firstPost.node.publishedDate}</p>
               </div>
-              <p className={newsStyles.remainingCategory}>{firstPost.node.category.title}</p>
+              <p className={newsStyles.remainingCategory}>{firstPost.node.category.name}</p>
             </div>
           </div>
         </div>
@@ -151,7 +151,7 @@ const FeaturesPage = () => {
                       <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
-                    <p className={newsStyles.remainingCategory}>{edge.node.category.title}</p>
+                    <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
                   </div>
                 </div>
               </div>

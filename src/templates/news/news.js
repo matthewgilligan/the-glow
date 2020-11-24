@@ -27,7 +27,7 @@ export const query = graphql`
       }
       publishedDate(formatString:"MMMM D YYYY")
       category {
-        title
+        name
       }
       subtitle
       genre {
@@ -109,14 +109,14 @@ const News = (props) => {
           <p>By: <Link to={`../../author/${props.data.contentfulNews.author.slug}`}>{props.data.contentfulNews.author.englishName}</Link></p>
           <p className={articleDetailsStyles.date}>{props.data.contentfulNews.publishedDate}</p>
           <div className={articleDetailsStyles.genreAndSocials}>
-            <p className={articleDetailsStyles.genre}>{props.data.contentfulNews.category.title}</p>
+            <p className={articleDetailsStyles.genre}>{props.data.contentfulNews.category.name}</p>
             <ShareBlockStandard {...shareBlockProps} />
           </div>
         </div>
         <div className={articleDetailsStyles.mobileMetaDetails}>
           <div className={articleDetailsStyles.genreAndSocials}>
             <p>By: <Link to={`../../author/${props.data.contentfulNews.author.slug}`}>{props.data.contentfulNews.author.englishName}</Link></p>
-            <p className={articleDetailsStyles.genre}>{props.data.contentfulNews.category.title}</p>
+            <p className={articleDetailsStyles.genre}>{props.data.contentfulNews.category.name}</p>
           </div>
           <p className={articleDetailsStyles.date}>{props.data.contentfulNews.publishedDate}</p>
         </div>
