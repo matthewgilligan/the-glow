@@ -37,7 +37,9 @@ export const query = graphql`
       subcategory {
         name
       }
-      subtitle
+      subtitle {
+        json
+      }
       genre {
         name
       }
@@ -209,7 +211,7 @@ const Feature = (props) => {
               <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
             </div>
             <div className={featureStyles.body}>
-              <p className={featureStyles.subtitle}>{props.data.contentfulFeature.subtitle}</p>
+              <p className={featureStyles.subtitle}>{documentToReactComponents(props.data.contentfulFeature.subtitle.json, options)}</p>
               {documentToReactComponents(props.data.contentfulFeature.body.json, options)}
               <p className={featureStyles.artistTags}>Tags: { artistTags }</p>
             </div>

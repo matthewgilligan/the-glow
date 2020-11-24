@@ -40,7 +40,9 @@ export const query = graphql`
       edges {
         node {
           title
-          subtitle
+          subtitle {
+            json
+          }
           slug
           publishedDate (formatString:"MMMM Do YYYY")
           coverImage {
@@ -56,7 +58,9 @@ export const query = graphql`
       edges {
         node {
           title
-          subtitle
+          subtitle {
+            json
+          }
           slug
           category {
             name
@@ -104,7 +108,9 @@ export const query = graphql`
       edges {
         node {
           title
-          subtitle
+          subtitle {
+            json
+          }
           slug
           category {
             name
@@ -134,7 +140,9 @@ export const query = graphql`
       edges {
         node {
           title
-          subtitle
+          subtitle {
+            json
+          }
           artist {
             englishName
             japaneseName

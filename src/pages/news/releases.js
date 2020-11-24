@@ -1,5 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import { INLINES } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Img from "gatsby-image"
 
 import Layout from "../../components/layout/layout"
@@ -14,7 +16,9 @@ const FeaturesPage = () => {
         edges {
           node {
             title
-            subtitle
+            subtitle {
+              json
+            }
             slug
             author {
               englishName
@@ -41,8 +45,30 @@ const FeaturesPage = () => {
     }
   `)
 
-  const firstPost = data.allContentfulNews.edges[0];
-  const remainingPosts = data.allContentfulNews.edges.slice(1);
+  {/*
+    const firstPost = data.allContentfulNews.edges[0];
+    const remainingPosts = data.allContentfulNews.edges.slice(1);
+  */}
+
+  const options = {
+    renderNode: {
+      "embedded-asset-block": (node) => {
+        const alt = node.data.target.fields.title['en-US']
+        const url = node.data.target.fields.file['en-US'].url
+        return <img alt={alt} src={url} />
+      },
+      [INLINES.HYPERLINK]: (node) => {
+        if(node.data.uri.indexOf('youtube.com/embed') !== -1){
+          return(
+            <iframe width="100%" height="321" title="YouTube" src={node.data.uri} frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          )
+        } else {
+          return <a href={node.data.uri} target={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '_self' : '_blank'}`} rel={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '' : 'noopener noreferrer'}`}>{node.content[0].value}</a>;
+        }
+      }
+    },
+    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
+  }
 
   return (
     <Layout>
@@ -90,6 +116,7 @@ const FeaturesPage = () => {
           </div> */}
         </div>
       </div>
+      {/*
       <Link to={`../${firstPost.node.slug}`} className={newsStyles.firstPostWide}>
         <div class={newsStyles.firstPost}>
           <Img
@@ -100,7 +127,7 @@ const FeaturesPage = () => {
           </Img>
           <div class={newsStyles.firstDetails}>
             <h2 class={newsStyles.firstTitle}>{firstPost.node.title}</h2>
-            <p class={newsStyles.firstSubtitle}>{firstPost.node.subtitle}</p>
+            <p className={newsStyles.firstSubtitle}>{documentToReactComponents(firstPost.node.subtitle.json, options)}</p>
             <div class={newsStyles.remainingInfo}>
               <div class={newsStyles.remainingMeta}>
                 <p class={newsStyles.remainingAuthor}>By: {firstPost.node.author.englishName}</p>
@@ -159,6 +186,7 @@ const FeaturesPage = () => {
           )
         })}
       </div>
+      */}
     </Layout>
   )
 }

@@ -1,5 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import { INLINES } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Img from "gatsby-image"
 
 import Layout from "../../components/layout/layout"
@@ -15,7 +17,9 @@ const FeaturesPage = () => {
         edges {
           node {
             title
-            subtitle
+            subtitle {
+              json
+            }
             slug
             author {
               englishName
@@ -42,11 +46,31 @@ const FeaturesPage = () => {
     }
   `)
 
-    const firstFeature = data.allContentfulFeature.edges[0];
+  const firstFeature = data.allContentfulFeature.edges[0];
   const scrollFeatures = data.allContentfulFeature.edges.slice(1, 5);
   const remainingFeatures = data.allContentfulFeature.edges.slice(5);
 
   const narrowRemainingFeatures = data.allContentfulFeature.edges.slice(1);
+
+  const options = {
+    renderNode: {
+      "embedded-asset-block": (node) => {
+        const alt = node.data.target.fields.title['en-US']
+        const url = node.data.target.fields.file['en-US'].url
+        return <img alt={alt} src={url} />
+      },
+      [INLINES.HYPERLINK]: (node) => {
+        if(node.data.uri.indexOf('youtube.com/embed') !== -1){
+          return(
+            <iframe width="100%" height="321" title="YouTube" src={node.data.uri} frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          )
+        } else {
+          return <a href={node.data.uri} target={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '_self' : '_blank'}`} rel={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '' : 'noopener noreferrer'}`}>{node.content[0].value}</a>;
+        }
+      }
+    },
+    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
+  }
 
   const wideScreen =
     <div class={featuresStyles.wideScreen}>
@@ -57,7 +81,7 @@ const FeaturesPage = () => {
               style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
               <div class={featuresStyles.firstFeatureDetails}>
                 <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
-                <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
+                <p className={featuresStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json, options)}</p>
                 <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
                 <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
               </div>
@@ -110,7 +134,7 @@ const FeaturesPage = () => {
                   <Link to={`../${edge.node.slug}`}>
                     <h3 class={featuresStyles.remainingFeatureTitle}>{edge.node.title}</h3>
                   </Link>
-                  <p class={featuresStyles.remainingFeatureSubtitle}>{edge.node.subtitle}</p>
+                  <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json, options)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
                       <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
@@ -134,7 +158,7 @@ const FeaturesPage = () => {
             style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
             <div class={featuresStyles.firstFeatureDetails}>
               <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
-              <p class={featuresStyles.firstFeatureSubtitle}>{firstFeature.node.subtitle}</p>
+              <p className={featuresStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json, options)}</p>
               <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
               <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
             </div>
@@ -158,7 +182,7 @@ const FeaturesPage = () => {
                   <Link to={`../${edge.node.slug}`}>
                     <h3 class={featuresStyles.remainingFeatureTitle}>{edge.node.title}</h3>
                   </Link>
-                  <p class={featuresStyles.remainingFeatureSubtitle}>{edge.node.subtitle}</p>
+                  <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json, options)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
                       <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>

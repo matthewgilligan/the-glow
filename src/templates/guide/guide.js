@@ -37,11 +37,7 @@ export const query = graphql`
       reference1 {
         albumTitle
         slug
-        artist {
-          englishName
-          japaneseName
-          slug
-        }
+        artist
         albumCover {
           title
           file {
@@ -55,11 +51,7 @@ export const query = graphql`
       reference2 {
         albumTitle
         slug
-        artist {
-          englishName
-          japaneseName
-          slug
-        }
+        artist
         albumCover {
           title
           file {
@@ -73,11 +65,7 @@ export const query = graphql`
       reference3 {
         albumTitle
         slug
-        artist {
-          englishName
-          japaneseName
-          slug
-        }
+        artist
         albumCover {
           title
           file {
@@ -91,11 +79,7 @@ export const query = graphql`
       reference4 {
         albumTitle
         slug
-        artist {
-          englishName
-          japaneseName
-          slug
-        }
+        artist
         albumCover {
           title
           file {
@@ -109,11 +93,7 @@ export const query = graphql`
       reference5 {
         albumTitle
         slug
-        artist {
-          englishName
-          japaneseName
-          slug
-        }
+        artist
         albumCover {
           title
           file {
@@ -189,7 +169,7 @@ const Guides = (props) => {
                   alt={reccomendation.albumCover.title}
                   className={guideStyles.albumCover}>
                 </Img>
-                <h2 className={guideStyles.artistName}>{reccomendation.artist.englishName}</h2>
+                <h2 className={guideStyles.artistName}>{reccomendation.artist}</h2>
                 <h2 className={guideStyles.albumTitle}>{reccomendation.albumTitle}</h2>
               </div>
             )

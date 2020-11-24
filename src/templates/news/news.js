@@ -29,7 +29,9 @@ export const query = graphql`
       category {
         name
       }
-      subtitle
+      subtitle {
+        json
+      }
       genre {
         name
       }

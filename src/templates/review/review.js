@@ -32,7 +32,7 @@ export const query = graphql`
       rating
       label
       initialReleaseDate(formatString:"YYYY")
-      reviewCategory {
+      category {
         name
       }
       albumCover {
@@ -47,12 +47,10 @@ export const query = graphql`
       genre {
         name
       }
-      seoDescription
-      seoKeywords
       body {
         json
       }
-      subtitle2 {
+      subtitle {
         json
       }
     }
@@ -152,18 +150,6 @@ const Review = (props) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{`${props.data.contentfulReview.artist.englishName}: ${props.data.contentfulReview.albumTitle}`} | The Glow</title>
-        <meta name="description" content={props.data.contentfulReview.seoDescription} />
-        <meta name="keywords" content={props.data.contentfulReview.seoKeywords} />
-        <meta name="og:title" content={`${props.data.contentfulReview.artist.englishName}: ${props.data.contentfulReview.albumTitle}`} />
-        <meta name="og:type" content="website" />
-        <meta name="og:description" content={props.data.contentfulReview.seoDescription} />
-        <meta name="og:image" content={props.data.contentfulReview.albumCover.file.url} />
-        <meta name="og:locale" content="en_US" />
-        <meta name="og: url" content={`https://xenodochial-dubinsky-db8110.netlify.app/reviews/${props.data.contentfulReview.albumCover.file.url}`} />
-        <link rel="canonical" href={`https://xenodochial-dubinsky-db8110.netlify.app/reviews/${props.data.contentfulReview.albumCover.file.url}`} />
-      </Helmet>
       <div className={reviewStyles.content}>
         <div className={reviewStyles.post}>
           <div className={reviewStyles.albumBanner}>
@@ -199,32 +185,34 @@ const Review = (props) => {
               </div>
             </div>
             <div className={reviewStyles.body}>
-              <p className={reviewStyles.subtitle}>{documentToReactComponents(props.data.contentfulReview.subtitle2.json, options)}</p>
+              <p className={reviewStyles.subtitle}>{documentToReactComponents(props.data.contentfulReview.subtitle.json, options)}</p>
               {documentToReactComponents(props.data.contentfulReview.body.json, options)}
             </div>
           </div>
         </div>
-        <div className={reviewStyles.latestReviews}>
-          <h1 className={reviewStyles.title}>Latest Reviews</h1>
-          <ul className={reviewStyles.latestAlbums}>
-            {props.data.allContentfulReview.edges.map((edge) => {
-              return (
-                <li>
-                  <Link to={`../${edge.node.slug}`}>
-                    <div className={reviewStyles.latestAlbum}>
-                      <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} />
-                      <div className={reviewStyles.latestDetails}>
-                        <h1 className={reviewStyles.latestArtistName}>{edge.node.artist.englishName}</h1>
-                        <h1 className={reviewStyles.latestAlbumTitle}>{edge.node.albumTitle}</h1>
-                        <p className={reviewStyles.latestDate}>{edge.node.publishedDate}</p>
+        {/*
+          <div className={reviewStyles.latestReviews}>
+            <h1 className={reviewStyles.title}>Latest Reviews</h1>
+            <ul className={reviewStyles.latestAlbums}>
+              {props.data.allContentfulReview.edges.map((edge) => {
+                return (
+                  <li>
+                    <Link to={`../${edge.node.slug}`}>
+                      <div className={reviewStyles.latestAlbum}>
+                        <img src={edge.node.albumCover.file.url} alt={edge.node.albumCover.title} />
+                        <div className={reviewStyles.latestDetails}>
+                          <h1 className={reviewStyles.latestArtistName}>{edge.node.artist.englishName}</h1>
+                          <h1 className={reviewStyles.latestAlbumTitle}>{edge.node.albumTitle}</h1>
+                          <p className={reviewStyles.latestDate}>{edge.node.publishedDate}</p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        */}
       </div>
     </Layout>
   )

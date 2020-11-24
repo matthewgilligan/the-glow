@@ -26,7 +26,7 @@ const ReviewsPage = () => {
             }
             publishedDate(formatString:"MMMM DD YYYY")
             rating
-            reviewCategory {
+            category {
               name
             }
             albumCover {

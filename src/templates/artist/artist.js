@@ -43,7 +43,9 @@ export const query = graphql`
       edges {
         node {
           title
-          subtitle
+          subtitle {
+            json
+          }
           slug
           author {
             englishName
@@ -72,7 +74,9 @@ export const query = graphql`
       edges {
         node {
           title
-          subtitle
+          subtitle {
+            json
+          }
           slug
           author {
             englishName
