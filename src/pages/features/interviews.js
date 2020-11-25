@@ -13,7 +13,8 @@ import Head from "../../components/head/head"
 const FeaturesPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulFeature ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ name: { eq: "Interviews" } } } ) {
+      allContentfulFeature ( sort: { fields:publishedDate, order:DESC } ) {
+      # allContentfulFeature ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ name: { eq: "Interviews" } } } ) {
         edges {
           node {
             title
