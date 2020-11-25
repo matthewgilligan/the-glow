@@ -343,6 +343,7 @@ const IndexPage = (props) => {
         </div>
       </section>
 
+      {/*
       <section className={indexStyles.featuresSection}>
         <div className={indexStyles.container}>
           <div className={indexStyles.sectionTitle}>
@@ -413,6 +414,7 @@ const IndexPage = (props) => {
           </div>
         </div>
       </section>
+      */}
 
       <section className={indexStyles.thePlaylistSection}>
         <div className={indexStyles.playlistContainer}>

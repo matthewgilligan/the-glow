@@ -96,7 +96,7 @@ index-container {
     -ms-transform: translateY(-28%);
     transform: translateY(-28%);
     z-index: 11;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
     color: black;
     width: 80%;
 }
@@ -107,7 +107,7 @@ index-container {
     font-size: 8rem;
     // transform: translate(0, 75px);
     float: right;
-    -webkit-text-stroke: 1px white;
+    // -webkit-text-stroke: 1px white;
     z-index: 99;
 }
 
@@ -119,7 +119,7 @@ index-container {
     // transform: translate(0, 75px);
     float: right;
 
-    -webkit-text-stroke: 1px white;
+    // -webkit-text-stroke: 1px white;
     z-index: 99;
 }
 
