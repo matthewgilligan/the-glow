@@ -1,5 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { INLINES } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Img from "gatsby-image"
 import { Helmet } from "react-helmet"
 
@@ -171,6 +173,26 @@ const IndexPage = (props) => {
   const topFeatureTitleShort = <h1 className={indexStyles.topFeatureTitleShort}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
   const topFeatureTitleLong = <h1 className={indexStyles.topFeatureTitleLong}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
 
+  const options = {
+    renderNode: {
+      "embedded-asset-block": (node) => {
+        const alt = node.data.target.fields.title['en-US']
+        const url = node.data.target.fields.file['en-US'].url
+        return <img alt={alt} src={url} />
+      },
+      [INLINES.HYPERLINK]: (node) => {
+        if(node.data.uri.indexOf('youtube.com/embed') !== -1){
+          return(
+            <iframe width="100%" height="321" title="YouTube" src={node.data.uri} frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          )
+        } else {
+          return <a href={node.data.uri} target={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '_self' : '_blank'}`} rel={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '' : 'noopener noreferrer'}`}>{node.content[0].value}</a>;
+        }
+      }
+    },
+    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
+  }
+
   return (
     <div className={indexStyles.indexContainter}>
       <Helmet>
@@ -208,7 +230,7 @@ const IndexPage = (props) => {
             </Link>
             <div className={indexStyles.topFeatureText}>
               <div className={indexStyles.topFeatureDetails}>
-                <p class={indexStyles.topFeatureSubtitle}>{props.data.firstInterview.edges[0].node.subtitle}</p>
+                <p className={indexStyles.topFeatureSubtitle}>{documentToReactComponents(props.data.firstInterview.edges[0].node.subtitle.json, options)}</p>
                 <div class={indexStyles.topFeatureInfo}>
                   <div class={indexStyles.topFeatureMeta}>
                     <p class={indexStyles.topFeatureAuthor}>By: <Link to={`/author/${props.data.firstInterview.edges[0].node.author.slug}`}>{props.data.firstInterview.edges[0].node.author.englishName}</Link></p>
@@ -228,7 +250,7 @@ const IndexPage = (props) => {
                   style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${props.data.firstInterview.edges[0].node.coverImage.file.url})`} }>
                   <div class={indexStyles.responsiveTopFeatureDetails}>
                     <h2 class={indexStyles.responsiveTopFeatureTitle}>{props.data.firstInterview.edges[0].node.title}</h2>
-                    <p class={indexStyles.responsiveTopFeatureSubtitle}>{props.data.firstInterview.edges[0].node.subtitle}</p>
+                    <p className={indexStyles.responsiveTopFeatureSubtitle}>{documentToReactComponents(props.data.firstInterview.edges[0].node.subtitle.json, options)}</p>
                     <p class={indexStyles.responsiveTopFeatureAuthor}>By: {props.data.firstInterview.edges[0].node.author.englishName}</p>
                     <p class={indexStyles.responsiveTopFeatureDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
                   </div>
@@ -415,7 +437,7 @@ const IndexPage = (props) => {
                       <Link to={`features/${edge.node.slug}`}>
                         <h2 className={indexStyles.playlistArtist}>{edge.node.artist[0].englishName}</h2>
                       </Link>
-                      <p className={indexStyles.playlistSubtitle}>{edge.node.subtitle}</p>
+                      <p className={indexStyles.playlistSubtitle}>{documentToReactComponents(edge.node.subtitle.json, options)}</p>
                       <p className={indexStyles.playlistDate}>{edge.node.publishedDate}</p>
                     </div>
                   </div>
