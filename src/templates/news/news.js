@@ -123,7 +123,7 @@ const News = (props) => {
           <p className={articleDetailsStyles.date}>{props.data.contentfulNews.publishedDate}</p>
         </div>
         <div className={featureStyles.body}>
-          <p className={featureStyles.subtitle}>{props.data.contentfulNews.subtitle}</p>
+          <p className={featureStyles.subtitle}>{documentToReactComponents(props.data.contentfulNews.subtitle.json, options)}</p>
           {documentToReactComponents(props.data.contentfulNews.body.json, options)}
           <p className={featureStyles.artistTags}>Tags: { artistTags }</p>
         </div>
