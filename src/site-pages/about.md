@@ -34,6 +34,8 @@ We’re always searching for new and exciting talent to contribute to The Glow. 
 <a href="mailto:advertise@theglow.jp" target="_blank">advertise@theglow.jp</a>
 
 ###Press Releases
+<p class="press-japanese">日英両言語での取材関係の宣伝・告知、お待ちしております<p>
+
 <a href="mailto:news@theglow.jp" target="_blank">news@theglow.jp</a>
 
 ###Press Inquiries
