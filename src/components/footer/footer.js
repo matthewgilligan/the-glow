@@ -48,7 +48,7 @@ const Footer = () => {
                 <Link to="/ad">Advertise</Link>
               </li>
               <li>
-                <Link to="#">Support Us</Link>
+                <a href="https://www.patreon.com/theglowjp" target="_blank">Support Us</a>
               </li>
             </ul>
           </div>

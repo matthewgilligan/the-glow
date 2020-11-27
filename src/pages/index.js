@@ -346,9 +346,9 @@ const IndexPage = (props) => {
       <section className={indexStyles.patreonAndLatestNews}>
         <div className={indexStyles.container}>
           <div className={indexStyles.patreonAndLatestNewsContent}>
-
-              <img src={patreon} alt="Support us on Patreon!" className={indexStyles.patreon} />
-
+            <a href="https://www.patreon.com/theglowjp" className={indexStyles.patreon} target="_blank">
+              <img src={patreon} className={indexStyles.patreonImage} alt="Support us on Patreon!" />
+            </a>
 
             <div className={indexStyles.latestNews}>
               <div className={indexStyles.sectionTitle}>
