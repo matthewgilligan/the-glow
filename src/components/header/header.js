@@ -14,6 +14,9 @@ const Header = () => {
       site {
         siteMetadata {
           siteTitle
+          twitterUsername
+          facebookUsername
+          instagramUsername
         }
       }
     }
@@ -43,13 +46,13 @@ const Header = () => {
           </ul>
           <ul className={headerStyles.mobileSocialList}>
             <li>
-              <a className={headerStyles.mobileSocialItem} href="https://www.instagram.com/theglow.jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
+              <a className={headerStyles.mobileSocialItem} href={`https://www.instagram.com/${data.site.siteMetadata.facebookUsername}/`} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
             </li>
             <li>
-              <a className={headerStyles.mobileSocialItem} href="https://www.facebook.com/theglow.jp" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
+              <a className={headerStyles.mobileSocialItem} href={`https://www.facebook.com/${data.site.siteMetadata.facebookUsername}/`} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
             </li>
             <li>
-              <a className={headerStyles.mobileSocialItem} href="https://twitter.com/theglow_jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
+              <a className={headerStyles.mobileSocialItem} href={`https://twitter.com/${data.site.siteMetadata.twitterUsername}/`} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
             </li>
           </ul>
         </div>
@@ -81,7 +84,7 @@ const Header = () => {
         <div className={headerStyles.search}>
           <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
         </div>
-        <Link to="/" className={headerStyles.mobileTitle}>{data.site.siteMetadata.title}</Link>
+        <Link to="/" className={headerStyles.mobileTitle}>{data.site.siteMetadata.siteTitle}</Link>
         <div className={headerStyles.mobileIcons}>
           <div className={headerStyles.mobileSearch}>
             <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
@@ -92,16 +95,16 @@ const Header = () => {
         </div>
         <ul className={headerStyles.socialList}>
           <li>
-            <a className={headerStyles.mobileSocialItem} href="https://www.instagram.com/theglow.jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
+            <a className={headerStyles.mobileSocialItem} href={`https://www.instagram.com/${data.site.siteMetadata.facebookUsername}/`} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
           </li>
           <li>
-            <a className={headerStyles.mobileSocialItem} href="https://www.facebook.com/theglow.jp" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
+            <a className={headerStyles.mobileSocialItem} href={`https://www.facebook.com/${data.site.siteMetadata.facebookUsername}/`} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
           </li>
           <li>
-            <a className={headerStyles.mobileSocialItem} href="https://twitter.com/theglow_jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
+            <a className={headerStyles.mobileSocialItem} href={`https://twitter.com/${data.site.siteMetadata.twitterUsername}/`} target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
           </li>
         </ul>
-        <Link to="/" className={headerStyles.title}>{data.site.siteMetadata.title}</Link>
+        <Link to="/" className={headerStyles.title}>{data.site.siteMetadata.siteTitle}</Link>
       </div>
       <div>
         <ul className={headerStyles.navList}>

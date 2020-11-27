@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Img from "gatsby-image"
@@ -17,6 +17,12 @@ import guidesStyles from "./guides.module.scss"
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        siteTitle
+        siteUrl
+      }
+    }
     allContentfulReview ( sort: { fields:publishedDate, order:DESC }, limit: 12 ) {
       edges {
         node {
@@ -204,8 +210,8 @@ const IndexPage = (props) => {
         <meta name="og:description" content="Japanese music in the spotlight." />
         <meta name="og:image" content="../images/red_logo_text_medium.png" />
         <meta name="og:locale" content="en_US" />
-        <meta name="og: url" content="https://xenodochial-dubinsky-db8110.netlify.app" />
-        <link rel="canonical" href="https://xenodochial-dubinsky-db8110.netlify.app" />
+        <meta name="og: url" content={props.data.site.siteMetadata.siteUrl} />
+        <link rel="canonical" href={props.data.site.siteMetadata.siteUrl} />
       </Helmet>
 
       <div className={indexStyles.headerContainer}>

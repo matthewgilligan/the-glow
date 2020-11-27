@@ -18,6 +18,12 @@ import searchStyles from "../../components/header/search.module.scss"
 
 export const query = graphql`
   query($slug: String!){
+    site {
+      siteMetadata {
+        siteTitle
+        siteUrl
+      }
+    }
     contentfulFeature (slug: { eq: $slug }) {
       title
       slug
@@ -127,7 +133,7 @@ const Feature = (props) => {
   }
 
   const shareBlockProps = {
-    url: `https://xenodochial-dubinsky-db8110.netlify.app/features/${props.data.contentfulFeature.slug}`,
+    url: `${props.data.site.siteMetadata.siteUrl}features/${props.data.contentfulFeature.slug}`,
     button: ShareButtonIconOnly,
     buttons: [
       { network: "Twitter", icon: FaTwitter },
@@ -163,7 +169,7 @@ const Feature = (props) => {
         description={props.data.contentfulFeature.description}
         cover={props.data.contentfulFeature.coverImage.file.url}
         imageShare={props.data.contentfulFeature.coverImage.file.url}
-        lang="en-US"
+        lang={props.data.site.siteMetadata.siteLang}
         path={`feature/${props.data.contentfulFeature.coverImage.slug}`}
         isBlogPost
       />

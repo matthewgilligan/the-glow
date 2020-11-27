@@ -1,10 +1,13 @@
 module.exports = {
   siteMetadata: {
     siteTitle: 'The Glow',
-    siteUrl: 'https://5fc12277f5af0400087aca29--xenodochial-dubinsky-db8110.netlify.app/',
+    siteUrl: 'http://theglow.jp/',
     siteCover: 'src/images/site_cover.jpg',
     siteDescription: 'Putting Japanese music in the spotlight.',
+    siteLang:'en-US',
     twitterUsername: 'theglow_jp',
+    facebookUsername: 'theglow.jp',
+    instagramUsername: 'theglow.jp'
   },
   plugins: [
     'gatsby-plugin-material-ui',
