@@ -7,6 +7,7 @@ import Img from "gatsby-image"
 import Layout from "../../components/layout/layout"
 import featuresStyles from "../features.module.scss"
 import newsStyles from "../news.module.scss"
+import reviewsStyles from "../reviews.module.scss"
 import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../../components/head/head"
 
@@ -301,6 +302,9 @@ const FeaturesPage = () => {
             </div>
           </div> */}
         </div>
+      </div>
+      <div className={reviewsStyles.noContent}>
+        <p>Content is on the way - hold tight!</p>
       </div>
       {/*
       {wideScreen}

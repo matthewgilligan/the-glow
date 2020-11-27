@@ -7,6 +7,16 @@
     margin: 0 -20px;
 }
 
+.no-content {
+    width: 100%;
+    text-align: center;
+
+    p {
+        margin-top: 3rem;
+        width: 100%;
+    }
+}
+
 .album {
     float: left;
     width: 13.235%;

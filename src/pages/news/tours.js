@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 
 import Layout from "../../components/layout/layout"
 import newsStyles from "../news.module.scss"
+import reviewsStyles from "../reviews.module.scss"
 import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../../components/head/head"
 
@@ -187,6 +188,9 @@ const FeaturesPage = () => {
         })}
       </div>
       */}
+      <div className={reviewsStyles.noContent}>
+        <p>Content is on the way - hold tight!</p>
+      </div>
     </Layout>
   )
 }

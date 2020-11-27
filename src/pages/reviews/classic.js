@@ -85,6 +85,10 @@ const ReviewsPage = () => {
           </div> */}
         </div>
       </div>
+      <div className={reviewsStyles.noContent}>
+        <p>Content is on the way - hold tight!</p>
+      </div>
+      {/*
       <div className={reviewsStyles.albums}>
         {data.allContentfulReview.edges.map((edge) => {
           return (
@@ -104,6 +108,7 @@ const ReviewsPage = () => {
           )
         })}
       </div>
+    */}
     </Layout>
   )
 }
