@@ -9,11 +9,18 @@ import { VscStarFull, VscStarHalf, VscStarEmpty } from "react-icons/vsc";
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 
 import Layout from "../../components/layout/layout"
+import SEO from "../../components/seo/seo"
 import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import reviewStyles from "./review.module.scss"
 
 export const query = graphql`
   query($slug: String!){
+    site {
+      siteMetadata {
+        siteTitle
+        siteUrl
+      }
+    }
     contentfulReview (slug: { eq: $slug }) {
       albumTitle
       slug
@@ -77,6 +84,16 @@ export const query = graphql`
 `
 
 const Review = (props) => {
+  const shareBlockProps = {
+    url: `${props.data.site.siteMetadata.siteUrl}reviews/${props.data.contentfulReview.slug}`,
+    button: ShareButtonIconOnly,
+    buttons: [
+      { network: "Twitter", icon: FaTwitter },
+      { network: "Facebook", icon: FaFacebookF },
+    ],
+    text: `${props.data.contentfulReview.artist.englishName}: ${props.data.contentfulReview.albumTitle}`,
+  };
+
   const options = {
     renderNode: {
       "embedded-asset-block": (node) => {
@@ -138,18 +155,17 @@ const Review = (props) => {
   const starsInt = multiplyInt(props.data.contentfulReview.rating)
   const starsDec = multiplyDec(props.data.contentfulReview.rating)
 
-  const shareBlockProps = {
-    url: `https://xenodochial-dubinsky-db8110.netlify.app/reviews/${props.data.contentfulReview.slug}`,
-    button: ShareButtonIconOnly,
-    buttons: [
-      { network: "Twitter", icon: FaTwitter },
-      { network: "Facebook", icon: FaFacebookF },
-    ],
-    text: `${props.data.contentfulReview.albumTitle}`,
-  };
-
   return (
     <Layout>
+      <SEO
+        title={`${props.data.contentfulReview.artist.englishName}: ${props.data.contentfulReview.albumTitle}`}
+        description={props.data.contentfulReview.description}
+        cover={props.data.contentfulReview.albumCover.file.url}
+        imageShare={props.data.contentfulReview.albumCover.file.url}
+        lang={props.data.site.siteMetadata.siteLang}
+        path={`/reviews/${props.data.contentfulReview.slug}`}
+        isBlogPost
+      />
       <div className={reviewStyles.content}>
         <div className={reviewStyles.post}>
           <div className={reviewStyles.albumBanner}>

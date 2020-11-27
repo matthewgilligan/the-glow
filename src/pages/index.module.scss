@@ -447,6 +447,8 @@ index-container {
 // Patreon and Latest News
 .patreon-and-latest-news {
     margin-top: 3rem;
+    // Remove mb when playlist section is added back
+    margin-bottom: 3rem;
     height: 475px;
 }
 

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteTitle: 'The Glow',
-    siteUrl: 'https://theglow.jp/',
+    siteUrl: 'https://www.theglow.jp/',
     siteCover: 'src/images/site_cover.jpg',
     siteDescription: 'Putting Japanese music in the spotlight.',
     siteLang:'en-US',

@@ -7,6 +7,7 @@ import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 import Head from "../../components/head/head"
+import SEO from "../../components/seo/seo"
 import Layout from "../../components/layout/layout"
 import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import featureStyles from "../feature/feature.module.scss"
@@ -14,6 +15,12 @@ import newsStyles from "./news.module.scss"
 
 export const query = graphql`
   query($slug: String!){
+    site {
+      siteMetadata {
+        siteTitle
+        siteUrl
+      }
+    }
     contentfulNews (slug: { eq: $slug }) {
       title
       slug
@@ -74,7 +81,7 @@ const News = (props) => {
   }
 
   const shareBlockProps = {
-    url: `https://xenodochial-dubinsky-db8110.netlify.app/news/${props.data.contentfulNews.slug}`,
+    url: `${props.data.site.siteMetadata.siteUrl}news/${props.data.contentfulNews.slug}`,
     button: ShareButtonIconOnly,
     buttons: [
       { network: "Twitter", icon: FaTwitter },
@@ -96,6 +103,15 @@ const News = (props) => {
   return (
     <Layout>
       <Head title={`${props.data.contentfulNews.title} | The Glow`}/>
+      <SEO
+        title={props.data.contentfulNews.title}
+        description={props.data.contentfulNews.description}
+        cover={props.data.contentfulNews.coverImage.file.url}
+        imageShare={props.data.contentfulNews.coverImage.file.url}
+        lang={props.data.site.siteMetadata.siteLang}
+        path={`news/${props.data.contentfulNews.slug}`}
+        isBlogPost
+      />
       <div className={newsStyles.header}>
         <h1 className={newsStyles.title}>{props.data.contentfulNews.title}</h1>
         <Img

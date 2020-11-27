@@ -6,6 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import logo from "../../images/white-glow-ray.png"
 import Head from "../../components/head/head"
+import SEO from "../../components/seo/seo"
 import Footer from "../../components/footer/footer"
 import Header from "../../components/header/header"
 import indexStyles from "../../pages/index.module.scss"
@@ -13,6 +14,12 @@ import guideStyles from "./guide.module.scss"
 
 export const query = graphql`
   query($slug: String!){
+    site {
+      siteMetadata {
+        siteTitle
+        siteUrl
+      }
+    }
     contentfulGuide (slug: { eq: $slug }) {
       title
       subject
@@ -136,6 +143,15 @@ const Guides = (props) => {
   return (
     <div className={indexStyles.indexContainter}>
       <Head title={`${props.data.contentfulGuide.title} | The Glow`}/>
+      <SEO
+        title={props.data.contentfulGuide.title}
+        description={props.data.contentfulGuide.description}
+        cover={props.data.contentfulGuide.coverImage.file.url}
+        imageShare={props.data.contentfulGuide.coverImage.file.url}
+        lang={props.data.site.siteMetadata.siteLang}
+        path={`/guides/${props.data.contentfulGuide.slug}`}
+        isBlogPost
+      />
       <div className={indexStyles.headerContainer}>
         <Header />
       </div>

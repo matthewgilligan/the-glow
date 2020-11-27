@@ -267,6 +267,33 @@ const IndexPage = (props) => {
         </div>
       </section>
 
+      <section className={indexStyles.guidesSection}>
+        <div className={indexStyles.container}>
+          <div className={indexStyles.sectionTitle}>
+            <h2>Guides</h2>
+          </div>
+          <div className={guidesStyles.guides}>
+            {props.data.allContentfulGuide.edges.map((edge) => {
+              return (
+                <div className={guidesStyles.guide}>
+              <Link to={`guides/${edge.node.slug}`}>
+                <div className={guidesStyles.image} style={{backgroundImage: `radial-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)), url(${edge.node.coverImage.file.url})`}}>
+                  <div className={guidesStyles.title}>
+                    <h1>{edge.node.subject}</h1>
+                  </div>
+                </div>
+              </Link>
+            </div>
+              )
+            })}
+          </div>
+          <div className={indexStyles.sectionLink}>
+            <Link to="/guides">View All Guides</Link>
+          </div>
+        </div>
+      </section>
+
+      {/*
       <section className={indexStyles.reviews}>
         <div className={indexStyles.container}>
           <div className={indexStyles.sectionTitle}>
@@ -314,6 +341,7 @@ const IndexPage = (props) => {
           </div>
         </div>
       </section>
+      */}
 
       <section className={indexStyles.patreonAndLatestNews}>
         <div className={indexStyles.container}>
@@ -422,6 +450,7 @@ const IndexPage = (props) => {
       </section>
       */}
 
+      {/*
       <section className={indexStyles.thePlaylistSection}>
         <div className={indexStyles.playlistContainer}>
           <div className={indexStyles.thePlaylistTitle}>
@@ -455,32 +484,7 @@ const IndexPage = (props) => {
           </div>
         </div>
       </section>
-
-      <section className={indexStyles.guidesSection}>
-        <div className={indexStyles.container}>
-          <div className={indexStyles.sectionTitle}>
-            <h2>Guides</h2>
-          </div>
-          <div className={guidesStyles.guides}>
-            {props.data.allContentfulGuide.edges.map((edge) => {
-              return (
-                <div className={guidesStyles.guide}>
-              <Link to={`guides/${edge.node.slug}`}>
-                <div className={guidesStyles.image} style={{backgroundImage: `radial-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0)), url(${edge.node.coverImage.file.url})`}}>
-                  <div className={guidesStyles.title}>
-                    <h1>{edge.node.subject}</h1>
-                  </div>
-                </div>
-              </Link>
-            </div>
-              )
-            })}
-          </div>
-          <div className={indexStyles.sectionLink}>
-            <Link to="/guides">View All Guides</Link>
-          </div>
-        </div>
-      </section>
+      */}
 
       <Footer />
     </div>
