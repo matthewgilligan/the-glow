@@ -41,7 +41,7 @@ const SEO = (props) => {
       <link rel="canonical" href={formatedSiteUrl + withPrefix(path)} />
 
       {/* OpenGraph tags */}
-      <meta property="og:url" content={formatedSiteUrl + withPrefix(path)} />
+      <meta property="og:url" content={`${siteUrl}${props.path}`} />
       <meta property="og:type" content={isBlogPost ? 'article' : 'website'} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

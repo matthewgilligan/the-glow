@@ -170,7 +170,7 @@ const Feature = (props) => {
         cover={props.data.contentfulFeature.coverImage.file.url}
         imageShare={props.data.contentfulFeature.coverImage.file.url}
         lang={props.data.site.siteMetadata.siteLang}
-        path={`feature/${props.data.contentfulFeature.slug}`}
+        path={`features/${props.data.contentfulFeature.slug}`}
         isBlogPost
       />
       <div
