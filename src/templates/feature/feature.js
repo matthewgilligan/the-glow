@@ -133,7 +133,7 @@ const Feature = (props) => {
   }
 
   const shareBlockProps = {
-    url: `${props.data.site.siteMetadata.siteUrl}features/${props.data.contentfulFeature.slug}`,
+    url: `${props.data.site.siteMetadata.siteUrl}/features/${props.data.contentfulFeature.slug}`,
     button: ShareButtonIconOnly,
     buttons: [
       { network: "Twitter", icon: FaTwitter },
@@ -170,7 +170,7 @@ const Feature = (props) => {
         cover={props.data.contentfulFeature.coverImage.file.url}
         imageShare={props.data.contentfulFeature.coverImage.file.url}
         lang={props.data.site.siteMetadata.siteLang}
-        path={`feature/${props.data.contentfulFeature.coverImage.slug}`}
+        path={`feature/${props.data.contentfulFeature.slug}`}
         isBlogPost
       />
       <div
