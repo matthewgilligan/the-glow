@@ -780,9 +780,11 @@ index-container {
 
     .playlist-details {
         position: relative;
-        margin: 20px 0;
+        margin: 20px 0 28px 0;
         color: white;
-        height: 185px;
+        height: 100%;
+        border: none;
+        text-align: left;
     }
 
     .playlist {
@@ -799,14 +801,13 @@ index-container {
     }
 
     .playlist-subtitle {
-        margin: 20px 0 16px 0;
+        margin: 16px 0 16px 0;
         font-size: .6rem;
 
     }
 
     .playlist-date {
-        font-size: .6rem;
-        position: relative;
+        display: none;
     }
 
 }

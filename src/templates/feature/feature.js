@@ -8,6 +8,7 @@ import { GrClose } from "react-icons/gr";
 import { FiSearch } from "react-icons/fi";
 
 import Head from "../../components/head/head"
+import SEO from "../../components/seo/seo"
 import Footer from "../../components/footer/footer"
 import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import featureStyles from "./feature.module.scss"
@@ -125,7 +126,7 @@ const Feature = (props) => {
   }
 
   const shareBlockProps = {
-    url: `https://xenodochial-dubinsky-db8110.netlify.app/news/${props.data.contentfulFeature.slug}`,
+    url: `https://xenodochial-dubinsky-db8110.netlify.app/features/${props.data.contentfulFeature.slug}`,
     button: ShareButtonIconOnly,
     buttons: [
       { network: "Twitter", icon: FaTwitter },
@@ -156,6 +157,15 @@ const Feature = (props) => {
     <div>
       <Head title={`${props.data.contentfulFeature.title} | The Glow`}/>
       { search }
+      <SEO
+        title={props.data.contentfulFeature.title}
+        description={props.data.contentfulFeature.subtitle}
+        cover={props.data.contentfulFeature.coverImage.file.url}
+        imageShare={props.data.contentfulFeature.coverImage.file.url}
+        lang="en-US"
+        path={`feature/${props.data.contentfulFeature.coverImage.slug}`}
+        isBlogPost
+      />
       <div
       style={{backgroundImage: `linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(${props.data.contentfulFeature.coverImage.file.url})`} }
       className={featureStyles.banner}>
