@@ -35,6 +35,7 @@ export const query = graphql`
       category {
         name
       }
+      description
       subcategory {
         name
       }
@@ -159,7 +160,7 @@ const Feature = (props) => {
       { search }
       <SEO
         title={props.data.contentfulFeature.title}
-        description={props.data.contentfulFeature.subtitle}
+        description={props.data.contentfulFeature.description}
         cover={props.data.contentfulFeature.coverImage.file.url}
         imageShare={props.data.contentfulFeature.coverImage.file.url}
         lang="en-US"
