@@ -25,6 +25,17 @@ export const query = graphql`
         siteUrl
       }
     }
+    allContentfulSiteMetadata (limit: 1) {
+      edges {
+        node {
+          image {
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
     allContentfulReview ( sort: { fields:publishedDate, order:DESC }, limit: 12 ) {
       edges {
         node {
@@ -206,8 +217,8 @@ const IndexPage = (props) => {
       <SEO
         title="The Glow | Japanese music in the spotlight"
         description="Japanese music in the spotlight."
-        cover={redLogo}
-        imageShare={redLogo}
+        cover={props.data.allContentfulSiteMetadata.edges[0].node.image.file.url}
+        imageShare={props.data.allContentfulSiteMetadata.edges[0].node.image.file.url}
         lang={props.data.site.siteMetadata.siteLang}
         path={props.data.site.siteMetadata.siteUrl}
       />
