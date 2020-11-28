@@ -10,6 +10,12 @@ module.exports = {
     instagramUsername: 'theglow.jp'
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_MEASUREMENT_ID
+      }
+    },
     'gatsby-plugin-material-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
