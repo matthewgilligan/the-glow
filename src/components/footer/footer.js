@@ -10,11 +10,13 @@ const Footer = () => {
   return (
     <footer className={footerStyles.footer}>
       <div className={footerStyles.container}>
+        {/*
         <div className={footerStyles.mailchimp}>
           <div className={footerStyles.form}>
             <Mailchimp />
           </div>
         </div>
+        */}
         <div className={footerStyles.content}>
           <div className={footerStyles.copyright}>
             <Link to="/" >
