@@ -24,9 +24,9 @@ const SEO = (props) => {
   const siteDescription = data.site.siteMetadata.siteDescription;
   const twitterUsername = data.site.siteMetadata.twitterUsername;
 
-  const title = props.title
-    ? `${props.title} | ${siteTitle}`
-    : `${siteTitle} - ${siteDescription}`
+  const title = props.title == ""
+    ? "The Glow | Japanese music in the spotlight"
+    : `${props.title} | ${siteTitle}`
   const formatedSiteUrl = siteUrl.endsWith('/')
     ? siteUrl.substring(0, siteUrl.length - 1)
     : siteUrl

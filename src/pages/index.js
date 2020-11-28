@@ -215,7 +215,7 @@ const IndexPage = (props) => {
   return (
     <div className={indexStyles.indexContainter}>
       <SEO
-        title="The Glow | Japanese music in the spotlight"
+        title=""
         description="Japanese music in the spotlight."
         cover={props.data.allContentfulSiteMetadata.edges[0].node.image.file.url}
         imageShare={props.data.allContentfulSiteMetadata.edges[0].node.image.file.url}
