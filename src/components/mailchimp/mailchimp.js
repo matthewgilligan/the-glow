@@ -16,6 +16,12 @@ export default class MailChimpForm extends React.Component {
     e.preventDefault()
     const result = await addToMailchimp(this.state.email)
     this.setState({result: result})
+
+    if (this.state.result.result === 'success') {
+      alert(this.state.result.msg)
+    } else {
+      alert("Oops! Something went wrong. You either are already subscribed to our mailing list, or you have entered an invalid email address.");
+    }
   }
 
   handleChange = event => {
