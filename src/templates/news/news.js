@@ -81,7 +81,7 @@ const News = (props) => {
   }
 
   const shareBlockProps = {
-    url: `${props.data.site.siteMetadata.siteUrl}news/${props.data.contentfulNews.slug}`,
+    url: `${props.data.site.siteMetadata.siteUrl}/news/${props.data.contentfulNews.slug}`,
     button: ShareButtonIconOnly,
     buttons: [
       { network: "Twitter", icon: FaTwitter },
