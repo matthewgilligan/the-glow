@@ -23,11 +23,9 @@ export default class MailChimpForm extends React.Component {
   }
 
   render() {
-    return this.state.result.result === "success" ? (
-      <div className={mailchimpStyles.response}>{this.state.result.msg}</div>
-    ) : this.state.result.result === "error" ? (
-      <div className={mailchimpStyles.response}>Oops! Something went wrong.<br></br> Either you are already subscribed to our list, or you have entered an invalid email.</div>
-    ) : (
+    return (
+      <div>
+      <div className="message" dangerouslySetInnerHTML={{ __html: this.state.result.msg}} />
       <div className={mailchimpStyles.main}>
         <h2>The Glow Newsletter</h2>
         <p>Let The Glow shine on your inbox!</p>
@@ -46,6 +44,7 @@ export default class MailChimpForm extends React.Component {
             <Typography variant="button" >Subscribe</Typography>
           </Button>
         </form>
+      </div>
       </div>
     )
   }
