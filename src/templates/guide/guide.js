@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
+import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 import logo from "../../images/white-glow-ray.png"
 import Head from "../../components/head/head"
@@ -137,6 +139,16 @@ const Guides = (props) => {
     },
     renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
   }
+
+  const shareBlockProps = {
+    url: `${props.data.site.siteMetadata.siteUrl}/guides/${props.data.contentfulGuide.slug}`,
+    button: ShareButtonIconOnly,
+    buttons: [
+      { network: "Twitter", icon: FaTwitter },
+      { network: "Facebook", icon: FaFacebookF },
+    ],
+    text: `${props.data.contentfulGuide.title}`,
+  };
 
   const reccomendations = [props.data.contentfulGuide.reference1, props.data.contentfulGuide.reference2, props.data.contentfulGuide.reference3, props.data.contentfulGuide.reference4, props.data.contentfulGuide.reference5]
 
