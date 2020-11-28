@@ -21,7 +21,7 @@ const Footer = () => {
               <img src={logo} alt="Logo" className={footerStyles.logo}/>
             </Link>
             <p>© 2020 The Glow JP Ltd.</p>
-            <p>All rights reserved. <Link className={footerStyles.copyrightLinks} to="/privacy-policy">Privacy Policy</Link> | <Link className={footerStyles.copyrightLinks} to="/terms-of-service">Terms of Service</Link></p>
+            <p>All rights reserved. <Link className={footerStyles.copyrightLinks} to="/privacy-policy">Privacy Policy</Link></p>
           </div>
           <div className={footerStyles.pages}>
             <ul>
@@ -77,7 +77,7 @@ const Footer = () => {
             </Link>
             <p>© 2020 The Glow JP Ltd.</p>
             <p>All rights reserved.</p>
-            <p><Link className={footerStyles.copyrightLinks} to="/privacy-policy">Privacy Policy</Link> | <Link className={footerStyles.copyrightLinks} to="/terms-of-service">Terms of Service</Link></p>
+            <p><Link className={footerStyles.copyrightLinks} to="/privacy-policy">Privacy Policy</Link></p>
           </div>
         </div>
       </div>
