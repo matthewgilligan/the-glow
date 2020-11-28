@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Helmet } from 'react-helmet'
 import { FaFacebookF, FaInstagram, FaTwitter, FaSpotify, FaApple } from 'react-icons/fa';
 
 import Mailchimp from "../../components/mailchimp/mailchimp"
@@ -9,6 +10,20 @@ import logo from "../../images/white-glow.png"
 const Footer = () => {
   return (
     <footer className={footerStyles.footer}>
+      <Helmet>
+        {/* other stuff... */}
+
+        {/* Global site tag (gtag.js) - Google Analytics  */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', ${process.env.GA_ID});
+          `}
+        </script>
+      </Helmet>
       <div className={footerStyles.container}>
         {/*}
         <div className={footerStyles.mailchimp}>
