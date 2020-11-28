@@ -5,7 +5,9 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Img from "gatsby-image"
 import { Helmet } from "react-helmet"
 
+import redLogo from "../images/red_logo_text_medium.png"
 import patreon from "../images/patreon_ad.png"
+import SEO from "../components/seo/seo"
 import Footer from "../components/footer/footer"
 import Header from "../components/header/header"
 import '../styles/index.scss'
@@ -201,18 +203,14 @@ const IndexPage = (props) => {
 
   return (
     <div className={indexStyles.indexContainter}>
-      <Helmet>
-        <title>The Glow | Japanese music in the spotlight</title>
-        <meta name="description" content="Japanese music in the spotlight." />
-        <meta name="keywords" content="music, japan, indie, japanese, reviews, albums" />
-        <meta name="og:title" content="The Glow | Japanese music in the spotlight" />
-        <meta name="og:type" content="website" />
-        <meta name="og:description" content="Japanese music in the spotlight." />
-        <meta name="og:image" content="../images/red_logo_text_medium.png" />
-        <meta name="og:locale" content="en_US" />
-        <meta name="og: url" content={props.data.site.siteMetadata.siteUrl} />
-        <link rel="canonical" href={props.data.site.siteMetadata.siteUrl} />
-      </Helmet>
+      <SEO
+        title="The Glow | Japanese music in the spotlight"
+        description="Japanese music in the spotlight."
+        cover={redLogo}
+        imageShare={redLogo}
+        lang={props.data.site.siteMetadata.siteLang}
+        path={props.data.site.siteMetadata.siteUrl}
+      />
 
       <div className={indexStyles.headerContainer}>
         <Header />
