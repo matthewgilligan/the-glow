@@ -9,7 +9,7 @@ import newsStyles from "../news.module.scss"
 import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../../components/head/head"
 
-const FeaturesPage = () => {
+const ReleasesPage = () => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulNews ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ name: { eq: "Releases" } } } ) {
@@ -45,10 +45,8 @@ const FeaturesPage = () => {
     }
   `)
 
-  {/*
-    const firstPost = data.allContentfulNews.edges[0];
-    const remainingPosts = data.allContentfulNews.edges.slice(1);
-  */}
+  const firstPost = data.allContentfulNews.edges[0];
+  const remainingPosts = data.allContentfulNews.edges.slice(1);
 
   const options = {
     renderNode: {
@@ -116,7 +114,6 @@ const FeaturesPage = () => {
           </div> */}
         </div>
       </div>
-      {/*
       <Link to={`../${firstPost.node.slug}`} className={newsStyles.firstPostWide}>
         <div class={newsStyles.firstPost}>
           <Img
@@ -186,9 +183,8 @@ const FeaturesPage = () => {
           )
         })}
       </div>
-      */}
     </Layout>
   )
 }
 
-export default FeaturesPage
+export default ReleasesPage
