@@ -3,6 +3,13 @@
 .first-post {
     display: flex;
     height: 25rem;
+
+    &:hover {
+        h2 {
+            text-decoration: underline !important;
+            text-decoration-color: #E7334D !important;
+        }
+    }
 }
 
 .first-img {
@@ -105,6 +112,9 @@
     .remaining-post {
         display: block;
         height: 536px;
+    }
+    .remaining-title {
+        font-size: 1.2rem;
     }
 
     .remaining-img {
