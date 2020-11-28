@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Helmet } from 'react-helmet'
+import CookieConsent, { Cookies } from "react-cookie-consent";
 import { FaFacebookF, FaInstagram, FaTwitter, FaSpotify, FaApple } from 'react-icons/fa';
 
 import Mailchimp from "../../components/mailchimp/mailchimp"
@@ -10,6 +11,21 @@ import logo from "../../images/white-glow.png"
 const Footer = () => {
   return (
     <footer className={footerStyles.footer}>
+      <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          declineButtonText="Decline"
+          style={{
+            background: "#E7334D",
+          }}
+          buttonStyle={{
+            background: "black",
+            color: "white",
+          }}
+          cookieName="gatsby-gdpr-google-analytics">
+        This website uses cookies to ensure you get the best experience on our website. <Link className={footerStyles.copyrightLinks} to="/privacy-policy">Learn More</Link>
+      </CookieConsent>
+
       <div className={footerStyles.container}>
         {/*}
         <div className={footerStyles.mailchimp}>

@@ -16,6 +16,16 @@ module.exports = {
         trackingId: process.env.GA_ID
       }
     },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: process.env.GA_ID,
+          // Setting this parameter is optional
+          anonymize: true
+        },
+      },
+    },
     'gatsby-plugin-material-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
