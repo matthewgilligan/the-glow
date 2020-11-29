@@ -253,6 +253,14 @@
 
     .body {
         width: 100%;
+
+        h2 {
+            margin-top: 24px;
+        }
+
+        iframe {
+            margin-bottom: 0;
+        }
     }
 
     .banner {
@@ -261,7 +269,7 @@
 }
 
 @media screen and (max-width: 650px) {
-        .feature-title {
+    .feature-title {
         h1 {
             font-size: 1.6rem;
         }
@@ -280,6 +288,11 @@
     .body {
         h2 {
             font-size: 1.2rem;
+        }
+
+        iframe {
+            height: 250px;
+            margin-bottom: 0;
         }
     }
 

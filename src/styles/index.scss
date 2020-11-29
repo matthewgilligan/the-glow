@@ -29,6 +29,12 @@ input, textarea, button, select, a {
     color: rgba(0,0,0,.6);
 }
 
+@media screen and (max-width: 650px) {
+    .youtube {
+        height: 200;
+    }
+}
+
 
 
 
