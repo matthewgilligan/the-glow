@@ -72,7 +72,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulFeature (sort: { fields:publishedDate, order:DESC } ,filter: { author:{ slug: { eq: $slug } } }) {
+    allContentfulFeature (sort: { fields:publishedDate, order:DESC }, filter: { artist:{ elemMatch:{ slug: { eq: $slug } } } }) {
       edges {
         node {
           title
@@ -182,7 +182,7 @@ const Author = (props) => {
                 </Link>
                 <div class={artistStyles.newsInfo}>
                   <div class={artistStyles.newsMeta}>
-                    <p class={artistStyles.newsAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={artistStyles.newsAuthor}>By: {edge.node.author[0].englishName}</p>
                     <p class={artistStyles.newsDate}>{edge.node.publishedDate}</p>
                   </div>
                   <Link to={`/features/${edge.node.category.name.toLowerCase()}`}  className={artistStyles.newsCategory}>
@@ -213,7 +213,7 @@ const Author = (props) => {
                   </Link>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <Link to={`/features/${edge.node.category.name.toLowerCase()}`} className={newsStyles.remainingCategory}>

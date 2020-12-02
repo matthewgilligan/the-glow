@@ -82,7 +82,7 @@ const FeaturesPage = () => {
               <div class={featuresStyles.firstFeatureDetails}>
                 <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
                 <p className={featuresStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json, options)}</p>
-                <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
+                <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author[0].englishName}</p>
                 <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
               </div>
             </div>
@@ -106,7 +106,7 @@ const FeaturesPage = () => {
                   </Link>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
@@ -137,7 +137,7 @@ const FeaturesPage = () => {
                   <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json, options)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
@@ -159,7 +159,7 @@ const FeaturesPage = () => {
             <div class={featuresStyles.firstFeatureDetails}>
               <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
               <p className={featuresStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json, options)}</p>
-              <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
+              <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author[0].englishName}</p>
               <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
             </div>
           </div>
@@ -185,7 +185,7 @@ const FeaturesPage = () => {
                   <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json, options)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
@@ -212,7 +212,7 @@ const FeaturesPage = () => {
             </Link>
             <div class={newsStyles.remainingInfo}>
               <div class={newsStyles.remainingMeta}>
-                <p class={newsStyles.remainingAuthor}>By: {firstFeature.node.author.englishName}</p>
+                <p class={newsStyles.remainingAuthor}>By: {firstFeature.node.author[0].englishName}</p>
                 <p class={newsStyles.remainingDate}>{firstFeature.node.publishedDate}</p>
               </div>
               <p className={newsStyles.remainingCategory}>{firstFeature.node.category.name}</p>
@@ -238,7 +238,7 @@ const FeaturesPage = () => {
                 </Link>
                 <div class={newsStyles.remainingInfo}>
                   <div class={newsStyles.remainingMeta}>
-                    <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
                     <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                   </div>
                   <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>

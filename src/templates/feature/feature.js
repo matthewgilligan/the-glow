@@ -213,7 +213,7 @@ const Feature = (props) => {
         <div className={featureStyles.content}>
           <div className={featureStyles.featureContent}>
             <div className={articleDetailsStyles.metaDetails}>
-              <p>By: <Link to={`../../author/${props.data.contentfulFeature.author.slug}`}>{props.data.contentfulFeature.author.englishName}</Link></p>
+              <p>By: <Link to={`../../author/${props.data.contentfulFeature.author[0].slug}`}>{props.data.contentfulFeature.author[0].englishName}</Link></p>
               <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
               <div className={articleDetailsStyles.genreAndSocials}>
                 <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
@@ -222,7 +222,7 @@ const Feature = (props) => {
             </div>
             <div className={articleDetailsStyles.mobileMetaDetails}>
               <div className={articleDetailsStyles.genreAndSocials}>
-                <p>By: <Link to={`../../author/${props.data.contentfulFeature.author.slug}`}>{props.data.contentfulFeature.author.englishName}</Link></p>
+                <p>By: <Link to={`../../author/${props.data.contentfulFeature.author[0].slug}`}>{props.data.contentfulFeature.author[0].englishName}</Link></p>
                 <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
               </div>
               <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>

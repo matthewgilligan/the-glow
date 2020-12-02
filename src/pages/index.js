@@ -248,7 +248,7 @@ const IndexPage = (props) => {
                 <p className={indexStyles.topFeatureSubtitle}>{documentToReactComponents(props.data.firstInterview.edges[0].node.subtitle.json, options)}</p>
                 <div class={indexStyles.topFeatureInfo}>
                   <div class={indexStyles.topFeatureMeta}>
-                    <p class={indexStyles.topFeatureAuthor}>By: <Link to={`/author/${props.data.firstInterview.edges[0].node.author.slug}`}>{props.data.firstInterview.edges[0].node.author.englishName}</Link></p>
+                    <p class={indexStyles.topFeatureAuthor}>By: <Link to={`/author/${props.data.firstInterview.edges[0].node.author[0].slug}`}>{props.data.firstInterview.edges[0].node.author[0].englishName}</Link></p>
                     <p class={indexStyles.topFeatureDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
                   </div>
                   <Link to={`features/${props.data.firstInterview.edges[0].node.category.name.toLowerCase()}`}  className={indexStyles.topFeatureCategory}>
@@ -266,7 +266,7 @@ const IndexPage = (props) => {
                   <div class={indexStyles.responsiveTopFeatureDetails}>
                     <h2 class={indexStyles.responsiveTopFeatureTitle}>{props.data.firstInterview.edges[0].node.title}</h2>
                     <p className={indexStyles.responsiveTopFeatureSubtitle}>{documentToReactComponents(props.data.firstInterview.edges[0].node.subtitle.json, options)}</p>
-                    <p class={indexStyles.responsiveTopFeatureAuthor}>By: {props.data.firstInterview.edges[0].node.author.englishName}</p>
+                    <p class={indexStyles.responsiveTopFeatureAuthor}>By: {props.data.firstInterview.edges[0].node.author[0].englishName}</p>
                     <p class={indexStyles.responsiveTopFeatureDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
                   </div>
                 </div>
