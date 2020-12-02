@@ -42,12 +42,12 @@ module.exports = {
         icon: `src/images/favicon.png`
       }
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: [`/*`,],
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {
+    //     precachePages: [`/*`,],
+    //   }
+    // },
     {
       resolve: 'gatsby-source-contentful',
       options: {
