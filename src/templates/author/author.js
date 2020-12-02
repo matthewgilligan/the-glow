@@ -246,7 +246,7 @@ const Author = (props) => {
                   <h3 class={artistStyles.newsTitle}>{edge.node.title}</h3>
                   <div class={artistStyles.newsInfo}>
                     <div class={artistStyles.newsMeta}>
-                      <p class={artistStyles.newsAuthor}>By: {edge.node.author[0].englishName}</p>
+                      <p class={artistStyles.newsAuthor}>By: {edge.node.author.englishName}</p>
                       <p class={artistStyles.newsDate}>{edge.node.publishedDate}</p>
                     </div>
                     <Link to={edge.node.category.slug} className={artistStyles.newsCategory}>
@@ -275,7 +275,7 @@ const Author = (props) => {
                     <h3 class={newsStyles.remainingTitle}>{edge.node.title}</h3>
                     <div class={newsStyles.remainingInfo}>
                       <div class={newsStyles.remainingMeta}>
-                        <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
+                        <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
                         <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                       </div>
                       <Link to={edge.node.category.slug} className={newsStyles.remainingCategory}>
