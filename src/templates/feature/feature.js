@@ -95,6 +95,16 @@ const Feature = (props) => {
     }
   }
 
+  const authors = props.data.contentfulFeature.author;
+  let authorTags = []
+  for (let i = 0; i < authors.length; i++) {
+    if(i === authors.length -1){
+      authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+    } else {
+      authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
+    }
+  }
+
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   let mobileNav
 
@@ -213,7 +223,7 @@ const Feature = (props) => {
         <div className={featureStyles.content}>
           <div className={featureStyles.featureContent}>
             <div className={articleDetailsStyles.metaDetails}>
-              <p>By: <Link to={`../../author/${props.data.contentfulFeature.author[0].slug}`}>{props.data.contentfulFeature.author[0].englishName}</Link></p>
+              <p>By: { authorTags }</p>
               <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
               <div className={articleDetailsStyles.genreAndSocials}>
                 <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
@@ -222,7 +232,7 @@ const Feature = (props) => {
             </div>
             <div className={articleDetailsStyles.mobileMetaDetails}>
               <div className={articleDetailsStyles.genreAndSocials}>
-                <p>By: <Link to={`../../author/${props.data.contentfulFeature.author[0].slug}`}>{props.data.contentfulFeature.author[0].englishName}</Link></p>
+                <p>By: { artistTags }</p>
                 <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
               </div>
               <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
