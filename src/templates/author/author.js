@@ -72,7 +72,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulFeature (sort: { fields:publishedDate, order:DESC }, filter: { artist:{ elemMatch:{ slug: { eq: $slug } } } }) {
+    allContentfulFeature (sort: { fields:publishedDate, order:DESC }, filter: { author:{ elemMatch:{ slug: { eq: $slug } } } }) {
       edges {
         node {
           title
