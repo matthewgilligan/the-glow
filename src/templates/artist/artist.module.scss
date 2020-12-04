@@ -150,7 +150,7 @@
 
 .responsive-features {
     display: none;
-    margin-bottom: 3rem;
+    margin: 3rem 0;
 }
 
 .feature {
@@ -275,56 +275,22 @@
 }
 
 @media screen and (max-width: 931px) {
-    .name-japanese {
-        font-size: 65px;
-    }
-
-    .bio {
-        width: 75%;
-    }
-
-    .content-section {
-        display: block;
-    }
-
-    .section-title {
-        padding-top: 16px;
-    }
-
-    .albums {
-        display: none;
-    }
-
-    .responsive-albums {
-        display: block;
-        margin-top: 3rem;
-    }
-
-    .features {
-        display: none;
-    }
-
-    .responsive-features {
-        display: block;
-    }
-
-    .news-items {
-        display: none;
-    }
-
-    .responsive-news {
-        display: block;
-    }
+    .name-japanese {font-size: 65px}
+    .bio {width: 75%}
+    .content-section {display: block}
+    .section-title {padding-top: 16px}
+    .albums {display: none}
+    .responsive-albums {display: block}
+    .features {display: none}
+    .responsive-features {display: block}
+    .news-items {display: none}
+    .responsive-news {display: block}
 }
 
 @media screen and (max-width: 600px) {
-    .name-japanese {
-        font-size: 45px;
-    }
-
-    .bio {
-        width: 95%;
-    }
+    .name-japanese {font-size: 45px}
+    .section-title {width: 100%}
+    .bio {width: 95%}
 
     .content-section {
         display: block;
