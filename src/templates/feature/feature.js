@@ -60,6 +60,7 @@ export const query = graphql`
         }
         description
       }
+      navColor
     }
   }
 `
@@ -191,14 +192,14 @@ const Feature = (props) => {
           <div className={featureStyles.content}>
             <div  className={featureStyles.titleDiv}>
               <h1 className={featureStyles.title} id="demo">
-                <Link to="/">The Glow</Link>
+                <Link to="/" style={{color: props.data.contentfulFeature.navColor}}>The Glow</Link>
               </h1>
             </div>
             <div className={featureStyles.navIcons}>
-              <div className={featureStyles.search}>
+              <div className={featureStyles.search} style={{color: props.data.contentfulFeature.navColor}}>
                 <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
               </div>
-              <div className={featureStyles.largeCheckButton}>
+              <div className={featureStyles.largeCheckButton} style={{color: props.data.contentfulFeature.navColor}}>
                 <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
               </div>
             </div>
