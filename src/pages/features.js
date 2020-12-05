@@ -23,6 +23,7 @@ const FeaturesPage = () => {
             slug
             author {
               englishName
+              slug
             }
             publishedDate(formatString:"MMMM Do YYYY")
             category {
@@ -72,6 +73,16 @@ const FeaturesPage = () => {
     renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
   }
 
+  const firstFeatureAuthors = firstFeature.node.author;
+  let firstFeatureAuthorTags = []
+  for (let i = 0; i < firstFeatureAuthors.length; i++) {
+    if(i === firstFeatureAuthors.length -1){
+      firstFeatureAuthorTags.push(<Link to={`/author/${firstFeatureAuthors[i].slug}`}>{firstFeatureAuthors[i].englishName}</Link>)
+    } else {
+      firstFeatureAuthorTags.push(<span><Link to={`/author/${firstFeatureAuthors[i].slug}`}>{firstFeatureAuthors[i].englishName}</Link> & </span>)
+    }
+  }
+
   const wideScreen =
     <div class={featuresStyles.wideScreen}>
       <div class={featuresStyles.topFeatures}>
@@ -82,7 +93,7 @@ const FeaturesPage = () => {
               <div class={featuresStyles.firstFeatureDetails}>
                 <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
                 <p className={featuresStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json, options)}</p>
-                <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author[0].englishName}</p>
+                <p class={featuresStyles.firstFeatureAuthor}>By: { firstFeatureAuthorTags }</p>
                 <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
               </div>
             </div>
@@ -90,6 +101,16 @@ const FeaturesPage = () => {
         </div>
         <ul className={featuresStyles.scrollFeatures}>
           {scrollFeatures.map((edge) => {
+            const authors = edge.node.author;
+            let authorTags = []
+            for (let i = 0; i < authors.length; i++) {
+              if(i === authors.length -1){
+                authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+              } else {
+                authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
+              }
+            }
+
             return (
               <li className={featuresStyles.scrollFeature}>
                 <Link to={`${edge.node.slug}`}>
@@ -106,7 +127,7 @@ const FeaturesPage = () => {
                   </Link>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: { authorTags }</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
@@ -119,6 +140,16 @@ const FeaturesPage = () => {
       </div>
       <ul className={featuresStyles.remainingFeatures}>
         {remainingFeatures.map((edge) => {
+          const authors = edge.node.author;
+          let authorTags = []
+          for (let i = 0; i < authors.length; i++) {
+            if(i === authors.length -1){
+              authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+            } else {
+              authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
+            }
+          }
+
           return (
             <li>
               <div className={featuresStyles.remainingFeature}>
@@ -137,7 +168,7 @@ const FeaturesPage = () => {
                   <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json, options)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: { firstFeatureAuthors }</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
@@ -159,7 +190,7 @@ const FeaturesPage = () => {
             <div class={featuresStyles.firstFeatureDetails}>
               <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
               <p className={featuresStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json, options)}</p>
-              <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author[0].englishName}</p>
+              <p class={featuresStyles.firstFeatureAuthor}>By: { firstFeatureAuthorTags }</p>
               <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
             </div>
           </div>
@@ -167,6 +198,16 @@ const FeaturesPage = () => {
       </div>
       <ul className={featuresStyles.remainingFeatures}>
         {narrowRemainingFeatures.map((edge) => {
+          const authors = edge.node.author;
+          let authorTags = []
+          for (let i = 0; i < authors.length; i++) {
+            if(i === authors.length -1){
+              authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+            } else {
+              authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
+            }
+          }
+
           return (
             <li>
               <div className={featuresStyles.remainingFeature}>
@@ -185,7 +226,7 @@ const FeaturesPage = () => {
                   <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json, options)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: { authorTags }</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
@@ -212,7 +253,7 @@ const FeaturesPage = () => {
             </Link>
             <div class={newsStyles.remainingInfo}>
               <div class={newsStyles.remainingMeta}>
-                <p class={newsStyles.remainingAuthor}>By: {firstFeature.node.author[0].englishName}</p>
+                <p class={newsStyles.remainingAuthor}>By: { firstFeatureAuthorTags }</p>
                 <p class={newsStyles.remainingDate}>{firstFeature.node.publishedDate}</p>
               </div>
               <p className={newsStyles.remainingCategory}>{firstFeature.node.category.name}</p>
@@ -222,6 +263,16 @@ const FeaturesPage = () => {
       </div>
       <div className={featuresStyles.mobileFeatures}>
         {narrowRemainingFeatures.map((edge) => {
+          const authors = edge.node.author;
+          let authorTags = []
+          for (let i = 0; i < authors.length; i++) {
+            if(i === authors.length -1){
+              authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+            } else {
+              authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
+            }
+          }
+
           return (
             <div className={featuresStyles.mobileFeature}>
               <Link to={`${edge.node.slug}`}>
@@ -238,7 +289,7 @@ const FeaturesPage = () => {
                 </Link>
                 <div class={newsStyles.remainingInfo}>
                   <div class={newsStyles.remainingMeta}>
-                    <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
+                    <p class={newsStyles.remainingAuthor}>By: { authorTags }</p>
                     <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                   </div>
                   <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>

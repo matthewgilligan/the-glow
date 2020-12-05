@@ -60,6 +60,7 @@ export const query = graphql`
         }
         description
       }
+      navColor
     }
   }
 `
@@ -68,9 +69,10 @@ const Feature = (props) => {
   const options = {
     renderNode: {
       "embedded-asset-block": (node) => {
-        const alt = node.data.target.fields.title['en-US']
-        const url = node.data.target.fields.file['en-US'].url
-        return <img alt={alt} src={url} />
+        const alt = ((node.data.target.fields) ? node.data.target.fields.title['en-US'] : '');
+        const url = node.data.target.fields.file['en-US'].url;
+        const caption = ((node.data.target.fields && node.data.target.fields.description) ? node.data.target.fields.description['en-US'] : '');
+        return <div><img alt={alt} src={url} /><p className={featureStyles.caption}>{caption}</p></div>
       },
       [INLINES.HYPERLINK]: (node) => {
         if(node.data.uri.indexOf('youtube.com/embed') !== -1){
@@ -92,6 +94,16 @@ const Feature = (props) => {
       artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}</Link>)
     } else {
       artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}, </Link>)
+    }
+  }
+
+  const authors = props.data.contentfulFeature.author;
+  let authorTags = []
+  for (let i = 0; i < authors.length; i++) {
+    if(i === authors.length -1){
+      authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+    } else {
+      authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
     }
   }
 
@@ -180,14 +192,14 @@ const Feature = (props) => {
           <div className={featureStyles.content}>
             <div  className={featureStyles.titleDiv}>
               <h1 className={featureStyles.title} id="demo">
-                <Link to="/">The Glow</Link>
+                <Link to="/" style={{color: props.data.contentfulFeature.navColor}}>The Glow</Link>
               </h1>
             </div>
             <div className={featureStyles.navIcons}>
-              <div className={featureStyles.search}>
+              <div className={featureStyles.search} style={{color: props.data.contentfulFeature.navColor}}>
                 <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
               </div>
-              <div className={featureStyles.largeCheckButton}>
+              <div className={featureStyles.largeCheckButton} style={{color: props.data.contentfulFeature.navColor}}>
                 <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
               </div>
             </div>
@@ -213,7 +225,7 @@ const Feature = (props) => {
         <div className={featureStyles.content}>
           <div className={featureStyles.featureContent}>
             <div className={articleDetailsStyles.metaDetails}>
-              <p>By: <Link to={`../../author/${props.data.contentfulFeature.author[0].slug}`}>{props.data.contentfulFeature.author[0].englishName}</Link></p>
+              <p>By: { authorTags }</p>
               <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
               <div className={articleDetailsStyles.genreAndSocials}>
                 <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
@@ -222,7 +234,7 @@ const Feature = (props) => {
             </div>
             <div className={articleDetailsStyles.mobileMetaDetails}>
               <div className={articleDetailsStyles.genreAndSocials}>
-                <p>By: <Link to={`../../author/${props.data.contentfulFeature.author[0].slug}`}>{props.data.contentfulFeature.author[0].englishName}</Link></p>
+                <p className={articleDetailsStyles.mobileAuthor}>By: { authorTags }</p>
                 <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
               </div>
               <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>

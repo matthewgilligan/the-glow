@@ -386,7 +386,6 @@ const IndexPage = (props) => {
         </div>
       </section>
 
-      {/*
       <section className={indexStyles.featuresSection}>
         <div className={indexStyles.container}>
           <div className={indexStyles.sectionTitle}>
@@ -394,6 +393,16 @@ const IndexPage = (props) => {
           </div>
           <div className={indexStyles.features}>
             {props.data.allContentfulFeature.edges.map((edge) => {
+              const authors = edge.node.author;
+              let authorTags = []
+              for (let i = 0; i < authors.length; i++) {
+                if(i === authors.length -1){
+                  authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+                } else {
+                  authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
+                }
+              }
+
               return (
                 <div className={indexStyles.feature}>
                   <Link to={`features/${edge.node.slug}`}>
@@ -410,7 +419,7 @@ const IndexPage = (props) => {
                     </Link>
                     <div class={newsStyles.remainingInfo}>
                       <div class={newsStyles.remainingMeta}>
-                        <p class={newsStyles.remainingAuthor}>By: <Link to={`/author/${edge.node.author.slug}`}>{edge.node.author.englishName}</Link></p>
+                        <p class={newsStyles.remainingAuthor}>By: { authorTags }</p>
                         <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                       </div>
                       <Link to={`features/${edge.node.category.name.toLowerCase()}`} className={newsStyles.remainingCategory}>
@@ -424,6 +433,16 @@ const IndexPage = (props) => {
           </div>
           <div className={indexStyles.lessFeatures}>
             {props.data.allContentfulFeature.edges.slice(0, 4).map((edge) => {
+              const authors = edge.node.author;
+              let authorTags = []
+              for (let i = 0; i < authors.length; i++) {
+                if(i === authors.length -1){
+                  authorTags.push(<span>{authors[i].englishName}</span>)
+                } else {
+                  authorTags.push(<span>{authors[i].englishName} & </span>)
+                }
+              }
+
               return (
                 <div className={indexStyles.feature}>
                   <Link to={`features/${edge.node.slug}`}>
@@ -440,7 +459,7 @@ const IndexPage = (props) => {
                     </Link>
                     <div class={newsStyles.remainingInfo}>
                       <div class={newsStyles.remainingMeta}>
-                        <p class={newsStyles.remainingAuthor}>By: <Link to={`/author/${edge.node.author.slug}`}>{edge.node.author.englishName}</Link></p>
+                        <p class={newsStyles.remainingAuthor}>By: { authorTags }</p>
                         <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                       </div>
                       <Link to={`features/${edge.node.category.name.toLowerCase()}`} className={newsStyles.remainingCategory}>
@@ -457,7 +476,6 @@ const IndexPage = (props) => {
           </div>
         </div>
       </section>
-      */}
 
       {/*
       <section className={indexStyles.thePlaylistSection}>

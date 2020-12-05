@@ -80,6 +80,7 @@ export const query = graphql`
           slug
           author {
             englishName
+            slug
           }
           publishedDate(formatString:"MMMM Do YYYY")
           category {
@@ -164,6 +165,16 @@ const Artist = (props) => {
       <h2 className={artistStyles.sectionTitle}>Features ({props.data.allContentfulFeature.edges.length})</h2>
       <div className={artistStyles.features}>
         {props.data.allContentfulFeature.edges.map((edge) => {
+          const authors = edge.node.author;
+          let authorTags = []
+          for (let i = 0; i < authors.length; i++) {
+            if(i === authors.length -1){
+              authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+            } else {
+              authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
+            }
+          }
+
           return (
             <div className={artistStyles.feature}>
               <Link to={`../../features/${edge.node.slug}`}>
@@ -180,7 +191,7 @@ const Artist = (props) => {
                 </Link>
                 <div class={artistStyles.newsInfo}>
                   <div class={artistStyles.newsMeta}>
-                    <p class={artistStyles.newsAuthor}>By: {edge.node.author[0].englishName}</p>
+                    <p class={artistStyles.newsAuthor}>By: { authorTags }</p>
                     <p class={artistStyles.newsDate}>{edge.node.publishedDate}</p>
                   </div>
                   <Link to={`/features/${edge.node.category.name.toLowerCase()}`}  className={artistStyles.newsCategory}>
@@ -195,6 +206,16 @@ const Artist = (props) => {
       <div className={artistStyles.responsiveFeatures}>
         <div className={featuresStyles.mobileFeatures}>
           {props.data.allContentfulFeature.edges.map((edge) => {
+            const authors = edge.node.author;
+            let authorTags = []
+            for (let i = 0; i < authors.length; i++) {
+              if(i === authors.length -1){
+                authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+              } else {
+                authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
+              }
+            }
+
             return (
               <div className={featuresStyles.mobileFeature}>
                 <Link to={`../../features/${edge.node.slug}`}>
@@ -211,7 +232,7 @@ const Artist = (props) => {
                   </Link>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: { authorTags }</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <Link to={`/features/${edge.node.category.name.toLowerCase()}`} className={newsStyles.remainingCategory}>
