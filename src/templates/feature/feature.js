@@ -69,9 +69,9 @@ const Feature = (props) => {
   const options = {
     renderNode: {
       "embedded-asset-block": (node) => {
-        const alt = node.data.target.fields.title['en-US']
-        const url = node.data.target.fields.file['en-US'].url
-        const caption = node.data.target.fields.description['en-US']
+        const alt = ((node.data.target.fields) ? node.data.target.fields.title['en-US'] : '');
+        const url = node.data.target.fields.file['en-US'].url;
+        const caption = ((node.data.target.fields && node.data.target.fields.description) ? node.data.target.fields.description['en-US'] : '');
         return <div><img alt={alt} src={url} /><p className={featureStyles.caption}>{caption}</p></div>
       },
       [INLINES.HYPERLINK]: (node) => {
@@ -234,7 +234,7 @@ const Feature = (props) => {
             </div>
             <div className={articleDetailsStyles.mobileMetaDetails}>
               <div className={articleDetailsStyles.genreAndSocials}>
-                <p>By: { artistTags }</p>
+                <p className={articleDetailsStyles.mobileAuthor}>By: { authorTags }</p>
                 <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
               </div>
               <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
