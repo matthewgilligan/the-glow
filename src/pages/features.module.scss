@@ -34,7 +34,7 @@
 }
 
 .first-feature-details {
-    width: 85%;
+    width: 90%;
     padding: 0 0 2rem 2rem;
     position: absolute;
     bottom: 0;
@@ -47,7 +47,7 @@
 
 .first-feature-title {
     font-weight: bolder;
-    font-size: 2.1rem;
+    font-size: 2rem;
 }
 
 .first-feature-subtitle{
@@ -59,7 +59,7 @@
 .first-feature-author {
     text-transform: uppercase;
     font-weight: bold;
-    padding: 2.5rem 0 .5rem 0;
+    padding: 1.5rem 0 .5rem 0;
 
     a {
         color: white;
@@ -328,6 +328,7 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        margin-bottom: 3rem;
     }
 }
 
