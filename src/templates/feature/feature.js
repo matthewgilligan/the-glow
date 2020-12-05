@@ -70,7 +70,8 @@ const Feature = (props) => {
       "embedded-asset-block": (node) => {
         const alt = node.data.target.fields.title['en-US']
         const url = node.data.target.fields.file['en-US'].url
-        return <img alt={alt} src={url} />
+        const caption = node.data.target.fields.description['en-US']
+        return <div><img alt={alt} src={url} /><p className={featureStyles.caption}>{caption}</p></div>
       },
       [INLINES.HYPERLINK]: (node) => {
         if(node.data.uri.indexOf('youtube.com/embed') !== -1){
