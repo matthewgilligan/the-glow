@@ -1,10 +1,6 @@
 import React from 'react'
+import { InstantSearch, Hits, SearchBox } from 'react-instantsearch-dom'
 import algoliasearch from 'algoliasearch/lite'
-import {
-  InstantSearch,
-  Hits,
-  SearchBox
-} from 'react-instantsearch-dom'
 
 import searchStyles from '../header/search.module.scss'
 import hit from './hit'

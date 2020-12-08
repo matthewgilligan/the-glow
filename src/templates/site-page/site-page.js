@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import sitePageStyles from "./site-page.module.scss"
 import Head from "../../components/head/head"
 import Layout from "../../components/layout/layout"
-import sitePageStyles from "./site-page.module.scss"
 
 export const query = graphql`
   query($slug: String!){

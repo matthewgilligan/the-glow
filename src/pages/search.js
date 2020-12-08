@@ -1,8 +1,8 @@
 import React from "react"
 
+import 'instantsearch.css/themes/algolia.css'
 import Layout from '../components/layout/layout'
 import SearchComp from '../components/search/searchComp'
-import 'instantsearch.css/themes/algolia.css'
 
 class Search extends React.Component {
   render() {

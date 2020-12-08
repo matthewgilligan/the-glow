@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
 import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
-import { GrClose } from "react-icons/gr";
 import { FiSearch } from "react-icons/fi";
+import { GrClose } from "react-icons/gr";
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 import headerStyles from './header.module.scss'
 import searchStyles from './search.module.scss'

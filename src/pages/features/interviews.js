@@ -1,14 +1,14 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import { INLINES } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Img from "gatsby-image"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { INLINES } from "@contentful/rich-text-types"
 
-import Layout from "../../components/layout/layout"
 import featuresStyles from "../features.module.scss"
 import newsStyles from "../news.module.scss"
 import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../../components/head/head"
+import Layout from "../../components/layout/layout"
 
 const FeaturesPage = () => {
   const data = useStaticQuery(graphql`

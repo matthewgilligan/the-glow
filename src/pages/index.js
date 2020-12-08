@@ -1,21 +1,17 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import { INLINES } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Helmet } from "react-helmet"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { INLINES } from "@contentful/rich-text-types"
 
-import redLogo from "../images/red_logo_text_medium.png"
-import patreon from "../images/patreon_ad.png"
-import SEO from "../components/seo/seo"
-import Footer from "../components/footer/footer"
-import Header from "../components/header/header"
 import '../styles/index.scss'
 import indexStyles from "./index.module.scss"
-import reviewsStyles from "./reviews.module.scss"
-import newsStyles from "./news.module.scss"
-import featuresStyles from "./features.module.scss"
 import guidesStyles from "./guides.module.scss"
+import newsStyles from "./news.module.scss"
+import patreon from "../images/patreon_ad.png"
+import Footer from "../components/footer/footer"
+import Header from "../components/header/header"
+import SEO from "../components/seo/seo"
 
 export const query = graphql`
   query {
@@ -355,7 +351,7 @@ const IndexPage = (props) => {
       <section className={indexStyles.patreonAndLatestNews}>
         <div className={indexStyles.container}>
           <div className={indexStyles.patreonAndLatestNewsContent}>
-            <a href="https://www.patreon.com/theglowjp" className={indexStyles.patreon} target="_blank">
+            <a href="https://www.patreon.com/theglowjp" className={indexStyles.patreon} target="_blank" rel="noreferrer">
               <img src={patreon} className={indexStyles.patreonImage} alt="Support us on Patreon!" />
             </a>
 

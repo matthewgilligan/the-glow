@@ -1,14 +1,14 @@
 import React from "react"
+import { FaSpotify, FaApple } from 'react-icons/fa';
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { FaSpotify, FaApple } from 'react-icons/fa';
 
-import Layout from "../../components/layout/layout"
-import Head from "../../components/head/head"
 import artistStyles from "./artist.module.scss"
-import reviewsStyles from "../../pages/reviews.module.scss"
 import featuresStyles from "../../pages/features.module.scss"
 import newsStyles from "../../pages/news.module.scss"
+import reviewsStyles from "../../pages/reviews.module.scss"
+import Head from "../../components/head/head"
+import Layout from "../../components/layout/layout"
 
 export const query = graphql`
   query($slug: String!){

@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
 
-import Layout from "../components/layout/layout"
 import reviewsStyles from './reviews.module.scss'
 import stickyNavStyles from '../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../components/head/head"
+import Layout from "../components/layout/layout"
 
 const ReviewsPage = () => {
   const data = useStaticQuery(graphql`

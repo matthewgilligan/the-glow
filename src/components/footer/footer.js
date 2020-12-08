@@ -1,12 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
-import { Helmet } from 'react-helmet'
-import CookieConsent, { Cookies } from "react-cookie-consent";
+import CookieConsent from "react-cookie-consent";
 import { FaFacebookF, FaInstagram, FaTwitter, FaSpotify, FaApple } from 'react-icons/fa';
+import { Link } from "gatsby"
 
-import Mailchimp from "../../components/mailchimp/mailchimp"
 import footerStyles from './footer.module.scss'
 import logo from "../../images/white-glow.png"
+{/* import Mailchimp from "../../components/mailchimp/mailchimp" */}
 
 const Footer = () => {
   return (
@@ -67,7 +66,7 @@ const Footer = () => {
                 <Link to="/ad">Advertise</Link>
               </li>
               <li>
-                <a href="https://www.patreon.com/theglowjp" target="_blank">Support Us</a>
+                <a href="https://www.patreon.com/theglowjp" target="_blank" rel="noreferrer">Support Us</a>
               </li>
             </ul>
           </div>
@@ -105,24 +104,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-
-{/*<ul className={footerStyles.socialMobileList}>
-            <li>
-              <a className={footerStyles.mobileSocialItem} href="https://www.instagram.com/theglow.jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaInstagram/></a>
-            </li>
-            <li>
-              <a className={footerStyles.mobileSocialItem} href="https://www.facebook.com/theglow.jp" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaFacebookF/></a>
-            </li>
-            <li>
-              <a className={footerStyles.mobileSocialItem} href="https://twitter.com/theglow_jp/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaTwitter/></a>
-            </li>
-          </ul>
-          <ul className={footerStyles.socialMobileList}>
-            <li>
-              <a className={footerStyles.socialMobileItem} href="https://www.spotify.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaSpotify/></a>
-            </li>
-            <li>
-              <a className={footerStyles.socialMobileItem} href="https://www.apple.com/" target="_blank" rel="noreferrer" role="button" aria-label="Mute volume"><FaApple/></a>
-            </li>
-          </ul>*/}
