@@ -26,14 +26,7 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-material-ui',
-      options: {
-        stylesProvider: {
-          injectFirst: true
-        },
-      },
-    },
+    'gatsby-plugin-material-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
