@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout/layout"
-import Head from "../components/head/head"
 import fourOFourStyles from "./404.module.scss"
+import Head from "../components/head/head"
+import Layout from "../components/layout/layout"
 
 const NotFound = () => {
   return (

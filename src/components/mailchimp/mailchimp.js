@@ -1,8 +1,8 @@
 import React from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
-import TextField from "@material-ui/core/TextField"
-import Button from "@material-ui/core/Button"
 import { Typography } from "@material-ui/core"
+import Button from "@material-ui/core/Button"
+import TextField from "@material-ui/core/TextField"
 
 import mailchimpStyles from './mailchimp.module.scss'
 

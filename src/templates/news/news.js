@@ -1,17 +1,17 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { INLINES } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
+import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { INLINES } from "@contentful/rich-text-types"
 
-import Head from "../../components/head/head"
-import SEO from "../../components/seo/seo"
-import Layout from "../../components/layout/layout"
 import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import featureStyles from "../feature/feature.module.scss"
 import newsStyles from "./news.module.scss"
+import Head from "../../components/head/head"
+import Layout from "../../components/layout/layout"
+import SEO from "../../components/seo/seo"
 
 export const query = graphql`
   query($slug: String!){

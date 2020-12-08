@@ -1,20 +1,20 @@
 import React, { useState } from "react"
-import { Link, graphql } from "gatsby"
-import { INLINES } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
-import { GrClose } from "react-icons/gr";
 import { FiSearch } from "react-icons/fi";
+import { GrClose } from "react-icons/gr";
+import { Link, graphql } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { INLINES } from "@contentful/rich-text-types"
 
-import Head from "../../components/head/head"
-import SEO from "../../components/seo/seo"
-import Footer from "../../components/footer/footer"
 import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import featureStyles from "./feature.module.scss"
-import SearchComp from '../../components/search/searchComp'
 import headerStyles from "../../components/header/header.module.scss"
 import searchStyles from "../../components/header/search.module.scss"
+import Footer from "../../components/footer/footer"
+import Head from "../../components/head/head"
+import SearchComp from '../../components/search/searchComp'
+import SEO from "../../components/seo/seo"
 
 export const query = graphql`
   query($slug: String!){
