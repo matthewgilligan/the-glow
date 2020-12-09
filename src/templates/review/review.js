@@ -85,7 +85,7 @@ export const query = graphql`
 
 const Review = (props) => {
   const shareBlockProps = {
-    url: `${props.data.site.siteMetadata.siteUrl}reviews/${props.data.contentfulReview.slug}`,
+    url: `${props.data.site.siteMetadata.siteUrl}/reviews/${props.data.contentfulReview.slug}`,
     button: ShareButtonIconOnly,
     buttons: [
       { network: "Twitter", icon: FaTwitter },
