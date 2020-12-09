@@ -366,6 +366,8 @@ index-container {
 // Reviews
 .reviews {
     height: 100%;
+    // delete when moving above
+    margin: 3rem 0;
 }
 
 .albums {
@@ -442,6 +444,28 @@ index-container {
     .less-albums {
         margin-left: -6.8px;
         margin-right: -6.5px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .less-albums {
+        -ms-flex-wrap: none;
+        flex-wrap: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0;
+        justify-content: space-between;
+    }
+
+    .album {
+        float: left;
+        width: 46%;
+        position: relative;
+        min-height: 1px;
+        padding: 0;
+        text-align: center;
+        margin-bottom: 60px;
     }
 }
 // Patreon and Latest News

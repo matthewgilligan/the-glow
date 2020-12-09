@@ -10,7 +10,7 @@ import Head from "../components/head/head"
 const ReviewsPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulReview ( sort: { fields:publishedDate, order:DESC } ) {
+      allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { albumTitle:{ ne: "Meshi Kuuna!" } } ) {
         edges {
           node {
             albumTitle
@@ -84,10 +84,6 @@ const ReviewsPage = () => {
           </div> */}
         </div>
       </div>
-      <div className={reviewsStyles.noContent}>
-        <p>Content is on the way - hold tight!</p>
-      </div>
-      {/*
       <div className={reviewsStyles.albums}>
         {data.allContentfulReview.edges.map((edge) => {
           return (
@@ -107,7 +103,6 @@ const ReviewsPage = () => {
           )
         })}
       </div>
-    */}
     </Layout>
   )
 }

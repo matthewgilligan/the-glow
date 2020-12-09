@@ -36,7 +36,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulReview ( sort: { fields:publishedDate, order:DESC }, limit: 12 ) {
+    allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter:{ albumTitle:{ ne: "Meshi Kuuna!" } } limit: 12 ) {
       edges {
         node {
           albumTitle
@@ -302,56 +302,6 @@ const IndexPage = (props) => {
         </div>
       </section>
 
-      {/*
-      <section className={indexStyles.reviews}>
-        <div className={indexStyles.container}>
-          <div className={indexStyles.sectionTitle}>
-            <h2>Reviews</h2>
-          </div>
-          <div className={indexStyles.albums}>
-            {props.data.allContentfulReview.edges.map((edge) => {
-              return (
-                <div className={reviewsStyles.album}>
-                  <Link to={`reviews/${edge.node.slug}`}>
-                    <Img
-                      fluid={edge.node.albumCover.fluid}
-                      key={edge.node.albumCover.fluid.src}
-                      alt={edge.node.albumCover.title}
-                      className={reviewsStyles.albumCover}>
-                    </Img>
-                    <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
-                    <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
-                    <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
-          <div className={indexStyles.lessAlbums}>
-            {props.data.allContentfulReview.edges.slice(0,6).map((edge) => {
-              return (
-                <div className={reviewsStyles.album}>
-                  <Link to={`reviews/${edge.node.slug}`}>
-                    <Img
-                      fluid={edge.node.albumCover.fluid}
-                      key={edge.node.albumCover.fluid.src}
-                      alt={edge.node.albumCover.title}
-                      className={reviewsStyles.albumCover}>
-                    </Img>
-                    <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
-                    <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
-          <div className={indexStyles.sectionLink}>
-            <Link to="/reviews">View All Reviews</Link>
-          </div>
-        </div>
-      </section>
-      */}
-
       <section className={indexStyles.patreonAndLatestNews}>
         <div className={indexStyles.container}>
           <div className={indexStyles.patreonAndLatestNewsContent}>
@@ -507,6 +457,54 @@ const IndexPage = (props) => {
                 )
               })}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={indexStyles.reviews}>
+        <div className={indexStyles.container}>
+          <div className={indexStyles.sectionTitle}>
+            <h2>Reviews</h2>
+          </div>
+          <div className={indexStyles.albums}>
+            {props.data.allContentfulReview.edges.map((edge) => {
+              return (
+                <div className={reviewsStyles.album}>
+                  <Link to={`reviews/${edge.node.slug}`}>
+                    <Img
+                      fluid={edge.node.albumCover.fluid}
+                      key={edge.node.albumCover.fluid.src}
+                      alt={edge.node.albumCover.title}
+                      className={reviewsStyles.albumCover}>
+                    </Img>
+                    <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                    <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
+                    <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
+                  </Link>
+                </div>
+              )
+            })}
+          </div>
+          <div className={indexStyles.lessAlbums}>
+            {props.data.allContentfulReview.edges.slice(0,6).map((edge) => {
+              return (
+                <div className={reviewsStyles.album}>
+                  <Link to={`reviews/${edge.node.slug}`}>
+                    <Img
+                      fluid={edge.node.albumCover.fluid}
+                      key={edge.node.albumCover.fluid.src}
+                      alt={edge.node.albumCover.title}
+                      className={reviewsStyles.albumCover}>
+                    </Img>
+                    <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                    <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
+                  </Link>
+                </div>
+              )
+            })}
+          </div>
+          <div className={indexStyles.sectionLink}>
+            <Link to="/reviews">View All Reviews</Link>
           </div>
         </div>
       </section>
