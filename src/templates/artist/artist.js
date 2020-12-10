@@ -27,6 +27,7 @@ export const query = graphql`
           artist {
             englishName
           }
+          publishedDate(formatString:"MMMM Do YYYY")
           albumCover {
             title
             file {
@@ -132,6 +133,7 @@ const Artist = (props) => {
                 </Img>
                 <h2 className={artistStyles.reviewArtistName}>{edge.node.artist.englishName}</h2>
                 <h2 className={artistStyles.albumTitle}>{edge.node.albumTitle}</h2>
+                <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
               </Link>
             </div>
           )
