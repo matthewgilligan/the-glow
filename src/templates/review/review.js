@@ -23,6 +23,7 @@ export const query = graphql`
     }
     contentfulReview (slug: { eq: $slug }) {
       albumTitle
+      description
       slug
       artist {
         englishName
