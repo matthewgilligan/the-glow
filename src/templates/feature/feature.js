@@ -53,6 +53,19 @@ export const query = graphql`
       }
       body {
         json
+        content {
+          data {
+            target {
+              fields {
+                file {
+                  en_US {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
       }
       coverImage {
         file {
