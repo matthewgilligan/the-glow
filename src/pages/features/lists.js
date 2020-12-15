@@ -73,7 +73,6 @@ const FeaturesPage = () => {
     renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
   }
 
-  {/*
   const wideScreen =
     <div class={featuresStyles.wideScreen}>
       <div class={featuresStyles.topFeatures}>
@@ -251,7 +250,6 @@ const FeaturesPage = () => {
         })}
       </div>
     </div>
-  */}
 
   return (
     <Layout>
@@ -303,13 +301,8 @@ const FeaturesPage = () => {
           </div> */}
         </div>
       </div>
-      <div className={reviewsStyles.noContent}>
-        <p>Content is on the way - hold tight!</p>
-      </div>
-      {/*
       {wideScreen}
       {narrowScreen}
-      */}
     </Layout>
   )
 }

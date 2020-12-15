@@ -203,7 +203,7 @@ const Review = (props) => {
             </div>
             <div className={reviewStyles.body}>
               <p className={reviewStyles.subtitle}>{documentToReactComponents(props.data.contentfulReview.subtitle.json, options)}</p>
-              {documentToReactComponents(props.data.contentfulReview.body.json, options)}
+              <p className={reviewStyles.mainBody}>{documentToReactComponents(props.data.contentfulReview.body.json, options)}</p>
             </div>
           </div>
         </div>

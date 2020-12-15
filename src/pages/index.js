@@ -189,8 +189,10 @@ export const query = graphql`
 `
 
 const IndexPage = (props) => {
+  {/*}
   const topFeatureTitleShort = <h1 className={indexStyles.topFeatureTitleShort}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
   const topFeatureTitleLong = <h1 className={indexStyles.topFeatureTitleLong}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
+  */}
 
   const options = {
     renderNode: {
@@ -231,28 +233,31 @@ const IndexPage = (props) => {
       <section className={indexStyles.topFeature}>
         <div className={indexStyles.container}>
           <div className={indexStyles.topFeatureContent}>
-            <h1 className={indexStyles.topFeatureResponsiveTitle}>Hakushi Hasegawa</h1>
-            <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`} className={indexStyles.topFeatureImageLink}>
+            <h1 className={indexStyles.topFeatureResponsiveTitle}>The Best Japanese Albums of 2020</h1>
+            <Link to={`features/${props.data.allContentfulFeature.edges[0].node.slug}`} className={indexStyles.topFeatureImageLink}>
               <Img
-                fluid={props.data.firstInterview.edges[0].node.coverImage.fluid}
-                key={props.data.firstInterview.edges[0].node.coverImage.fluid.src}
-                alt={props.data.firstInterview.edges[0].node.coverImage.title}
+                fluid={props.data.allContentfulFeature.edges[0].node.coverImage.fluid}
+                key={props.data.allContentfulFeature.edges[0].node.coverImage.fluid.src}
+                alt={props.data.allContentfulFeature.edges[0].node.coverImage.title}
                 className={indexStyles.topFeatureImage}>
               </Img>
             </Link>
-            <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`} className={indexStyles.topFeatureTitleLink}>
-              {props.data.firstInterview.edges[0].node.artist[0].englishName.length > 11 ? topFeatureTitleLong : topFeatureTitleShort}
+            <Link to={`features/${props.data.allContentfulFeature.edges[0].node.slug}`} className={indexStyles.topFeatureTitleLink}>
+              {/*
+                {props.data.allContentfulFeature.edges[0].node.artist[0].englishName.length > 11 ? topFeatureTitleLong : topFeatureTitleShort}
+              */}
+              <h1 className={indexStyles.topFeatureTitleLong}>Best Albums of 2020</h1>
             </Link>
             <div className={indexStyles.topFeatureText}>
               <div className={indexStyles.topFeatureDetails}>
-                <p className={indexStyles.topFeatureSubtitle}>{documentToReactComponents(props.data.firstInterview.edges[0].node.subtitle.json, options)}</p>
+                <p className={indexStyles.topFeatureSubtitle}>{documentToReactComponents(props.data.allContentfulFeature.edges[0].node.subtitle.json, options)}</p>
                 <div class={indexStyles.topFeatureInfo}>
                   <div class={indexStyles.topFeatureMeta}>
-                    <p class={indexStyles.topFeatureAuthor}>By: <Link to={`/author/${props.data.firstInterview.edges[0].node.author[0].slug}`}>{props.data.firstInterview.edges[0].node.author[0].englishName}</Link></p>
-                    <p class={indexStyles.topFeatureDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
+                    <p class={indexStyles.topFeatureAuthor}>By: <Link to={`/author/${props.data.allContentfulFeature.edges[0].node.author[0].slug}`}>{props.data.allContentfulFeature.edges[0].node.author[0].englishName}</Link></p>
+                    <p class={indexStyles.topFeatureDate}>{props.data.allContentfulFeature.edges[0].node.publishedDate}</p>
                   </div>
-                  <Link to={`features/${props.data.firstInterview.edges[0].node.category.name.toLowerCase()}`}  className={indexStyles.topFeatureCategory}>
-                    <p>{props.data.firstInterview.edges[0].node.category.name}</p>
+                  <Link to={`features/${props.data.allContentfulFeature.edges[0].node.category.name.toLowerCase()}`}  className={indexStyles.topFeatureCategory}>
+                    <p>{props.data.allContentfulFeature.edges[0].node.category.name}</p>
                   </Link>
                 </div>
               </div>
@@ -260,14 +265,14 @@ const IndexPage = (props) => {
           </div>
           <div className={indexStyles.responsiveTopFeature}>
             <div class={indexStyles.responsiveTopFeature}>
-              <Link to={`features/${props.data.firstInterview.edges[0].node.slug}`}>
+              <Link to={`features/${props.data.allContentfulFeature.edges[0].node.slug}`}>
                 <div class={indexStyles.responsiveTopFeatureImg}
-                  style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${props.data.firstInterview.edges[0].node.coverImage.file.url})`} }>
+                  style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${props.data.allContentfulFeature.edges[0].node.coverImage.file.url})`} }>
                   <div class={indexStyles.responsiveTopFeatureDetails}>
-                    <h2 class={indexStyles.responsiveTopFeatureTitle}>{props.data.firstInterview.edges[0].node.title}</h2>
-                    <p className={indexStyles.responsiveTopFeatureSubtitle}>{documentToReactComponents(props.data.firstInterview.edges[0].node.subtitle.json, options)}</p>
-                    <p class={indexStyles.responsiveTopFeatureAuthor}>By: {props.data.firstInterview.edges[0].node.author[0].englishName}</p>
-                    <p class={indexStyles.responsiveTopFeatureDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
+                    <h2 class={indexStyles.responsiveTopFeatureTitle}>{props.data.allContentfulFeature.edges[0].node.title}</h2>
+                    <p className={indexStyles.responsiveTopFeatureSubtitle}>{documentToReactComponents(props.data.allContentfulFeature.edges[0].node.subtitle.json, options)}</p>
+                    <p class={indexStyles.responsiveTopFeatureAuthor}>By: {props.data.allContentfulFeature.edges[0].node.author[0].englishName}</p>
+                    <p class={indexStyles.responsiveTopFeatureDate}>{props.data.allContentfulFeature.edges[0].node.publishedDate}</p>
                   </div>
                 </div>
               </Link>
