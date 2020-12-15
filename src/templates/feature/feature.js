@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
-import { INLINES } from "@contentful/rich-text-types"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
@@ -73,7 +73,7 @@ export const query = graphql`
 const Feature = (props) => {
   const options = {
     renderNode: {
-      "embedded-asset-block": (node) => {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const alt = ((node.data.target.fields) ? node.data.target.fields.title['en-US'] : '');
         const url = node.data.target.fields.file['en-US'].url;
         const caption = ((node.data.target.fields && node.data.target.fields.description) ? node.data.target.fields.description['en-US'] : '');
