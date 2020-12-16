@@ -34,7 +34,7 @@ const SEO = (props) => {
   const description = props.description || siteDescription
 
   return (
-    <Helmet title={title}>
+      <Helmet title={title}>
       {/* General tags */}
       <html lang={lang} />
       <meta name="description" content={description} />

@@ -6,9 +6,8 @@ import { FiSearch } from "react-icons/fi";
 
 import Head from "../../components/head/head"
 import SEO from "../../components/seo/seo"
-import RichTextRenderer from "../../components/rich-text-renderer/rich-text-renderer"
+import Content from "../../components/content/content"
 import Footer from "../../components/footer/footer"
-import ArticleDetails from "../../components/article-details/article-details"
 import featureStyles from "./feature.module.scss"
 import SearchComp from '../../components/search/searchComp'
 import headerStyles from "../../components/header/header.module.scss"
@@ -87,7 +86,6 @@ const Feature = (props) => {
 
   return (
     <div>
-      <Head title={`${featureContent.title} | The Glow`}/>
       { search }
       <SEO
         title={featureContent.title}
@@ -151,22 +149,16 @@ const Feature = (props) => {
       </div>
       <div className={featureStyles.container}>
         <p className={featureStyles.credit}>{featureContent.coverImage.description}</p>
-        <div className={featureStyles.content}>
-          <div className={featureStyles.featureContent}>
-            <ArticleDetails
-              authors={featureContent.author}
-              publishedDate={props.data.contentfulFeature.publishedDate}
-              category={props.data.contentfulFeature.category.name}
-              type="features"
-              slug={props.data.contentfulFeature.slug}
-              title={props.data.contentfulFeature.title}
-            />
-            <div className={featureStyles.body}>
-              <RichTextRenderer subtitle={featureContent.subtitle.json} body={featureContent.body.json}/>
-              <p className={featureStyles.artistTags}>Tags: { artistTags }</p>
-            </div>
-          </div>
-        </div>
+        <Content
+          authors={featureContent.author}
+          publishedDate={featureContent.publishedDate}
+          category={featureContent.category.name}
+          type="features"
+          slug={featureContent.slug}
+          title={featureContent.title}
+          subtitle={featureContent.subtitle.json}
+          body={featureContent.body.json}
+        />
       </div>
       <Footer />
       { mobileNav }

@@ -2,11 +2,9 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import Head from "../../components/head/head"
 import SEO from "../../components/seo/seo"
 import Layout from "../../components/layout/layout"
-import RichTextRenderer from "../../components/rich-text-renderer/rich-text-renderer"
-import ArticleDetails from "../../components/article-details/article-details"
+import Content from "../../components/content/content"
 import featureStyles from "../feature/feature.module.scss"
 import newsStyles from "./news.module.scss"
 
@@ -25,7 +23,6 @@ const News = (props) => {
 
   return (
     <Layout>
-      <Head title={`${props.data.contentfulNews.title} | The Glow`}/>
       <SEO
         title={props.data.contentfulNews.title}
         description={props.data.contentfulNews.description}
@@ -45,23 +42,16 @@ const News = (props) => {
         </Img>
         <p className={newsStyles.credit}>{props.data.contentfulNews.coverImage.description}</p>
       </div>
-      <div className={featureStyles.featureContent}>
-        <ArticleDetails
-          authors={newsContent.author}
-          publishedDate={props.data.contentfulNews.publishedDate}
-          category={props.data.contentfulNews.category.name}
-          type="news"
-          slug={props.data.contentfulNews.slug}
-          title={props.data.contentfulNews.title}
-        />
-        <div className={featureStyles.body}>
-          <RichTextRenderer
-            subtitle={props.data.contentfulNews.subtitle.json}
-            body={props.data.contentfulNews.body.json}
-          />
-          <p className={featureStyles.artistTags}>Tags: { artistTags }</p>
-        </div>
-      </div>
+      <Content
+        authors={newsContent.author}
+        publishedDate={props.data.contentfulNews.publishedDate}
+        category={props.data.contentfulNews.category.name}
+        type="news"
+        slug={props.data.contentfulNews.slug}
+        title={props.data.contentfulNews.title}
+        subtitle={props.data.contentfulNews.subtitle.json}
+        body={props.data.contentfulNews.body.json}
+      />
     </Layout>
   )
 }

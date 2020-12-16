@@ -28,7 +28,6 @@ const Guides = (props) => {
 
   return (
     <div className={indexStyles.indexContainter}>
-      <Head title={`${props.data.contentfulGuide.title} | The Glow`}/>
       <SEO
         title={props.data.contentfulGuide.title}
         description={props.data.contentfulGuide.description}
