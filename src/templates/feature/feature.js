@@ -87,10 +87,8 @@ const Feature = (props) => {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const alt = ((node.data.target.fields) ? node.data.target.fields.title['en-US'] : '');
-        const url = node.data.target.fields.file['en-US'].url;
-        const caption = ((node.data.target.fields && node.data.target.fields.description) ? node.data.target.fields.description['en-US'] : '');
-        return <div><img alt={alt} src={url} /><p className={featureStyles.caption}>{caption}</p></div>
+        console.log(node)
+        return <img src={node.data.target.fields.file['en-US'].url} />
       },
       [INLINES.HYPERLINK]: (node) => {
         if(node.data.uri.indexOf('youtube.com/embed') !== -1){
