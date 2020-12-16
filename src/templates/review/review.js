@@ -85,8 +85,8 @@ const Review = (props) => {
               className={reviewStyles.albumCover}>
             </Img>
             <div className={reviewStyles.albumDetails}>
-              <Link to={`../../artist/${props.data.contentfulReview.artist.slug}`}>
-                <h1 className={reviewStyles.artistName}>{props.data.contentfulReview.artist.englishName}</h1>
+              <Link to={`../../artist/${props.data.contentfulReview.artist[0].slug}`}>
+                <h1 className={reviewStyles.artistName}>{props.data.contentfulReview.artist[0].englishName}</h1>
               </Link>
               <h1 className={reviewStyles.albumTitle}>{props.data.contentfulReview.albumTitle}</h1>
               <h3 className={reviewStyles.stars}>{props.data.contentfulReview.rating % 1 !== 0 ? starsDec : starsInt }</h3>
