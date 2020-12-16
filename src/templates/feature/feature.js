@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
-import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
 import { GrClose } from "react-icons/gr";
 import { FiSearch } from "react-icons/fi";
@@ -9,7 +8,7 @@ import Head from "../../components/head/head"
 import SEO from "../../components/seo/seo"
 import RichTextRenderer from "../../components/rich-text-renderer/rich-text-renderer"
 import Footer from "../../components/footer/footer"
-import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
+import ArticleDetails from "../../components/article-details/article-details"
 import featureStyles from "./feature.module.scss"
 import SearchComp from '../../components/search/searchComp'
 import headerStyles from "../../components/header/header.module.scss"
@@ -25,16 +24,6 @@ const Feature = (props) => {
       artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}</Link>)
     } else {
       artistTags.push(<Link to={`/artist/${artists[i].slug}`}>{artists[i].englishName}, </Link>)
-    }
-  }
-
-  const authors = featureContent.author;
-  let authorTags = []
-  for (let i = 0; i < authors.length; i++) {
-    if(i === authors.length -1){
-      authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
-    } else {
-      authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
     }
   }
 
@@ -77,16 +66,6 @@ const Feature = (props) => {
         </div>
       </div>
   }
-
-  const shareBlockProps = {
-    url: `${props.data.site.siteMetadata.siteUrl}/features/${featureContent.slug}`,
-    button: ShareButtonIconOnly,
-    buttons: [
-      { network: "Twitter", icon: FaTwitter },
-      { network: "Facebook", icon: FaFacebookF },
-    ],
-    text: `${featureContent.title}`,
-  };
 
   const [searchOpen, setSearchOpen] = useState(false)
   let search
@@ -174,21 +153,14 @@ const Feature = (props) => {
         <p className={featureStyles.credit}>{featureContent.coverImage.description}</p>
         <div className={featureStyles.content}>
           <div className={featureStyles.featureContent}>
-            <div className={articleDetailsStyles.metaDetails}>
-              <p>By: { authorTags }</p>
-              <p className={articleDetailsStyles.date}>{featureContent.publishedDate}</p>
-              <div className={articleDetailsStyles.genreAndSocials}>
-                <p className={articleDetailsStyles.genre}>{featureContent.subcategory.name}</p>
-                <ShareBlockStandard {...shareBlockProps} />
-              </div>
-            </div>
-            <div className={articleDetailsStyles.mobileMetaDetails}>
-              <div className={articleDetailsStyles.genreAndSocials}>
-                <p className={articleDetailsStyles.mobileAuthor}>By: { authorTags }</p>
-                <p className={articleDetailsStyles.genre}>{featureContent.subcategory.name}</p>
-              </div>
-              <p className={articleDetailsStyles.date}>{featureContent.publishedDate}</p>
-            </div>
+            <ArticleDetails
+              authors={featureContent.author}
+              publishedDate={props.data.contentfulFeature.publishedDate}
+              category={props.data.contentfulFeature.category.name}
+              type="features"
+              slug={props.data.contentfulFeature.slug}
+              title={props.data.contentfulFeature.title}
+            />
             <div className={featureStyles.body}>
               <RichTextRenderer subtitle={featureContent.subtitle.json} body={featureContent.body.json}/>
               <p className={featureStyles.artistTags}>Tags: { artistTags }</p>

@@ -42,7 +42,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulNews (sort: { fields:publishedDate, order:DESC }, filter: { author:{ slug: { eq: $slug } } }) {
+    allContentfulNews (sort: { fields:publishedDate, order:DESC }, filter: { author:{ elemMatch:{ slug: { eq: $slug } } } }) {
       edges {
         node {
           title
