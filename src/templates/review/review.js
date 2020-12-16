@@ -95,14 +95,14 @@ const Review = (props) => {
           </div>
           <div className={articleDetailsStyles.mobileMetaDetails}>
             <div className={articleDetailsStyles.genreAndSocials}>
-              <p>By: <Link to={`../../author/${props.data.contentfulReview.author.slug}`}>{props.data.contentfulReview.author.englishName}</Link></p>
+              <p>By: <Link to={`../../author/${props.data.contentfulReview.author[0].slug}`}>{props.data.contentfulReview.author[0].englishName}</Link></p>
               <p className={articleDetailsStyles.genre}>{props.data.contentfulReview.genre.name}</p>
             </div>
             <p className={articleDetailsStyles.date}>{props.data.contentfulReview.publishedDate}</p>
           </div>
           <div className={reviewStyles.reviewContent}>
             <div className={articleDetailsStyles.metaDetails}>
-              <p>By: <Link to={`../../author/${props.data.contentfulReview.author.slug}`}>{props.data.contentfulReview.author.englishName}</Link></p>
+              <p>By: <Link to={`../../author/${props.data.contentfulReview.author[0].slug}`}>{props.data.contentfulReview.author[0].englishName}</Link></p>
               <p className={articleDetailsStyles.date}>{props.data.contentfulReview.publishedDate}</p>
               <div className={articleDetailsStyles.genreAndSocials}>
                 <p className={articleDetailsStyles.genre}>{props.data.contentfulReview.genre.name}</p>
