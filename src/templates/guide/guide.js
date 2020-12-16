@@ -1,14 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { INLINES } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 import logo from "../../images/white-glow-ray.png"
 import Head from "../../components/head/head"
 import SEO from "../../components/seo/seo"
+import RichTextRenderer from "../../components/rich-text-renderer/rich-text-renderer"
 import Footer from "../../components/footer/footer"
 import Header from "../../components/header/header"
 import indexStyles from "../../pages/index.module.scss"
@@ -120,26 +119,6 @@ export const query = graphql`
 `
 
 const Guides = (props) => {
-  const options = {
-    renderNode: {
-      "embedded-asset-block": (node) => {
-        const alt = node.data.target.fields.title['en-US']
-        const url = node.data.target.fields.file['en-US'].url
-        return <img alt={alt} src={url} />
-      },
-      [INLINES.HYPERLINK]: (node) => {
-        if(node.data.uri.indexOf('youtube.comyoutube.com/embed') !== -1){
-          return(
-            <iframe width="100%" height="321" title="YouTube" src={node.data.uri} frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          )
-        } else {
-          return <a href={node.data.uri} target={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '_self' : '_blank'}`} rel={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '' : 'noopener noreferrer'}`}>{node.content[0].value}</a>;
-        }
-      }
-    },
-    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
-  }
-
   const shareBlockProps = {
     url: `${props.data.site.siteMetadata.siteUrl}/guides/${props.data.contentfulGuide.slug}`,
     button: ShareButtonIconOnly,
@@ -181,7 +160,7 @@ const Guides = (props) => {
 
       <div className={guideStyles.container}>
         <div className={guideStyles.body}>
-          {documentToReactComponents(props.data.contentfulGuide.body.json, options)}
+          <RichTextRenderer subtitle={null} body={props.data.contentfulGuide.body.json}/>
         </div>
       </div>
 

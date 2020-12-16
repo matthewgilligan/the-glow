@@ -2,87 +2,15 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Helmet } from 'react-helmet'
-import { INLINES } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import { VscStarFull, VscStarHalf, VscStarEmpty } from "react-icons/vsc";
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 
 import Layout from "../../components/layout/layout"
 import SEO from "../../components/seo/seo"
+import RichTextRenderer from "../../components/rich-text-renderer/rich-text-renderer"
 import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import reviewStyles from "./review.module.scss"
-
-export const query = graphql`
-  query($slug: String!){
-    site {
-      siteMetadata {
-        siteTitle
-        siteUrl
-      }
-    }
-    contentfulReview (slug: { eq: $slug }) {
-      albumTitle
-      description
-      slug
-      artist {
-        englishName
-        japaneseName
-        slug
-      }
-      author {
-        englishName
-        twitter
-        bio
-        slug
-      }
-      publishedDate(formatString:"MMMM D YYYY")
-      rating
-      label
-      initialReleaseDate(formatString:"YYYY")
-      category {
-        name
-      }
-      albumCover {
-        title
-        file {
-          url
-        }
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
-      genre {
-        name
-      }
-      body {
-        json
-      }
-      subtitle {
-        json
-      }
-    }
-    allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { slug:{ ne: $slug } }, limit: 5 ) {
-        edges {
-          node {
-            albumTitle
-            slug
-            artist {
-              englishName
-              japaneseName
-            }
-            publishedDate(formatString:"MMMM D YYYY")
-            albumCover {
-              title
-              file {
-                url
-              }
-            }
-          }
-        }
-      }
-  }
-`
 
 const Review = (props) => {
   const shareBlockProps = {
@@ -94,26 +22,6 @@ const Review = (props) => {
     ],
     text: `${props.data.contentfulReview.artist.englishName}: ${props.data.contentfulReview.albumTitle}`,
   };
-
-  const options = {
-    renderNode: {
-      "embedded-asset-block": (node) => {
-        const alt = node.data.target.fields.title['en-US']
-        const url = node.data.target.fields.file['en-US'].url
-        return <img alt={alt} src={url} />
-      },
-      [INLINES.HYPERLINK]: (node) => {
-        if(node.data.uri.indexOf('youtube.com/embed') !== -1){
-          return(
-            <iframe width="100%" height="321" title="YouTube" src={node.data.uri} frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          )
-        } else {
-          return <a href={node.data.uri} target={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '_self' : '_blank'}`} rel={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '' : 'noopener noreferrer'}`}>{node.content[0].value}</a>;
-        }
-      }
-    },
-    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
-  }
 
   const multiplyInt = (num) => {
     let stars = [];
@@ -202,8 +110,7 @@ const Review = (props) => {
               </div>
             </div>
             <div className={reviewStyles.body}>
-              <p className={reviewStyles.subtitle}>{documentToReactComponents(props.data.contentfulReview.subtitle.json, options)}</p>
-              <p className={reviewStyles.mainBody}>{documentToReactComponents(props.data.contentfulReview.body.json, options)}</p>
+              <RichTextRenderer subtitle={props.data.contentfulReview.subtitle.json} body={props.data.contentfulReview.body.json}/>
             </div>
           </div>
         </div>
@@ -234,5 +141,73 @@ const Review = (props) => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query($slug: String!){
+    site {
+      siteMetadata {
+        siteTitle
+        siteUrl
+      }
+    }
+    contentfulReview (slug: { eq: $slug }) {
+      albumTitle
+      description
+      slug
+      artist {
+        englishName
+        slug
+      }
+      author {
+        englishName
+        slug
+      }
+      publishedDate(formatString:"MMMM D YYYY")
+      rating
+      label
+      initialReleaseDate(formatString:"YYYY")
+      category {
+        name
+      }
+      albumCover {
+        title
+        file {
+          url
+        }
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+      genre {
+        name
+      }
+      body {
+        json
+      }
+      subtitle {
+        json
+      }
+    }
+    allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { slug:{ ne: $slug } }, limit: 5 ) {
+        edges {
+          node {
+            albumTitle
+            slug
+            artist {
+              englishName
+              japaneseName
+            }
+            publishedDate(formatString:"MMMM D YYYY")
+            albumCover {
+              title
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
+  }
+`
 
 export default Review

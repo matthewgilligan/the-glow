@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
-import { BLOCKS, INLINES } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
 import { GrClose } from "react-icons/gr";
@@ -9,6 +7,7 @@ import { FiSearch } from "react-icons/fi";
 
 import Head from "../../components/head/head"
 import SEO from "../../components/seo/seo"
+import RichTextRenderer from "../../components/rich-text-renderer/rich-text-renderer"
 import Footer from "../../components/footer/footer"
 import articleDetailsStyles from "../../components/article-details/article-details.module.scss"
 import featureStyles from "./feature.module.scss"
@@ -16,96 +15,10 @@ import SearchComp from '../../components/search/searchComp'
 import headerStyles from "../../components/header/header.module.scss"
 import searchStyles from "../../components/header/search.module.scss"
 
-export const query = graphql`
-  query($slug: String!){
-    site {
-      siteMetadata {
-        siteTitle
-        siteUrl
-      }
-    }
-    contentfulFeature (slug: { eq: $slug }) {
-      title
-      slug
-      author {
-        englishName
-        twitter
-        bio
-        slug
-      }
-      artist {
-        englishName
-        slug
-      }
-      publishedDate(formatString:"MMMM D YYYY")
-      category {
-        name
-      }
-      description
-      subcategory {
-        name
-      }
-      subtitle {
-        json
-      }
-      genre {
-        name
-      }
-      body {
-        json
-        content {
-          data {
-            target {
-              fields {
-                file {
-                  en_US {
-                    url
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      coverImage {
-        file {
-          url
-        }
-        description
-      }
-      coverImageMobile {
-        file {
-          url
-        }
-      }
-      navColor
-    }
-  }
-`
-
 const Feature = (props) => {
-  const options = {
-    renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const alt = ((node.data.target.fields) ? node.data.target.fields.title['en-US'] : '');
-        const url = node.data.target.fields.file['en-US'].url;
-        const caption = ((node.data.target.fields && node.data.target.fields.description) ? node.data.target.fields.description['en-US'] : '');
-        return <div><img alt={alt} src={url} /><p className={featureStyles.caption}>{caption}</p></div>
-      },
-      [INLINES.HYPERLINK]: (node) => {
-        if(node.data.uri.indexOf('youtube.com/embed') !== -1){
-          return(
-            <iframe classname={featureStyles.youtube} width="100%" height="321" src={node.data.uri} frameborder="0" title="YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          )
-        } else {
-          return <a href={node.data.uri} target={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '_self' : '_blank'}`} rel={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '' : 'noopener noreferrer'}`}>{node.content[0].value}</a>;
-        }
-      }
-    },
-    renderText: text => text.split('\n').flatMap((text, i) => [i > 0 && <br />, text])
-  }
+  const featureContent = props.data.contentfulFeature
 
-  const artists = props.data.contentfulFeature.artist;
+  const artists = featureContent.artist;
   let artistTags = []
   for (let i = 0; i < artists.length; i++) {
     if(i === artists.length -1){
@@ -115,7 +28,7 @@ const Feature = (props) => {
     }
   }
 
-  const authors = props.data.contentfulFeature.author;
+  const authors = featureContent.author;
   let authorTags = []
   for (let i = 0; i < authors.length; i++) {
     if(i === authors.length -1){
@@ -125,9 +38,8 @@ const Feature = (props) => {
     }
   }
 
-  const coverImage = props.data.contentfulFeature.coverImage.file.url
-  const coverImageMobile = props.data.contentfulFeature.coverImageMobile ? props.data.contentfulFeature.coverImageMobile.file.url : ""
-
+  const coverImage = featureContent.coverImage.file.url
+  const coverImageMobile = featureContent.coverImageMobile ? featureContent.coverImageMobile.file.url : ""
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   let mobileNav
@@ -167,13 +79,13 @@ const Feature = (props) => {
   }
 
   const shareBlockProps = {
-    url: `${props.data.site.siteMetadata.siteUrl}/features/${props.data.contentfulFeature.slug}`,
+    url: `${props.data.site.siteMetadata.siteUrl}/features/${featureContent.slug}`,
     button: ShareButtonIconOnly,
     buttons: [
       { network: "Twitter", icon: FaTwitter },
       { network: "Facebook", icon: FaFacebookF },
     ],
-    text: `${props.data.contentfulFeature.title}`,
+    text: `${featureContent.title}`,
   };
 
   const [searchOpen, setSearchOpen] = useState(false)
@@ -196,49 +108,49 @@ const Feature = (props) => {
 
   return (
     <div>
-      <Head title={`${props.data.contentfulFeature.title} | The Glow`}/>
+      <Head title={`${featureContent.title} | The Glow`}/>
       { search }
       <SEO
-        title={props.data.contentfulFeature.title}
-        description={props.data.contentfulFeature.description}
-        cover={props.data.contentfulFeature.coverImage.file.url}
-        imageShare={props.data.contentfulFeature.coverImage.file.url}
+        title={featureContent.title}
+        description={featureContent.description}
+        cover={featureContent.coverImage.file.url}
+        imageShare={featureContent.coverImage.file.url}
         lang={props.data.site.siteMetadata.siteLang}
-        path={`features/${props.data.contentfulFeature.slug}`}
+        path={`features/${featureContent.slug}`}
         isBlogPost
       />
       <div
-      style={{backgroundImage: `linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(${props.data.contentfulFeature.coverImage.file.url})`} }
+      style={{backgroundImage: `linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(${featureContent.coverImage.file.url})`} }
       className={featureStyles.banner}>
         <div className={featureStyles.container}>
           <div className={featureStyles.content}>
             <div  className={featureStyles.titleDiv}>
               <h1 className={featureStyles.title} id="demo">
-                <Link to="/" style={{color: props.data.contentfulFeature.navColor}}>The Glow</Link>
+                <Link to="/" style={{color: featureContent.navColor}}>The Glow</Link>
               </h1>
             </div>
             <div className={featureStyles.navIcons}>
-              <div className={featureStyles.search} style={{color: props.data.contentfulFeature.navColor}}>
+              <div className={featureStyles.search} style={{color: featureContent.navColor}}>
                 <FiSearch onClick={ () => setSearchOpen(!searchOpen) } role="button" href="#" />
               </div>
-              <div className={featureStyles.largeCheckButton} style={{color: props.data.contentfulFeature.navColor}}>
+              <div className={featureStyles.largeCheckButton} style={{color: featureContent.navColor}}>
                 <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
               </div>
             </div>
             <div className={featureStyles.featureTitle}>
-              <h1>{props.data.contentfulFeature.title}</h1>
+              <h1>{featureContent.title}</h1>
             </div>
           </div>
         </div>
       </div>
       <div
-      style={{backgroundImage: `linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(${props.data.contentfulFeature.coverImageMobile ? coverImageMobile : coverImage})`} }
+      style={{backgroundImage: `linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(${featureContent.coverImageMobile ? coverImageMobile : coverImage})`} }
       className={featureStyles.mobileBanner}>
         <div className={featureStyles.container}>
           <div className={featureStyles.content}>
             <div  className={featureStyles.titleDiv}>
               <h1 className={featureStyles.title} id="demo">
-                <Link to="/" style={{color: props.data.contentfulFeature.navColor}}>The Glow</Link>
+                <Link to="/" style={{color: featureContent.navColor}}>The Glow</Link>
               </h1>
             </div>
             <div className={featureStyles.mobileNav}>
@@ -253,33 +165,32 @@ const Feature = (props) => {
               </div>
             </div>
             <div className={featureStyles.featureTitle}>
-              <h1>{props.data.contentfulFeature.title}</h1>
+              <h1>{featureContent.title}</h1>
             </div>
           </div>
         </div>
       </div>
       <div className={featureStyles.container}>
-        <p className={featureStyles.credit}>{props.data.contentfulFeature.coverImage.description}</p>
+        <p className={featureStyles.credit}>{featureContent.coverImage.description}</p>
         <div className={featureStyles.content}>
           <div className={featureStyles.featureContent}>
             <div className={articleDetailsStyles.metaDetails}>
               <p>By: { authorTags }</p>
-              <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
+              <p className={articleDetailsStyles.date}>{featureContent.publishedDate}</p>
               <div className={articleDetailsStyles.genreAndSocials}>
-                <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
+                <p className={articleDetailsStyles.genre}>{featureContent.subcategory.name}</p>
                 <ShareBlockStandard {...shareBlockProps} />
               </div>
             </div>
             <div className={articleDetailsStyles.mobileMetaDetails}>
               <div className={articleDetailsStyles.genreAndSocials}>
                 <p className={articleDetailsStyles.mobileAuthor}>By: { authorTags }</p>
-                <p className={articleDetailsStyles.genre}>{props.data.contentfulFeature.subcategory.name}</p>
+                <p className={articleDetailsStyles.genre}>{featureContent.subcategory.name}</p>
               </div>
-              <p className={articleDetailsStyles.date}>{props.data.contentfulFeature.publishedDate}</p>
+              <p className={articleDetailsStyles.date}>{featureContent.publishedDate}</p>
             </div>
             <div className={featureStyles.body}>
-              <p className={featureStyles.subtitle}>{documentToReactComponents(props.data.contentfulFeature.subtitle.json, options)}</p>
-              {documentToReactComponents(props.data.contentfulFeature.body.json, options)}
+              <RichTextRenderer subtitle={featureContent.subtitle.json} body={featureContent.body.json}/>
               <p className={featureStyles.artistTags}>Tags: { artistTags }</p>
             </div>
           </div>
@@ -289,8 +200,55 @@ const Feature = (props) => {
       { mobileNav }
     </div>
   )
-
-
 }
+
+export const query = graphql`
+  query($slug: String!){
+    site {
+      siteMetadata {
+        siteTitle
+        siteUrl
+      }
+    }
+    contentfulFeature (slug: { eq: $slug }) {
+      title
+      slug
+      author {
+        englishName
+        slug
+      }
+      artist {
+        englishName
+        slug
+      }
+      publishedDate(formatString:"MMMM D YYYY")
+      category {
+        name
+      }
+      description
+      subcategory {
+        name
+      }
+      subtitle {
+        json
+      }
+      body {
+        json
+      }
+      coverImage {
+        file {
+          url
+        }
+        description
+      }
+      coverImageMobile {
+        file {
+          url
+        }
+      }
+      navColor
+    }
+  }
+`
 
 export default Feature
