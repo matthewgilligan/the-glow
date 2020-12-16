@@ -31,6 +31,10 @@
     }
 }
 
+.mobile-banner {
+    display: none;
+}
+
 .credit {
     font-size: .7rem;
     margin-top: 8px;
@@ -287,6 +291,24 @@
         display: flex;
     }
 
+    .banner {
+        display: none;
+    }
+
+    .mobile-banner {
+        display: block;
+        height: 100vh;
+        background-size: cover;
+        color: white;
+        background-position: center;
+        position: relative;
+
+        p {
+            text-transform: uppercase;
+            font-size: .8rem;
+        }
+    }
+
     .body {
         h2 {
             font-size: 1.2rem;
@@ -300,12 +322,6 @@
 
     .mobile-icons {
         display: flex;
-    }
-
-    .banner {
-        p {
-            font-size: .8rem;
-        }
     }
 
     .nav-icons {

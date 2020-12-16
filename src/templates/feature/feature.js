@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
-import { INLINES } from "@contentful/rich-text-types"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
@@ -53,12 +53,30 @@ export const query = graphql`
       }
       body {
         json
+        content {
+          data {
+            target {
+              fields {
+                file {
+                  en_US {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
       }
       coverImage {
         file {
           url
         }
         description
+      }
+      coverImageMobile {
+        file {
+          url
+        }
       }
       navColor
     }
@@ -68,7 +86,7 @@ export const query = graphql`
 const Feature = (props) => {
   const options = {
     renderNode: {
-      "embedded-asset-block": (node) => {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const alt = ((node.data.target.fields) ? node.data.target.fields.title['en-US'] : '');
         const url = node.data.target.fields.file['en-US'].url;
         const caption = ((node.data.target.fields && node.data.target.fields.description) ? node.data.target.fields.description['en-US'] : '');
@@ -106,6 +124,10 @@ const Feature = (props) => {
       authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
     }
   }
+
+  const coverImage = props.data.contentfulFeature.coverImage.file.url
+  const coverImageMobile = props.data.contentfulFeature.coverImageMobile ? props.data.contentfulFeature.coverImageMobile.file.url : ""
+
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   let mobileNav
@@ -202,6 +224,22 @@ const Feature = (props) => {
               <div className={featureStyles.largeCheckButton} style={{color: props.data.contentfulFeature.navColor}}>
                 <FaBars onClick={ () => setMobileNavOpen(!mobileNavOpen) } role="button" href="#"/>
               </div>
+            </div>
+            <div className={featureStyles.featureTitle}>
+              <h1>{props.data.contentfulFeature.title}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+      style={{backgroundImage: `linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(${props.data.contentfulFeature.coverImageMobile ? coverImageMobile : coverImage})`} }
+      className={featureStyles.mobileBanner}>
+        <div className={featureStyles.container}>
+          <div className={featureStyles.content}>
+            <div  className={featureStyles.titleDiv}>
+              <h1 className={featureStyles.title} id="demo">
+                <Link to="/" style={{color: props.data.contentfulFeature.navColor}}>The Glow</Link>
+              </h1>
             </div>
             <div className={featureStyles.mobileNav}>
               <Link to="/" className={featureStyles.mobileTitle}>The Glow</Link>
