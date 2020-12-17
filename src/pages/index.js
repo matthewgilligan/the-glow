@@ -14,11 +14,6 @@ import newsStyles from "./news.module.scss"
 import guidesStyles from "./guides.module.scss"
 
 const IndexPage = (props) => {
-  {/*}
-  const topFeatureTitleShort = <h1 className={indexStyles.topFeatureTitleShort}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
-  const topFeatureTitleLong = <h1 className={indexStyles.topFeatureTitleLong}>{props.data.firstInterview.edges[0].node.artist[0].englishName}</h1>
-  */}
-
   return (
     <div className={indexStyles.indexContainter}>
       <SEO

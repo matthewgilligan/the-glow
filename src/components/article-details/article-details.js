@@ -15,7 +15,6 @@ const ArticleDetails = ({ authors, publishedDate, category, type, slug, title })
     ],
     text: title,
   };
-  console.log(authors)
 
   let authorTags = []
   for (let i = 0; i < authors.length; i++) {
@@ -24,14 +23,6 @@ const ArticleDetails = ({ authors, publishedDate, category, type, slug, title })
     } else {
       authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
     }
-  }
-
-  console.log(authors)
-
-  if (typeof authors.englishName === "string") {
-    let authorTags = <Link to={`/author/${authors.slug}`}>{authors.englishName}</Link>
-  } else {
-
   }
 
   return (

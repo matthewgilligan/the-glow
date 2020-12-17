@@ -9,7 +9,6 @@ const SEO = (props) => {
         siteMetadata {
           siteTitle
           siteUrl
-          siteCover
           siteDescription
           twitterUsername
         }
@@ -20,11 +19,10 @@ const SEO = (props) => {
   const { isBlogPost, path = '', lang = 'en' } = props
   const siteTitle = data.site.siteMetadata.siteTitle;
   const siteUrl = data.site.siteMetadata.siteUrl;
-  const siteCover = data.site.siteMetadata.siteCover;
   const siteDescription = data.site.siteMetadata.siteDescription;
   const twitterUsername = data.site.siteMetadata.twitterUsername;
 
-  const title = props.title == ""
+  const title = props.title === ""
     ? "The Glow | Japanese music in the spotlight"
     : `${props.title} | ${siteTitle}`
   const formatedSiteUrl = siteUrl.endsWith('/')
