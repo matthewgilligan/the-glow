@@ -8,7 +8,7 @@ import Layout from "../../components/layout/layout"
 import Head from "../../components/head/head"
 import artistStyles from "../artist/artist.module.scss"
 import reviewsStyles from "../../pages/reviews.module.scss"
-import featuresStyles from "../../pages/features.module.scss"
+import featuresStyles from "../../components/indeces/features/features.module.scss"
 import newsStyles from "../../pages/news.module.scss"
 
 export const query = graphql`
