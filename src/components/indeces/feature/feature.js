@@ -4,7 +4,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Img from "gatsby-image"
 
 import Layout from "../../layout/layout"
-import featuresStyles from "../../../pages/features.module.scss"
+import featureStyles from "./feature.module.scss"
 import newsStyles from "../../../pages/news.module.scss"
 import stickyNavStyles from '../../sticky-nav/sticky-nav.module.scss'
 import Head from "../../head/head"
@@ -27,22 +27,22 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
   }
 
   const wideScreen =
-    <div class={featuresStyles.wideScreen}>
-      <div class={featuresStyles.topFeatures}>
-        <div class={featuresStyles.firstFeature}>
+    <div class={featureStyles.wideScreen}>
+      <div class={featureStyles.topFeatures}>
+        <div class={featureStyles.firstFeature}>
           <Link to={`${firstFeature.node.slug}`}>
-            <div class={featuresStyles.firstFeatureImg}
+            <div class={featureStyles.firstFeatureImg}
               style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
-              <div class={featuresStyles.firstFeatureDetails}>
-                <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
-                <p className={featuresStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json)}</p>
-                <p class={featuresStyles.firstFeatureAuthor}>By: { firstFeatureAuthorTags }</p>
-                <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
+              <div class={featureStyles.firstFeatureDetails}>
+                <h2 class={featureStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
+                <p className={featureStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json)}</p>
+                <p class={featureStyles.firstFeatureAuthor}>By: { firstFeatureAuthorTags }</p>
+                <p class={featureStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
               </div>
             </div>
           </Link>
         </div>
-        <ul className={featuresStyles.scrollFeatures}>
+        <ul className={featureStyles.scrollFeatures}>
           {scrollFeatures.map((edge) => {
             const authors = edge.node.author;
             let authorTags = []
@@ -55,18 +55,18 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
             }
 
             return (
-              <li className={featuresStyles.scrollFeature}>
+              <li className={featureStyles.scrollFeature}>
                 <Link to={`${edge.node.slug}`}>
                   <Img
                     fluid={edge.node.coverImage.fluid}
                     key={edge.node.coverImage.fluid.src}
                     alt={edge.node.coverImage.title}
-                    className={featuresStyles.scrollFeatureImage}>
+                    className={featureStyles.scrollFeatureImage}>
                   </Img>
                 </Link>
-                <div class={featuresStyles.scrollFeatureDetails}>
+                <div class={featureStyles.scrollFeatureDetails}>
                   <Link to={`${edge.node.slug}`}>
-                    <p class={featuresStyles.scrollFeatureTitle}>{edge.node.title}</p>
+                    <p class={featureStyles.scrollFeatureTitle}>{edge.node.title}</p>
                   </Link>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
@@ -81,7 +81,7 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
           })}
         </ul>
       </div>
-      <ul className={featuresStyles.remainingFeatures}>
+      <ul className={featureStyles.remainingFeatures}>
         {remainingFeatures.map((edge) => {
           const authors = edge.node.author;
           let authorTags = []
@@ -95,20 +95,20 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
 
           return (
             <li>
-              <div className={featuresStyles.remainingFeature}>
-                <Link to={`${edge.node.slug}`} class={featuresStyles.remainingFeatureImageLink}>
+              <div className={featureStyles.remainingFeature}>
+                <Link to={`${edge.node.slug}`} class={featureStyles.remainingFeatureImageLink}>
                   <Img
                     fluid={edge.node.coverImage.fluid}
                     key={edge.node.coverImage.fluid.src}
                     alt={edge.node.coverImage.title}
-                    className={featuresStyles.remainingFeatureImage}>
+                    className={featureStyles.remainingFeatureImage}>
                   </Img>
                 </Link>
-                <div class={featuresStyles.remainingFeatureDetails}>
+                <div class={featureStyles.remainingFeatureDetails}>
                   <Link to={`${edge.node.slug}`}>
-                    <h3 class={featuresStyles.remainingFeatureTitle}>{edge.node.title}</h3>
+                    <h3 class={featureStyles.remainingFeatureTitle}>{edge.node.title}</h3>
                   </Link>
-                  <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json)}</p>
+                  <p className={featureStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
                       <p class={newsStyles.remainingAuthor}>By: { firstFeatureAuthors }</p>
@@ -125,21 +125,21 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
     </div>
 
   const narrowScreen =
-    <div class={featuresStyles.narrowScreen}>
-      <div class={featuresStyles.narrowTopFeature}>
+    <div class={featureStyles.narrowScreen}>
+      <div class={featureStyles.narrowTopFeature}>
         <Link to={`${firstFeature.node.slug}`}>
-          <div class={featuresStyles.narrowTopFeatureImg}
+          <div class={featureStyles.narrowTopFeatureImg}
             style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.0), 65%, rgba(0,0,0,0.9)), url(${firstFeature.node.coverImage.file.url})`} }>
-            <div class={featuresStyles.firstFeatureDetails}>
-              <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
-              <p className={featuresStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json)}</p>
-              <p class={featuresStyles.firstFeatureAuthor}>By: { firstFeatureAuthorTags }</p>
-              <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
+            <div class={featureStyles.firstFeatureDetails}>
+              <h2 class={featureStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
+              <p className={featureStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json)}</p>
+              <p class={featureStyles.firstFeatureAuthor}>By: { firstFeatureAuthorTags }</p>
+              <p class={featureStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
             </div>
           </div>
         </Link>
       </div>
-      <ul className={featuresStyles.remainingFeatures}>
+      <ul className={featureStyles.remainingFeatures}>
         {narrowRemainingFeatures.map((edge) => {
           const authors = edge.node.author;
           let authorTags = []
@@ -153,20 +153,20 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
 
           return (
             <li>
-              <div className={featuresStyles.remainingFeature}>
-                <Link to={`${edge.node.slug}`} class={featuresStyles.remainingFeatureImageLink}>
+              <div className={featureStyles.remainingFeature}>
+                <Link to={`${edge.node.slug}`} class={featureStyles.remainingFeatureImageLink}>
                   <Img
                     fluid={edge.node.coverImage.fluid}
                     key={edge.node.coverImage.fluid.src}
                     alt={edge.node.coverImage.title}
-                    className={featuresStyles.remainingFeatureImage}>
+                    className={featureStyles.remainingFeatureImage}>
                   </Img>
                 </Link>
-                <div class={featuresStyles.remainingFeatureDetails}>
+                <div class={featureStyles.remainingFeatureDetails}>
                   <Link to={`${edge.node.slug}`}>
-                    <h3 class={featuresStyles.remainingFeatureTitle}>{edge.node.title}</h3>
+                    <h3 class={featureStyles.remainingFeatureTitle}>{edge.node.title}</h3>
                   </Link>
-                  <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json)}</p>
+                  <p className={featureStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
                       <p class={newsStyles.remainingAuthor}>By: { authorTags }</p>
@@ -180,19 +180,19 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
           )
         })}
       </ul>
-      <div className={featuresStyles.mobileTopFeature}>
-        <div className={featuresStyles.mobileFeature}>
+      <div className={featureStyles.mobileTopFeature}>
+        <div className={featureStyles.mobileFeature}>
           <Link to={`${firstFeature.node.slug}`}>
             <Img
               fluid={firstFeature.node.coverImage.fluid}
               key={firstFeature.node.coverImage.fluid.src}
               alt={firstFeature.node.coverImage.title}
-              className={featuresStyles.mobileFeatureImage}>
+              className={featureStyles.mobileFeatureImage}>
             </Img>
           </Link>
-          <div class={featuresStyles.mobileFeatureDetails}>
+          <div class={featureStyles.mobileFeatureDetails}>
             <Link to={`${firstFeature.node.slug}`}>
-              <h3 class={featuresStyles.mobileFeatureTitle}>{firstFeature.node.title}</h3>
+              <h3 class={featureStyles.mobileFeatureTitle}>{firstFeature.node.title}</h3>
             </Link>
             <div class={newsStyles.remainingInfo}>
               <div class={newsStyles.remainingMeta}>
@@ -204,7 +204,7 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
           </div>
         </div>
       </div>
-      <div className={featuresStyles.mobileFeatures}>
+      <div className={featureStyles.mobileFeatures}>
         {narrowRemainingFeatures.map((edge) => {
           const authors = edge.node.author;
           let authorTags = []
@@ -217,18 +217,18 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
           }
 
           return (
-            <div className={featuresStyles.mobileFeature}>
+            <div className={featureStyles.mobileFeature}>
               <Link to={`${edge.node.slug}`}>
                 <Img
                   fluid={edge.node.coverImage.fluid}
                   key={edge.node.coverImage.fluid.src}
                   alt={edge.node.coverImage.title}
-                  className={featuresStyles.mobileFeatureImage}>
+                  className={featureStyles.mobileFeatureImage}>
                 </Img>
               </Link>
-              <div class={featuresStyles.mobileFeatureDetails}>
+              <div class={featureStyles.mobileFeatureDetails}>
                 <Link to={`${edge.node.slug}`}>
-                  <h3 class={featuresStyles.mobileFeatureTitle}>{edge.node.title}</h3>
+                  <h3 class={featureStyles.mobileFeatureTitle}>{edge.node.title}</h3>
                 </Link>
                 <div class={newsStyles.remainingInfo}>
                   <div class={newsStyles.remainingMeta}>
