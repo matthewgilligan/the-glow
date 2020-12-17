@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
-import FeatureIndex from "../components/indeces/feature/feature"
+import FeatureIndex from "../components/indeces/features/features"
 
 const FeaturesPage = () => {
   const data = useStaticQuery(graphql`
