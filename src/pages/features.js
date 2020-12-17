@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import FeatureIndex from "../components/indeces/features/features"
 
-const FeaturesPage = () => {
+const FeaturesIndex = () => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulFeature ( sort: { fields:publishedDate, order:DESC } ) {
@@ -59,4 +59,4 @@ const FeaturesPage = () => {
   )
 }
 
-export default FeaturesPage
+export default FeaturesIndex
