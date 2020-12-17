@@ -1,7 +1,7 @@
 import React from "react"
 import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 import { FaFacebookF, FaTwitter } from "react-icons/fa"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import articleDetailsStyles from "./article-details.module.scss"
 

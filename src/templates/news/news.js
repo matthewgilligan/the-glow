@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import SEO from "../../components/seo/seo"
 import Layout from "../../components/layout/layout"
 import Content from "../../components/content/content"
-import featureStyles from "../feature/feature.module.scss"
 import newsStyles from "./news.module.scss"
 
 const News = (props) => {
@@ -44,13 +43,13 @@ const News = (props) => {
       </div>
       <Content
         authors={newsContent.author}
-        publishedDate={props.data.contentfulNews.publishedDate}
-        category={props.data.contentfulNews.category.name}
+        publishedDate={newsContent.publishedDate}
+        category={newsContent.category.name}
         type="news"
-        slug={props.data.contentfulNews.slug}
-        title={props.data.contentfulNews.title}
-        subtitle={props.data.contentfulNews.subtitle.json}
-        body={props.data.contentfulNews.body.json}
+        slug={newsContent.slug}
+        title={newsContent.title}
+        subtitle={newsContent.subtitle.json}
+        body={newsContent.body.json}
       />
     </Layout>
   )

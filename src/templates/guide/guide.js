@@ -1,11 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
-import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 import logo from "../../images/white-glow-ray.png"
-import Head from "../../components/head/head"
 import SEO from "../../components/seo/seo"
 import RichTextRenderer from "../../components/rich-text-renderer/rich-text-renderer"
 import Footer from "../../components/footer/footer"
@@ -14,16 +11,6 @@ import indexStyles from "../../pages/index.module.scss"
 import guideStyles from "./guide.module.scss"
 
 const Guides = (props) => {
-  const shareBlockProps = {
-    url: `${props.data.site.siteMetadata.siteUrl}/guides/${props.data.contentfulGuide.slug}`,
-    button: ShareButtonIconOnly,
-    buttons: [
-      { network: "Twitter", icon: FaTwitter },
-      { network: "Facebook", icon: FaFacebookF },
-    ],
-    text: `${props.data.contentfulGuide.title}`,
-  };
-
   const reccomendations = [props.data.contentfulGuide.reference1, props.data.contentfulGuide.reference2, props.data.contentfulGuide.reference3, props.data.contentfulGuide.reference4, props.data.contentfulGuide.reference5]
 
   return (

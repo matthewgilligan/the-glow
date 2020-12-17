@@ -4,7 +4,6 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaBars } from 'react-icons/fa'
 import { GrClose } from "react-icons/gr";
 import { FiSearch } from "react-icons/fi";
 
-import Head from "../../components/head/head"
 import SEO from "../../components/seo/seo"
 import Content from "../../components/content/content"
 import Footer from "../../components/footer/footer"
