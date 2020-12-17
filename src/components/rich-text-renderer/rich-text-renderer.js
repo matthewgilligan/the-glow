@@ -23,7 +23,10 @@ const RichTextRenderer = ({ subtitle, body }) => {
         <p className={richTextStyles.paragraph}>{children}</p>
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node) => (
-        <img src={`https:${node.data.target.fields.file["en-US"].url}`} alt=""/>
+        <div>
+          <img src={`https:${node.data.target.fields.file["en-US"].url}`} alt=""/>
+          <p className={richTextStyles.caption}>{node.data.target.fields.description["en-US"]}</p>
+        </div>
       ),
       [INLINES.HYPERLINK]: (node) => {
         if(node.data.uri.indexOf('youtube.com/embed') !== -1){

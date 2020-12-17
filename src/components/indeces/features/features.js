@@ -253,8 +253,8 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
         featureJapanese="特徴"
         navItems={ navItems }
       />
-      {wideScreen}
-      {narrowScreen}
+      { wideScreen }
+      { narrowScreen }
     </Layout>
   )
 }
