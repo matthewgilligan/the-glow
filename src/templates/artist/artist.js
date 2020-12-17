@@ -19,7 +19,7 @@ export const query = graphql`
       spotify
       appleMusic
     }
-    allContentfulReview (sort: { fields:publishedDate, order:DESC }, filter: { artist:{ slug: { eq: $slug } } }) {
+    allContentfulReview (sort: { fields:publishedDate, order:DESC }, filter: { artist:{ elemMatch:{ slug: { eq: $slug } } } }) {
       edges {
         node {
           albumTitle
@@ -131,7 +131,7 @@ const Artist = (props) => {
                   alt={edge.node.albumCover.title}
                   className={artistStyles.albumCover}>
                 </Img>
-                <h2 className={artistStyles.reviewArtistName}>{edge.node.artist.englishName}</h2>
+                <h2 className={artistStyles.reviewArtistName}>{edge.node.artist[0].englishName}</h2>
                 <h2 className={artistStyles.albumTitle}>{edge.node.albumTitle}</h2>
                 <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
               </Link>
@@ -151,7 +151,7 @@ const Artist = (props) => {
                     alt={edge.node.albumCover.title}
                     className={reviewsStyles.albumCover}>
                   </Img>
-                  <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                  <h2 className={reviewsStyles.artistName}>{edge.node.artist[0].englishName}</h2>
                   <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
                   <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
                 </Link>

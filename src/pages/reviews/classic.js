@@ -1,6 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
+import { Link } from "gatsby"
 
 import Layout from "../../components/layout/layout"
 import reviewsStyles from '../reviews.module.scss'
@@ -8,33 +7,6 @@ import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../../components/head/head"
 
 const ReviewsPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ name: { eq: "Classic" } } } ) {
-        edges {
-          node {
-            albumTitle
-            slug
-            artist {
-              englishName
-              japaneseName
-            }
-            albumCover {
-              fluid {
-                ...GatsbyContentfulFluid
-              }
-              title
-              file {
-                url
-              }
-            }
-            publishedDate(formatString:"MMMM DD YYYY")
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Layout>
       <Head title="Japanese Classic Album Reviews | The Glow"/>
@@ -100,7 +72,7 @@ const ReviewsPage = () => {
                   alt={edge.node.albumCover.title}
                   className={reviewsStyles.albumCover}>
                 </Img>
-                <h2 className={reviewsStyles.artistName}>{edge.node.artist.englishName}</h2>
+                <h2 className={reviewsStyles.artistName}>{edge.node.artist[0].englishName}</h2>
                 <h2 className={reviewsStyles.albumTitle}>{edge.node.albumTitle}</h2>
                 <p class={reviewsStyles.publishedDate}>{edge.node.publishedDate}</p>
               </Link>

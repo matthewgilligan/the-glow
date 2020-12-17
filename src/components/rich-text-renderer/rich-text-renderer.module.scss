@@ -1,0 +1,55 @@
+.content {
+    line-height: 1.8;
+
+    img {
+        width: 100%;
+    }
+}
+
+.subtitle {
+    font-weight: bold;
+    padding-bottom: 2rem;
+}
+
+.paragraph {
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration-color: red;
+        }
+    }
+}
+
+// img {
+//     width: 100%;
+// }
+
+@media screen and (max-width: 750px) {
+    .content {
+        iframe {
+            margin-bottom: 0;
+        }
+    }
+
+    .heading-2 {
+        margin-top: 24px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .heading-1 {
+        font-size: 1.7rem;
+    }
+
+    .heading-2 {
+        font-size: 1.2rem;
+    }
+
+    .content{
+        iframe {
+            height: 250px;
+        }
+    }
+}
+

@@ -7,7 +7,6 @@ import Img from "gatsby-image"
 import Layout from "../../components/layout/layout"
 import featuresStyles from "../features.module.scss"
 import newsStyles from "../news.module.scss"
-import reviewsStyles from "../reviews.module.scss"
 import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../../components/head/head"
 
@@ -63,7 +62,7 @@ const FeaturesPage = () => {
       [INLINES.HYPERLINK]: (node) => {
         if(node.data.uri.indexOf('youtube.com/embed') !== -1){
           return(
-            <iframe width="100%" height="321" title="YouTube" src={node.data.uri} frameborder="0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="321" title="YouTube" src={node.data.uri} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           )
         } else {
           return <a href={node.data.uri} target={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '_self' : '_blank'}`} rel={`${node.data.uri.startsWith('https://xenodochial-dubinsky-db8110.netlify.app') ? '' : 'noopener noreferrer'}`}>{node.content[0].value}</a>;
@@ -83,7 +82,7 @@ const FeaturesPage = () => {
               <div class={featuresStyles.firstFeatureDetails}>
                 <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
                 <p className={featuresStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json, options)}</p>
-                <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
+                <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author[0].englishName}</p>
                 <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
               </div>
             </div>
@@ -107,7 +106,7 @@ const FeaturesPage = () => {
                   </Link>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
@@ -138,7 +137,7 @@ const FeaturesPage = () => {
                   <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json, options)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
@@ -160,7 +159,7 @@ const FeaturesPage = () => {
             <div class={featuresStyles.firstFeatureDetails}>
               <h2 class={featuresStyles.firstFeatureTitle}>{firstFeature.node.title}</h2>
               <p className={featuresStyles.firstFeatureSubtitle}>{documentToReactComponents(firstFeature.node.subtitle.json, options)}</p>
-              <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author.englishName}</p>
+              <p class={featuresStyles.firstFeatureAuthor}>By: {firstFeature.node.author[0].englishName}</p>
               <p class={featuresStyles.firstFeatureDate}>{firstFeature.node.publishedDate}</p>
             </div>
           </div>
@@ -186,7 +185,7 @@ const FeaturesPage = () => {
                   <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json, options)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
@@ -213,7 +212,7 @@ const FeaturesPage = () => {
             </Link>
             <div class={newsStyles.remainingInfo}>
               <div class={newsStyles.remainingMeta}>
-                <p class={newsStyles.remainingAuthor}>By: {firstFeature.node.author.englishName}</p>
+                <p class={newsStyles.remainingAuthor}>By: {firstFeature.node.author[0].englishName}</p>
                 <p class={newsStyles.remainingDate}>{firstFeature.node.publishedDate}</p>
               </div>
               <p className={newsStyles.remainingCategory}>{firstFeature.node.category.name}</p>
@@ -239,7 +238,7 @@ const FeaturesPage = () => {
                 </Link>
                 <div class={newsStyles.remainingInfo}>
                   <div class={newsStyles.remainingMeta}>
-                    <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                    <p class={newsStyles.remainingAuthor}>By: {edge.node.author[0].englishName}</p>
                     <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                   </div>
                   <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>

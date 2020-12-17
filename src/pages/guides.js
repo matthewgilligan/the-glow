@@ -1,10 +1,8 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
 
 import Layout from "../components/layout/layout"
 import guidesStyles from "./guides.module.scss"
-import guideStyles from "../templates//guide/guide.module.scss"
 import stickyNavStyles from '../components/sticky-nav/sticky-nav.module.scss'
 import Head from "../components/head/head"
 

@@ -4,14 +4,11 @@
   margin-bottom: 4rem;
 }
 
-.post {
-    width: 72.5%;
-    margin-top: 48px;
-}
-
-.albumBanner {
+.album-banner {
     display: flex;
     justify-content: space-between;
+    width: 72.5%;
+    margin-top: 48px;
 }
 
 .album-cover {
@@ -56,51 +53,6 @@
     padding-bottom: 16px;
 }
 
-.review-content {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 4rem;
-}
-
-.body {
-    width: 61.5%;
-    line-height: 1.8;
-
-    a {
-        text-decoration: underline;
-
-        &:hover {
-            text-decoration-color: #E7334D;
-        }
-    }
-
-    img {
-        width: 100%;
-    }
-}
-
-.subtitle {
-    font-weight: bold;
-    padding-bottom: 2rem;
-    line-height: 1.8;
-}
-
-.main-body {
-    font-weight: 400;
-}
-
-
-.latest-reviews {
-    margin-top: 48px;
-    width: 25%;
-    height: 100%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
-
 .title {
     text-transform: uppercase;
     font-weight: lighter;
@@ -108,90 +60,16 @@
     padding-top: 1rem;
 }
 
-.latest-albums {
-    list-style: none;
-    margin-block-start: 0;
-    padding-inline-start: 0;
-    padding-bottom: 1rem;
-
-    li {
-        width: 100%;
-        text-decoration: none;
-        padding-top: .5rem;
-    }
-}
-
-.latest-album {
-    display: flex;
-
-    img {
-        width: 5rem;
-        height: 5rem;
-        padding-right: 1rem;
-    }
-}
-
-.latest-details {
-    padding-top: .2rem;
-    width: 100%;
-
-    h1 {
-        font-size: 1rem;
-    }
-}
-
-.latest-album-title {
-    font-weight: lighter;
-    font-style: italic;
-}
-
-.latest-date {
-    margin-top: 4px;
-    font-size: .7rem;
-    font-weight: bolder;
-    color: #C0C0C0;
-    text-transform: uppercase;
-}
-
-@media screen and (max-width: 1140px) {
-    .latest-reviews {
-        display: none;
-    }
-}
-
 @media screen and (max-width: 1000px) {
-    .post {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 750px) {
-    .review-content {
-        display: block;
-        margin-top: 2rem;
-    }
-
-    .body {
-        width: 100%;
-    }
-
-    .post {
+    .album-banner {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .content {
+    .album-banner {
         display: block;
-        widows: 100%;
-    }
-
-    .post {
-        margin-top: 1rem;
-    }
-
-    .albumBanner {
-        display: block;
+        margin-top: 1rem
     }
 
     .album-cover {
@@ -217,7 +95,6 @@
     }
 
     .stars {
-        // padding-bottom: 8.5rem;
         font-size: 1.5rem;
         color: #E7334D;
     }
@@ -231,18 +108,6 @@
     .review-content {
         display: block;
         margin-top: 1rem;
-    }
-
-    .body {
-        width: 100%;
-        margin-top: 3rem;
-
-        p {line-height: 1.5}
-    }
-
-    .subtitle {
-        font-weight: bold;
-        padding-bottom: rem;
     }
 }
 
