@@ -616,12 +616,9 @@ index-container {
 
 .features {
     display: flex;
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
     width: 100%;
-    // justify-content: space-between;
-
-    //temp
-    margin-left: -2rem;
+    justify-content: space-between;
 }
 
 .less-features {
@@ -631,9 +628,6 @@ index-container {
 .feature {
     width: 31.5%;
     margin-bottom: 60px;
-
-    //temp
-    margin-left: 2rem;
 }
 
 .feature-image {
