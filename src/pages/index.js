@@ -33,7 +33,7 @@ const IndexPage = (props) => {
       <section className={indexStyles.topFeature}>
         <div className={indexStyles.container}>
           <div className={indexStyles.topFeatureContent}>
-            <h1 className={indexStyles.topFeatureResponsiveTitle}>The Best Japanese Albums of 2020</h1>
+            <h1 className={indexStyles.topFeatureResponsiveTitle}>Best Japanese Singles of 2020</h1>
             <Link to={`features/${props.data.allContentfulFeature.edges[0].node.slug}`} className={indexStyles.topFeatureImageLink}>
               <Img
                 fluid={props.data.allContentfulFeature.edges[0].node.coverImage.fluid}
@@ -46,7 +46,7 @@ const IndexPage = (props) => {
               {/*
                 {props.data.allContentfulFeature.edges[0].node.artist[0].englishName.length > 11 ? topFeatureTitleLong : topFeatureTitleShort}
               */}
-              <h1 className={indexStyles.topFeatureTitleLong}>Best Albums of 2020</h1>
+              <h1 className={indexStyles.topFeatureTitleLong}>Best Singles of 2020</h1>
             </Link>
             <div className={indexStyles.topFeatureText}>
               <div className={indexStyles.topFeatureDetails}>
