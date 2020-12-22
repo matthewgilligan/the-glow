@@ -21,7 +21,7 @@ const Content = ({ data }) => {
           <h2 className={playlistCardStyles.artist}>{data.artist[0].englishName}</h2>
         </Link>
         <p className={playlistCardStyles.subtitle}>{documentToReactComponents(data.subtitle.json)}</p>
-        <p className={playlistCardStyles.date}>{data.publishedDate}</p>
+        <h3 className={playlistCardStyles.date}>{data.publishedDate}</h3>
       </div>
     </div>
   )
