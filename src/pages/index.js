@@ -12,6 +12,7 @@ import indexStyles from "./index.module.scss"
 import reviewsStyles from "./reviews.module.scss"
 import newsStyles from "./news.module.scss"
 import guidesStyles from "./guides.module.scss"
+import PlaylistCard from "../components/cards/features/playlist/index"
 
 const IndexPage = (props) => {
   return (
@@ -242,23 +243,9 @@ const IndexPage = (props) => {
             <div className={indexStyles.playlists}>
               {props.data.thePlaylist.edges.map((edge) => {
                 return (
-                  <div className={indexStyles.playlist}>
-                    <Link to={`features/${edge.node.slug}`}>
-                      <Img
-                        fluid={edge.node.coverImage.fluid}
-                        key={edge.node.coverImage.fluid.src}
-                        alt={edge.node.coverImage.title}
-                        className={indexStyles.playlistImage}>
-                      </Img>
-                    </Link>
-                    <div className={indexStyles.playlistDetails}>
-                      <Link to={`features/${edge.node.slug}`}>
-                        <h2 className={indexStyles.playlistArtist}>{edge.node.artist[0].englishName}</h2>
-                      </Link>
-                      <p className={indexStyles.playlistSubtitle}>{documentToReactComponents(edge.node.subtitle.json)}</p>
-                      <p className={indexStyles.playlistDate}>{edge.node.publishedDate}</p>
-                    </div>
-                  </div>
+                  <PlaylistCard
+                    data={ edge.node }
+                  />
                 )
               })}
             </div>
