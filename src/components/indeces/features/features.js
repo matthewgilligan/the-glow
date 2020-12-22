@@ -112,7 +112,7 @@ const FeatureIndex = ({ data, li1, li2, li3, li4, dd1, dd2, dd3, dd4 }) => {
                   <p className={featuresStyles.remainingFeatureSubtitle}>{documentToReactComponents(edge.node.subtitle.json)}</p>
                   <div class={newsStyles.remainingInfo}>
                     <div class={newsStyles.remainingMeta}>
-                      <p class={newsStyles.remainingAuthor}>By: { firstFeatureAuthors }</p>
+                      <p class={newsStyles.remainingAuthor}>By: { authorTags }</p>
                       <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                     </div>
                     <p className={newsStyles.remainingCategory}>{edge.node.category.name}</p>
