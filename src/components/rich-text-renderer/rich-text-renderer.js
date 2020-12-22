@@ -19,6 +19,11 @@ const RichTextRenderer = ({ subtitle, body }) => {
       [BLOCKS.HEADING_4]: (node, children) => (
         <h4 className={richTextStyles.heading4}>{children}</h4>
       ),
+      [BLOCKS.HEADING_5]: (node, children) => (
+        <div className={richTextStyles.divider}>
+          <h5>{children}</h5>
+        </div>
+      ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <p className={richTextStyles.paragraph}>{children}</p>
       ),
