@@ -1,0 +1,80 @@
+.playlist {
+    width: 20%;
+    //delete when have 4
+    margin-left: 50px;
+}
+
+.image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.details {
+    position: relative;
+    margin: 20px 0;
+    height: 215px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    text-align: center;
+    color: white;
+    font-size: .8rem;
+}
+
+.artist {
+    margin-top: 16px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    color: white !important;
+}
+
+.subtitle {
+    margin: 40px 8px 0 8px;
+}
+
+.date {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 0 16px 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 700px) {
+    .playlist {
+        width: 150px;
+        height: 100%;
+    }
+
+    .image {
+        height: 100px;
+    }
+
+    .details {
+        position: relative;
+        margin: 20px 0 28px 0;
+        color: white;
+        height: 100%;
+        border: none;
+        text-align: left;
+    }
+
+    .artist {
+        font-size: .8rem;
+    }
+
+    .subtitle {
+        margin: 16px 0 16px 0;
+        font-size: .6rem;
+
+    }
+
+    .date {
+        display: none;
+    }
+}
