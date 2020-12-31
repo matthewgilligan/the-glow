@@ -42,14 +42,9 @@ const News = (props) => {
         <p className={newsStyles.credit}>{props.data.contentfulNews.coverImage.description}</p>
       </div>
       <Content
-        authors={newsContent.author}
-        publishedDate={newsContent.publishedDate}
+        data={newsContent}
         category={newsContent.category.name}
         type="news"
-        slug={newsContent.slug}
-        title={newsContent.title}
-        subtitle={newsContent.subtitle.json}
-        body={newsContent.body.json}
       />
     </Layout>
   )

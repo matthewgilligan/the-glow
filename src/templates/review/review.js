@@ -80,14 +80,9 @@ const Review = (props) => {
         </div>
       </div>
       <Content
-        authors={reviewContent.author}
-        publishedDate={reviewContent.publishedDate}
+        data={reviewContent}
         category={reviewContent.genre.name}
         type="reviews"
-        slug={reviewContent.slug}
-        title={reviewContent.title}
-        subtitle={reviewContent.subtitle.json}
-        body={reviewContent.body.json}
       />
     </Layout>
   )

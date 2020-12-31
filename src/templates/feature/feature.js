@@ -149,14 +149,9 @@ const Feature = (props) => {
       <div className={featureStyles.container}>
         <p className={featureStyles.credit}>{featureContent.coverImage.description}</p>
         <Content
-          authors={featureContent.author}
-          publishedDate={featureContent.publishedDate}
+          data={featureContent}
           category={featureContent.category.name}
           type="features"
-          slug={featureContent.slug}
-          title={featureContent.title}
-          subtitle={featureContent.subtitle.json}
-          body={featureContent.body.json}
         />
       </div>
       <Footer />
