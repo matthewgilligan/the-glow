@@ -148,7 +148,7 @@ const IndexPage = (props) => {
             <h2>Features</h2>
           </div>
           <div className={indexStyles.features}>
-            {props.data.allContentfulFeature.edges.slice(1,4).map((edge) => {
+            {props.data.allContentfulFeature.edges.slice(0,3).map((edge) => {
               const authors = edge.node.author;
               let authorTags = []
               for (let i = 0; i < authors.length; i++) {
