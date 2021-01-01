@@ -237,7 +237,7 @@ const IndexPage = (props) => {
         <div className={indexStyles.playlistContainer}>
           <div className={indexStyles.thePlaylistTitle}>
             <h2>The Playlist</h2>
-            {/*<p>swipe →</p>*/}
+            <p>swipe →</p>
           </div>
           <div className={indexStyles.playlistsScroll}>
             <div className={indexStyles.playlists}>
