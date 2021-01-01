@@ -254,6 +254,16 @@ const Artist = (props) => {
       <h2 className={artistStyles.sectionTitle}>News ({props.data.allContentfulNews.edges.length})</h2>
       <div className={artistStyles.newsItems}>
         {props.data.allContentfulNews.edges.map((edge) => {
+          const authors = edge.node.author;
+          let authorTags = []
+          for (let i = 0; i < authors.length; i++) {
+            if(i === authors.length -1){
+              authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+            } else {
+              authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
+            }
+          }
+
           return (
             <Link to={`../../news/${edge.node.slug}`}>
               <div className={artistStyles.newsItem}>
@@ -267,12 +277,12 @@ const Artist = (props) => {
                   <h3 class={artistStyles.newsTitle}>{edge.node.title}</h3>
                   <div class={artistStyles.newsInfo}>
                     <div class={artistStyles.newsMeta}>
-                      <p class={artistStyles.newsAuthor}>By: {edge.node.author.englishName}</p>
+                      <p class={artistStyles.newsAuthor}>By: { authorTags }</p>
                       <p class={artistStyles.newsDate}>{edge.node.publishedDate}</p>
                     </div>
                     <Link to={edge.node.category.slug} className={artistStyles.newsCategory}>
-                        <p>{edge.node.category.name}</p>
-                      </Link>
+                      <p>{edge.node.category.name}</p>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -283,6 +293,16 @@ const Artist = (props) => {
       <div className={artistStyles.responsiveNews}>
         <div className={newsStyles.remainingPosts}>
           {props.data.allContentfulNews.edges.map((edge) => {
+            const authors = edge.node.author;
+            let authorTags = []
+            for (let i = 0; i < authors.length; i++) {
+              if(i === authors.length -1){
+                authorTags.push(<Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link>)
+              } else {
+                authorTags.push(<span><Link to={`/author/${authors[i].slug}`}>{authors[i].englishName}</Link> & </span>)
+              }
+            }
+
             return (
               <Link to={`../../news/${edge.node.slug}`}>
                 <div className={newsStyles.remainingPost}>
@@ -296,7 +316,7 @@ const Artist = (props) => {
                     <h3 class={newsStyles.remainingTitle}>{edge.node.title}</h3>
                     <div class={newsStyles.remainingInfo}>
                       <div class={newsStyles.remainingMeta}>
-                        <p class={newsStyles.remainingAuthor}>By: {edge.node.author.englishName}</p>
+                        <p class={newsStyles.remainingAuthor}>By: { authorTags }</p>
                         <p class={newsStyles.remainingDate}>{edge.node.publishedDate}</p>
                       </div>
                       <Link to={edge.node.category.slug} className={newsStyles.remainingCategory}>
