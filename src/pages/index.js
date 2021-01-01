@@ -51,10 +51,10 @@ const IndexPage = (props) => {
             </Link>
             <div className={indexStyles.topFeatureText}>
               <div className={indexStyles.topFeatureDetails}>
-                <p className={indexStyles.topFeatureSubtitle}>{documentToReactComponents(props.data.allContentfulFeature.edges[0].node.subtitle.json)}</p>
+                <p className={indexStyles.topFeatureSubtitle}>{documentToReactComponents(props.data.firstInterview.edges[0].node.subtitle.json)}</p>
                 <div class={indexStyles.topFeatureInfo}>
                   <div class={indexStyles.topFeatureMeta}>
-                    <p class={indexStyles.topFeatureAuthor}>By: <Link to={`/author/${props.data.allContentfulFeature.edges[0].node.author[0].slug}`}>{props.data.allContentfulFeature.edges[0].node.author[0].englishName}</Link></p>
+                    <p class={indexStyles.topFeatureAuthor}>By: <Link to={`/author/${props.data.firstInterview.edges[0].node.author[0].slug}`}>{props.data.allContentfulFeature.edges[0].node.author[0].englishName}</Link></p>
                     <p class={indexStyles.topFeatureDate}>{props.data.firstInterview.edges[0].node.publishedDate}</p>
                   </div>
                   <Link to={`features/${props.data.firstInterview.edges[0].node.category.name.toLowerCase()}`}  className={indexStyles.topFeatureCategory}>
