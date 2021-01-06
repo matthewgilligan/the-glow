@@ -1,12 +1,53 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { graphql, useStaticQuery, Link } from 'gatsby';
+import Img from 'gatsby-image';
 
-import Layout from "../../components/layout/layout"
-import reviewsStyles from '../reviews.module.scss'
-import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
-import Head from "../../components/head/head"
+import Layout from '../../components/layout/layout';
+import Head from '../../components/head/head';
 
-const ReviewsPage = () => {
+import reviewsStyles from '../reviews.module.scss';
+import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss';
+
+const ReviewsClassicPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ name: { eq: "Classic" } } } ) {
+        edges {
+          node {
+            albumTitle
+            slug
+            artist {
+              englishName
+              japaneseName
+            }
+            author {
+              englishName
+              twitter
+              bio
+            }
+            publishedDate(formatString:"MMMM DD YYYY")
+            rating
+            category {
+              name
+            }
+            albumCover {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+              title
+              file {
+                url
+              }
+            }
+            genre {
+              name
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <Head title="Japanese Classic Album Reviews | The Glow"/>
@@ -57,10 +98,6 @@ const ReviewsPage = () => {
           </div> */}
         </div>
       </div>
-      <div className={reviewsStyles.noContent}>
-        <p>Content is on the way - hold tight!</p>
-      </div>
-      {/*
       <div className={reviewsStyles.albums}>
         {data.allContentfulReview.edges.map((edge) => {
           return (
@@ -80,9 +117,8 @@ const ReviewsPage = () => {
           )
         })}
       </div>
-    */}
     </Layout>
   )
 }
 
-export default ReviewsPage
+export default ReviewsClassicPage

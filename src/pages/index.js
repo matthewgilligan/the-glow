@@ -325,7 +325,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter:{ albumTitle:{ ne: "Meshi Kuuna!" } } limit: 12 ) {
+    allContentfulReview ( sort: { fields:publishedDate, order:DESC } limit: 12 ) {
       edges {
         node {
           albumTitle

@@ -10,7 +10,7 @@ import Head from "../components/head/head"
 const ReviewsPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { albumTitle:{ ne: "Meshi Kuuna!" } } ) {
+      allContentfulReview ( sort: { fields:publishedDate, order:DESC } ) {
         edges {
           node {
             albumTitle

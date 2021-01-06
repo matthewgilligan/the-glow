@@ -1,13 +1,14 @@
-import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react';
+import { graphql, useStaticQuery, Link } from 'gatsby';
+import Img from 'gatsby-image';
 
-import Layout from "../../components/layout/layout"
-import reviewsStyles from '../reviews.module.scss'
-import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss'
-import Head from "../../components/head/head"
+import Layout from '../../components/layout/layout';
+import Head from '../../components/head/head';
 
-const ReviewsPage = () => {
+import reviewsStyles from '../reviews.module.scss';
+import stickyNavStyles from '../../components/sticky-nav/sticky-nav.module.scss';
+
+const ReviewsContemporaryPage = () => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulReview ( sort: { fields:publishedDate, order:DESC }, filter: { category:{ name: { eq: "Contemporary" } } } ) {
@@ -120,4 +121,4 @@ const ReviewsPage = () => {
   )
 }
 
-export default ReviewsPage
+export default ReviewsContemporaryPage
