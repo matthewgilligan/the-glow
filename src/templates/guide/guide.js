@@ -88,6 +88,7 @@ export const query = graphql`
     contentfulGuide (slug: { eq: $slug }) {
       title
       subject
+      description
       slug
       author {
         englishName
