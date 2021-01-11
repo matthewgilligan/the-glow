@@ -1,14 +1,14 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-import logo from "../../images/white-glow-ray.png"
-import SEO from "../../components/seo/seo"
-import RichTextRenderer from "../../components/rich-text-renderer/rich-text-renderer"
-import Footer from "../../components/Footer"
-import Header from "../../components/Header"
-import indexStyles from "../../pages/index.module.scss"
-import guideStyles from "./guide.module.scss"
+import logo from '../../images/white-glow-ray.png';
+import SEO from '../../components/seo/seo';
+import RichTextRenderer from '../../components/rich-text-renderer/rich-text-renderer';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import indexStyles from '../../pages/index.module.scss';
+import guideStyles from './guide.module.scss';
 
 const Guides = (props) => {
   const reccomendations = [props.data.contentfulGuide.reference1, props.data.contentfulGuide.reference2, props.data.contentfulGuide.reference3, props.data.contentfulGuide.reference4, props.data.contentfulGuide.reference5]

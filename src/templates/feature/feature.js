@@ -9,8 +9,8 @@ import Content from "../../components/content/content"
 import Footer from "../../components/Footer"
 import featureStyles from "./feature.module.scss"
 import SearchComp from '../../components/search/searchComp'
-import headerStyles from "../../components/header/header.module.scss"
-import searchStyles from "../../components/header/search.module.scss"
+import headerStyles from "../../components/Header/styles.scss"
+import searchStyles from "../../components/search/search.module.scss"
 
 const Feature = (props) => {
   const featureContent = props.data.contentfulFeature

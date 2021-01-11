@@ -5,8 +5,8 @@ import { GrClose } from 'react-icons/gr';
 import { FiSearch } from 'react-icons/fi';
 
 import './styles.scss';
-import searchStyles from './search.module.scss';
-import SearchComp from '../search/searchComp';
+import searchStyles from './../search/search.module.scss';
+import SearchComp from './../search/searchComp';
 
 const Header = () => {
   const data = useStaticQuery(graphql`
