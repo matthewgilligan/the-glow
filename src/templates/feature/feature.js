@@ -6,7 +6,7 @@ import { FiSearch } from "react-icons/fi";
 
 import SEO from "../../components/seo/seo"
 import Content from "../../components/content/content"
-import Footer from "../../components/footer/footer"
+import Footer from "../../components/Footer"
 import featureStyles from "./feature.module.scss"
 import SearchComp from '../../components/search/searchComp'
 import headerStyles from "../../components/header/header.module.scss"

@@ -1,0 +1,148 @@
+.footer {
+  padding-top: 2rem;
+  background-color: black;
+  color: rgb(153, 153, 153);
+
+  a {
+    color: rgb(153, 153, 153);
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.container {
+  display:flex;
+  flex-direction:column;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mailchimp {
+  width: 100%;
+  margin: 3.7rem 0 4.1rem 0;
+}
+
+.form {
+  width: 306.27px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  ul {
+    padding-left: 0;
+  }
+}
+
+.copyright {
+  margin-top: 4px;
+  font-size: .7rem;
+}
+
+.logo {
+  height: 70px;
+  margin-bottom: .5rem;
+
+  &:hover {
+    filter: brightness(0) invert(1) !important;
+  }
+}
+
+.pageLinks {
+  position: relative;
+  width: 15%;
+  font-size: .9rem;
+  text-transform: uppercase;
+
+  ul {
+    position: absolute;
+    bottom: 0;
+    list-style-type: none;
+  }
+
+  li {
+    margin-top: 8px;
+  }
+}
+
+.socialLinks {
+  margin-top: 84px;
+  padding: 0;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+
+  li {
+    margin-right: 1.2rem;
+    color: rgb(153, 153, 153);
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  li:last-child {
+    margin-right: 0;
+  }
+}
+
+.mobileCopyright {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .mailchimp {
+    width: 100%;
+    margin: 2rem 0 2rem 0;
+  }
+
+  .content {
+    display: block;
+    // margin-bottom: rem;
+  }
+
+  .copyright {
+    display: none;
+  }
+
+  .pageLinks {
+    width: 100%;
+    font-size: 1rem;
+
+    ul {
+      position: relative;
+      text-align: center;
+    }
+  }
+
+  .socialLinks {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+
+    ul {
+      margin: 0 auto;
+    }
+
+    li {
+      font-size: 1.8rem;
+    }
+  }
+
+  .mobileCopyright {
+    display: block;
+    text-align: center;
+
+    p {
+      font-size: .7rem;
+    }
+  }
+}

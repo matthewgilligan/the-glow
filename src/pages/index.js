@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 
 import patreon from "../images/patreon_ad.png"
 import SEO from "../components/seo/seo"
-import Footer from "../components/footer/footer"
+import Footer from "../components/Footer"
 import Header from "../components/header/header"
 import '../styles/index.scss'
 import indexStyles from "./index.module.scss"
