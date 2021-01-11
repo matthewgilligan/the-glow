@@ -6,7 +6,7 @@ import logo from "../../images/white-glow-ray.png"
 import SEO from "../../components/seo/seo"
 import RichTextRenderer from "../../components/rich-text-renderer/rich-text-renderer"
 import Footer from "../../components/Footer"
-import Header from "../../components/header/header"
+import Header from "../../components/Header"
 import indexStyles from "../../pages/index.module.scss"
 import guideStyles from "./guide.module.scss"
 
