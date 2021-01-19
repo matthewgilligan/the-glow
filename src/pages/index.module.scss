@@ -726,10 +726,8 @@ index-container {
 
 .playlists {
     display: flex;
-    //justify-content: space-between;
+    justify-content: space-between;
     width: 100%;
-    //delete when have 4
-    margin-left: -50px;
 }
 
 @media screen and (max-width: 700px) {
@@ -771,8 +769,7 @@ index-container {
     .playlists {
         width: 750px;
         padding-right: 30px;
-        margin-left: -3px;
-        //margin-left: 18px;
+        margin-left: 18px;
     }
 }
 
