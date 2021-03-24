@@ -124,7 +124,7 @@ const IndexPage = (props) => {
                   return (
                     <Link to={`news/${edge.node.slug}`}>
                       <div className={indexStyles.newsItem}>
-                        <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} className={indexStyles.albumCover} />
+                        <img src={edge.node.coverImage.file.url} alt={edge.node.coverImage.title} />
                         <div className={indexStyles.newsDetails}>
                           <h2>{edge.node.title}</h2>
                           <p>{edge.node.publishedDate}</p>
