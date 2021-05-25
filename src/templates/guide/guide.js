@@ -77,7 +77,7 @@ const Guides = (props) => {
         </div>
         <div className={guideStyles.streaming}>
           <img src={logo} alt="Logo" className={guideStyles.logo}/>
-          <p className={guideStyles.checkout}>Check out our {props.data.contentfulGuide.subject2 ? props.data.contentfulGuide.subject2 : props.data.contentfulGuide.subject} playlist!</p>
+          <p className={guideStyles.checkout}>Check out our {props.data.contentfulGuide.spotify2 ? props.data.contentfulGuide.subject2 : props.data.contentfulGuide.subject} playlist!</p>
           <div className={guideStyles.embed}>
             <iframe src={props.data.contentfulGuide.spotify} title="spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             <iframe src={props.data.contentfulGuide.appleMusic} title="apple" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -103,7 +103,7 @@ const Guides = (props) => {
               )
             })}
           </div>
-          {(props.data.contentfulGuide.spotify2.length > 0) &&
+          {(props.data.contentfulGuide.spotify2) &&
             <div className={guideStyles.streaming}>
               <img src={logo} alt="Logo" className={guideStyles.logo}/>
               <p className={guideStyles.checkout}>Check out our {props.data.contentfulGuide.subject3} playlist!</p>
