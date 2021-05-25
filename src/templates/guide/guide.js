@@ -162,7 +162,6 @@ export const query = graphql`
       subject
       subject2
       subject3
-      subject4
       description
       slug
       author {
@@ -336,84 +335,87 @@ export const query = graphql`
           }
         }
       }
-      reference11 {
-        albumTitle
-        slug
-        artist
-        albumCover {
-          title
-          file {
-            url
-          }
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-      }
-      reference12 {
-        albumTitle
-        slug
-        artist
-        albumCover {
-          title
-          file {
-            url
-          }
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-      }
-      reference13 {
-        albumTitle
-        slug
-        artist
-        albumCover {
-          title
-          file {
-            url
-          }
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-      }
-      reference14 {
-        albumTitle
-        slug
-        artist
-        albumCover {
-          title
-          file {
-            url
-          }
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-      }
-      reference15 {
-        albumTitle
-        slug
-        artist
-        albumCover {
-          title
-          file {
-            url
-          }
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-      }
       spotify
       appleMusic
-      spotify2
-      appleMusic2
-      spotify3
-      appleMusic3
     }
   }
 `
 
 export default Guides
+
+// To add later to query:
+// spotify3
+// appleMusic3
+// spotify2
+// appleMusic2
+// subject4
+// reference11 {
+//   albumTitle
+//   slug
+//   artist
+//   albumCover {
+//     title
+//     file {
+//       url
+//     }
+//     fluid {
+//       ...GatsbyContentfulFluid
+//     }
+//   }
+// }
+// reference12 {
+//   albumTitle
+//   slug
+//   artist
+//   albumCover {
+//     title
+//     file {
+//       url
+//     }
+//     fluid {
+//       ...GatsbyContentfulFluid
+//     }
+//   }
+// }
+// reference13 {
+//   albumTitle
+//   slug
+//   artist
+//   albumCover {
+//     title
+//     file {
+//       url
+//     }
+//     fluid {
+//       ...GatsbyContentfulFluid
+//     }
+//   }
+// }
+// reference14 {
+//   albumTitle
+//   slug
+//   artist
+//   albumCover {
+//     title
+//     file {
+//       url
+//     }
+//     fluid {
+//       ...GatsbyContentfulFluid
+//     }
+//   }
+// }
+// reference15 {
+//   albumTitle
+//   slug
+//   artist
+//   albumCover {
+//     title
+//     file {
+//       url
+//     }
+//     fluid {
+//       ...GatsbyContentfulFluid
+//     }
+//   }
+// }
