@@ -1,243 +1,245 @@
 .container {
-    margin: 0 auto;
-    max-width: 1280px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    display: flex;
-    flex-direction: column;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .banner {
-    position: relative;
-    margin-top: 48px;
-    width: 100%;
-    height: 25rem;
-    color: white;
-    text-align: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  position: relative;
+  margin-top: 48px;
+  width: 100%;
+  height: 25rem;
+  color: white;
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .banner-title {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 100%;
-    text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
 
-    h3 {
-        font-weight: lighter;
-        font-size: 1.3rem;
-    }
+  h3 {
+    font-weight: lighter;
+    font-size: 1.3rem;
+  }
 
-    h1 {
-        font-size: 4rem;
-        padding-bottom: .5rem;
-        border-top: 1px solid white;
-        border-bottom: 1px solid white;
-        margin: 1rem 0;
-        display:inline-block;
-    }
+  h1 {
+    font-size: 4rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin: 1rem 0;
+    display: inline-block;
+  }
 }
 
 .credit {
-    font-size: .7rem;
-    margin-top: 4px;
+  font-size: 0.7rem;
+  margin-top: 4px;
 }
 
 .body {
-    width: 50%;
-    margin: 3rem auto 4rem auto;
-    line-height: 1.8;
+  width: 50%;
+  margin: 3rem auto 4rem auto;
+  line-height: 1.8;
 
-    a {
-        text-decoration: underline;
+  a {
+    text-decoration: underline;
 
-        &:hover {
-            text-decoration-color: #E7334D;
-        }
+    &:hover {
+      text-decoration-color: #e7334d;
     }
+  }
 }
 
 .reccomendations {
-    width: 100%;
-    height: 100%;
-    background-color: #E7334D;
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
+  width: 100%;
+  height: 100%;
+  background-color: #e7334d;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .reccomendations-header {
-    padding: 4rem 0 1.5rem 0;
+  padding: 4rem 0 1.5rem 0;
 }
 
 .albums {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 90%;
-    justify-content: space-between;
-    margin: 40px auto 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin: 40px auto 20px auto;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .album {
-    float: left;
-    width: 13.33%;
-    position: relative;
-    min-height: 1px;
-    padding-left: 22px;
-    padding-right: 22px;
-    text-align: center;
-    margin-bottom: 60px;
+  float: left;
+  width: 13.33%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 22px;
+  padding-right: 22px;
+  text-align: center;
+  margin-bottom: 60px;
 
-    a {
-        text-decoration: none;
-        color: white;
-    }
-
-    // :hover + .details {
-    //   display: block;
-    // }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  // :hover + .details {
+  //   display: block;
+  // }
 }
 
 .albumCover {
-    border: 2px solid white;
-    width: 100%;
-    margin-bottom: 12px;
+  border: 2px solid white;
+  width: 100%;
+  margin-bottom: 12px;
 }
 
 .artistName {
-    font-size: 1rem;
-    padding: .6rem 0;
-    margin-block-end: 0;
-    margin-right: 0;
+  font-size: 1rem;
+  padding: 0.6rem 0;
+  margin-block-end: 0;
+  margin-right: 0;
 }
 
 .album-title {
-    font-size: .9rem;
-    font-weight: lighter;
-    font-style: italic;
+  font-size: 0.9rem;
+  font-weight: lighter;
+  font-style: italic;
 }
 
 .logo {
-    width: 3rem;
-    margin-bottom: 1rem;
+  width: 3rem;
+  margin-bottom: 1rem;
 }
 
 .streaming {
-    text-align: center;
-    padding-bottom: 3rem;
+  text-align: center;
+  padding-bottom: 3rem;
 
-    p {
-        margin-bottom: 3rem;
-    }
+  p {
+    margin-bottom: 3rem;
+  }
 }
 
 .embed {
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 1270px) {
-    .embed {
-        width: 60%;
-    }
+  .embed {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 1070px) {
-    .embed {
-        width: 70%;
-    }
+  .embed {
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 1000px) {
-    .body {
-        width: 100%;
-    }
+  .body {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1070px) {
-    .embed {
-        width: 85%;
-    }
+  .embed {
+    width: 85%;
+  }
 }
 
 @media screen and (max-width: 750px) {
-    .banner {
-        height: 18rem;
-    }
+  .banner {
+    height: 18rem;
+  }
 
-    .reccomendations-header {
-        font-size: 1.5rem;
-    }
+  .reccomendations-header {
+    font-size: 1.5rem;
+  }
 
-    .albums {
-        display: block;
-        width: 100%;
-        text-align: center;
-        height: 100%;
-        justify-content: center;
-        position: relative;
-    }
+  .albums {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+  }
 
-    .album {
-        width: 50%;
-        min-height: 1px;
-        text-align: center;
-        margin: 0 auto 40px auto;
-        float: none;
-        clear: both;
+  .album {
+    width: 50%;
+    min-height: 1px;
+    text-align: center;
+    margin: 0 auto 40px auto;
+    float: none;
+    clear: both;
 
-        a {
-            text-decoration: none;
-            color: white;
-        }
+    a {
+      text-decoration: none;
+      color: white;
     }
+  }
 
-    .streaming {
-        padding-top: 3rem;
-    }
+  .streaming {
+    padding-top: 3rem;
+  }
 
-    .embed {
-        display: block;
-        width: 80%;
-    }
+  .embed {
+    display: block;
+    width: 80%;
+  }
 
-    iframe {
-        margin-bottom: 3rem;
-    }
+  iframe {
+    margin-bottom: 3rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .banner-title {
-
-        h3 {
-            font-size: .8rem;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin: .5rem 0;
-        }
+  .banner-title {
+    h3 {
+      font-size: 0.8rem;
     }
 
-    .checkout {
-        margin: 0 auto;
-        width: 95%;
+    h1 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
     }
+  }
 
-    .body {
-        width: 100%;
-        margin: 1rem auto 3rem auto;
-    }
+  .checkout {
+    margin: 0 auto;
+    width: 95%;
+  }
 
-    .banner {
-        margin: 2rem 0;
-    }
+  .body {
+    width: 100%;
+    margin: 1rem auto 3rem auto;
+  }
+
+  .banner {
+    margin: 2rem 0;
+  }
 }

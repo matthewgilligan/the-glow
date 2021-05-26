@@ -30,7 +30,9 @@ const RichTextRenderer = ({ subtitle, body }) => {
       [BLOCKS.EMBEDDED_ASSET]: (node) => (
         <div>
           <img src={`https:${node.data.target.fields.file["en-US"].url}`} alt=""/>
-          {node.data.target.fields.description && <p className={richTextStyles.caption}>{node.data.target.fields.description["en-US"]}</p>}
+          {node.data.target.fields.description &&
+            <p className={richTextStyles.caption}>{node.data.target.fields.description["en-US"]}</p>
+          }
         </div>
       ),
       [INLINES.HYPERLINK]: (node) => {
