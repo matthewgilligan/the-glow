@@ -22,9 +22,6 @@ const GuidesPage = () => {
               }
               title
             }
-            author {
-              englishName
-            }
           }
         }
       }

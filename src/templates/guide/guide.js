@@ -15,7 +15,7 @@ const Guides = (props) => {
     reference12, reference13, reference14, reference15 } = props.data.contentfulGuide;
 
   console.log(props);
-  console.log(reference6);
+  console.log(reference11);
 
   const reccomendations = [reference1, reference2, reference3, reference4, reference5];
   const reccomendations2 = (reference6 != null) ? [reference6, reference7, reference8, reference9, reference10] : null;
@@ -164,10 +164,6 @@ export const query = graphql`
       subject3
       description
       slug
-      author {
-        englishName
-        slug
-      }
       publishedDate(formatString:"MMMM D YYYY")
       genre {
         name
@@ -337,85 +333,85 @@ export const query = graphql`
       }
       spotify
       appleMusic
+      spotify3
+      appleMusic3
+      spotify2
+      appleMusic2
+      subject4
+      reference11 {
+        albumTitle
+        slug
+        artist
+        albumCover {
+          title
+          file {
+            url
+          }
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+      reference12 {
+        albumTitle
+        slug
+        artist
+        albumCover {
+          title
+          file {
+            url
+          }
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+      reference13 {
+        albumTitle
+        slug
+        artist
+        albumCover {
+          title
+          file {
+            url
+          }
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+      reference14 {
+        albumTitle
+        slug
+        artist
+        albumCover {
+          title
+          file {
+            url
+          }
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+      reference15 {
+        albumTitle
+        slug
+        artist
+        albumCover {
+          title
+          file {
+            url
+          }
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
     }
   }
 `
 
 export default Guides
 
-// To add later to query:
-// spotify3
-// appleMusic3
-// spotify2
-// appleMusic2
-// subject4
-// reference11 {
-//   albumTitle
-//   slug
-//   artist
-//   albumCover {
-//     title
-//     file {
-//       url
-//     }
-//     fluid {
-//       ...GatsbyContentfulFluid
-//     }
-//   }
-// }
-// reference12 {
-//   albumTitle
-//   slug
-//   artist
-//   albumCover {
-//     title
-//     file {
-//       url
-//     }
-//     fluid {
-//       ...GatsbyContentfulFluid
-//     }
-//   }
-// }
-// reference13 {
-//   albumTitle
-//   slug
-//   artist
-//   albumCover {
-//     title
-//     file {
-//       url
-//     }
-//     fluid {
-//       ...GatsbyContentfulFluid
-//     }
-//   }
-// }
-// reference14 {
-//   albumTitle
-//   slug
-//   artist
-//   albumCover {
-//     title
-//     file {
-//       url
-//     }
-//     fluid {
-//       ...GatsbyContentfulFluid
-//     }
-//   }
-// }
-// reference15 {
-//   albumTitle
-//   slug
-//   artist
-//   albumCover {
-//     title
-//     file {
-//       url
-//     }
-//     fluid {
-//       ...GatsbyContentfulFluid
-//     }
-//   }
-// }
+
