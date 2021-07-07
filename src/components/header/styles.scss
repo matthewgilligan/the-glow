@@ -1,0 +1,285 @@
+input, textarea, button, select, a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.header {
+  padding: 0;
+  position: relative;
+}
+
+.navTop {
+  display: flex;
+  justify-content: space-between;
+  padding: .6rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  color: #000000;
+  margin-top: 10px;
+  font-size: 3rem;
+  font-family: Lexend Tera;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.mobileTitle {
+  display: none;
+  height: 100%;
+  color: #000000;
+  font-size: 3rem;
+  font-family: Lexend Tera;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.search {
+  padding-top: 1.8rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  :hover {
+    color: #E7334D;
+  }
+}
+
+.mobileIcons {
+  display: none;
+  float: right;
+  font-size: 1.8rem;
+  margin-bottom: .1rem;
+}
+
+.mobileSearch {
+  cursor: pointer;
+  margin-right: .6rem;
+
+  :hover {
+    color: #E7334D;
+  }
+}
+
+.checkButton {
+  cursor: pointer;
+
+  :hover {
+    color: #E7334D;
+  }
+}
+
+.navList {
+  display: flex;
+  list-style-type: none;
+  padding: 1rem 0 1rem 0;
+  max-width: 100%;
+  justify-content: space-around;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  li {
+    a {
+      color: #000000;
+      font-size: 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        color: #E7334D;
+        transition: color 200ms;
+      }
+    }
+  }
+}
+
+.socialList {
+  display: flex;
+  list-style-type: none;
+  padding-top: 1.8rem;
+
+  li {
+    padding-right: 1.2rem;
+
+    a {
+      color: #000000;
+      font-size: 1.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        color: #E7334D;
+        cursor: pointer;
+      }
+    }
+  }
+
+  li:last-child {
+    padding-right: 0;
+  }
+}
+
+.mobileNavOpen {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 1000000;
+  overflow: hidden;
+}
+
+.mobileNav {
+  width: 50%;
+  height: 100vh;
+  background-color: #E7334D;
+  float: right;
+}
+
+.close {
+  margin: 1rem .9rem 0 0;
+  float: right;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  justify-content: center;
+  margin-top: 10rem;
+  padding-inline-start: 1rem;
+
+  li {
+    margin-top: 1.5rem;
+    color: #000000;
+    font-size: 4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      font-style: italic;
+    }
+  }
+}
+
+.mobileSocialList {
+  display: flex;
+  list-style-type: none;
+  padding: 2.4rem 0 .5rem 1rem;
+
+  li {
+    margin-right: 2.4rem;
+
+    a {
+      color: #000000;
+      font-size: 1.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  li:last-child {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mobileNav {
+    width: 80%;
+    height: 100vh;
+    background-color: #E7334D;
+    float: right;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .title {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    background-color: white;
+  }
+
+  .navTop {
+    border-bottom: 1px solid black;
+    padding: .8rem 0 .4rem 0;
+    height: 2.1rem;
+    display: block;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .mobileTitle {
+    display: block;
+    font-size: 1.5rem;
+    position: absolute;
+    top: .9rem;
+    transform: translate(0)
+  }
+
+  .navList {
+    display: none;
+  }
+
+  .socialList {
+    display: none;
+  }
+
+  .mobileIcons {
+    display: flex;
+  }
+
+  .mobileNav {
+    display: block;
+    width: 80%;
+    height: 100vh;
+    background-color: #E7334D;
+    float: right;
+  }
+
+  .close {
+    margin: 1rem .9rem 0 0;
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .mobileNavList {
+    margin-top: 6rem;
+    padding-inline-start: 1rem;
+
+    li {
+      font-size: 2.5rem;
+      pointer-events: none;
+    }
+  }
+}
